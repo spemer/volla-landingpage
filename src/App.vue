@@ -9,8 +9,8 @@ import Vue from 'vue'
 import VueProgressBar from 'vue-progressbar'
 
 Vue.use(VueProgressBar, {
-  color: '#ffbe19',
-  height: '2px'
+  color: '#ff82ab',
+  height: '2px',
 })
 
 export default {
@@ -20,7 +20,6 @@ export default {
     this.$Progress.finish()
   },
 
-  // load progressbar
   created () {
     this.$Progress.start()
     this.$router.beforeEach((to, from, next) => {
@@ -37,7 +36,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-
-</style>
