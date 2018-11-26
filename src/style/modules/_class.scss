@@ -57,9 +57,9 @@
     height: $grid14x;
     font-weight: 900;
     margin-top: $grid8x;
-    color: $brand-yellow;
+    color: $brand-pink;
     background-color: #fff;
-    border: 2px solid $brand-yellow;
+    border: 2px solid $brand-pink;
     -webkit-transition: all .25s ease;
             transition: all .25s ease;
     @include border-radius($grid16x);
@@ -72,7 +72,7 @@
     &:hover {
       color: #fff;
       font-weight: 900;
-      background-color: $brand-yellow;
+      background-color: $brand-pink;
     }
   }
 }
