@@ -7,6 +7,7 @@
 <script>
 import Vue from 'vue'
 import VueProgressBar from 'vue-progressbar'
+import {globalVar} from '@/globalVar'
 
 Vue.use(VueProgressBar, {
   color: '#ff82ab',
@@ -15,6 +16,11 @@ Vue.use(VueProgressBar, {
 
 export default {
   name: 'app',
+
+  metaInfo: {
+    title: globalVar.appNameEn,
+    titleTemplate: '%s',
+  },
 
   mounted () {
     this.$Progress.finish()
