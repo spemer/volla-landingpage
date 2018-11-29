@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Meta from 'vue-meta'
 
+import RedirectDL from '@/pages/RedirectDL'
+
 Vue.use(VueRouter)
 Vue.use(Meta)
 
@@ -18,6 +20,10 @@ export default new VueRouter({
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/app',
+      component: RedirectDL,
     },
   ]
 })

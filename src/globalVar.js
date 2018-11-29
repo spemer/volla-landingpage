@@ -3,7 +3,12 @@ import Vue from 'vue'
 export const globalVar = new Vue ({
   data: {
     companyName: 'RsFive',
-    appNameKr: '볼라',
-    appNameEn: 'Volla',
+    serviceKo: '볼라',
+    serviceEn: 'Volla',
+
+    websiteUrl: '#',
+    iosStore: '#',
+    androidStore: '#',
+
   }
 })
