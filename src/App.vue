@@ -18,8 +18,8 @@ export default {
   name: 'app',
 
   metaInfo: {
-    title: globalVar.appNameEn,
-    titleTemplate: '%s',
+    title: globalVar.serviceEn,
+    titleTemplate: '%s' + ': ' + globalVar.tagline,
   },
 
   mounted () {
