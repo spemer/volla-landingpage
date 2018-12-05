@@ -19,7 +19,7 @@ export default {
 
   metaInfo: {
     title: globalVar.serviceEn,
-    titleTemplate: '%s' + ': ' + globalVar.tagline,
+    titleTemplate: '%s' + ' - ' + globalVar.tagline,
   },
 
   mounted () {
