@@ -1,12 +1,14 @@
 <template lang="pug">
   div#home
     Header
+    Download
     Footer
     Kakao
 </template>
 
 <script>
 import Header from '@/components/Header'
+import Download from '@/components/Download'
 import Footer from '@/components/Footer'
 import Kakao from '@/components/misc/Kakao'
 
@@ -14,6 +16,7 @@ export default {
   name: 'home',
   components: {
     Header,
+    Download,
     Footer,
     Kakao,
   }
