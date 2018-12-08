@@ -47,7 +47,7 @@
 ============================== */
 body {
   outline: none;
-  color: $text333;
+  color: $black78;
   @include font-settings();
   @include font-stack-html();
   @include font-size($grid4x);
