@@ -83,9 +83,10 @@
   toast
 ============================== */
 .toasted.primary.default {
-  font-weight: 500;
+  color: #fff;
+  font-weight: 400;
   background: $black78;
-  padding: auto $grid4x;
+  padding: $grid2x $grid4x;
   @include font-size(12px);
   @include box-shadow($grid, $grid2x, $black16);
   @include border-radius($grid16x !important);
