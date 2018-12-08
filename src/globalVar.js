@@ -11,7 +11,7 @@ export const globalVar = new Vue ({
     serviceEn: 'Volla',
     tagline: '실시간 쇼핑 스트리밍',
 
-    callTo: '010-7422-8845',
+    callTo: '010-0000-0000',
     mailTo: 'riversouthfive@gmail.com',
 
     websiteUrl: 'https://volla.live',
