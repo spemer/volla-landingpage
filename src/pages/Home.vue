@@ -1,7 +1,7 @@
 <template lang="pug">
   div#home
     Header
-    Download
+    Download.section__each
     Footer
     Kakao
 </template>

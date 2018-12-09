@@ -16,10 +16,10 @@
           )
           span.download__badge--text {{ value.title }}
 
-      //- div.download__mockup
-      //-   img.download__mockup--img(
-      //-     src="/src/assets/dist/screen.png"
-      //-   )
+      div.download__mockup
+        img.download__mockup--img(
+          src="/src/assets/dist/screen.png"
+        )
 </template>
 
 <script>
@@ -51,15 +51,17 @@ export default {
 <style lang="scss">
 
 #download {
-  height: 640px;
+  height: 612px;
   overflow-y: hidden;
   border-top: 1px solid $texteee;
+  // background-color: #F0F0F0;
 
-  @media #{$tablet} {
-    height: 560px;
-  }
+  // @media #{$tablet} {
+  //   height: 560px;
+  // }
 
   .download__title {
+    font-weight: 300;
     text-align: center;
     margin-bottom: $grid8x;
   }
@@ -74,10 +76,10 @@ export default {
     .download__badge--link {
       height: $grid10x;
       display: inline-block;
+      margin-bottom: $grid8x;
       border-radius: $grid16x;
-      margin-bottom: $grid12x;
-      padding: $grid2x $grid4x 0;
       border: 1px solid $texteee;
+      padding: $grid2x $grid4x 0;
 
       &:first-child {
         margin-right: $grid4x;
@@ -113,7 +115,7 @@ export default {
       width: 320px;
       margin: 0 auto;
 
-      @media #{$pablet} {
+      @media #{$mobile} {
         width: 280px;
       }
     }

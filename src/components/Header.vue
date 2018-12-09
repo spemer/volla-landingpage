@@ -78,6 +78,10 @@ export default {
       margin-left: $grid4x;
       display: inline-block;
       @include transform(translateY(-75%));
+
+      @media #{$ip6} {
+        display: none;
+      }
     }
   }
 
