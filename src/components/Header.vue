@@ -8,7 +8,8 @@
         img.header__left--img(
           src="../assets/dist/launcher.svg"
         )
-        p.header__left--text {{ serviceKo }} - {{ tagline }}
+        p.header__left--text {{ serviceKo }}
+        p.header__left--text.sub &nbsp;- {{ tagline }}
 
       div.header__right(
         v-scroll-to="{el: '#download', duration: 0, offset: -54}"
@@ -27,6 +28,7 @@ export default {
     return {
       tagline: globalVar.tagline,
       serviceKo: globalVar.serviceKo,
+      serviceEn: globalVar.serviceEn,
     }
   },
 }
@@ -78,6 +80,10 @@ export default {
       margin-left: $grid4x;
       display: inline-block;
       @include transform(translateY(-75%));
+
+      &.sub {
+        margin-left: 0;
+      }
 
       @media #{$ip6} {
         display: none;
