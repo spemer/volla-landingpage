@@ -79,6 +79,7 @@ export default {
 <style lang="scss">
 
 #footer {
+  font-weight: 400;
   padding: $grid12x $grid4x;
   border-top: 1px solid $stroke;
 

@@ -1,4 +1,5 @@
 #terms {
+  font-weight: 400;
 
   .global__cta--btn {
     @include box-shadow(0, 0, transparent);
@@ -9,7 +10,7 @@
   }
 
   .terms-wrapper {
-    color: $text333;
+    color: $black78;
     margin: 0 auto;
     padding: $grid32x 0 $grid32x;
     max-width: 640px;
@@ -22,12 +23,12 @@
     }
 
     h1 {
-      color: $text333;
+      color: $black78;
       @include font-size($grid8x);
     }
 
     h3 {
-      color: $text333;
+      color: $black78;
       margin-top: $grid16x;
       margin-bottom: $grid2x;
       @include font-size($grid6x);
