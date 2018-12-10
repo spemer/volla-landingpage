@@ -68,6 +68,10 @@ h1 {
   font-weight: 900;
   text-align: center;
   @include font-size($grid8x);
+
+  @media #{$pablet} {
+    @include font-size($grid7x);
+  }
 }
 
 h3 {
