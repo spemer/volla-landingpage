@@ -35,7 +35,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #header {
   top: 0;
   width: 100%;

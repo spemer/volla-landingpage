@@ -49,7 +49,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #download {
   height: 612px;
   overflow-y: hidden;
