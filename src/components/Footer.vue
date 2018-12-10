@@ -16,22 +16,22 @@
             v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
           ) 이메일: {{ mailTo }}
 
-        //- p.footer__terms
-        //-   router-link.footer__terms--each(
-        //-     :key="key"
-        //-     :to="'tos/' + value"
-        //-     target="_blank"
-        //-     v-tooltip.bottom="{content: key + '(새 탭)', delay: {show: 500, hide: 100}}"
-        //-     v-for="(value, key) in tos"
-        //-   ) {{ key }}
+        p.footer__terms
+          router-link.footer__terms--each(
+            :key="key"
+            :to="'tos/' + value"
+            target="_blank"
+            v-tooltip.bottom="{content: key + '(새 탭)', delay: {show: 500, hide: 100}}"
+            v-for="(value, key) in tos"
+          ) {{ key }}
 </template>
 
 <script>
 import Vue from 'vue'
 import {globalVar} from '@/globalVar'
-// import Geolocate from '@/pages/tos/Geolocate'
-// import Privacy from '@/pages/tos/Privacy'
-// import Terms from '@/pages/tos/Terms'
+import Privacy from '@/pages/tos/Privacy'
+import TermsProduct from '@/pages/tos/TermsProduct'
+import TermsSite from '@/pages/tos/TermsSite'
 import Toasted from 'vue-toasted'
 import VueClipboard from 'vue-clipboard2'
 
@@ -50,11 +50,11 @@ export default {
       companyAdr: globalVar.companyAdr,
       callTo: globalVar.callTo,
       mailTo: globalVar.mailTo,
-      // tos: {
-      //   위치기반서비스이용약관: 'geolocate',
-      //   개인정보처리방침: 'privacy',
-      //   로라이용약관: 'terms',
-      // }
+      tos: {
+        개인정보처리방침: 'privacy',
+        제품판매이용약관: 'terms-product',
+        관리자사이트이용약관: 'terms-site',
+      }
     }
   },
 
