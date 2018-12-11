@@ -129,11 +129,11 @@
     }
 
     @media #{$tablet} {
-      padding: $grid24x $grid8x $grid24x;
+      padding: $grid28x $grid8x $grid24x;
     }
 
     @media #{$pablet} {
-      padding: $grid12x $grid6x $grid16x;
+      padding: $grid28x $grid6x $grid16x;
 
       h1 {
         @include font-size(28px);
@@ -145,7 +145,7 @@
     }
 
     @media #{$mobile} {
-      padding: $grid8x $grid4x $grid16x;
+      padding: $grid24x $grid4x $grid16x;
 
       h1 {
         @include font-size($grid6x);

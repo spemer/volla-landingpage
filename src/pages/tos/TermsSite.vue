@@ -1,5 +1,6 @@
 <template lang="pug">
   div#terms
+    Header
     div.terms-wrapper
       h1 {{ pageTitle }}
       h3 1. 개인정보의 처리 목적
@@ -89,8 +90,9 @@
 </template>
 
 <script>
-import {globalVar} from '@/globalVar'
+import Header from '@/components/Header'
 import CloseBtn from '@components/misc/CloseBtn'
+import {globalVar} from '@/globalVar'
 
 export default {
   name: 'term-site',
@@ -113,7 +115,8 @@ export default {
   },
 
   components: {
-    CloseBtn
+    CloseBtn,
+    Header,
   },
 
   updated () {

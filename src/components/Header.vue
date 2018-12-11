@@ -12,10 +12,19 @@
         p.header__left--text.sub &nbsp;- {{ tagline }}
 
       div.header__right(
+        v-if="this.$route.path === '/'"
         v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         v-tooltip.bottom="{content: '어플 다운로드 받기', delay: {show: 500, hide: 100}}"
       )
         p.header__right--text 어플 다운로드
+
+      div.header__right(
+        v-if="this.$route.path !== '/'"
+        v-tooltip.bottom="{content: 'Volla 메인으로 이동', delay: {show: 500, hide: 100}}"
+      )
+        router-link.header__right--text(
+          to="/"
+        ) 홈으로
 </template>
 
 <script>
@@ -92,8 +101,9 @@ export default {
 
   .header__right {
     float: right;
-    color: $brand-pink;
     cursor: pointer;
+    color: $brand-pink;
+    padding-top: $grid4x;
     transition: color .25s ease;
 
     &:hover {
@@ -101,7 +111,7 @@ export default {
     }
 
     .header__right--text {
-      @include transform(translateY(-10%));
+      @include transform(translateY(-65%) !important);
     }
   }
 }
