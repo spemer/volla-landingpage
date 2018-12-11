@@ -15,7 +15,7 @@ export const globalVar = new Vue ({
     mailTo: 'riversouthfive@gmail.com',
 
     websiteUrl: 'https://volla.live',
-    ceoWebsiteUrl: 'https://admin.volla.live',
+    ceoWebsiteUrl: 'https://volla.live/admin',
     iosStore: '#',
     androidStore: '#',
 
