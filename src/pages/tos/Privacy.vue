@@ -1,6 +1,6 @@
 <template lang="pug">
   div#terms
-    Header
+    //- Header
     div.terms-wrapper
       h1 {{ pageTitle }}
       h3 1. 개인정보의 처리 목적
