@@ -12,19 +12,9 @@
         p.header__left--text.sub &nbsp;- {{ tagline }}
 
       div.header__right(
-        v-if="this.$route.path === '/'"
         v-scroll-to="{el: '#download', duration: 0, offset: -54}"
-        v-tooltip.bottom="{content: '어플 다운로드 받기', delay: {show: 500, hide: 100}}"
       )
         p.header__right--text 어플 다운로드
-
-      div.header__right(
-        v-if="this.$route.path !== '/'"
-        v-tooltip.bottom="{content: 'Volla 메인으로 이동', delay: {show: 500, hide: 100}}"
-      )
-        router-link.header__right--text(
-          to="/"
-        ) 홈으로
 </template>
 
 <script>
@@ -45,14 +35,15 @@ export default {
   //   var prevScrollpos = window.pageYOffset;
   //   window.onscroll = function() {
   //   var currentScrollPos = window.pageYOffset;
-  //     if (prevScrollpos > currentScrollPos) {
+  //     if (prevScrollpos > currentScrollPos || prevScrollpos < 0) {
   //       document.getElementById("header").style.top = "0";
   //     } else {
   //       document.getElementById("header").style.top = "-56px";
   //     }
   //     prevScrollpos = currentScrollPos;
   //   }
-  // }
+  // },
+
 }
 </script>
 

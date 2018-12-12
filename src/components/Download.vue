@@ -53,11 +53,10 @@ export default {
   height: 612px;
   overflow-y: hidden;
   border-top: 1px solid $texteee;
-  // background-color: #F0F0F0;
 
-  // @media #{$tablet} {
-  //   height: 560px;
-  // }
+  @media #{$pablet} {
+    height: 602px;
+  }
 
   .download__title {
     font-weight: 300;

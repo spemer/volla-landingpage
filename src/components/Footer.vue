@@ -6,10 +6,9 @@
           | ⓒ {{ thisYear }} {{ companyName }}., All Rights Reserved.
 
         p.footer__copyright--info
-          span 사업자등록번호: {{ companyID }}
-          span 대표이사: {{ companyCEO }}
-          span 주소: {{ companyAdr }}
-          span 대표전화: {{ callTo }}
+          span(
+            v-for="info in infoList"
+          ) {{ info }}
           span.clipboard(
             @click="toast"
             v-clipboard:copy="mailTo"
@@ -29,9 +28,6 @@
 <script>
 import Vue from 'vue'
 import {globalVar} from '@/globalVar'
-import Privacy from '@/pages/tos/Privacy'
-import TermsProduct from '@/pages/tos/TermsProduct'
-import TermsSite from '@/pages/tos/TermsSite'
 import Toasted from 'vue-toasted'
 import VueClipboard from 'vue-clipboard2'
 
@@ -45,10 +41,14 @@ export default {
     return {
       year: '',
       companyName: globalVar.companyName,
-      companyID: globalVar.companyID,
-      companyCEO: globalVar.companyCEO,
-      companyAdr: globalVar.companyAdr,
-      callTo: globalVar.callTo,
+      infoList: [
+        '상호명: ' + globalVar.companyNameFull,
+        '사업자등록번호: ' + globalVar.companyID,
+        '통신판매업: ' + globalVar.companyItc,
+        '대표이사: ' + globalVar.companyCEO,
+        '대표전화: ' + globalVar.callTo,
+        '주소: ' + globalVar.companyAdr,
+      ],
       mailTo: globalVar.mailTo,
       tos: {
         개인정보처리방침: 'privacy',

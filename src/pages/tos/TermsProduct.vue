@@ -132,8 +132,8 @@
       h3 제 14 조 (관할 법원)
       p 이 약관과 회사와 회원 간의 "서비스" 이용계약 및 회원 상호간의 분쟁에 대해 회사를 당사자로 하는 소송이 제기될 경우에는 회사의 본사 소재지를 관할하는 법원을 합의관할법원으로 정합니다.
 
-    //- div.global__cta
-    //-   CloseBtn
+    div.global__cta
+      CloseBtn
 </template>
 
 <script>
