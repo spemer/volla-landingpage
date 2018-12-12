@@ -40,6 +40,19 @@ export default {
       serviceEn: globalVar.serviceEn,
     }
   },
+
+  // mounted () {
+  //   var prevScrollpos = window.pageYOffset;
+  //   window.onscroll = function() {
+  //   var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //       document.getElementById("header").style.top = "0";
+  //     } else {
+  //       document.getElementById("header").style.top = "-56px";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  //   }
+  // }
 }
 </script>
 
@@ -52,6 +65,7 @@ export default {
   height: $grid14x;
   font-weight: 900;
   background-color: #fff;
+  transition: top 0.3s ease;
   @include box-shadow();
 
   // safari
