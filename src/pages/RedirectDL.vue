@@ -40,15 +40,19 @@ export default {
         ios     = globalVar.iosStore,
         unknown = globalVar.websiteUrl
 
-    if      (this.userAgent == "Android")  window.location.href = android;
-    else if (this.userAgent == "iOS")      window.location.href = ios;
+    if      (this.userAgent == "Android") {
+      window.location.href = android
+    }
+    else if (this.userAgent == "iOS") {
+      window.location.href = ios
+    }
     else if (this.userAgent == "Windows Phone") {
-        alert("안드로이드, iOS 운영체제에서만 다운로드 가능합니다.")
-        window.location.href = unknown
+      alert("안드로이드, iOS 운영체제에서만 다운로드 가능합니다.")
+      window.location.href = unknown
     }
     else {
-        alert("안드로이드, iOS 운영체제에서만 다운로드 가능합니다.")
-        window.location.href = unknown
+      alert("안드로이드, iOS 운영체제에서만 다운로드 가능합니다.")
+      window.location.href = unknown
     }
   },
 }
