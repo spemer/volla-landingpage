@@ -1,4 +1,9 @@
 #!/bin/bash
+prjname="volla-landingpage"
+
+echo "=============================="
+echo ${prjname}
+echo "=============================="
 
 npm run dev
 
