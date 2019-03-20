@@ -1,8 +1,6 @@
 #!/bin/bash
-prjname="volla-landingpage"
-
 echo "=============================="
-echo ${prjname}
+echo "${PWD##*/}"
 echo "=============================="
 
 # run gulpfile.js image resizer
