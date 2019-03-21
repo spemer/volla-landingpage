@@ -8,9 +8,10 @@ trap 'echo Stop gulp-watch' SIGINT
 sudo gulp watch
 trap SIGINT
 
+# serve with hot reload at localhost:3000
 npm run dev
 
-# build
+# build for production with minification
 npm run build
 
 # deploy with firebase cli
