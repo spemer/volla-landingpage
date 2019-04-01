@@ -108,7 +108,7 @@ git_commit() {
 git_push() {
   while true; do
     printf "\n"
-    read -p "${BOLD}git push? (Y/n) ${RESET}" yn
+    read -p "${BOLD}${GREEN}git push? (Y/n) ${RESET}" yn
     case ${yn} in
       [Yy]* ) git push; break;;
       [Nn]* ) return 0;;

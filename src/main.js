@@ -6,11 +6,14 @@ import 'promise-polyfill/src/polyfill'
 import Vue from 'vue'
 import axios from 'axios'
 import App from '@/App.vue'
+import store from '@/store'
 import router from '@/routes'
 import VTooltip from 'v-tooltip'
 import VueScrollTo from 'vue-scrollto'
 
-import {globalVar} from '@/globalVar'
+import {
+  globalVar
+} from '@/globalVar'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
@@ -21,6 +24,7 @@ Kakao.init(process.env.KAKAO_KEY)
 
 new Vue({
   el: '#app',
+  store,
   router,
   render: h => h(App)
 })

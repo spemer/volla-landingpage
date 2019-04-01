@@ -1,13 +1,13 @@
 import Vue from 'vue'
 
-export const globalVar = new Vue ({
+export const globalVar = new Vue({
   data: {
     companyName: 'RsFive',
     companyNameFull: '(주)알에스파이브',
-    companyAdr: '전국구',
+    companyAdr: '서울특별시 송파구 송파대로 345, 209동 904호(가락동, 헬리오시티)',
     companyCEO: '이문규',
-    companyID: '000-00-00000',
-    companyItc: '2019-서울강남-0000',
+    companyID: '653-12-01150',
+    companyItc: '2019-서울송파-0847',
 
     serviceKo: '볼라',
     serviceEn: 'Volla',
@@ -20,6 +20,5 @@ export const globalVar = new Vue ({
     ceoWebsiteUrl: 'https://volla.live/admin',
     iosStore: '#',
     androidStore: '#',
-
   }
 })
