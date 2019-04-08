@@ -52,8 +52,8 @@ export default {
       mailTo: globalVar.mailTo,
       tos: {
         개인정보처리방침: 'privacy',
-        제품판매이용약관: 'terms-product',
-        관리자사이트이용약관: 'terms-site',
+        서비스이용약관: 'terms-service',
+        쇼핑몰사업자이용약관: 'terms-site',
       }
     }
   },

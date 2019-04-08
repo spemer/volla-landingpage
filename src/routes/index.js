@@ -8,7 +8,7 @@ Vue.use(Meta)
 import Home from '@/pages/Home'
 import Privacy from '@/pages/tos/Privacy'
 import TermsSite from '@/pages/tos/TermsSite'
-import TermsProduct from '@/pages/tos/TermsProduct'
+import TermsService from '@/pages/tos/TermsService'
 import RedirectDL from '@/pages/RedirectDL'
 
 export default new VueRouter({
@@ -28,9 +28,9 @@ export default new VueRouter({
       component: Privacy,
     },
     {
-      path: '/tos/terms-product',
-      name: 'term-product',
-      component: TermsProduct,
+      path: '/tos/terms-service',
+      name: 'term-service',
+      component: TermsService,
     },
     {
       path: '/tos/terms-site',
