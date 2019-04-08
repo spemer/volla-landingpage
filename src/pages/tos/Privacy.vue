@@ -202,9 +202,11 @@ export default {
     return {
       pageTitle: '개인정보처리방침',
       companyNameFullKo: globalVar.companyNameFullKo,
+      ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
       companyName: globalVar.companyName,
       companyCEO: globalVar.companyCEO,
       websiteUrl: globalVar.websiteUrl,
+      serviceEn: globalVar.serviceEn,
       callTo: globalVar.callTo,
       mailTo: globalVar.mailTo,
     }

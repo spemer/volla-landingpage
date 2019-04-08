@@ -241,8 +241,14 @@ export default {
   data () {
     return {
       pageTitle: '서비스이용약관(이용자용)',
-      companyName: globalVar.companyName,
+      companyNameFullKo: globalVar.companyNameFullKo,
       ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
+      companyName: globalVar.companyName,
+      companyCEO: globalVar.companyCEO,
+      websiteUrl: globalVar.websiteUrl,
+      serviceEn: globalVar.serviceEn,
+      callTo: globalVar.callTo,
+      mailTo: globalVar.mailTo,
     }
   },
 

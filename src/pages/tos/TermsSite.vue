@@ -280,9 +280,12 @@ export default {
   data () {
     return {
       pageTitle: '서비스이용약관(쇼핑몰사업자용)',
+      companyNameFullKo: globalVar.companyNameFullKo,
+      ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
       companyName: globalVar.companyName,
       companyCEO: globalVar.companyCEO,
-      ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
+      websiteUrl: globalVar.websiteUrl,
+      serviceEn: globalVar.serviceEn,
       callTo: globalVar.callTo,
       mailTo: globalVar.mailTo,
     }
