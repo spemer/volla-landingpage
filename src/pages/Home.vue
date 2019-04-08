@@ -1,6 +1,7 @@
 <template lang="pug">
   div#home
     Header
+    Hero
     Service.section__each
     Download.section__each
     Footer
@@ -9,6 +10,7 @@
 
 <script>
 import Header from '@/components/Header'
+import Hero from '@/components/Hero'
 import Service from '@/components/Service'
 import Download from '@/components/Download'
 import Footer from '@/components/Footer'
@@ -18,6 +20,7 @@ export default {
   name: 'home',
   components: {
     Header,
+    Hero,
     Service,
     Download,
     Footer,

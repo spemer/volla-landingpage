@@ -12,6 +12,7 @@ export const globalVar = new Vue({
     serviceKo: '볼라',
     serviceEn: 'Volla',
     tagline: '실시간 쇼핑 스트리밍',
+    taglineLong: '라이브 방송으로 만나는 동대문 쇼핑',
 
     callTo: '010-7422-8845',
     mailTo: 'riversouthfive@gmail.com',

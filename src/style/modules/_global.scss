@@ -3,8 +3,8 @@
 ============================== */
 @mixin font-stack-html() {
   -webkit-font-family: 'Spoqa Han Sans', Sans-serif;
-     -moz-font-family: 'Spoqa Han Sans', Sans-serif;
-          font-family: 'Spoqa Han Sans', Sans-serif;
+  -moz-font-family: 'Spoqa Han Sans', Sans-serif;
+  font-family: 'Spoqa Han Sans', Sans-serif;
 }
 
 
@@ -14,13 +14,13 @@
 @mixin font-settings() {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
-     -moz-font-feature-settings: 'liga';
-          font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale !important;
-   -webkit-font-smoothing: antialiased !important;
-          text-rendering:  optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip: ink;
+  text-decoration-skip: ink;
 }
 
 
@@ -31,10 +31,12 @@
   $remSize: $size / $grid4x;
   @return $remSize * 1rem;
 }
+
 @mixin line-height($size) {
   line-height: $size * 1.6;
   line-height: calculateRem($size) * 1.6;
 }
+
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
@@ -86,7 +88,7 @@ span {
   @include line-height(18px);
 
   b {
-      font-weight: 900;
+    font-weight: 900;
   }
 }
 
@@ -102,7 +104,8 @@ button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 
   &:focus,
-  &:active, {
+  &:active,
+    {
     border: none;
     outline: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;

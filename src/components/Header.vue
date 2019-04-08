@@ -53,36 +53,41 @@ export default {
   width: 100%;
   z-index: 10;
   position: fixed;
-  height: $grid14x;
+  height: $header;
   font-weight: 900;
   background-color: #fff;
   transition: top 0.3s ease;
   @include box-shadow();
 
   // safari
-  @supports (-webkit-appearance:none) {
+  @supports (-webkit-appearance: none) {
     @include box-shadow(0);
-    background-color: hsla(0, 0%, 100%, .8);
+    background-color: hsla(0, 0%, 100%, 0.8);
     -webkit-backdrop-filter: saturate(100%) blur($grid6x);
-            backdrop-filter: saturate(100%) blur($grid6x);
+    backdrop-filter: saturate(100%) blur($grid6x);
   }
 
   // edge
-  @supports (-ms-ime-align:auto) {
+  @supports (-ms-ime-align: auto) {
     @include box-shadow(0);
-    background-color: hsla(0, 0%, 100%, .8);
+    background-color: hsla(0, 0%, 100%, 0.8);
     -webkit-backdrop-filter: saturate(100%) blur($grid6x);
-            backdrop-filter: saturate(100%) blur($grid6x);
+    backdrop-filter: saturate(100%) blur($grid6x);
   }
 
-  @media #{$ie}      { background-color: #fff; }
-  @media #{$chrome}  { background-color: #fff; }
-  @media #{$firefox} { background-color: #fff; }
-
+  @media #{$ie} {
+    background-color: #fff;
+  }
+  @media #{$chrome} {
+    background-color: #fff;
+  }
+  @media #{$firefox} {
+    background-color: #fff;
+  }
 
   .header__left {
     cursor: pointer;
-    height: $grid14x;
+    height: $header;
     display: inline-block;
 
     .header__left--img {
@@ -111,7 +116,7 @@ export default {
     cursor: pointer;
     color: $brand-pink;
     padding-top: $grid4x;
-    transition: color .25s ease;
+    transition: color 0.25s ease;
 
     &:hover {
       color: $brand-pink-pressed;
