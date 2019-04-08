@@ -26,9 +26,7 @@ export default {
 @import '../../style/style.scss';
 
 #plusfriend-addfriend-button {
-
   &:not(.contact__each) {
-
     @keyframes popup {
       from {
         opacity: 0;
@@ -43,13 +41,13 @@ export default {
     right: $grid4x;
     bottom: $grid4x;
     position: fixed;
-    animation: popup .25s ease-in-out 2.5s 1 forwards;
+    animation: popup 0.25s ease-in-out 2.5s 1 forwards;
     @include transform(scale(0));
 
     img {
       cursor: pointer;
       border-radius: $grid8x;
-      transition: all .25s ease;
+      transition: all 0.25s ease;
       @include box-shadow($grid3x, $grid4x, $black08);
 
       &:hover {

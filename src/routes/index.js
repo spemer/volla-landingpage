@@ -13,8 +13,7 @@ import RedirectDL from '@/pages/RedirectDL'
 
 export default new VueRouter({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'home',
       component: Home,

@@ -1,7 +1,7 @@
 <template lang="pug">
   div#download
     div.container
-      h1.download__title 어플로 간편하게 즐겨보세요
+      h1.download__title.section__title 어플로 간편하게 즐겨보세요
 
       div.download__badge
         a.download__badge--link(
@@ -56,12 +56,6 @@ export default {
 
   @media #{$pablet} {
     height: 602px;
-  }
-
-  .download__title {
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: $grid8x;
   }
 
   .download__badge {

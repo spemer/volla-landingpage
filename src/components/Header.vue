@@ -14,7 +14,7 @@
       div.header__right(
         v-scroll-to="{el: '#download', duration: 0, offset: -54}"
       )
-        p.header__right--text 어플 다운로드
+        p.header__right--text 어플다운로드
 </template>
 
 <script>
@@ -59,31 +59,31 @@ export default {
   transition: top 0.3s ease;
   @include box-shadow();
 
-  // safari
-  @supports (-webkit-appearance: none) {
-    @include box-shadow(0);
-    background-color: hsla(0, 0%, 100%, 0.8);
-    -webkit-backdrop-filter: saturate(100%) blur($grid6x);
-    backdrop-filter: saturate(100%) blur($grid6x);
-  }
+  // // safari
+  // @supports (-webkit-appearance: none) {
+  //   @include box-shadow(0);
+  //   background-color: hsla(0, 0%, 100%, 0.8);
+  //   -webkit-backdrop-filter: saturate(100%) blur($grid6x);
+  //   backdrop-filter: saturate(100%) blur($grid6x);
+  // }
 
-  // edge
-  @supports (-ms-ime-align: auto) {
-    @include box-shadow(0);
-    background-color: hsla(0, 0%, 100%, 0.8);
-    -webkit-backdrop-filter: saturate(100%) blur($grid6x);
-    backdrop-filter: saturate(100%) blur($grid6x);
-  }
+  // // edge
+  // @supports (-ms-ime-align: auto) {
+  //   @include box-shadow(0);
+  //   background-color: hsla(0, 0%, 100%, 0.8);
+  //   -webkit-backdrop-filter: saturate(100%) blur($grid6x);
+  //   backdrop-filter: saturate(100%) blur($grid6x);
+  // }
 
-  @media #{$ie} {
-    background-color: #fff;
-  }
-  @media #{$chrome} {
-    background-color: #fff;
-  }
-  @media #{$firefox} {
-    background-color: #fff;
-  }
+  // @media #{$ie} {
+  //   background-color: #fff;
+  // }
+  // @media #{$chrome} {
+  //   background-color: #fff;
+  // }
+  // @media #{$firefox} {
+  //   background-color: #fff;
+  // }
 
   .header__left {
     cursor: pointer;

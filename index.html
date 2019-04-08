@@ -1,85 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130648307-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-130648307-1');
-    </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--[if !mso]><!-- -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!--<![endif]-->
-    <title>Volla</title>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet' type='text/css'>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130648307-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/src/assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/src/assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/src/assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/src/assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/src/assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/src/assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/src/assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/src/assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/src/assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/src/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/src/assets/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/src/assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-    <meta name="google-site-verification" content="7wgJAy0Qce6ltlBzRVr-hFpFYjjcdw7sKpfYil-HdI0" />
-    <meta name="naver-site-verification" content="dd2bc3a7564532cf684be2d390977b4cd96c5b99"/>
-    <meta property="fb:admins" content="2378294292413002">
+    gtag('config', 'UA-130648307-1');
 
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="description" content="볼라 - 실시간 쇼핑 스트리밍">
-    <meta name="keywords" content="볼라,Volla,쇼핑,shopping,스트리밍,streaming,라이브,live,커머스,commerce,sns,소셜,social,패션,fashion,옷,여성,남성,카테고리,category,앱,어플,app">
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--[if !mso]><!-- -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+  <title>Volla</title>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'
+    type='text/css'>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
-    <meta name="twitter:title" content="Volla">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image:alt" content="볼라 - 실시간 쇼핑 스트리밍">
-    <meta name="twitter:description" content="볼라 - 실시간 쇼핑 스트리밍">
-    <meta name="twitter:image" content="/src/assets/dist/gpstore_feature_graphic.png">
-    <meta name="twitter:image:src" content="/src/assets/dist/gpstore_feature_graphic.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/src/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/src/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/src/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/src/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/src/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/src/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/src/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/src/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/src/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/src/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/src/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/src/assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-    <meta name="og:title" content="Volla">
-    <meta name="og:type" content="website">
-    <meta name="og:site_name" content="Volla">
-    <meta name="og:url" content="https://volla.live">
-    <meta name="og:description" content="볼라 - 실시간 쇼핑 스트리밍">
-    <meta name="og:image" content="/src/assets/dist/gpstore_feature_graphic.png">
-    <meta property="og:title" content="Volla">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Volla">
-    <meta property="og:url" content="https://volla.live">
-    <meta property="og:description" content="볼라 - 실시간 쇼핑 스트리밍">
-    <meta property="og:image" content="/src/assets/dist/gpstore_feature_graphic.png">
+  <meta name="google-site-verification" content="7wgJAy0Qce6ltlBzRVr-hFpFYjjcdw7sKpfYil-HdI0" />
+  <meta name="naver-site-verification" content="dd2bc3a7564532cf684be2d390977b4cd96c5b99" />
+  <meta property="fb:admins" content="2378294292413002">
 
-    <meta itemprop="name" content="Volla">
-    <meta itemprop="description" content="볼라 - 실시간 쇼핑 스트리밍">
-    <meta itemprop="image" content="/src/assets/dist/gpstore_feature_graphic.png">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="description" content="볼라 - 실시간 쇼핑 스트리밍">
+  <meta name="keywords"
+    content="볼라,Volla,쇼핑,shopping,스트리밍,streaming,라이브,live,커머스,commerce,sns,소셜,social,패션,fashion,옷,여성,남성,카테고리,category,앱,어플,app">
 
-    <link rel="canonical" href="https://volla.live">
+  <meta name="twitter:title" content="Volla">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image:alt" content="볼라 - 실시간 쇼핑 스트리밍">
+  <meta name="twitter:description" content="볼라 - 실시간 쇼핑 스트리밍">
+  <meta name="twitter:image" content="/src/assets/dist/gpstore_feature_graphic.png">
+  <meta name="twitter:image:src" content="/src/assets/dist/gpstore_feature_graphic.png">
 
-  </head>
-  <body>
-    <div id="app"></div>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script src="/dist/build.js"></script>
-  </body>
+  <meta name="og:title" content="Volla">
+  <meta name="og:type" content="website">
+  <meta name="og:site_name" content="Volla">
+  <meta name="og:url" content="https://volla.live">
+  <meta name="og:description" content="볼라 - 실시간 쇼핑 스트리밍">
+  <meta name="og:image" content="/src/assets/dist/gpstore_feature_graphic.png">
+  <meta property="og:title" content="Volla">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Volla">
+  <meta property="og:url" content="https://volla.live">
+  <meta property="og:description" content="볼라 - 실시간 쇼핑 스트리밍">
+  <meta property="og:image" content="/src/assets/dist/gpstore_feature_graphic.png">
+
+  <meta itemprop="name" content="Volla">
+  <meta itemprop="description" content="볼라 - 실시간 쇼핑 스트리밍">
+  <meta itemprop="image" content="/src/assets/dist/gpstore_feature_graphic.png">
+
+  <link rel="canonical" href="https://volla.live">
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script src="/dist/build.js"></script>
+</body>
+
 </html>

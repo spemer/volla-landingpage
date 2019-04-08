@@ -77,7 +77,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #footer {
   font-weight: 400;
   padding: $grid12x $grid4x;
@@ -100,9 +99,9 @@ export default {
         @include font-size($grid3x);
 
         &:not(:last-child) {
-
           &:after {
-            content: " | ";
+            content: ' | ';
+            margin: 0 $grid2x;
           }
         }
       }
@@ -124,17 +123,17 @@ export default {
 
     .footer__terms--each {
       color: $black38;
-      transition: color .25s ease;
+      transition: color 0.25s ease;
 
       &:hover {
-        color: $black38;
+        color: $black54;
       }
 
       &:not(:first-child) {
-
         &::before {
-          content: " | ";
+          content: ' | ';
           color: $black38;
+          margin: 0 $grid2x;
         }
       }
     }

@@ -74,6 +74,12 @@ h1 {
   @media #{$pablet} {
     @include font-size($grid7x);
   }
+
+  &.section__title {
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: $grid8x;
+  }
 }
 
 h3 {
