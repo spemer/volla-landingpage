@@ -91,6 +91,11 @@ export default {
     margin: 0 auto;
     color: $black38;
 
+    .footer__copyright--info,
+    .footer__terms {
+      margin-top: $grid6x;
+    }
+
     .footer__copyright--text,
     .footer__copyright--info,
     .footer__terms {

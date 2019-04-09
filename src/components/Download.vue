@@ -1,7 +1,8 @@
 <template lang="pug">
   div#download
     div.container
-      h1.download__title.section__title 어플로 간편하게 즐겨보세요
+      h1.download__title.section__title 어플로 간편하게 즐겨보세요.
+      p.section__subtitle {{ serviceKo }}는 안드로이드 구글 플레이, 아이폰 앱스토어에서 받으실 수 있습니다.
 
       div.download__badge
         a.download__badge--link(
@@ -41,7 +42,9 @@ export default {
           title: 'App Store',
           href: globalVar.iosStore,
         },
-      }
+      },
+
+      serviceKo: globalVar.serviceKo,
     }
   },
 
@@ -81,8 +84,12 @@ export default {
         }
 
         @media #{$mobile} {
-          margin-right: $grid2x;
-          padding: $grid2x $grid2x 0;
+          margin-left: $grid2x;
+          padding: $grid2x $grid4x 0;
+        }
+
+        @media #{$mini} {
+          margin-bottom: $grid4x;
         }
       }
 

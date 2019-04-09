@@ -76,9 +76,13 @@ h1 {
   }
 
   &.section__title {
-    font-weight: 300;
+    font-weight: 700;
     text-align: center;
     margin-bottom: $grid8x;
+
+    @media #{$mobile} {
+      @include font-size($grid6x);
+    }
   }
 }
 
@@ -95,6 +99,17 @@ span {
 
   b {
     font-weight: 900;
+  }
+
+  &.section__subtitle {
+    font-weight: 400;
+    text-align: center;
+    margin-top: -#{$grid6x};
+    margin-bottom: $grid8x;
+
+    // @media #{$mobile} {
+    //   @include font-size($grid4x);
+    // }
   }
 }
 

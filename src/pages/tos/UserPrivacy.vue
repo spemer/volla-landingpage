@@ -2,6 +2,8 @@
   div#terms
     div.terms-wrapper
       h1 {{ pageTitle }}
+
+
       h3 사용자 개인정보 처리방침
       p {{ companyNameFullKo }}(이하 “회사”라 합니다)는 이용자의 개인정보를 보호하고 이와 관련된 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.
 

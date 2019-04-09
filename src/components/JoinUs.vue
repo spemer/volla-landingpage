@@ -1,7 +1,8 @@
 <template lang="pug">
   div#joinus
     div.container
-      h1.joinus__title.section__title Volla에 입점하세요
+      h1.joinus__title.section__title {{ serviceKo }}에 입점하세요.
+      p.section__subtitle {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다.
 
       div.global__cta
         a.global__cta--link(
@@ -21,6 +22,8 @@ export default {
   data () {
     return {
       baseURI: globalVar.ceoWebsiteUrl,
+      serviceEn: globalVar.serviceEn,
+      serviceKo: globalVar.serviceKo,
     }
   }
 }
