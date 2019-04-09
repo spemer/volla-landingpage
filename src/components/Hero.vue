@@ -7,8 +7,8 @@
             | 라이브 방송으로 만나는
             span.hero__title--nbsp &nbsp;
             span.hero__br
-            | 동대문 쇼핑
-          p.hero__text--subtitle {{ serviceEn }}를 소개합니다
+            | 동대문 쇼핑,
+          p.hero__text--subtitle {{ serviceEn }}를 소개합니다.
 </template>
 
 <script>
@@ -62,9 +62,6 @@ $baseURI: '../assets/dist/hero.jpg';
         }
 
         @media #{$middle} {
-          @include font-size($grid6x);
-          @include line-height($grid6x);
-
           .hero__title--nbsp {
             display: none;
           }
@@ -76,6 +73,11 @@ $baseURI: '../assets/dist/hero.jpg';
             }
           }
         }
+
+        @media #{$mini} {
+          @include font-size($grid6x);
+          @include line-height($grid6x);
+        }
       }
 
       .hero__text--subtitle {
@@ -84,6 +86,10 @@ $baseURI: '../assets/dist/hero.jpg';
         @include font-size($grid5x);
 
         @media #{$middle} {
+          margin-top: -#{$grid2x};
+        }
+
+        @media #{$mini} {
           @include font-size($grid4x);
         }
       }
