@@ -6,9 +6,10 @@ Vue.use(VueRouter)
 Vue.use(Meta)
 
 import Home from '@/pages/Home'
-import Privacy from '@/pages/tos/Privacy'
-import TermsSite from '@/pages/tos/TermsSite'
-import TermsService from '@/pages/tos/TermsService'
+import UserPrivacy from '@/pages/tos/UserPrivacy'
+import UserService from '@/pages/tos/UserService'
+import CeoPrivacy from '@/pages/tos/CeoPrivacy'
+import CeoService from '@/pages/tos/CeoService'
 import RedirectDL from '@/pages/RedirectDL'
 
 export default new VueRouter({
@@ -23,19 +24,24 @@ export default new VueRouter({
       redirect: '/'
     },
     {
-      path: '/tos/privacy',
+      path: '/tos/user/privacy',
       name: 'privacy',
-      component: Privacy,
+      component: UserPrivacy,
     },
     {
-      path: '/tos/terms-service',
-      name: 'term-service',
-      component: TermsService,
+      path: '/tos/user/service',
+      name: 'UserService',
+      component: UserService,
     },
     {
-      path: '/tos/terms-site',
-      name: 'term-site',
-      component: TermsSite,
+      path: '/tos/ceo/privacy',
+      name: 'CeoPrivacy',
+      component: CeoPrivacy,
+    },
+    {
+      path: '/tos/ceo/service',
+      name: 'CeoService',
+      component: CeoService,
     },
     {
       path: '/app',

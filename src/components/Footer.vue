@@ -18,9 +18,9 @@
         p.footer__terms
           router-link.footer__terms--each(
             :key="key"
-            :to="'tos/' + value"
+            :title="key"
             target="_blank"
-            v-tooltip.bottom="{content: key + '(새 탭)', delay: {show: 500, hide: 100}}"
+            :to="'tos/' + value"
             v-for="(value, key) in tos"
           ) {{ key }}
 </template>
@@ -51,9 +51,10 @@ export default {
       ],
       mailTo: globalVar.mailTo,
       tos: {
-        개인정보처리방침: 'privacy',
-        서비스이용약관: 'terms-service',
-        쇼핑몰사업자이용약관: 'terms-site',
+        '개인정보처리방침(이용자용)': 'user/privacy',
+        '서비스이용약관(이용자용)': 'user/service',
+        '개인정보처리방침(판매자용)': 'ceo/privacy',
+        '서비스이용약관(쇼핑몰사업자용)': 'ceo/service',
       }
     }
   },

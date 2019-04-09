@@ -196,11 +196,11 @@ import CloseBtn from '@components/misc/CloseBtn'
 import {globalVar} from '@/globalVar'
 
 export default {
-  name: 'privacy',
+  name: 'UserPrivacy',
 
   data () {
     return {
-      pageTitle: '개인정보처리방침',
+      pageTitle: '개인정보처리방침(이용자용)',
       companyNameFullKo: globalVar.companyNameFullKo,
       ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
       companyName: globalVar.companyName,
@@ -213,7 +213,7 @@ export default {
   },
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - 개인정보처리방침',
+    title: globalVar.serviceEn + ' - 개인정보처리방침(이용자용)',
     titleTemplate: '%s',
   },
 
