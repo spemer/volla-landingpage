@@ -8,6 +8,7 @@ export default new Vuex.Store({
   debug: true,
 
   state: {
+    thisYear: new Date().getFullYear(),
 
   },
 

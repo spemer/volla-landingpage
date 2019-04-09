@@ -71,7 +71,7 @@ export default {
 
   computed: {
     thisYear() {
-      return this.year = new Date().getFullYear()
+      return this.$store.state.thisYear
     }
   },
 }
@@ -81,7 +81,8 @@ export default {
 #footer {
   font-weight: 400;
   padding: $grid12x $grid4x;
-  border-top: 1px solid $stroke;
+  background-color: $textf4;
+  // border-top: 1px solid $stroke;
 
   @media #{$pablet} {
     padding: $grid12x $grid4x $grid16x;
