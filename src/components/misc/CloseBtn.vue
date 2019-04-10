@@ -14,10 +14,10 @@ export default {
   methods: {
     closeWindow () {
       window.close()
-      if (window.ReactNativeWebView){
+      window.postMessage('close')
+      if (window.ReactNativeWebView) {
         console.log('RN WebView Detected!')
         window.ReactNativeWebView.postMessage('close')
-      } else {
         window.postMessage('close')
       }
     }
