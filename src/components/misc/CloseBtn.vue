@@ -18,7 +18,6 @@ export default {
       if (window.ReactNativeWebView) {
         console.log('RN WebView Detected!')
         window.ReactNativeWebView.postMessage('close')
-        window.postMessage('close')
       }
     }
   },
