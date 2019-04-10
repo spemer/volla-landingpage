@@ -2,7 +2,7 @@
   div#home
     Header
     Hero
-    Service.section__each
+    Service
     Download.section__each
     JoinUs.section__each
     Footer
@@ -34,6 +34,6 @@ export default {
 
 <style lang="scss">
 .section__each {
-  padding: 48px 0 80px;
+  padding: $grid12x 0 $grid20x;
 }
 </style>
