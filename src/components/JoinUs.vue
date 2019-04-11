@@ -11,7 +11,7 @@
           @click="toast"
           v-clipboard:copy="mailTo"
           v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
-        ) (또는 이메일 주소 복사하기)
+        ) 이메일 주소 복사하기
 
       div.global__cta
         a.global__cta--link(
@@ -56,7 +56,7 @@ export default {
 
   .container {
     .section__subtitle {
-      margin-bottom: $grid4x;
+      margin-bottom: 0;
 
       .joinus__title--copyEmail {
         cursor: pointer;
@@ -67,6 +67,17 @@ export default {
         &:hover {
           opacity: 0.5;
         }
+      }
+    }
+
+    .global__cta--btn {
+      color: #fff;
+      background-color: $brand-pink;
+
+      &:hover {
+        // opacity: .5;
+        color: $brand-pink;
+        background-color: #fff;
       }
     }
   }
