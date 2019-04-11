@@ -15,7 +15,7 @@
 
       div.global__cta
         a.global__cta--link(
-          :href="`mailto:${mailTo}`"
+          :href="`mailto:${mailTo},${companyMailTo}`"
         )
           button.global__cta--btn(
             v-tooltip.bottom="{content: '입점신청 이메일을 보내려면 클릭하세요', delay: {show: 500, hide: 100}}"
@@ -30,6 +30,7 @@ export default {
 
   data () {
     return {
+      companyMailTo: globalVar.companyMailTo,
       baseURI: globalVar.ceoWebsiteUrl,
       serviceEn: globalVar.serviceEn,
       serviceKo: globalVar.serviceKo,
