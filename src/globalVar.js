@@ -22,5 +22,7 @@ export const globalVar = new Vue({
     ceoWebsiteUrl: 'https://volla.live/admin',
     iosStore: '#',
     androidStore: '#',
+
+    tosDateNow: '2019년 3월 26일',
   }
 })

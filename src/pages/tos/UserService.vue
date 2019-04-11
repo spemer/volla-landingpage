@@ -266,7 +266,7 @@
 
 
       h3 부칙
-      p 이 약관은 2019년 3월 26일부터 적용됩니다.
+      p 이 약관은 {{ tosDateNow }}부터 적용됩니다.
 
 
     div.global__cta
@@ -289,6 +289,7 @@ export default {
       companyName: globalVar.companyName,
       companyCEO: globalVar.companyCEO,
       websiteUrl: globalVar.websiteUrl,
+      tosDateNow: globalVar.tosDateNow,
       serviceEn: globalVar.serviceEn,
       callTo: globalVar.callTo,
       mailTo: globalVar.mailTo,
