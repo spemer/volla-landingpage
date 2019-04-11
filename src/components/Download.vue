@@ -10,7 +10,7 @@
           :key="key"
           target="_blank"
           :href="value.href"
-          v-tooltip.bottom="{content: value.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
+          v-tooltip.bottom="{content: key + ' ' + value.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
         )
           img.download__badge--each(
             :src="value.src"
@@ -32,12 +32,12 @@ export default {
   data () {
     return {
       badges: {
-        android: {
+        Android: {
           src: '/src/assets/dist/playstore.png',
           title: 'Google Play',
           href: globalVar.androidStore,
         },
-        ios: {
+        iOS: {
           src: '/src/assets/dist/appstore.png',
           title: 'App Store',
           href: globalVar.iosStore,
@@ -75,6 +75,11 @@ export default {
       border-radius: $grid16x;
       border: 1px solid $texteee;
       padding: $grid2x $grid4x 0;
+      @include transition(all 0.25s ease);
+
+      &:hover {
+        opacity: 0.75;
+      }
 
       &:first-child {
         margin-right: $grid4x;

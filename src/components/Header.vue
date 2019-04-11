@@ -116,10 +116,10 @@ export default {
     cursor: pointer;
     color: $brand-pink;
     padding-top: $grid4x;
-    transition: color 0.25s ease;
+    @include transition(all 0.25s ease);
 
     &:hover {
-      color: $brand-pink-pressed;
+      opacity: 0.5;
     }
 
     .header__right--text {

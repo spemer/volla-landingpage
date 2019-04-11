@@ -56,6 +56,20 @@
 
 
 /* ==============================
+    transition
+============================== */
+@mixin transition ($transition...) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+
+
+
+/* ==============================
   global btn
 ============================== */
 .global__cta {
@@ -71,8 +85,7 @@
     color: $brand-pink;
     background-color: #fff;
     border: 2px solid $brand-pink;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
+    @include transition(all .25s ease);
     @include border-radius($grid16x);
     // @include box-shadow($grid2x, $grid4x);
 
@@ -105,14 +118,4 @@
   @media #{$pablet} {
     white-space: nowrap;
   }
-}
-
-
-
-/* ==============================
-    transition
-============================== */
-@mixin transition ($transition...) {
-  -webkit-transition: $transition;
-  transition: $transition;
 }
