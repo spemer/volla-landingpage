@@ -1,6 +1,11 @@
 #terms {
   font-weight: 400;
 
+  ::selection {
+    color: #fff;
+    background-color: $brand-pink !important;
+  }
+
   .global__cta--btn {
     @include box-shadow(0, 0, transparent);
   }
@@ -64,7 +69,7 @@
         margin: 0 0 1em;
       }
 
-      > li {
+      >li {
         margin: 0;
         margin-bottom: $grid2x;
         padding: 0 0 0 1.25em;
@@ -72,19 +77,19 @@
         list-style-type: none;
         counter-increment: item;
 
-        > ul {
+        >ul {
           padding-left: 1.5em !important;
 
-          > li {
+          >li {
             padding: 0 !important;
             text-indent: 0 !important;
           }
         }
 
-        > ol {
+        >ol {
           counter-reset: item;
 
-          > li {
+          >li {
             display: block;
             counter-increment: item;
 
@@ -112,14 +117,15 @@
           }
         }
 
-        > ul, > ol {
+        >ul,
+        >ol {
 
-          > li {
+          >li {
             margin: 0;
             padding: 0 0 0 1.5em;
             text-indent: -1.5em;
 
-            @media #{$mobile}{
+            @media #{$mobile} {
               padding: 0 0 0 1.25em;
               text-indent: -1.25em;
             }
@@ -150,6 +156,7 @@
       h1 {
         @include font-size($grid6x);
       }
+
       h3 {
         @include font-size(21px);
       }

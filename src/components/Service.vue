@@ -45,7 +45,7 @@ export default {
   .service__card {
     @include grid-layout(3, 100px, $grid16x);
 
-    @media #{$tablet} {
+    @media #{$pro2} {
       @include grid-layout(1, 100px, $grid4x);
     }
 
@@ -65,7 +65,7 @@ export default {
           }
         }
 
-        @media #{$tablet} {
+        @media #{$pro2} {
           height: 560px;
           width: 320px;
         }

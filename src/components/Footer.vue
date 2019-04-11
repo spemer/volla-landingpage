@@ -5,6 +5,15 @@
         p.footer__copyright--text
           | ⓒ {{ thisYear }} {{ companyName }}., All Rights Reserved.
 
+        p.footer__terms
+          router-link.footer__terms--each(
+            :key="key"
+            :title="key"
+            target="_blank"
+            :to="'tos/' + value"
+            v-for="(value, key) in tos"
+          ) {{ key }}
+
         p.footer__copyright--info
           span(
             v-for="info in infoList"
@@ -14,15 +23,6 @@
             v-clipboard:copy="mailTo"
             v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
           ) 이메일: {{ mailTo }}
-
-        p.footer__terms
-          router-link.footer__terms--each(
-            :key="key"
-            :title="key"
-            target="_blank"
-            :to="'tos/' + value"
-            v-for="(value, key) in tos"
-          ) {{ key }}
 </template>
 
 <script>
@@ -79,10 +79,13 @@ export default {
 
 <style lang="scss">
 #footer {
-  font-weight: 400;
   padding: $grid12x $grid4x;
   background-color: $textf4;
-  // border-top: 1px solid $stroke;
+
+  ::selection {
+    color: #fff;
+    background-color: $brand-pink !important;
+  }
 
   @media #{$pablet} {
     padding: $grid12x $grid4x $grid16x;
@@ -90,20 +93,50 @@ export default {
 
   .footer__copyright {
     margin: 0 auto;
-    color: $black38;
+    color: $black24;
 
     .footer__copyright--info,
     .footer__terms {
-      margin-top: $grid6x;
+      margin-top: $grid5x;
     }
 
-    .footer__copyright--text,
-    .footer__copyright--info,
+    .footer__copyright--text {
+      color: $black38;
+      font-weight: 700;
+      margin-bottom: -#{$grid2x};
+      @include font-size(14px);
+    }
+
     .footer__terms {
-      @include font-size($grid3x);
+      font-weight: 700;
+      margin-top: $grid6x;
+      @include line-height($grid3x);
+
+      .footer__terms--each {
+        color: $black24;
+        transition: color 0.25s ease;
+        @include font-size($grid3x);
+
+        &:hover {
+          color: $black54;
+        }
+
+        &:not(:first-child) {
+          &::before {
+            content: '·';
+            color: $black24;
+            margin: 0 $grid2x;
+          }
+        }
+      }
+    }
+
+    .footer__copyright--info {
+      margin-bottom: $grid8x;
+      @include font-size(10px);
 
       span {
-        @include font-size($grid3x);
+        @include font-size(10px);
 
         &:not(:last-child) {
           &:after {
@@ -114,35 +147,8 @@ export default {
       }
     }
 
-    .footer__copyright--text {
-      color: $black54;
-      font-weight: 900;
-    }
-
     .clipboard {
       cursor: pointer;
-    }
-
-    .footer__copyright--text,
-    .footer__copyright--info {
-      margin-bottom: -#{$grid2x};
-    }
-
-    .footer__terms--each {
-      color: $black38;
-      transition: color 0.25s ease;
-
-      &:hover {
-        color: $black54;
-      }
-
-      &:not(:first-child) {
-        &::before {
-          content: ' | ';
-          color: $black38;
-          margin: 0 $grid2x;
-        }
-      }
     }
   }
 }
