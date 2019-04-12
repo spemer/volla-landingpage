@@ -26,13 +26,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import {globalVar} from '@/globalVar'
-import Toasted from 'vue-toasted'
-import VueClipboard from 'vue-clipboard2'
-
-Vue.use(Toasted)
-Vue.use(VueClipboard)
 
 export default {
   name: 'footer-el',
