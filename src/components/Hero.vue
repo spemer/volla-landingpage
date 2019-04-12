@@ -90,7 +90,7 @@ $baseURI: '../assets/dist/hero.jpg';
       }
 
       .hero__text--subtitle {
-        font-weight: 400;
+        font-weight: 300;
         margin-top: -#{$grid4x};
         @include font-size($grid5x);
 

@@ -15,7 +15,7 @@
 
       div.global__cta
         a.global__cta--link(
-          :href="`mailto:${mailTo},${companyMailTo}`"
+          :href="`mailto:${mailTo},${companyMailTo}?subject=볼라 셀러 입점신청`"
         )
           button.global__cta--btn(
             v-tooltip.bottom="{content: '입점신청 이메일을 보내려면 클릭하세요', delay: {show: 500, hide: 100}}"

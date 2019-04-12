@@ -67,7 +67,7 @@ a {
 }
 
 h1 {
-  font-weight: 900;
+  font-weight: 300;
   text-align: center;
   @include font-size($grid8x);
 
@@ -76,7 +76,7 @@ h1 {
   }
 
   &.section__title {
-    font-weight: 700;
+    font-weight: 300;
     text-align: center;
     margin-bottom: $grid8x;
 
@@ -87,7 +87,7 @@ h1 {
 }
 
 h3 {
-  font-weight: 900;
+  font-weight: 700;
   @include font-size($grid5x);
 }
 
@@ -102,10 +102,10 @@ span {
   }
 
   &.section__subtitle {
-    font-weight: 400;
     text-align: center;
-    margin-top: -#{$grid6x};
     margin-bottom: $grid8x;
+    margin-top: -#{$grid4x};
+    font-weight: 300 !important;
   }
 }
 

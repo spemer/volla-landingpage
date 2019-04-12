@@ -2,7 +2,7 @@
   div#download
     div.container
       h1.download__title.section__title 어플로 간편하게 즐겨보세요.
-      p.section__subtitle {{ serviceKo }}는 안드로이드 구글 플레이, 아이폰 앱스토어에서 받으실 수 있습니다.
+      p.section__subtitle {{ serviceKo }}는 안드로이드 구글 플레이, 아이폰 앱스토어에서 다운로드 받으실 수 있습니다.
 
       DownloadBtn
 
@@ -40,63 +40,24 @@ export default {
 
 <style lang="scss">
 #download {
-  height: 612px;
+  height: 649px;
   overflow-y: hidden;
   border-top: 1px solid $texteee;
 
-  @media #{$pablet} {
-    height: 602px;
+  @media #{$pablet2} {
+    height: 720px;
   }
 
-  .download__badge {
-    width: 100%;
-    outline: none;
-    margin: 0 auto;
-    text-align: center;
-    display: inline-block;
+  @media #{$pablet} {
+    height: 667px;
+  }
 
-    .download__badge--link {
-      height: $grid10x;
-      display: inline-block;
-      margin-bottom: $grid8x;
-      border-radius: $grid16x;
-      border: 1px solid $texteee;
-      padding: $grid2x $grid4x 0;
-      @include transition(all 0.25s ease);
+  @media #{$middle2} {
+    height: 667px;
+  }
 
-      &:hover {
-        opacity: 0.75;
-      }
-
-      &:first-child {
-        margin-right: $grid4x;
-
-        @media #{$ip6} {
-          margin-right: $grid2x;
-        }
-
-        @media #{$mobile} {
-          margin-left: $grid2x;
-          padding: $grid2x $grid4x 0;
-        }
-
-        @media #{$mini} {
-          margin-bottom: $grid4x;
-        }
-      }
-
-      .download__badge--each {
-        width: $grid6x;
-        margin-right: $grid2x;
-        vertical-align: bottom;
-      }
-
-      .download__badge--text {
-        color: $text777;
-        font-weight: 700;
-        vertical-align: bottom;
-      }
-    }
+  @media #{$mobile} {
+    height: 595px;
   }
 
   .download__mockup {

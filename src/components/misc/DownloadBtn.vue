@@ -90,7 +90,7 @@ export default {
     outline: none;
     margin: 0 auto;
     margin-top: $grid4x;
-    // text-align: center;
+    text-align: center;
     display: inline-block;
 
     .download__badge--link {
@@ -110,18 +110,13 @@ export default {
       &:first-child {
         margin-right: $grid4x;
 
-        // @media #{$ip6} {
-        //   margin-right: $grid2x;
-        // }
+        @media #{$pablet} {
+          margin-right: 0;
+        }
 
-        // @media #{$mobile} {
-        //   margin-left: $grid2x;
-        //   padding: $grid2x $grid4x 0;
-        // }
-
-        // @media #{$mini} {
-        //   margin-bottom: $grid4x;
-        // }
+        @media #{$mobile} {
+          padding: $grid2x $grid4x 0;
+        }
       }
 
       .download__badge--each {

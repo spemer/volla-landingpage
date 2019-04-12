@@ -88,6 +88,7 @@ export default {
   .header__left {
     cursor: pointer;
     height: $header;
+    font-weight: 300;
     display: inline-block;
 
     .header__left--img {
@@ -96,7 +97,6 @@ export default {
 
     .header__left--text {
       color: $black78;
-      font-weight: 400;
       margin-left: $grid4x;
       display: inline-block;
       @include transform(translateY(-75%));

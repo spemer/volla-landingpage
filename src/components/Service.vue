@@ -97,7 +97,7 @@ export default {
       }
 
       .service__card--title {
-        font-weight: 700;
+        font-weight: 600;
         margin: $grid4x 0 $grid6x;
       }
 
