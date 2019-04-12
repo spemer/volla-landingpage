@@ -1,11 +1,11 @@
 <template lang="pug">
   div#joinus
     div.container
-      h1.joinus__title.section__title {{ serviceKo }}에 입점하세요.
+      h1.joinus__title.section__title {{ serviceKo }}에 입점하세요
       p.section__subtitle
-        | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다.
+        | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다
         br
-        | 입점신청 이메일을 보내시려면, 아래의 버튼을 클릭해주세요.
+        | 입점신청 이메일을 보내시려면, 아래의 버튼을 클릭해주세요
         br
         span.joinus__title--copyEmail(
           @click="toast"

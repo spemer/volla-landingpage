@@ -39,23 +39,8 @@ export default {
 
   data () {
     return {
-      year: '',
       companyName: globalVar.companyName,
-      infoList: [
-        '상호명: ' + globalVar.companyNameFull,
-        '사업자등록번호: ' + globalVar.companyID,
-        '통신판매업: ' + globalVar.companyItc,
-        '대표이사: ' + globalVar.companyCEO,
-        '대표전화: ' + globalVar.callTo,
-        '주소: ' + globalVar.companyAdr,
-      ],
       mailTo: globalVar.mailTo,
-      tos: {
-        '개인정보처리방침(이용자용)': 'user/privacy',
-        '서비스이용약관(이용자용)': 'user/service',
-        '개인정보처리방침(판매자용)': 'ceo/privacy',
-        '서비스이용약관(쇼핑몰사업자용)': 'ceo/service',
-      }
     }
   },
 
@@ -72,7 +57,15 @@ export default {
   computed: {
     thisYear() {
       return this.$store.state.thisYear
-    }
+    },
+
+    infoList() {
+      return this.$store.state.infoList
+    },
+
+    tos() {
+      return this.$store.state.tos
+    },
   },
 }
 </script>

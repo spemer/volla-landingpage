@@ -7,8 +7,8 @@
             | 라이브 방송으로 만나는
             span.hero__title--nbsp &nbsp;
             span.hero__br
-            | 동대문 쇼핑,
-          p.hero__text--subtitle {{ serviceEn }}를 소개합니다.
+            | 동대문 쇼핑
+          p.hero__text--subtitle {{ serviceEn }}를 소개합니다
 
           DownloadBtn.dlbtn
 </template>
