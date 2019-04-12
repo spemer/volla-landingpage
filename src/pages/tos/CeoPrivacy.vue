@@ -210,7 +210,6 @@ export default {
 
   updated () {
     window.postMessage(document.title)
-    console.log(document.title)
   },
 
 }
