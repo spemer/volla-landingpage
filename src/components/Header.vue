@@ -31,19 +31,6 @@ export default {
     }
   },
 
-  // mounted () {
-  //   var prevScrollpos = window.pageYOffset;
-  //   window.onscroll = function() {
-  //   var currentScrollPos = window.pageYOffset;
-  //     if (prevScrollpos > currentScrollPos || prevScrollpos < 0) {
-  //       document.getElementById("header").style.top = "0";
-  //     } else {
-  //       document.getElementById("header").style.top = "-56px";
-  //     }
-  //     prevScrollpos = currentScrollPos;
-  //   }
-  // },
-
 }
 </script>
 
@@ -58,32 +45,6 @@ export default {
   background-color: #fff;
   transition: top 0.3s ease;
   @include box-shadow();
-
-  // // safari
-  // @supports (-webkit-appearance: none) {
-  //   @include box-shadow(0);
-  //   background-color: hsla(0, 0%, 100%, 0.8);
-  //   -webkit-backdrop-filter: saturate(100%) blur($grid6x);
-  //   backdrop-filter: saturate(100%) blur($grid6x);
-  // }
-
-  // // edge
-  // @supports (-ms-ime-align: auto) {
-  //   @include box-shadow(0);
-  //   background-color: hsla(0, 0%, 100%, 0.8);
-  //   -webkit-backdrop-filter: saturate(100%) blur($grid6x);
-  //   backdrop-filter: saturate(100%) blur($grid6x);
-  // }
-
-  // @media #{$ie} {
-  //   background-color: #fff;
-  // }
-  // @media #{$chrome} {
-  //   background-color: #fff;
-  // }
-  // @media #{$firefox} {
-  //   background-color: #fff;
-  // }
 
   .header__left {
     cursor: pointer;

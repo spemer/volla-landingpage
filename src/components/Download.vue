@@ -25,12 +25,6 @@ export default {
     }
   },
 
-  computed: {
-    badges() {
-      return this.$store.state.badges
-    }
-  },
-
   components: {
     DownloadBtn,
   },

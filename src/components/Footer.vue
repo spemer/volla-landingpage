@@ -11,7 +11,7 @@
             :title="key"
             target="_blank"
             :to="'tos/' + value"
-            v-for="(value, key) in tos"
+            v-for="(value, key) in tosList"
           ) {{ key }}
 
         p.footer__copyright--info
@@ -63,8 +63,8 @@ export default {
       return this.$store.state.infoList
     },
 
-    tos() {
-      return this.$store.state.tos
+    tosList() {
+      return this.$store.state.tosList
     },
   },
 }

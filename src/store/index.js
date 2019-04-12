@@ -54,7 +54,7 @@ export default new Vuex.Store({
     ],
 
     // Footer.vue
-    tos: {
+    tosList: {
       '개인정보처리방침(이용자용)': 'user/privacy',
       '서비스이용약관(이용자용)': 'user/service',
       '개인정보처리방침(판매자용)': 'ceo/privacy',
