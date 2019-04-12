@@ -9,10 +9,13 @@
             span.hero__br
             | 동대문 쇼핑,
           p.hero__text--subtitle {{ serviceEn }}를 소개합니다.
+
+          DownloadBtn.dlbtn
 </template>
 
 <script>
 import {globalVar} from '@/globalVar'
+import DownloadBtn from '@/components/misc/DownloadBtn'
 
 export default {
   name: 'hero',
@@ -21,6 +24,10 @@ export default {
     return {
       serviceEn: globalVar.serviceEn,
     }
+  },
+
+  components: {
+    DownloadBtn,
   },
 
 }
@@ -51,19 +58,21 @@ $baseURI: '../assets/dist/hero.jpg';
       top: 50%;
       left: 50%;
       color: #fff;
-      position: absolute;
       text-align: center;
+      position: absolute;
       margin-right: -50%;
       @include transform(translate(-50%, -50%));
 
       .hero__text--title {
+        text-align: center;
+
         .hero__title--nbsp {
           display: inline-block;
         }
 
         @media #{$middle} {
           .hero__title--nbsp {
-            display: none;
+            display: none !important;
           }
 
           .hero__br {
@@ -92,6 +101,10 @@ $baseURI: '../assets/dist/hero.jpg';
         @media #{$mini} {
           @include font-size($grid4x);
         }
+      }
+
+      .dlbtn {
+        margin-top: $grid12x;
       }
     }
   }

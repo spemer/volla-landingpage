@@ -279,7 +279,7 @@ import CloseBtn from '@components/misc/CloseBtn'
 import {globalVar} from '@/globalVar'
 
 export default {
-  name: 'term-product',
+  name: 'UserService',
 
   data () {
     return {

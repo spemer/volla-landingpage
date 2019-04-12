@@ -63,7 +63,7 @@
         li 위탁업무의 내용이나 수탁자가 변경될 경우 지체없이 본 개인정보 처리방침을 통하여 공개합니다.
 
 
-      h3 제7조 [개인정보 보유 및 이용기간]
+      h3 제 7 조 [개인정보 보유 및 이용기간]
       ol
         li 회사는 법령에 따른 개인정보 보유·이용기간 또는 이용자로부터 개인정보 수집시 동의받은 개인정보 보유·이용 기간 내에서 개인정보를 처리·보유합니다.
         li 회사의 개인정보 처리 및 보유기간은 다음과 같습니다.
@@ -190,7 +190,7 @@ import CloseBtn from '@components/misc/CloseBtn'
 import {globalVar} from '@/globalVar'
 
 export default {
-  name: 'term-site',
+  name: 'CeoPrivacy',
 
   data () {
     return {

@@ -12,14 +12,27 @@
 
   h1 {
     text-align: left;
+    color: $black78 !important;
   }
 
   .terms-wrapper {
-    color: $black78;
     margin: 0 auto;
-    padding: $grid32x 0 $grid32x;
     max-width: 640px;
-    @include line-height(18px);
+    color: $black78 !important;
+    padding: $grid32x 0 $grid32x;
+    @include line-height($grid5x);
+
+    .terms_mid--title {
+      text-align: center;
+      margin-top: $grid16x;
+      color: $black78 !important;
+      margin-bottom: -#{$grid4x};
+      @include font-size($grid7x);
+
+      @media #{$pablet} {
+        @include font-size($grid6x);
+      }
+    }
 
     p {
       margin-bottom: $grid2x;

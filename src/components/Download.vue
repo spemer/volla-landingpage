@@ -4,18 +4,7 @@
       h1.download__title.section__title 어플로 간편하게 즐겨보세요.
       p.section__subtitle {{ serviceKo }}는 안드로이드 구글 플레이, 아이폰 앱스토어에서 받으실 수 있습니다.
 
-      div.download__badge
-        a.download__badge--link(
-          v-for="(value, key) in badges"
-          :key="key"
-          target="_blank"
-          :href="value.href"
-          v-tooltip.bottom="{content: key + ' ' + value.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
-        )
-          img.download__badge--each(
-            :src="value.src"
-          )
-          span.download__badge--text {{ value.title }}
+      DownloadBtn
 
       div.download__mockup
         img.download__mockup--img(
@@ -25,27 +14,25 @@
 
 <script>
 import {globalVar} from '@/globalVar'
+import DownloadBtn from '@/components/misc/DownloadBtn'
 
 export default {
   name: 'download',
 
   data () {
     return {
-      badges: {
-        Android: {
-          src: '/src/assets/dist/playstore.png',
-          title: 'Google Play',
-          href: globalVar.androidStore,
-        },
-        iOS: {
-          src: '/src/assets/dist/appstore.png',
-          title: 'App Store',
-          href: globalVar.iosStore,
-        },
-      },
-
       serviceKo: globalVar.serviceKo,
     }
+  },
+
+  computed: {
+    badges() {
+      return this.$store.state.badges
+    }
+  },
+
+  components: {
+    DownloadBtn,
   },
 
 }
