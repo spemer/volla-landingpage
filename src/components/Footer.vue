@@ -20,8 +20,8 @@
             :key="key"
           ) {{ info }}
             span.footer__copyright--desc {{ key }}
-          span.footer__copyright--title.clipboard 이메일
-            span.footer__copyright--desc(
+          span.footer__copyright--title 이메일
+            span.footer__copyright--desc.clipboard(
             @click="toast"
             v-clipboard:copy="mailTo"
             v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
