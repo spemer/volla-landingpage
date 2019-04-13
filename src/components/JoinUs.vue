@@ -17,8 +17,10 @@
         a.global__cta--link(
           :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
         )
+          //- href="https://forms.gle/7HQXvD7vFH3Yoi9V6"
+          //- target="_blank"
           button.global__cta--btn(
-            v-tooltip.bottom="{content: '입점신청 이메일을 보내려면 클릭하세요', delay: {show: 500, hide: 100}}"
+            v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
           ) 입점신청하기
 </template>
 
