@@ -17,7 +17,7 @@ export const globalVar = new Vue({
     taglineLong: '라이브 방송으로 만나는 동대문 쇼핑',
 
     callTo: '+82-10-7422-8845',
-    mailTo: 'alex.lee@volla.live',
+    mailTo: 'ceo@volla.live',
 
     websiteUrl: 'https://volla.live',
     ceoWebsiteUrl: 'https://volla.live/admin',
