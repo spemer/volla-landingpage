@@ -1,7 +1,7 @@
 <template lang="pug">
   div#terms
     div.terms-wrapper
-      h1 {{ tosVars.userServicePageTitle }}
+      h1 {{ tosList.userServicePageTitle[0] }}
 
 
       h3 제 1 조 [목적]
@@ -282,13 +282,17 @@ export default {
   name: 'UserService',
 
   computed: {
+    tosList() {
+      return this.$store.state.tosList
+    },
+
     tosVars() {
       return this.$store.state.tosVars
-    }
+    },
   },
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - 서비스이용약관(이용자용)',
+    title: globalVar.serviceEn + ' - ' + globalVar.userServicePageTitle,
     titleTemplate: '%s',
   },
 

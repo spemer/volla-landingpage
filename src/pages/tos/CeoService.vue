@@ -1,7 +1,7 @@
 <template lang="pug">
   div#terms
     div.terms-wrapper
-      h1 {{ tosVars.ceoServicePageTitle }}
+      h1 {{ tosList.ceoServicePageTitle[0] }}
 
 
       h3.terms_mid--title 제 1 장 총칙
@@ -280,13 +280,17 @@ export default {
   name: 'CeoService',
 
   computed: {
+    tosList() {
+      return this.$store.state.tosList
+    },
+
     tosVars() {
       return this.$store.state.tosVars
-    }
+    },
   },
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - 서비스이용약관(쇼핑몰사업자용)',
+    title: globalVar.serviceEn + ' - ' + globalVar.ceoServicePageTitle,
     titleTemplate: '%s',
   },
 

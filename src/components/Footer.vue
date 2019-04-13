@@ -8,11 +8,11 @@
         p.footer__terms
           router-link.footer__terms--each(
             :key="key"
-            :title="key"
+            :title="value[0]"
             target="_blank"
-            :to="'tos/' + value"
+            :to="'tos/' + value[1]"
             v-for="(value, key) in tosList"
-          ) {{ key }}
+          ) {{ value[0] }}
 
         p.footer__copyright--info
           span.footer__copyright--title(

@@ -1,7 +1,7 @@
 <template lang="pug">
   div#terms
     div.terms-wrapper
-      h1 {{ tosVars.userPrivacyPageTitle }}
+      h1 {{ tosList.userPrivacyPageTitle[0] }}
 
 
       h3 사용자 개인정보 처리방침
@@ -201,13 +201,17 @@ export default {
   name: 'UserPrivacy',
 
   computed: {
+    tosList() {
+      return this.$store.state.tosList
+    },
+
     tosVars() {
       return this.$store.state.tosVars
-    }
+    },
   },
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - 개인정보처리방침(이용자용)',
+    title: globalVar.serviceEn + ' - ' + globalVar.userPrivacyPageTitle,
     titleTemplate: '%s',
   },
 

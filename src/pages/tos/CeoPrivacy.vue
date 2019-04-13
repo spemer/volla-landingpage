@@ -1,7 +1,7 @@
 <template lang="pug">
   div#terms
     div.terms-wrapper
-      h1 {{ tosVars.ceoPrivacyPageTitle }}
+      h1 {{ tosList.ceoPrivacyPageTitle[0] }}
 
 
       p {{ tosVars.companyNameFullKo }}(이하 "회사"라 합니다)는 쇼핑몰 사업자의 개인정보를 처리함에 있어 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 통신비밀보호법, 전기통신사업법, 개인정보보호법 등 정보통신서비스제공자가 준수하여야 할 관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보 처리방침을 수립·준수하여 쇼핑몰 사업자 권익 보호에 최선을 다하고 있습니다.
@@ -193,13 +193,17 @@ export default {
   name: 'CeoPrivacy',
 
   computed: {
+    tosList() {
+      return this.$store.state.tosList
+    },
+
     tosVars() {
       return this.$store.state.tosVars
-    }
+    },
   },
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - 개인정보처리방침(판매자용)',
+    title: globalVar.serviceEn + ' - ' + globalVar.ceoPrivacyPageTitle,
     titleTemplate: '%s',
   },
 

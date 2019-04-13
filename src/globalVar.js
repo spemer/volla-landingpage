@@ -25,5 +25,10 @@ export const globalVar = new Vue({
     androidStore: '#',
 
     tosDateNow: '2019년 3월 26일',
+
+    userPrivacyPageTitle: '개인정보처리방침(이용자용)',
+    userServicePageTitle: '서비스이용약관(이용자용)',
+    ceoPrivacyPageTitle: '개인정보처리방침(판매자용)',
+    ceoServicePageTitle: '서비스이용약관(쇼핑몰사업자용)',
   }
 })

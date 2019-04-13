@@ -55,18 +55,26 @@ export default new Vuex.Store({
 
     // Footer.vue
     tosList: {
-      '개인정보처리방침(이용자용)': 'user/privacy',
-      '서비스이용약관(이용자용)': 'user/service',
-      '개인정보처리방침(판매자용)': 'ceo/privacy',
-      '서비스이용약관(쇼핑몰사업자용)': 'ceo/service',
+      userPrivacyPageTitle: [
+        globalVar.userPrivacyPageTitle,
+        'user/privacy'
+      ],
+      userServicePageTitle: [
+        globalVar.userServicePageTitle,
+        'user/service'
+      ],
+      ceoPrivacyPageTitle: [
+        globalVar.ceoPrivacyPageTitle,
+        'ceo/privacy'
+      ],
+      ceoServicePageTitle: [
+        globalVar.ceoServicePageTitle,
+        'ceo/service'
+      ],
     },
 
     // pages/tos
     tosVars: {
-      userPrivacyPageTitle: '개인정보처리방침(이용자용)',
-      userServicePageTitle: '서비스이용약관(이용자용)',
-      ceoPrivacyPageTitle: '개인정보처리방침(판매자용)',
-      ceoServicePageTitle: '서비스이용약관(쇼핑몰사업자용)',
       companyNameFullKo: globalVar.companyNameFullKo,
       ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
       companyName: globalVar.companyName,
