@@ -44,14 +44,14 @@ export default new Vuex.Store({
     },
 
     // Footer.vue
-    infoList: [
-      '상호명: ' + globalVar.companyNameFull,
-      '사업자등록번호: ' + globalVar.companyID,
-      '통신판매업: ' + globalVar.companyItc,
-      '대표이사: ' + globalVar.companyCEO,
-      '대표전화: ' + globalVar.callTo,
-      '주소: ' + globalVar.companyAdr,
-    ],
+    infoList: {
+      상호명: globalVar.companyNameFull,
+      사업자등록번호: globalVar.companyID,
+      통신판매업신고번호: globalVar.companyItc,
+      대표이사: globalVar.companyCEO,
+      대표전화: globalVar.callTo,
+      주소: globalVar.companyAdr,
+    },
 
     // Footer.vue
     tosList: {

@@ -15,14 +15,17 @@
           ) {{ key }}
 
         p.footer__copyright--info
-          span(
-            v-for="info in infoList"
+          span.footer__copyright--title(
+            v-for="(key, info) in infoList"
+            :key="key"
           ) {{ info }}
-          span.clipboard(
+            span.footer__copyright--desc {{ key }}
+          span.footer__copyright--title.clipboard 이메일
+            span.footer__copyright--desc(
             @click="toast"
             v-clipboard:copy="mailTo"
             v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
-          ) 이메일: {{ mailTo }}
+          ) {{ mailTo }}
 </template>
 
 <script>
@@ -123,14 +126,31 @@ export default {
       @include font-size(10px);
 
       span {
+        display: inline-block;
         @include font-size(10px);
 
-        &:not(:last-child) {
-          &:after {
-            content: ' | ';
-            margin: 0 $grid2x;
+        &.footer__copyright--title {
+          display: block;
+          font-weight: 400;
+          @include line-height($grid3x);
+        }
+
+        &.footer__copyright--desc {
+          font-weight: 900;
+          display: inline;
+
+          &::before {
+            content: ' ';
+            margin-right: $grid;
           }
         }
+
+        // &:not(:last-child) {
+        //   &:after {
+        //     content: ' | ';
+        //     margin: 0 $grid2x;
+        //   }
+        // }
       }
     }
 
