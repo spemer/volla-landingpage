@@ -34,7 +34,7 @@ export default {
 
 <style lang="scss">
 #download {
-  height: 649px;
+  height: 656px;
   overflow-y: hidden;
   border-top: 1px solid $texteee;
 
@@ -47,11 +47,11 @@ export default {
   }
 
   @media #{$middle2} {
-    height: 667px;
+    height: 675px;
   }
 
   @media #{$mobile} {
-    height: 595px;
+    height: 603px;
   }
 
   .download__mockup {

@@ -23,6 +23,10 @@
     padding: $grid32x 0 $grid32x;
     @include line-height($grid5x);
 
+    @media #{$pablet} {
+      padding-bottom: $grid32x !important;
+    }
+
     .terms_mid--title {
       text-align: center;
       margin-top: $grid16x;

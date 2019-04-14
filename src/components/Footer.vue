@@ -156,6 +156,11 @@ export default {
 
     .clipboard {
       cursor: pointer;
+      @include transition(color 0.25s ease);
+
+      &:hover {
+        color: $black54;
+      }
     }
   }
 }
