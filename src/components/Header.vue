@@ -11,12 +11,14 @@
         p.header__left--text {{ serviceKo }}
         p.header__left--text.sub &nbsp;- {{ tagline }}
 
-      div.header__right(
-        @click="dlWait"
-      )
-        //- v-scroll-to="{el: '#download', duration: 0, offset: -54}"
-        p.header__right--text(
-        ) 앱 다운로드
+      div.header__right
+        p.header__right--text.dl(
+          @click="dlWait"
+        ) 다운로드
+          //- v-scroll-to="{el: '#download', duration: 0, offset: -54}"
+        a.header__right--text.join(
+          :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
+        ) 입점신청
 </template>
 
 <script>
@@ -33,6 +35,7 @@ export default {
 
   data () {
     return {
+      mailTo: globalVar.mailTo,
       tagline: globalVar.tagline,
       serviceKo: globalVar.serviceKo,
       serviceEn: globalVar.serviceEn,
@@ -60,7 +63,7 @@ export default {
     .header__left {
       cursor: pointer;
       height: $header;
-      font-weight: 300;
+      font-weight: 400;
       display: inline-block;
 
       .header__left--img {
@@ -77,7 +80,7 @@ export default {
           margin-left: 0;
         }
 
-        @media #{$ip6} {
+        @media #{$pablet} {
           display: none;
         }
       }
@@ -86,16 +89,36 @@ export default {
     .header__right {
       float: right;
       height: $header;
-      cursor: pointer;
-      color: $brand-pink;
-      @include transition(all 0.25s ease);
-
-      &:hover {
-        opacity: 0.5;
-      }
+      font-weight: 500;
 
       .header__right--text {
+        cursor: pointer;
+        display: inline-block;
+        @include font-size($grid4x);
         @include line-height($grid4x);
+        @include transition(all 0.25s ease);
+
+        // &.dl {
+        // }
+
+        // &.join {
+        // }
+
+        &:hover {
+          opacity: 0.5;
+        }
+
+        &:first-child {
+          margin-right: $grid8x;
+
+          @media #{$pablet} {
+            margin-right: $grid6x;
+          }
+
+          @media #{$mini} {
+            margin-right: $grid4x;
+          }
+        }
       }
     }
   }
