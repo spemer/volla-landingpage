@@ -14,7 +14,7 @@
       div.header__right(
         v-scroll-to="{el: '#download', duration: 0, offset: -54}"
       )
-        p.header__right--text 어플다운로드
+        p.header__right--text 앱 다운로드
 </template>
 
 <script>
