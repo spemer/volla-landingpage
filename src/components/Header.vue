@@ -101,8 +101,9 @@ export default {
         // &.dl {
         // }
 
-        // &.join {
-        // }
+        &.join {
+          font-weight: 700;
+        }
 
         &:hover {
           opacity: 0.5;
