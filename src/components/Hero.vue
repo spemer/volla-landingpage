@@ -9,6 +9,13 @@
             span.hero__br
             | 동대문 쇼핑
           p.hero__text--subtitle {{ serviceEn }}를 소개합니다
+          p.hero__text--spantext
+            | 라이브 방송으로 여러분의 상품을
+            span.hero__title--nbsp &nbsp;
+            span.hero__br
+            | 더욱 쉽고 확실하게 판매하는
+            br
+            | 모바일 라이브 쇼핑 플랫폼
 
           DownloadBtn.dlbtn
 </template>
@@ -34,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
-$baseURI: '../assets/dist/hero.jpg';
+$baseURI: '../assets/dist/hero.png';
 
 #hero {
   width: 100%;
@@ -63,25 +70,25 @@ $baseURI: '../assets/dist/hero.jpg';
       margin-right: -50%;
       @include transform(translate(-50%, -50%));
 
+      .hero__title--nbsp {
+        display: inline-block;
+      }
+
+      @media #{$middle} {
+        .hero__title--nbsp {
+          display: none !important;
+        }
+
+        .hero__br {
+          &::after {
+            content: '\a ';
+            white-space: pre;
+          }
+        }
+      }
+
       .hero__text--title {
         text-align: center;
-
-        .hero__title--nbsp {
-          display: inline-block;
-        }
-
-        @media #{$middle} {
-          .hero__title--nbsp {
-            display: none !important;
-          }
-
-          .hero__br {
-            &::after {
-              content: '\a ';
-              white-space: pre;
-            }
-          }
-        }
 
         @media #{$mini} {
           @include font-size($grid6x);
@@ -100,6 +107,19 @@ $baseURI: '../assets/dist/hero.jpg';
 
         @media #{$mini} {
           @include font-size($grid4x);
+        }
+      }
+
+      .hero__text--spantext {
+        font-weight: 300;
+        opacity: 0.75;
+        margin-bottom: -#{$grid2x};
+        @include font-size($grid4x);
+
+        @media #{$pablet} {
+          padding: $grid4x 0;
+          margin-top: -#{$grid2x};
+          margin-bottom: -#{$grid4x};
         }
       }
 
