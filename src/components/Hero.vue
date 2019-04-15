@@ -59,7 +59,7 @@ $baseURI: '../assets/dist/hero.png';
 
   .hero__dim {
     height: 100%;
-    background-color: $black54;
+    background-color: $black78;
 
     .hero__text {
       top: 50%;
@@ -110,9 +110,10 @@ $baseURI: '../assets/dist/hero.png';
         }
       }
 
-      .hero__text--spantext {
+      .hero__text--spantext,
+      .hero__br {
         font-weight: 300;
-        opacity: 0.75;
+        opacity: 0.8;
         margin-bottom: -#{$grid2x};
         @include font-size($grid4x);
 
@@ -120,6 +121,10 @@ $baseURI: '../assets/dist/hero.png';
           padding: $grid4x 0;
           margin-top: -#{$grid2x};
           margin-bottom: -#{$grid4x};
+        }
+
+        @media #{$mobile} {
+          @include font-size(14px);
         }
       }
 
