@@ -12,9 +12,11 @@
         p.header__left--text.sub &nbsp;- {{ tagline }}
 
       div.header__right(
-        v-scroll-to="{el: '#download', duration: 0, offset: -54}"
+        @click="dlWait"
       )
-        p.header__right--text 앱 다운로드
+        //- v-scroll-to="{el: '#download', duration: 0, offset: -54}"
+        p.header__right--text(
+        ) 앱 다운로드
 </template>
 
 <script>
@@ -22,6 +24,12 @@ import {globalVar} from '@/globalVar'
 
 export default {
   name: 'header-el',
+
+  methods: {
+    dlWait() {
+      alert('어플이 4월 중으로 곧 출시됩니다. 조금만 기다려주세요!')
+    }
+  },
 
   data () {
     return {
@@ -46,45 +54,49 @@ export default {
   transition: top 0.3s ease;
   @include box-shadow();
 
-  .header__left {
-    cursor: pointer;
+  .container {
     height: $header;
-    font-weight: 300;
-    display: inline-block;
 
-    .header__left--img {
-      padding: $grid2x 0;
-    }
-
-    .header__left--text {
-      color: $black78;
-      margin-left: $grid4x;
+    .header__left {
+      cursor: pointer;
+      height: $header;
+      font-weight: 300;
       display: inline-block;
-      @include transform(translateY(-75%));
 
-      &.sub {
-        margin-left: 0;
+      .header__left--img {
+        padding: $grid2x 0;
       }
 
-      @media #{$ip6} {
-        display: none;
+      .header__left--text {
+        color: $black78;
+        margin-left: $grid4x;
+        display: inline-block;
+        @include transform(translateY(-75%));
+
+        &.sub {
+          margin-left: 0;
+        }
+
+        @media #{$ip6} {
+          display: none;
+        }
       }
     }
-  }
 
-  .header__right {
-    float: right;
-    cursor: pointer;
-    color: $brand-pink;
-    padding-top: $grid4x;
-    @include transition(all 0.25s ease);
+    .header__right {
+      float: right;
+      height: $header;
+      cursor: pointer;
+      color: $brand-pink;
+      @include transition(all 0.25s ease);
 
-    &:hover {
-      opacity: 0.5;
-    }
+      &:hover {
+        opacity: 0.5;
+      }
 
-    .header__right--text {
-      @include transform(translateY(-65%) !important);
+      .header__right--text {
+        @include line-height($grid4x);
+      }
     }
   }
 }
