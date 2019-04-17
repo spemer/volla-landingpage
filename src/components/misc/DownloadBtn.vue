@@ -99,8 +99,8 @@ export default {
     width: 100%;
     outline: none;
     margin: 0 auto;
-    margin-top: $grid4x;
     text-align: center;
+    margin-top: $grid4x;
     display: inline-block;
 
     .download__badge--link {
@@ -110,12 +110,12 @@ export default {
       margin-bottom: $grid8x;
       border-radius: $grid16x;
       background-color: #fff;
-      border: 1px solid $texteee;
+      border: 1px solid $textccc;
       padding: $grid2x $grid4x 0;
       @include transition(all 0.25s ease);
 
       &:hover {
-        opacity: 0.75;
+        opacity: 0.5;
       }
 
       &:first-child {

@@ -5,7 +5,7 @@
       p.section__subtitle
         | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다.
         br
-        | 입점신청 이메일을 보내시려면, 아래의 버튼을 클릭해주세요.
+        | 셀러 입점신청서를 작성하시려면 아래의 버튼을 클릭해주세요.
         br
         span.joinus__title--copyEmail(
           @click="toast"
@@ -16,11 +16,14 @@
 
       div.global__cta
         a.global__cta--link(
+          :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
+        )
+          button.global__cta--btn.mailto 메일로 문의하기
+        a.global__cta--link(
           :href="sellerRequestUrl"
           target="_blank"
         )
-          //- :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
-          button.global__cta--btn(
+          button.global__cta--btn.form(
             v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
           ) 입점신청하기
 </template>
@@ -80,14 +83,37 @@ export default {
       }
     }
 
-    .global__cta--btn {
-      color: #fff;
-      background-color: $brand-pink;
+    .global__cta {
+      width: 100%;
+      display: inline-block;
 
-      &:hover {
-        // opacity: .5;
-        color: $brand-pink;
-        background-color: #fff;
+      .global__cta--btn {
+        width: $grid40x;
+        border: 1px solid $brand-pink;
+
+        &.form {
+          color: #fff;
+          background-color: $brand-pink;
+        }
+
+        &.mailto {
+          margin-right: $grid4x;
+
+          @media #{$pablet} {
+            display: none;
+          }
+
+          &:hover {
+            color: $brand-pink;
+            background-color: #fff;
+          }
+        }
+
+        &:hover {
+          opacity: 0.5;
+          // color: $brand-pink;
+          // background-color: #fff;
+        }
       }
     }
   }
