@@ -21,6 +21,7 @@ export const globalVar = new Vue({
 
     websiteUrl: 'https://volla.live',
     ceoWebsiteUrl: 'https://volla.live/admin',
+    sellerRequestUrl: 'https://forms.gle/vrSC9rELrEoYutdN8',
     iosStore: '#',
     androidStore: '#',
 

@@ -17,8 +17,10 @@
         ) 다운로드
           //- v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         a.header__right--text.join(
-          :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
+          :href="sellerRequestUrl"
+          target="_blank"
         ) 입점신청
+          //- :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
 </template>
 
 <script>
@@ -39,6 +41,7 @@ export default {
       tagline: globalVar.tagline,
       serviceKo: globalVar.serviceKo,
       serviceEn: globalVar.serviceEn,
+      sellerRequestUrl: globalVar.sellerRequestUrl,
     }
   },
 

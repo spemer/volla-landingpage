@@ -16,10 +16,10 @@
 
       div.global__cta
         a.global__cta--link(
-          :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
+          :href="sellerRequestUrl"
+          target="_blank"
         )
-          //- href="https://forms.gle/7HQXvD7vFH3Yoi9V6"
-          //- target="_blank"
+          //- :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
           button.global__cta--btn(
             v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
           ) 입점신청하기
@@ -33,11 +33,12 @@ export default {
 
   data () {
     return {
-      companyMailTo: globalVar.companyMailTo,
-      baseURI: globalVar.ceoWebsiteUrl,
-      serviceEn: globalVar.serviceEn,
-      serviceKo: globalVar.serviceKo,
       mailTo: globalVar.mailTo,
+      serviceKo: globalVar.serviceKo,
+      serviceEn: globalVar.serviceEn,
+      baseURI: globalVar.ceoWebsiteUrl,
+      companyMailTo: globalVar.companyMailTo,
+      sellerRequestUrl: globalVar.sellerRequestUrl,
     }
   },
 

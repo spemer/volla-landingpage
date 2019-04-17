@@ -36,8 +36,8 @@ export default {
 
   data () {
     return {
-      companyName: globalVar.companyName,
       mailTo: globalVar.mailTo,
+      companyName: globalVar.companyName,
     }
   },
 
