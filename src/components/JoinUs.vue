@@ -3,15 +3,16 @@
     div.container
       h1.joinus__title.section__title {{ serviceKo }}에 입점하세요
       p.section__subtitle
-        | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다
+        | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다.
         br
-        | 입점신청 이메일을 보내시려면, 아래의 버튼을 클릭해주세요
+        | 입점신청 이메일을 보내시려면, 아래의 버튼을 클릭해주세요.
         br
         span.joinus__title--copyEmail(
           @click="toast"
           v-clipboard:copy="mailTo"
           v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
         ) 이메일 주소 복사하기
+          i.far.fa-copy
 
       div.global__cta
         a.global__cta--link(
@@ -63,12 +64,17 @@ export default {
 
       .joinus__title--copyEmail {
         cursor: pointer;
+        font-weight: 400;
         color: $brand-pink;
         display: inline-block;
         @include transition(all 0.25s ease);
 
         &:hover {
           opacity: 0.5;
+        }
+
+        .fa-copy {
+          margin-left: $grid;
         }
       }
     }

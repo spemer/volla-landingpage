@@ -15,7 +15,7 @@
             span.hero__br
             | 더욱 쉽고 확실하게 판매하는
             br
-            | 모바일 라이브 쇼핑 플랫폼
+            | 여성 패션 &amp; 뷰티 모바일 라이브 쇼핑 플랫폼
 
           DownloadBtn.dlbtn
 </template>
