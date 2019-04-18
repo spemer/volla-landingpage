@@ -50,6 +50,7 @@
 body {
   outline: none;
   color: $black78;
+  background-color: #fff;
   @include font-settings();
   @include font-stack-html();
   @include font-size($grid4x);

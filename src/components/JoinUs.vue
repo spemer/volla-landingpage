@@ -18,7 +18,9 @@
         a.global__cta--link(
           :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
         )
-          button.global__cta--btn.mailto 메일로 문의하기
+          button.global__cta--btn.mailto(
+            v-tooltip.bottom="{content: '메일 앱 열기(새 창)', delay: {show: 500, hide: 100}}"
+          ) 메일로 문의하기
 
         a.global__cta--link(
           :href="sellerRequestUrl"
