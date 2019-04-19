@@ -14,11 +14,6 @@
           type="email" name="email" v-model="email"
           placeholder="이메일 주소를 입력해주세요" required
         )
-        //- p.sellerform__form--title(required) 상호명
-        //- input.sellerform__form--input(
-        //-   type="text" name="shopname" v-model="shopname"
-        //-   placeholder="상호명을 입력해주세요" required
-        //- )
         p.sellerform__form--title(required) 담당자 이름
         input.sellerform__form--input(
           type="text" name="name" v-model="name"
@@ -61,7 +56,6 @@ export default {
   data () {
     return {
       email: '',
-      // shopname: '',
       name: '',
       contact: '',
       site: '',
@@ -71,24 +65,23 @@ export default {
 
   methods: {
     sendPost() {
-      // let token = process.env.TOKEN
       let baseURI = globalVar.requestSellerUrl
 
       axios.post(baseURI, {
+        headers: {
+          Accept:
+            'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+        },
       	email: this.email,
-      	// shopname: this.shopname,
       	name: this.name,
       	contact: this.contact,
       	site: this.site,
       	sns: this.sns,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          // "x-volla-auth": token,
-        },
       })
       .then(function(res) {
-      	console.log(res.data)
+      	console.info(res.data)
       })
     },
 
@@ -103,7 +96,7 @@ $min-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid16x 0 $grid32x;
+  padding: $grid12x 0 $grid32x;
 
   // .sellerform__form--title {
   // }
