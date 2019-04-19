@@ -10,7 +10,9 @@
         p.header__left--text {{ serviceKo }}
         p.header__left--text.sub &nbsp;- {{ tagline }}
 
-      div.header__right
+      div.header__right(
+        v-if="this.$route.path === '/'"
+      )
         p.header__right--text.dl(
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
@@ -98,9 +100,6 @@ export default {
         @include font-size($grid4x);
         @include line-height($grid4x);
         @include transition(all 0.25s ease);
-
-        // &.dl {
-        // }
 
         &.join {
           font-weight: 700;

@@ -130,7 +130,7 @@ $mobile-width: 288px;
     display: block;
     margin: 0 auto;
     text-align: center;
-    margin-top: $grid16x;
+    margin-top: $grid20x;
 
     // @media #{$pablet} {
     //   width: $pablet-width;
