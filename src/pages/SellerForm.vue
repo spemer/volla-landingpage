@@ -9,37 +9,28 @@
         @submit.prevent="sendPost"
         name="sellerform__form"
       )
-        p.sellerform__form--title(required) 이메일 주소
-        input.sellerform__form--input(
-          type="email" name="email" v-model="email"
-          placeholder="회신받을 이메일 주소를 입력해주세요." required
+        p.sellerform__form--title(
+          v-for="list in sellerFormList"
+        ) {{ list.text }}
+          span(
+          :required="list.required"
         )
-        p.sellerform__form--title(required) 담당자 이름
-        input.sellerform__form--input(
-          type="text" name="name" v-model="name"
-          placeholder="담당자 이름을 입력해주세요." required
-        )
-        p.sellerform__form--title(required) 전화번호
-        input.sellerform__form--input(
-          type="tel" name="contact" v-model="contact"
-          minlength="8" maxlength="12"
-          placeholder="'-' 없이 숫자만 입력해주세요." required
-        )
-        p.sellerform__form--title 웹사이트 주소
-        input.sellerform__form--input(
-          type="text" name="site" v-model="site"
-          placeholder="웹사이트 주소를 입력해주세요."
-        )
-        p.sellerform__form--title SNS 주소
-        input.sellerform__form--input(
-          type="text" name="sns" v-model="sns"
-          placeholder="대표 SNS 주소를 입력해주세요."
-        )
+          input.sellerform__form--input(
+            @input="updateValue"
+            v-model="list.value"
+            :type="list.type"
+            :name="list.name"
+            :minlength="list.minlength"
+            :maxlength="list.maxlength"
+            :placeholder="list.placeholder"
+            :required="list.required"
+          )
+
         p.sellerform__form--title 기타 문의사항
-        textarea.sellerform__form--input.textarea(
-          type="text" name="details" v-model="details"
-          placeholder="기타 문의사항을 적어주세요."
-        )
+          textarea.sellerform__form--input.textarea(
+            type="text" name="details" v-model="details"
+            placeholder="기타 문의사항을 적어주세요."
+          )
 
         button.sellerform__form--submit(
           name="sellerform__form"
@@ -48,7 +39,7 @@
 
 <script>
 import axios from 'axios'
-import {globalVar} from '@/globalVar'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'sellerForm',
@@ -58,28 +49,35 @@ export default {
     titleTemplate: '%s',
   },
 
+  computed: {
+    sellerFormList() {
+      return this.$store.state.sellerFormList
+    },
+
+  },
+
   data () {
     return {
-      email: '',
-      name: '',
-      contact: '',
-      site: '',
-      sns: '',
       details: '',
     }
   },
 
   methods: {
+    updateValue(e) {
+      this.$store.commit('updateValue', e.target.value)
+    },
+
     sendPost() {
       let baseURI = globalVar.requestSellerUrl
+      // let testURI = globalVar.testUrl
 
       axios.post(baseURI,
         {
-          email: this.email,
-          name: this.name,
-          contact: this.contact,
-          site: this.site,
-          sns: this.sns,
+          email: this.$store.state.sellerFormList[0].value,
+          name: this.$store.state.sellerFormList[1].value,
+          contact: this.$store.state.sellerFormList[2].value,
+          site: this.$store.state.sellerFormList[3].value,
+          sns: this.$store.state.sellerFormList[4].value,
           details: this.details,
         },
         {
@@ -93,7 +91,7 @@ export default {
         console.log(res.data)
       })
 
-      alert(this.name + ' 님의 입점신청이 정상적으로 접수되었습니다.\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
+      alert(this.$store.state.sellerFormList[1].value + ' 님의 입점신청이 정상적으로 접수되었습니다.\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
       // window.close()
       // window.postMessage('close')
     },
@@ -147,53 +145,56 @@ $mobile-width: 288px;
       margin-bottom: $grid;
       @include font-size($grid5x);
 
-      &[required] {
-        &::after {
+      span[required] {
+        &::before {
           content: ' *';
           color: $brand-pink;
+          @include font-size($grid5x);
         }
       }
-    }
 
-    .sellerform__form--input {
-      border: none;
-      width: $width;
-      outline: none;
-      display: inline-block;
-      margin-bottom: $grid12x;
-      padding: $grid4x 0 $grid;
-      border-bottom: 1px solid $textccc;
-      @include transition(all 0.25s ease);
+      .sellerform__form--input {
+        border: none;
+        width: $width;
+        outline: none;
+        display: inline-block;
+        margin-bottom: $grid12x;
+        padding: $grid4x 0 $grid;
+        border-bottom: 1px solid $textccc;
+        @include font-size($grid4x);
+        @include transition(all 0.25s ease);
 
-      // @media #{$pablet} {
-      //   width: $pablet-width;
-      // }
+        // @media #{$pablet} {
+        //   width: $pablet-width;
+        // }
 
-      @media #{$mobile} {
-        width: $mobile-width;
-      }
+        @media #{$mobile} {
+          width: $mobile-width;
+        }
 
-      &.textarea {
-        resize: none;
-        height: $grid32x;
-        @include line-height($grid4x);
-      }
+        &.textarea {
+          resize: none;
+          height: $grid32x;
+          padding-top: $grid2x;
+          @include line-height($grid4x);
+        }
 
-      &:focus {
-        border-bottom: 1px solid $brand-pink;
-      }
+        &:focus {
+          border-bottom: 1px solid $brand-pink;
+        }
 
-      &::selection {
-        color: #fff !important;
-        background-color: $brand-pink !important;
-      }
+        &::selection {
+          color: #fff !important;
+          background-color: $brand-pink !important;
+        }
 
-      &::placeholder,
-      &::-moz-placeholder,
-      &:-ms-input-placeholder,
-      &::-ms-input-placeholder,
-      &::-webkit-input-placeholder {
-        color: $black24;
+        &::placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &::-ms-input-placeholder,
+        &::-webkit-input-placeholder {
+          color: $black24;
+        }
       }
     }
 

@@ -9,7 +9,7 @@
 import Vue from 'vue'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import {globalVar} from '@/globalVar'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'app',

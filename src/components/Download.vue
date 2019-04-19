@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {globalVar} from '@/globalVar'
+import { globalVar } from '@/globalVar'
 import DownloadBtn from '@/components/misc/DownloadBtn'
 
 export default {

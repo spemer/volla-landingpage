@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import {globalVar} from '@/globalVar'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'footer-el',

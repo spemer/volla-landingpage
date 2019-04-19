@@ -272,9 +272,9 @@
 </template>
 
 <script>
+import { globalVar } from '@/globalVar'
 import Header from '@/components/Header'
 import CloseBtn from '@components/misc/CloseBtn'
-import {globalVar} from '@/globalVar'
 
 export default {
   name: 'CeoService',
