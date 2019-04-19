@@ -12,33 +12,33 @@
         p.sellerform__form--title(required) 이메일 주소
         input.sellerform__form--input(
           type="email" name="email" v-model="email"
-          placeholder="이메일 주소를 입력해주세요" required
+          placeholder="이메일 주소를 입력해주세요." required
         )
         p.sellerform__form--title(required) 담당자 이름
         input.sellerform__form--input(
           type="text" name="name" v-model="name"
-          placeholder="담당자 이름을 입력해주세요" required
+          placeholder="담당자 이름을 입력해주세요." required
         )
         p.sellerform__form--title(required) 전화번호
         input.sellerform__form--input(
           type="tel" name="contact" v-model="contact"
-          placeholder="'-' 없이 숫자만 입력해주세요" required
+          placeholder="'-' 없이 숫자만 입력해주세요." required
         )
         p.sellerform__form--title 웹사이트 주소
         input.sellerform__form--input(
           type="text" name="site" v-model="site"
-          placeholder="웹사이트 주소를 입력해주세요"
+          placeholder="웹사이트 주소를 입력해주세요."
         )
         p.sellerform__form--title SNS 주소
         input.sellerform__form--input(
           type="text" name="sns" v-model="sns"
-          placeholder="대표 SNS 주소를 입력해주세요"
+          placeholder="대표 SNS 주소를 입력해주세요."
         )
-        //- p.sellerform__form--title 기타 문의사항
-        //- textarea.sellerform__form--input.textarea(
-        //-   type="text" name="details" v-model="details"
-        //-   placeholder="기타 문의사항을 적어주세요"
-        //- )
+        p.sellerform__form--title 기타 문의사항
+        textarea.sellerform__form--input.textarea(
+          type="text" name="details" v-model="details"
+          placeholder="기타 문의사항을 적어주세요."
+        )
 
         button.sellerform__form--submit(
           name="sellerform__form"
@@ -57,6 +57,11 @@ export default {
     titleTemplate: '%s',
   },
 
+  // computed: {
+  //   sellerFormList() {
+  //     return this.$store.state.sellerFormList
+  //   }
+  // },
 
   data () {
     return {
@@ -80,6 +85,7 @@ export default {
           contact: this.contact,
           site: this.site,
           sns: this.sns,
+          details: this.details,
         },
         {
           headers: {
@@ -91,6 +97,10 @@ export default {
       .then(res => {
         console.log(res.data)
       })
+
+      alert(this.name + ' 님의 입점신청이 정상적으로 접수되었습니다.\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
+      // window.close()
+      // window.postMessage('close')
     },
 
   },
@@ -100,14 +110,12 @@ export default {
 
 <style lang="scss">
 $width: 320px;
-$min-width: 288px;
+// $pablet-width: 320px;
+$mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
   padding: $grid12x 0 $grid32x;
-
-  // .sellerform__form--title {
-  // }
 
   .sellerform__form--subtitle {
     font-weight: 300;
@@ -129,8 +137,12 @@ $min-width: 288px;
     text-align: center;
     margin-top: $grid16x;
 
+    // @media #{$pablet} {
+    //   width: $pablet-width;
+    // }
+
     @media #{$mobile} {
-      width: $min-width;
+      width: $mobile-width;
     }
 
     .sellerform__form--title {
@@ -150,22 +162,26 @@ $min-width: 288px;
 
     .sellerform__form--input {
       border: none;
-      outline: none;
       width: $width;
+      outline: none;
       display: inline-block;
       margin-bottom: $grid12x;
       padding: $grid4x 0 $grid;
       border-bottom: 1px solid $textccc;
       @include transition(all 0.25s ease);
 
+      // @media #{$pablet} {
+      //   width: $pablet-width;
+      // }
+
+      @media #{$mobile} {
+        width: $mobile-width;
+      }
+
       &.textarea {
         resize: none;
         height: $grid32x;
         @include line-height($grid4x);
-      }
-
-      @media #{$mobile} {
-        width: $min-width;
       }
 
       &:focus {

@@ -99,6 +99,45 @@ export default new Vuex.Store({
       mailTo: globalVar.mailTo,
     },
 
+    // SellerForm.vue
+    sellerFormList: {
+      email: {
+        text: '이메일 주소',
+        type: 'email',
+        name: 'email',
+        placeholder: '회신받을 이메일 주소를 입력해주세요.',
+        required: true,
+      },
+      name: {
+        text: '담당자 이름',
+        type: 'text',
+        name: 'name',
+        placeholder: '담당자 이름을 입력해주세요.',
+        required: true,
+      },
+      contact: {
+        text: '전화번호',
+        type: 'tel',
+        name: 'contact',
+        minlength: '8',
+        maxlength: '16',
+        placeholder: '" - " 없이 숫자만 입력해주세요.',
+        required: true,
+      },
+      site: {
+        text: '웹사이트 주소',
+        type: 'text',
+        name: 'site',
+        placeholder: '웹사이트 주소를 입력해주세요.',
+      },
+      sns: {
+        text: 'SNS 주소',
+        type: 'text',
+        name: 'sns',
+        placeholder: '대표 SNS 주소를 입력해주세요.',
+      },
+    }
+
   },
 
   mutations: {
