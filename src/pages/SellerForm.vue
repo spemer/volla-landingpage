@@ -74,22 +74,21 @@ export default {
       let baseURI = globalVar.requestSellerUrl
       let testURI = globalVar.testURI
 
-      axios.post(baseURI, {
-        withCredentials: true,
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-        data: {
+      axios.post(baseURI,
+        {
           email: this.email,
           name: this.name,
           contact: this.contact,
           site: this.site,
           sns: this.sns,
-          // details: this.details,
         },
-      })
+        {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          }
+        },
+      )
       .then(res => {
         console.log(res.data)
       })
