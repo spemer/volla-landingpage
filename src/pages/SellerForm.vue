@@ -34,6 +34,11 @@
           type="text" name="sns" v-model="sns"
           placeholder="대표 SNS 주소를 입력해주세요"
         )
+        p.sellerform__form--title 기타 문의사항
+        textarea.sellerform__form--input.textarea(
+          type="text" name="details" v-model="details"
+          placeholder="기타 문의사항"
+        )
 
         button.sellerform__form--submit(
           name="sellerform__form"
@@ -60,6 +65,7 @@ export default {
       contact: '',
       site: '',
       sns: '',
+      details: '',
     }
   },
 
@@ -79,6 +85,7 @@ export default {
       	contact: this.contact,
       	site: this.site,
       	sns: this.sns,
+      	details: this.details,
       })
       .then(function(res) {
       	console.info(res.data)
@@ -149,6 +156,12 @@ $min-width: 288px;
       padding: $grid4x 0 $grid;
       border-bottom: 1px solid $textccc;
       @include transition(all 0.25s ease);
+
+      &.textarea {
+        resize: none;
+        height: $grid32x;
+        @include line-height($grid4x);
+      }
 
       @media #{$mobile} {
         width: $min-width;
