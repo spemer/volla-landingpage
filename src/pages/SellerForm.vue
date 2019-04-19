@@ -12,7 +12,7 @@
         p.sellerform__form--title(required) 이메일 주소
         input.sellerform__form--input(
           type="email" name="email" v-model="email"
-          placeholder="이메일 주소를 입력해주세요." required
+          placeholder="회신받을 이메일 주소를 입력해주세요." required
         )
         p.sellerform__form--title(required) 담당자 이름
         input.sellerform__form--input(
@@ -22,6 +22,7 @@
         p.sellerform__form--title(required) 전화번호
         input.sellerform__form--input(
           type="tel" name="contact" v-model="contact"
+          minlength="8" maxlength="16"
           placeholder="'-' 없이 숫자만 입력해주세요." required
         )
         p.sellerform__form--title 웹사이트 주소
@@ -56,12 +57,6 @@ export default {
     title: globalVar.serviceEn + ' - ' + globalVar.sellerForm,
     titleTemplate: '%s',
   },
-
-  // computed: {
-  //   sellerFormList() {
-  //     return this.$store.state.sellerFormList
-  //   }
-  // },
 
   data () {
     return {
