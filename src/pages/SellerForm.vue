@@ -72,7 +72,6 @@ export default {
   methods: {
     sendPost() {
       let baseURI = globalVar.requestSellerUrl
-      let testURI = globalVar.testURI
 
       axios.post(baseURI,
         {

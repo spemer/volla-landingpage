@@ -25,11 +25,11 @@ export const globalVar = new Vue({
     sellerRequestUrl: 'https://forms.gle/vrSC9rELrEoYutdN8',
     iosStore: '#',
     androidStore: '#',
+
     facebookUrl: 'https://facebook.com/vollaofficial/',
     instagramUrl: 'https://www.instagram.com/volla_official/',
+
     requestSellerUrl: 'https://operator-apis.volla.live/requestSeller',
-    // requestSellerUrl: 'https://8xuvmf5h8a.execute-api.ap-northeast-2.amazonaws.com/prod/requestSeller',
-    testURI: 'http://jsonplaceholder.typicode.com/users',
 
     tosDateNow: '2019년 3월 26일',
 
