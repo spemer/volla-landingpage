@@ -72,22 +72,24 @@ export default {
   methods: {
     sendPost() {
       let baseURI = globalVar.requestSellerUrl
+      let testURI = 'http://jsonplaceholder.typicode.com/users'
 
       axios.post(baseURI, {
         headers: {
-          Accept:
-            'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
-      	email: this.email,
-      	name: this.name,
-      	contact: this.contact,
-      	site: this.site,
-      	sns: this.sns,
-      	details: this.details,
+        data: {
+          email: this.email,
+          name: this.name,
+          contact: this.contact,
+          site: this.site,
+          sns: this.sns,
+          details: this.details,
+        }
       })
-      .then(function(res) {
+      .then(res => {
+      	console.info(res.headers)
       	console.info(res.data)
       })
     },
@@ -186,10 +188,10 @@ $min-width: 288px;
     }
 
     .sellerform__form--submit {
-      width: 200px;
       outline: none;
       margin: 0 auto;
       display: block;
+      width: $grid48x;
       cursor: pointer;
       height: $grid14x;
       font-weight: 900;
