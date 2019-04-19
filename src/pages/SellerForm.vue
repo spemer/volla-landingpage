@@ -34,11 +34,11 @@
           type="text" name="sns" v-model="sns"
           placeholder="대표 SNS 주소를 입력해주세요"
         )
-        p.sellerform__form--title 기타 문의사항
-        textarea.sellerform__form--input.textarea(
-          type="text" name="details" v-model="details"
-          placeholder="기타 문의사항"
-        )
+        //- p.sellerform__form--title 기타 문의사항
+        //- textarea.sellerform__form--input.textarea(
+        //-   type="text" name="details" v-model="details"
+        //-   placeholder="기타 문의사항을 적어주세요"
+        //- )
 
         button.sellerform__form--submit(
           name="sellerform__form"
@@ -57,6 +57,7 @@ export default {
     titleTemplate: '%s',
   },
 
+
   data () {
     return {
       email: '',
@@ -71,12 +72,14 @@ export default {
   methods: {
     sendPost() {
       let baseURI = globalVar.requestSellerUrl
-      let testURI = 'http://jsonplaceholder.typicode.com/users'
+      let testURI = globalVar.testURI
 
       axios.post(baseURI, {
-        headers: {Accept:
-          'application/json',
+        withCredentials: true,
+        headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
         data: {
           email: this.email,
@@ -84,7 +87,7 @@ export default {
           contact: this.contact,
           site: this.site,
           sns: this.sns,
-          details: this.details,
+          // details: this.details,
         },
       })
       .then(res => {
