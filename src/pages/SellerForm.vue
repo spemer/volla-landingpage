@@ -14,11 +14,11 @@
           type="email" name="email" v-model="email"
           placeholder="이메일 주소를 입력해주세요" required
         )
-        p.sellerform__form--title(required) 상호명
-        input.sellerform__form--input(
-          type="text" name="shop" v-model="shop"
-          placeholder="상호명을 입력해주세요" required
-        )
+        //- p.sellerform__form--title(required) 상호명
+        //- input.sellerform__form--input(
+        //-   type="text" name="shopname" v-model="shopname"
+        //-   placeholder="상호명을 입력해주세요" required
+        //- )
         p.sellerform__form--title(required) 담당자 이름
         input.sellerform__form--input(
           type="text" name="name" v-model="name"
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+// https://operator-apis.volla.live/get
 import axios from 'axios'
 import {globalVar} from '@/globalVar'
 
@@ -60,7 +61,7 @@ export default {
   data () {
     return {
       email: '',
-      shop: '',
+      // shopname: '',
       name: '',
       contact: '',
       site: '',
@@ -70,14 +71,21 @@ export default {
 
   methods: {
     sendPost() {
-      let baseURI = 'https://operator-apis.volla.live'
+      // let token = process.env.TOKEN
+      let baseURI = globalVar.requestSellerUrl
+
       axios.post(baseURI, {
       	email: this.email,
-      	shop: this.shop,
+      	// shopname: this.shopname,
       	name: this.name,
       	contact: this.contact,
       	site: this.site,
       	sns: this.sns,
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          // "x-volla-auth": token,
+        },
       })
       .then(function(res) {
       	console.log(res.data)
@@ -155,6 +163,11 @@ $min-width: 288px;
 
       &:focus {
         border-bottom: 1px solid $brand-pink;
+      }
+
+      &::selection {
+        color: #fff !important;
+        background-color: $brand-pink !important;
       }
 
       &::placeholder,
