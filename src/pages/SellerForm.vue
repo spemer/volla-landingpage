@@ -22,7 +22,7 @@
         p.sellerform__form--title(required) 전화번호
         input.sellerform__form--input(
           type="tel" name="contact" v-model="contact"
-          minlength="8" maxlength="16"
+          minlength="8" maxlength="12"
           placeholder="'-' 없이 숫자만 입력해주세요." required
         )
         p.sellerform__form--title 웹사이트 주소

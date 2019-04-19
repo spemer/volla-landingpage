@@ -120,7 +120,7 @@ export default new Vuex.Store({
     //     type: 'tel',
     //     name: 'contact',
     //     minlength: '8',
-    //     maxlength: '16',
+    //     maxlength: '12',
     //     placeholder: '" - " 없이 숫자만 입력해주세요.',
     //     required: true,
     //   },
