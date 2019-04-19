@@ -24,6 +24,8 @@ export const globalVar = new Vue({
     sellerRequestUrl: 'https://forms.gle/vrSC9rELrEoYutdN8',
     iosStore: '#',
     androidStore: '#',
+    facebookUrl: 'https://facebook.com/vollaofficial/',
+    instagramUrl: 'https://www.instagram.com/volla_official/',
 
     tosDateNow: '2019년 3월 26일',
 

@@ -26,6 +26,15 @@
             v-clipboard:copy="mailTo"
             v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
           ) {{ mailTo }}
+
+        a.footer__sns(
+          v-for="(value, key) in snsList"
+          :key="key"
+          :href="value[0]"
+        )
+          i.footer__sns--logo.fab(
+            :class="value[1]"
+          )
 </template>
 
 <script>
@@ -62,6 +71,10 @@ export default {
 
     tosList() {
       return this.$store.state.tosList
+    },
+
+    snsList() {
+      return this.$store.state.snsList
     },
   },
 }
@@ -144,13 +157,6 @@ export default {
             margin-right: $grid;
           }
         }
-
-        // &:not(:last-child) {
-        //   &:after {
-        //     content: ' | ';
-        //     margin: 0 $grid2x;
-        //   }
-        // }
       }
     }
 
@@ -160,6 +166,31 @@ export default {
 
       &:hover {
         color: $black54;
+      }
+    }
+
+    .footer__sns {
+      color: $black24;
+      font-size: $grid5x;
+      display: inline-block;
+
+      .footer__sns--logo {
+        padding: 0 $grid4x $grid2x 0;
+        @include transition(all 0.25s ease);
+
+        &.fa-facebook-square {
+          margin-right: $grid4x;
+
+          &:hover {
+            color: $facebook;
+          }
+        }
+
+        &.fa-instagram {
+          &:hover {
+            color: $instagram;
+          }
+        }
       }
     }
   }

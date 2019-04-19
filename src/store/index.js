@@ -75,6 +75,17 @@ export default new Vuex.Store({
       ],
     },
 
+    snsList: {
+      facebook: [
+        globalVar.facebookUrl,
+        'fa-facebook-square',
+      ],
+      instagram: [
+        globalVar.instagramUrl,
+        'fa-instagram',
+      ],
+    },
+
     // pages/tos
     tosVars: {
       companyNameFullKo: globalVar.companyNameFullKo,
