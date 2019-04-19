@@ -15,6 +15,7 @@ export const globalVar = new Vue({
     serviceEn: 'Volla',
     tagline: '실시간 쇼핑 스트리밍',
     taglineLong: '라이브 방송으로 만나는 동대문 쇼핑',
+    sellerForm: '셀러 입점신청',
 
     callTo: '+82-10-7422-8845',
     mailTo: 'ceo@volla.live',

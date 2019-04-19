@@ -187,6 +187,8 @@ export default {
         }
 
         &.fa-instagram {
+          // padding-left: $grid4x;
+
           &:hover {
             color: $instagram;
           }

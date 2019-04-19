@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 Vue.use(Meta)
 
 import Home from '@/pages/Home'
+import sellerForm from '@/pages/sellerForm'
 import UserPrivacy from '@/pages/tos/UserPrivacy'
 import UserService from '@/pages/tos/UserService'
 import CeoPrivacy from '@/pages/tos/CeoPrivacy'
@@ -22,6 +23,11 @@ export default new VueRouter({
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/seller-form',
+      name: 'sellerForm',
+      component: sellerForm,
     },
     {
       path: '/tos/user/privacy',

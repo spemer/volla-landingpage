@@ -129,3 +129,24 @@ button {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   }
 }
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-webkit-contacts-auto-fill-button,
+  &::-webkit-credentials-auto-fill-button {
+    right: 0;
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+    display: none !important;
+  }
+}

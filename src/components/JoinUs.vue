@@ -22,8 +22,8 @@
             v-tooltip.bottom="{content: '메일 앱 열기(새 창)', delay: {show: 500, hide: 100}}"
           ) 메일로 문의하기
 
-        a.global__cta--link(
-          :href="sellerRequestUrl"
+        router-link.global__cta--link(
+          :to="'/seller-form'"
           target="_blank"
         )
           button.global__cta--btn.form(

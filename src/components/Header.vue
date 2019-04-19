@@ -3,7 +3,6 @@
     div.container
       div.header__left(
         v-scroll-to="{el: 'body', duration: 0}"
-        v-tooltip.bottom="{content: '맨 위로', delay: {show: 500, hide: 100}}"
       )
         img.header__left--img(
           src="../assets/dist/launcher.svg"
@@ -15,13 +14,11 @@
         p.header__right--text.dl(
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
-          //- @click="dlWait"
-        a.header__right--text.join(
-          :href="sellerRequestUrl"
+        router-link.header__right--text.join(
+          :to="'/seller-form'"
           target="_blank"
           v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
         ) 입점신청
-          //- :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
 </template>
 
 <script>

@@ -30,7 +30,15 @@ $grid60x: ($grid * 60);
 $grid64x: ($grid * 64);
 $grid72x: ($grid * 72);
 $grid80x: ($grid * 80);
+$mini: $grid80x;
+
+$grid90x: ($grid * 90);
+$mobile: $grid90x;
+
 $grid96x: ($grid * 96);
 $grid100x: ($grid * 100);
 $grid104x: ($grid * 104);
 $grid128x: ($grid * 128);
+
+$ip6: 375px;
+$pablet: 420px;
