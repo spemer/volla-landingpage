@@ -16,27 +16,27 @@
         )
         p.sellerform__form--title(required) 상호명
         input.sellerform__form--input(
-          type="text" name="shopname" v-model="shopname"
+          type="text" name="shop" v-model="shop"
           placeholder="상호명을 입력해주세요" required
         )
         p.sellerform__form--title(required) 담당자 이름
         input.sellerform__form--input(
-          type="text" name="sellername" v-model="sellername"
+          type="text" name="name" v-model="name"
           placeholder="담당자 이름을 입력해주세요" required
         )
         p.sellerform__form--title(required) 전화번호
         input.sellerform__form--input(
-          type="text" name="tel" v-model="tel"
+          type="tel" name="contact" v-model="contact"
           placeholder="'-' 없이 숫자만 입력해주세요" required
         )
         p.sellerform__form--title 웹사이트 주소
         input.sellerform__form--input(
-          type="text" name="website" v-model="website"
+          type="text" name="site" v-model="site"
           placeholder="웹사이트 주소를 입력해주세요"
         )
         p.sellerform__form--title SNS 주소
         input.sellerform__form--input(
-          type="text" name="snsurl" v-model="snsurl"
+          type="text" name="sns" v-model="sns"
           placeholder="대표 SNS 주소를 입력해주세요"
         )
 
@@ -60,24 +60,24 @@ export default {
   data () {
     return {
       email: '',
-      shopname: '',
-      sellername: '',
-      tel: '',
-      website: '',
-      snsurl: '',
+      shop: '',
+      name: '',
+      contact: '',
+      site: '',
+      sns: '',
     }
   },
 
   methods: {
     sendPost() {
-      let baseURI = '//jsonplaceholder.typicode.com/posts'
+      let baseURI = 'https://operator-apis.volla.live'
       axios.post(baseURI, {
       	email: this.email,
-      	shopname: this.shopname,
-      	sellername: this.sellername,
-      	tel: this.tel,
-      	website: this.website,
-      	snsurl: this.snsurl,
+      	shop: this.shop,
+      	name: this.name,
+      	contact: this.contact,
+      	site: this.site,
+      	sns: this.sns,
       })
       .then(function(res) {
       	console.log(res.data)
