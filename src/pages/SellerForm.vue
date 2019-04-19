@@ -46,7 +46,6 @@
 </template>
 
 <script>
-// https://operator-apis.volla.live/get
 import axios from 'axios'
 import {globalVar} from '@/globalVar'
 
@@ -75,8 +74,8 @@ export default {
       let testURI = 'http://jsonplaceholder.typicode.com/users'
 
       axios.post(baseURI, {
-        headers: {
-          Accept: 'application/json',
+        headers: {Accept:
+          'application/json',
           'Content-Type': 'application/json',
         },
         data: {
@@ -86,11 +85,10 @@ export default {
           site: this.site,
           sns: this.sns,
           details: this.details,
-        }
+        },
       })
       .then(res => {
-      	console.info(res.headers)
-      	console.info(res.data)
+        console.log(res.data)
       })
     },
 
