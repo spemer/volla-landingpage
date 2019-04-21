@@ -21,6 +21,15 @@
           target="_blank"
           v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
         ) 입점신청
+
+      div.header__right(
+        v-if="this.$route.path === '/seller-form'"
+      )
+        router-link.header__right--text.home(
+          :to="'/'"
+          target="_blank"
+          v-tooltip.bottom="{content: '홈페이지(새 창)', delay: {show: 500, hide: 100}}"
+        ) 홈페이지
 </template>
 
 <script>
@@ -92,7 +101,7 @@ export default {
     .header__right {
       float: right;
       height: $header;
-      font-weight: 500;
+      font-weight: 400;
 
       .header__right--text {
         cursor: pointer;
@@ -103,6 +112,12 @@ export default {
 
         &.join {
           font-weight: 700;
+        }
+
+        &.home {
+          font-weight: 700;
+          margin-right: 0 !important;
+          @include transform(translateY(63%));
         }
 
         &:hover {

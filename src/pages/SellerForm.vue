@@ -26,8 +26,7 @@
             :required="list.required"
           )
 
-
-        p.sellerform__form--title.host 호스트 지원 희망 여부
+        p.sellerform__form--title.host 호스트 지원 희망여부 선택
           span(required="true")
           br
           input#hostTrue.sellerform__form--input.radio(
@@ -44,7 +43,6 @@
           label.sellerform__form--label(
             for="hostFalse" v-model="apply_category"
           ) 호스트 지원 필요
-
 
         p.sellerform__form--title 기타 문의사항
           textarea.sellerform__form--input.textarea(
@@ -129,7 +127,7 @@ $mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid12x 0 $grid32x;
+  padding: $grid24x 0 $grid32x;
 
   .sellerform__form--subtitle {
     font-weight: 300;
@@ -179,13 +177,14 @@ $mobile-width: 288px;
 
         .sellerform__form--label {
           cursor: pointer;
+          color: $black54;
           font-weight: 300;
           text-align: center;
           margin-top: $grid4x;
           display: inline-block;
           padding: $grid2x $grid4x;
           border: 1px solid $textccc;
-          background-color: $brand-pink-10;
+          // background-color: $brand-pink-10;
           @include font-size($grid4x);
           @include border-radius($grid2x);
 
