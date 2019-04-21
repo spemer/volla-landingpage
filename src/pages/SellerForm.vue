@@ -13,8 +13,8 @@
           v-for="list in sellerFormList"
         ) {{ list.text }}
           span(
-          :required="list.required"
-        )
+            :required="list.required"
+          )
           input.sellerform__form--input(
             @input="updateValue"
             v-model="list.value"
@@ -25,6 +25,26 @@
             :placeholder="list.placeholder"
             :required="list.required"
           )
+
+
+        p.sellerform__form--title.host 호스트 지원 희망 여부
+          span(required="true")
+          br
+          input#hostTrue.sellerform__form--input.radio(
+            type="radio" name="apply_category" required="true"
+            v-model="apply_category" v-bind:value="'직접 방송'"
+          )
+          label.sellerform__form--label.first(
+            for="hostTrue" v-model="apply_category"
+          ) 직접 방송
+          input#hostFalse.sellerform__form--input.radio(
+            type="radio" name="apply_category" required="true"
+            v-model="apply_category" v-bind:value="'호스트 지원 필요'"
+          )
+          label.sellerform__form--label(
+            for="hostFalse" v-model="apply_category"
+          ) 호스트 지원 필요
+
 
         p.sellerform__form--title 기타 문의사항
           textarea.sellerform__form--input.textarea(
@@ -58,6 +78,7 @@ export default {
 
   data () {
     return {
+      apply_category: '',
       details: '',
     }
   },
@@ -78,6 +99,7 @@ export default {
           contact: this.$store.state.sellerFormList[2].value,
           site: this.$store.state.sellerFormList[3].value,
           sns: this.$store.state.sellerFormList[4].value,
+          apply_category: this.apply_category,
           details: this.details,
         },
         {
@@ -92,8 +114,6 @@ export default {
       })
 
       alert(this.$store.state.sellerFormList[1].value + ' 님의 입점신청이 정상적으로 접수되었습니다.\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
-      // window.close()
-      // window.postMessage('close')
     },
 
   },
@@ -102,8 +122,9 @@ export default {
 </script>
 
 <style lang="scss">
-$width: 320px;
-// $pablet-width: 320px;
+// $width: 320px;
+$width: 480px;
+$pablet-width: 320px;
 $mobile-width: 288px;
 
 #sellerForm {
@@ -130,9 +151,9 @@ $mobile-width: 288px;
     text-align: center;
     margin-top: $grid20x;
 
-    // @media #{$pablet} {
-    //   width: $pablet-width;
-    // }
+    @media #{$pablet} {
+      width: $pablet-width;
+    }
 
     @media #{$mobile} {
       width: $mobile-width;
@@ -153,6 +174,38 @@ $mobile-width: 288px;
         }
       }
 
+      &.host {
+        margin-bottom: $grid16x;
+
+        .sellerform__form--label {
+          cursor: pointer;
+          font-weight: 300;
+          text-align: center;
+          margin-top: $grid4x;
+          display: inline-block;
+          padding: $grid2x $grid4x;
+          border: 1px solid $textccc;
+          background-color: $brand-pink-10;
+          @include font-size($grid4x);
+          @include border-radius($grid2x);
+
+          &.first {
+            margin-right: $grid2x;
+          }
+        }
+
+        input[type='radio'] {
+          display: none;
+        }
+
+        input[type='radio']:checked + label {
+          color: #fff;
+          font-weight: 900;
+          border: 1px solid $brand-pink;
+          background-color: $brand-pink;
+        }
+      }
+
       .sellerform__form--input {
         border: none;
         width: $width;
@@ -164,9 +217,9 @@ $mobile-width: 288px;
         @include font-size($grid4x);
         @include transition(all 0.25s ease);
 
-        // @media #{$pablet} {
-        //   width: $pablet-width;
-        // }
+        @media #{$pablet} {
+          width: $pablet-width;
+        }
 
         @media #{$mobile} {
           width: $mobile-width;
@@ -177,6 +230,11 @@ $mobile-width: 288px;
           height: $grid32x;
           padding-top: $grid2x;
           @include line-height($grid4x);
+        }
+
+        &[type='radio'] {
+          margin-top: $grid8x;
+          margin-bottom: -#{$grid2x};
         }
 
         &:focus {
