@@ -88,7 +88,6 @@ export default {
 
     sendPost() {
       let baseURI = globalVar.requestSellerUrl
-      // let testURI = globalVar.testUrl
 
       axios.post(baseURI,
         {
@@ -120,7 +119,6 @@ export default {
 </script>
 
 <style lang="scss">
-// $width: 320px;
 $width: 480px;
 $pablet-width: 320px;
 $mobile-width: 288px;
@@ -176,15 +174,14 @@ $mobile-width: 288px;
         margin-bottom: $grid16x;
 
         .sellerform__form--label {
-          cursor: pointer;
           color: $black54;
+          cursor: pointer;
           font-weight: 300;
           text-align: center;
           margin-top: $grid4x;
           display: inline-block;
           padding: $grid2x $grid4x;
           border: 1px solid $textccc;
-          // background-color: $brand-pink-10;
           @include font-size($grid4x);
           @include border-radius($grid2x);
 

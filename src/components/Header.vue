@@ -11,24 +11,22 @@
         p.header__left--text.sub &nbsp;- {{ tagline }}
 
       div.header__right(
-        v-if="this.$route.path === '/'"
       )
         p.header__right--text.dl(
+          v-if="this.$route.path === '/'"
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
         router-link.header__right--text.join(
+          v-if="this.$route.path === '/'"
           :to="'/seller-form'"
           target="_blank"
           v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
         ) 입점신청
-
-      div.header__right(
-        v-if="this.$route.path === '/seller-form'"
-      )
         router-link.header__right--text.home(
+          v-if="this.$route.path === '/seller-form'"
           :to="'/'"
           target="_blank"
-          v-tooltip.bottom="{content: '홈페이지(새 창)', delay: {show: 500, hide: 100}}"
+          v-tooltip.bottom="{content: '볼라 홈페이지(새 창)', delay: {show: 500, hide: 100}}"
         ) 홈페이지
 </template>
 
