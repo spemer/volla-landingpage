@@ -16,27 +16,35 @@
             :required="list.required"
           )
           input.sellerform__form--input(
-            @input="updateValue" v-model="list.value"
-            :type="list.type" :name="list.name"
-            :minlength="list.minlength" :maxlength="list.maxlength"
-            :placeholder="list.placeholder" :required="list.required"
+            @input="updateValue"
+            v-model="list.value"
+            :type="list.type"
+            :name="list.name"
+            :minlength="list.minlength"
+            :maxlength="list.maxlength"
+            :placeholder="list.placeholder"
+            :required="list.required"
           )
 
         p.sellerform__form--title.host {{ apply_category.text }}
           span(required="true")
           br
-          input#hostTrue.sellerform__form--input.radio(
-            :type="apply_category.type" :name="apply_category.name"
-            :required="apply_category.required" :value="apply_category.prevalue[0]"
+          input.sellerform__form--input.radio(
+            :type="apply_category.type"
+            :name="apply_category.name"
+            :required="apply_category.required"
+            :value="apply_category.prevalue[0]"
             v-model="apply_category.value"
           )
           label.sellerform__form--label.first(
             for="hostTrue"
             v-model="apply_category.value"
           ) {{ apply_category.prevalue[0] }}
-          input#hostFalse.sellerform__form--input.radio(
-            :type="apply_category.type" :name="apply_category.name"
-            :required="apply_category.required" :value="apply_category.prevalue[1]"
+          input.sellerform__form--input.radio(
+            :type="apply_category.type"
+            :name="apply_category.name"
+            :required="apply_category.required"
+            :value="apply_category.prevalue[1]"
             v-model="apply_category.value"
           )
           label.sellerform__form--label(
@@ -46,8 +54,10 @@
 
         p.sellerform__form--title {{ sellerFormDetails.text }}
           textarea.sellerform__form--input.textarea(
-            :type="sellerFormDetails.text" :name="sellerFormDetails.name"
-            v-model="sellerFormDetails.value" :placeholder="sellerFormDetails.placeholder"
+            :type="sellerFormDetails.text"
+            :name="sellerFormDetails.name"
+            v-model="sellerFormDetails.value"
+            :placeholder="sellerFormDetails.placeholder"
           )
 
         button.sellerform__form--submit(
