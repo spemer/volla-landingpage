@@ -100,7 +100,7 @@ export default new Vuex.Store({
     },
 
     // SellerForm.vue
-    sellerFormList: [{
+    sellerForm_List: [{
         value: '',
         text: '이메일 주소',
         type: 'email',
@@ -142,19 +142,30 @@ export default new Vuex.Store({
       },
     ],
 
-    apply_category: {
-      prevalue: [
-        '직접 방송',
-        '호스트 지원 필요',
-      ],
+    sellerForm_Category: [{
+        buttonText: '직접 방송',
+        id: 'hostTrue',
+        text: '호스트 지원 희망여부 선택',
+        type: 'radio',
+        name: 'apply_category',
+        required: true,
+        class: 'first',
+      },
+      {
+        buttonText: '호스트 지원 필요',
+        id: 'hostFalse',
+        text: '호스트 지원 희망여부 선택',
+        type: 'radio',
+        name: 'apply_category',
+        required: true,
+      },
+    ],
+
+    sellerForm_CategoryValue: {
       value: '',
-      text: '호스트 지원 희망여부 선택',
-      type: 'radio',
-      name: 'apply_category',
-      required: true,
     },
 
-    sellerFormDetails: {
+    sellerForm_Details: {
       value: '',
       text: '기타 문의사항',
       type: 'text',
@@ -169,16 +180,16 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    updateValue(state, value) {
-      state.sellerFormList.value = value
+    updateSellerFormList(state, value) {
+      state.sellerForm_List.value = value
     },
 
-    updateCategoryValue(state, value) {
-      state.apply_category.value = value
+    UpdateSellerFormCategoryValue(state, value) {
+      state.sellerForm_CategoryValue.value = value
     },
 
-    updateDetailsValue(state, value) {
-      state.sellerFormDetails.value = value
+    UpdateSellerFormDetails(state, value) {
+      state.sellerForm_Details.value = value
     },
 
   },

@@ -10,13 +10,12 @@
         name="sellerform__form"
       )
         p.sellerform__form--title(
-          v-for="list in sellerFormList"
+          v-for="list in sellerForm_List"
         ) {{ list.text }}
           span(
             :required="list.required"
           )
           input.sellerform__form--input(
-            @input="updateValue"
             v-model="list.value"
             :type="list.type"
             :name="list.name"
@@ -26,38 +25,33 @@
             :required="list.required"
           )
 
-        p.sellerform__form--title.host {{ apply_category.text }}
-          span(required="true")
-          br
-          input.sellerform__form--input.radio(
-            :type="apply_category.type"
-            :name="apply_category.name"
-            :required="apply_category.required"
-            :value="apply_category.prevalue[0]"
-            v-model="apply_category.value"
+        p.sellerform__form--title.host {{ sellerForm_Category[0].text }}
+          span(
+            :required="sellerForm_Category[0].required"
           )
-          label.sellerform__form--label.first(
-            for="hostTrue"
-            v-model="apply_category.value"
-          ) {{ apply_category.prevalue[0] }}
-          input.sellerform__form--input.radio(
-            :type="apply_category.type"
-            :name="apply_category.name"
-            :required="apply_category.required"
-            :value="apply_category.prevalue[1]"
-            v-model="apply_category.value"
-          )
-          label.sellerform__form--label(
-            for="hostFalse"
-            v-model="apply_category.value"
-          ) {{ apply_category.prevalue[1] }}
+            div.sellerform__form--div(
+              v-for="category in sellerForm_Category"
+            )
+              input.sellerform__form--input(
+                :id="category.id"
+                :type="category.type"
+                :name="category.name"
+                :required="category.required"
+                :value="category.buttonText"
+                v-model="sellerForm_CategoryValue.value"
+              )
+              label.sellerform__form--label(
+                :for="category.id"
+                :class="category.class"
+                v-model="sellerForm_CategoryValue.value"
+              ) {{ category.buttonText }}
 
-        p.sellerform__form--title {{ sellerFormDetails.text }}
+        p.sellerform__form--title {{ sellerForm_Details.text }}
           textarea.sellerform__form--input.textarea(
-            :type="sellerFormDetails.text"
-            :name="sellerFormDetails.name"
-            v-model="sellerFormDetails.value"
-            :placeholder="sellerFormDetails.placeholder"
+            :type="sellerForm_Details.text"
+            :name="sellerForm_Details.name"
+            v-model="sellerForm_Details.value"
+            :placeholder="sellerForm_Details.placeholder"
           )
 
         button.sellerform__form--submit(
@@ -79,37 +73,40 @@ export default {
   },
 
   computed: {
-    sellerFormList() {
-      return this.$store.state.sellerFormList
+    sellerForm_List: {
+      get() {
+        return this.$store.state.sellerForm_List
+      },
+      set(value) {
+        this.$store.commit('updateSellerFormList', value)
+      },
     },
 
-    apply_category() {
-      return this.$store.state.apply_category
+    sellerForm_CategoryValue: {
+      get() {
+        return this.$store.state.sellerForm_CategoryValue
+      },
+      set(value) {
+        this.$store.commit('UpdateSellerFormCategoryValue', value)
+      },
     },
 
-    sellerFormDetails() {
-      return this.$store.state.sellerFormDetails
+    sellerForm_Details: {
+      get() {
+        return this.$store.state.sellerForm_Details
+      },
+      set(value) {
+        this.$store.commit('UpdateSellerFormDetails', value)
+      },
     },
+
+    sellerForm_Category() { return this.$store.state.sellerForm_Category },
 
   },
 
   methods: {
     checkRadio() {
-      if (! this.apply_category.value) {
-        alert('호스트 지원 희망여부를 선택해주세요.')
-      }
-    },
-
-    updateValue(e) {
-      this.$store.commit('updateValue', e.target.value)
-    },
-
-    updateCategoryValue(e) {
-      this.$store.commit('updateCategoryValue', e.target.value)
-    },
-
-    updateDetailsValue(e) {
-      this.$store.commit('updateDetailsValue', e.target.value)
+      if (! this.sellerForm_CategoryValue.value) alert('호스트 지원 희망여부를 선택해주세요.')
     },
 
     sendPost() {
@@ -117,13 +114,13 @@ export default {
 
       axios.post(baseURI,
         {
-          email: this.$store.state.sellerFormList[0].value,
-          name: this.$store.state.sellerFormList[1].value,
-          contact: this.$store.state.sellerFormList[2].value,
-          site: this.$store.state.sellerFormList[3].value,
-          sns: this.$store.state.sellerFormList[4].value,
-          apply_category: this.$store.state.apply_category.value,
-          details: this.$store.state.sellerFormDetails.value,
+          email: this.sellerForm_List[0].value,
+          name: this.sellerForm_List[1].value,
+          contact: this.sellerForm_List[2].value,
+          site: this.sellerForm_List[3].value,
+          sns: this.sellerForm_List[4].value,
+          apply_categories: this.sellerForm_CategoryValue.value,
+          details: this.sellerForm_Details.value,
         },
         {
           headers: {
@@ -132,11 +129,11 @@ export default {
           }
         },
       )
-      .then(res => {
-        console.log(res.data)
-      })
+      .then(res => { console.log(res.data) })
 
-      alert(this.$store.state.sellerFormList[1].value + ' 님의 입점신청이 정상적으로 접수되었습니다.\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
+      alert(this.$store.state.sellerForm_List[1].value
+        + ' 님의 입점신청이 정상적으로 접수되었습니다.'
+        + '\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
     },
 
   },
@@ -199,32 +196,43 @@ $mobile-width: 288px;
       &.host {
         margin-bottom: $grid16x;
 
-        .sellerform__form--label {
-          color: $black54;
-          cursor: pointer;
-          font-weight: 300;
-          text-align: center;
-          margin-top: $grid4x;
-          display: inline-block;
-          padding: $grid2x $grid4x;
-          border: 1px solid $textccc;
-          @include font-size($grid4x);
-          @include border-radius($grid2x);
-
-          &.first {
-            margin-right: $grid2x;
+        span {
+          &::before {
+            content: '\A';
+            white-space: pre;
           }
         }
 
-        input[type='radio'] {
-          display: none;
-        }
+        .sellerform__form--div {
+          display: inline-block;
 
-        input[type='radio']:checked + label {
-          color: #fff;
-          font-weight: 900;
-          border: 1px solid $brand-pink;
-          background-color: $brand-pink;
+          .sellerform__form--label {
+            color: $black54;
+            cursor: pointer;
+            font-weight: 300;
+            text-align: center;
+            margin-top: $grid4x;
+            display: inline-block;
+            padding: $grid2x $grid4x;
+            border: 1px solid $textccc;
+            @include font-size($grid4x);
+            @include border-radius($grid2x);
+
+            &.first {
+              margin-right: $grid2x;
+            }
+          }
+
+          input[type='radio'] {
+            display: none;
+          }
+
+          input[type='radio']:checked + label {
+            color: #fff;
+            font-weight: 900;
+            border: 1px solid $brand-pink;
+            background-color: $brand-pink;
+          }
         }
       }
 
