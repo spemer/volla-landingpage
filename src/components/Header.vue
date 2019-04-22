@@ -18,12 +18,12 @@
         ) 다운로드
         router-link.header__right--text.join(
           v-if="this.$route.path === '/'"
-          :to="'/seller-form'"
+          :to="'/sellerform'"
           target="_blank"
           v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
         ) 입점신청
         router-link.header__right--text.home(
-          v-if="this.$route.path === '/seller-form'"
+          v-if="this.$route.path === '/sellerform'"
           :to="'/'"
           target="_blank"
           v-tooltip.bottom="{content: '볼라 홈페이지(새 창)', delay: {show: 500, hide: 100}}"

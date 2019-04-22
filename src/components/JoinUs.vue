@@ -23,7 +23,7 @@
           ) 메일로 문의하기
 
         router-link.global__cta--link(
-          :to="'/seller-form'"
+          :to="'/sellerform'"
           target="_blank"
         )
           button.global__cta--btn.form(

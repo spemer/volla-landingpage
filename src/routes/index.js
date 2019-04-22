@@ -25,7 +25,7 @@ export default new VueRouter({
       redirect: '/'
     },
     {
-      path: '/seller-form',
+      path: '/sellerform',
       name: 'sellerForm',
       component: sellerForm,
     },
