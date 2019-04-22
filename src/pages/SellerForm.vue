@@ -132,7 +132,7 @@ export default {
       )
       .then(res => { console.log(res.data) })
 
-      alert(this.$store.state.sellerForm_List[1].value
+      alert(this.$store.state.sellerForm_CategoryValue.value
         + ' 님의 입점신청이 정상적으로 접수되었습니다.'
         + '\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
     },

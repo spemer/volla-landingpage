@@ -30,6 +30,7 @@
         a.footer__sns(
           v-for="(value, key) in snsList"
           :key="key"
+          target="_blank"
           :href="value[0]"
         )
           i.footer__sns--logo.fab(
