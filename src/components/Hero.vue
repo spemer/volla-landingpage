@@ -4,10 +4,10 @@
       div.container
         div.hero__text
           h1.hero__text--title
-            | 라이브 방송으로 만나는
-            span.hero__title--nbsp &nbsp;
+            | 라이브 방송으로 담는
+            span.hero__title--nbsp &nbsp;&nbsp;
             span.hero__br
-            | 동대문 쇼핑
+            | 오프라인 쇼핑
           p.hero__text--subtitle {{ serviceEn }}를 소개합니다
           p.hero__text--spantext
             | 라이브 방송으로 여러분의 상품을
