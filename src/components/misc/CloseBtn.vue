@@ -23,11 +23,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-#closebtn {
-  @media #{$pablet} {
-    display: none;
-  }
-}
-</style>

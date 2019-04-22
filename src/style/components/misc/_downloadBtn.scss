@@ -1,0 +1,68 @@
+#downloadBtn {
+  .if__mobile--true {
+    display: none !important;
+  }
+
+  .if__mobile--false {
+    display: block !important;
+  }
+
+  @media #{$pablet} {
+    .if__mobile--false {
+      display: none !important;
+    }
+
+    .if__mobile--true {
+      display: block !important;
+    }
+  }
+
+  .download__badge {
+    width: 100%;
+    outline: none;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: $grid4x;
+    display: inline-block;
+
+    .download__badge--link {
+      cursor: pointer;
+      height: $grid10x;
+      display: inline-block;
+      margin-bottom: $grid8x;
+      border-radius: $grid16x;
+      background-color: #fff;
+      border: 1px solid $textccc;
+      padding: $grid2x $grid4x 0;
+      @include transition(all 0.25s ease);
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:first-child {
+        margin-right: $grid4x;
+
+        @media #{$pablet} {
+          margin-right: 0;
+        }
+
+        @media #{$mobile} {
+          padding: $grid2x $grid4x 0;
+        }
+      }
+
+      .download__badge--each {
+        width: $grid6x;
+        margin-right: $grid2x;
+        vertical-align: bottom;
+      }
+
+      .download__badge--text {
+        color: $text777;
+        font-weight: 700;
+        vertical-align: bottom;
+      }
+    }
+  }
+}

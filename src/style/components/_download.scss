@@ -1,0 +1,34 @@
+#download {
+  height: 656px;
+  overflow-y: hidden;
+  border-top: 1px solid $texteee;
+
+  @media #{$pablet2} {
+    height: 720px;
+  }
+
+  @media #{$pablet} {
+    height: 667px;
+  }
+
+  @media #{$middle2} {
+    height: 675px;
+  }
+
+  @media #{$mobile} {
+    height: 603px;
+  }
+
+  .download__mockup {
+    text-align: center;
+
+    .download__mockup--img {
+      width: 320px;
+      margin: 0 auto;
+
+      @media #{$mobile} {
+        width: 280px;
+      }
+    }
+  }
+}

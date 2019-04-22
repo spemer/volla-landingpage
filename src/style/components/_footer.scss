@@ -1,0 +1,116 @@
+#footer {
+  padding: $grid12x $grid4x;
+  background-color: $textf4;
+
+  ::selection {
+    color: #fff;
+    background-color: $brand-pink !important;
+  }
+
+  @media #{$pablet} {
+    padding: $grid12x $grid4x $grid16x;
+  }
+
+  .footer__copyright {
+    margin: 0 auto;
+    color: $black24;
+
+    .footer__copyright--info,
+    .footer__terms {
+      margin-top: $grid5x;
+    }
+
+    .footer__copyright--text {
+      color: $black38;
+      font-weight: 700;
+      margin-bottom: -#{$grid2x};
+      @include font-size(14px);
+    }
+
+    .footer__terms {
+      font-weight: 700;
+      margin-top: $grid6x;
+      @include line-height($grid3x);
+
+      .footer__terms--each {
+        color: $black24;
+        transition: color 0.25s ease;
+        @include font-size($grid3x);
+
+        &:hover {
+          color: $black54;
+        }
+
+        &:not(:first-child) {
+          &::before {
+            content: '·';
+            color: $black24;
+            margin: 0 $grid2x;
+          }
+        }
+      }
+    }
+
+    .footer__copyright--info {
+      margin-bottom: $grid8x;
+      @include font-size(10px);
+
+      span {
+        display: inline-block;
+        @include font-size(10px);
+
+        &.footer__copyright--title {
+          display: block;
+          font-weight: 400;
+          @include line-height($grid3x);
+        }
+
+        &.footer__copyright--desc {
+          font-weight: 900;
+          display: inline;
+
+          &::before {
+            content: ' ';
+            margin-right: $grid;
+          }
+        }
+      }
+    }
+
+    .clipboard {
+      cursor: pointer;
+      @include transition(color 0.25s ease);
+
+      &:hover {
+        color: $black54;
+      }
+    }
+
+    .footer__sns {
+      color: $black24;
+      font-size: $grid5x;
+      display: inline-block;
+
+      .footer__sns--logo {
+        padding: 0 $grid4x $grid2x 0;
+        @include transition(all 0.25s ease);
+
+        &.fa-facebook-square {
+          margin-right: $grid4x;
+
+          &:hover {
+            color: $facebook;
+          }
+        }
+
+        &.fa-instagram {
+          // padding-left: $grid4x;
+
+          &:hover {
+            color: $instagram;
+          }
+        }
+      }
+    }
+  }
+}

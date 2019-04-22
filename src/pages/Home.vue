@@ -30,9 +30,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss">
-.section__each {
-  padding: $grid12x 0 $grid20x;
-}
-</style>

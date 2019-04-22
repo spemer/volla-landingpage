@@ -23,10 +23,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-#easyStart {
-  border-top: 1px solid $texteee;
-  padding-bottom: $grid12x;
-}
-</style>

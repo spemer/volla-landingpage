@@ -1,0 +1,168 @@
+$width: 480px;
+$pablet-width: 320px;
+$mobile-width: 288px;
+
+#sellerForm {
+  text-align: center;
+  padding: $grid24x 0 $grid32x;
+
+  .sellerform__form--subtitle {
+    font-weight: 300;
+
+    span {
+      &::before {
+        content: '\A* ';
+        white-space: pre;
+        font-weight: 900;
+        color: $brand-pink;
+      }
+    }
+  }
+
+  .sellerform__form--form {
+    width: $width;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: $grid20x;
+
+    @media #{$pablet} {
+      width: $pablet-width;
+    }
+
+    @media #{$mobile} {
+      width: $mobile-width;
+    }
+
+    .sellerform__form--title {
+      display: block;
+      text-align: left;
+      font-weight: 900;
+      margin-bottom: $grid;
+      @include font-size($grid5x);
+
+      span[required] {
+        &::before {
+          content: ' *';
+          color: $brand-pink;
+          @include font-size($grid5x);
+        }
+      }
+
+      &.host {
+        margin-bottom: $grid16x;
+
+        span {
+          &::before {
+            content: ' *\A';
+            white-space: pre;
+          }
+        }
+
+        .sellerform__form--div {
+          display: inline-block;
+
+          .sellerform__form--label {
+            color: $black54;
+            cursor: pointer;
+            font-weight: 300;
+            text-align: center;
+            margin-top: $grid4x;
+            display: inline-block;
+            padding: $grid2x $grid4x;
+            border: 1px solid $textccc;
+            @include font-size($grid4x);
+            @include border-radius($grid2x);
+
+            &.first {
+              margin-right: $grid2x;
+            }
+          }
+
+          input[type='radio'] {
+            display: none;
+          }
+
+          input[type='radio']:checked+label {
+            color: #fff;
+            font-weight: 900;
+            border: 1px solid $brand-pink;
+            background-color: $brand-pink;
+          }
+        }
+      }
+
+      .sellerform__form--input {
+        border: none;
+        width: $width;
+        outline: none;
+        display: inline-block;
+        margin-bottom: $grid12x;
+        padding: $grid4x 0 $grid;
+        border-bottom: 1px solid $textccc;
+        @include font-size($grid4x);
+        @include transition(all 0.25s ease);
+
+        @media #{$pablet} {
+          width: $pablet-width;
+        }
+
+        @media #{$mobile} {
+          width: $mobile-width;
+        }
+
+        &.textarea {
+          resize: none;
+          height: $grid32x;
+          padding-top: $grid2x;
+          @include line-height($grid4x);
+        }
+
+        &[type='radio'] {
+          margin-top: $grid8x;
+          margin-bottom: -#{$grid2x};
+        }
+
+        &:focus {
+          border-bottom: 1px solid $brand-pink;
+        }
+
+        &::selection {
+          color: #fff !important;
+          background-color: $brand-pink !important;
+        }
+
+        &::placeholder,
+        &::-o-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &::-ms-input-placeholder,
+        &::-webkit-input-placeholder {
+          color: $black24;
+        }
+      }
+    }
+
+    .sellerform__form--submit {
+      outline: none;
+      margin: 0 auto;
+      display: block;
+      width: $grid48x;
+      cursor: pointer;
+      height: $grid14x;
+      font-weight: 900;
+      color: $brand-pink;
+      margin-top: $grid8x;
+      background-color: #fff;
+      border: 2px solid $brand-pink;
+      @include transition(all 0.25s ease);
+      @include border-radius($grid16x);
+
+      &:hover {
+        color: #fff;
+        font-weight: 900;
+        background-color: $brand-pink;
+      }
+    }
+  }
+}
