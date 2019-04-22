@@ -180,7 +180,7 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    updateSellerFormList(state, value) {
+    UpdateSellerFormList(state, value) {
       state.sellerForm_List.value = value
     },
 

@@ -78,7 +78,7 @@ export default {
         return this.$store.state.sellerForm_List
       },
       set(value) {
-        this.$store.commit('updateSellerFormList', value)
+        this.$store.commit('UpdateSellerFormList', value)
       },
     },
 
@@ -106,7 +106,8 @@ export default {
 
   methods: {
     checkRadio() {
-      if (! this.sellerForm_CategoryValue.value) alert('호스트 지원 희망여부를 선택해주세요.')
+      if (! this.sellerForm_CategoryValue.value)
+        alert('호스트 지원 희망여부를 선택해주세요.')
     },
 
     sendPost() {
@@ -198,7 +199,7 @@ $mobile-width: 288px;
 
         span {
           &::before {
-            content: '\A';
+            content: ' *\A';
             white-space: pre;
           }
         }
