@@ -143,9 +143,9 @@ export default new Vuex.Store({
     ],
 
     sellerForm_Category: [{
+        text: '호스트 지원 희망여부 선택',
         buttonText: '직접 방송',
         id: 'hostTrue',
-        text: '호스트 지원 희망여부 선택',
         type: 'radio',
         name: 'apply_category',
         required: true,
@@ -154,7 +154,6 @@ export default new Vuex.Store({
       {
         buttonText: '호스트 지원 필요',
         id: 'hostFalse',
-        text: '호스트 지원 희망여부 선택',
         type: 'radio',
         name: 'apply_category',
         required: true,

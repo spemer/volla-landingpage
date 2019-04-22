@@ -6,8 +6,8 @@
         span 는 필수 입력 항목입니다.
 
       form.sellerform__form--form(
-        @submit.prevent="sendPost"
         name="sellerform__form"
+        @submit.prevent="sendPost"
       )
         p.sellerform__form--title(
           v-for="list in sellerForm_List"
@@ -16,13 +16,13 @@
             :required="list.required"
           )
           input.sellerform__form--input(
-            v-model="list.value"
             :type="list.type"
             :name="list.name"
+            v-model="list.value"
+            :required="list.required"
             :minlength="list.minlength"
             :maxlength="list.maxlength"
             :placeholder="list.placeholder"
-            :required="list.required"
           )
 
         p.sellerform__form--title.host {{ sellerForm_Category[0].text }}
@@ -36,8 +36,8 @@
                 :id="category.id"
                 :type="category.type"
                 :name="category.name"
-                :required="category.required"
                 :value="category.buttonText"
+                :required="category.required"
                 v-model="sellerForm_CategoryValue.value"
               )
               label.sellerform__form--label(
@@ -55,8 +55,8 @@
           )
 
         button.sellerform__form--submit(
-          @click="checkRadio"
           name="sellerform__form"
+          @click="checkCategoryValue"
         ) 제출하기
 </template>
 
@@ -105,7 +105,7 @@ export default {
   },
 
   methods: {
-    checkRadio() {
+    checkCategoryValue() {
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
     },
