@@ -142,6 +142,26 @@ export default new Vuex.Store({
       },
     ],
 
+    apply_category: {
+      prevalue: [
+        '직접 방송',
+        '호스트 지원 필요',
+      ],
+      value: '',
+      text: '호스트 지원 희망여부 선택',
+      type: 'radio',
+      name: 'apply_category',
+      required: true,
+    },
+
+    sellerFormDetails: {
+      value: '',
+      text: '기타 문의사항',
+      type: 'text',
+      name: 'details',
+      placeholder: '기타 문의사항을 적어주세요.',
+    },
+
   },
 
   getters: {
@@ -151,6 +171,14 @@ export default new Vuex.Store({
   mutations: {
     updateValue(state, value) {
       state.sellerFormList.value = value
+    },
+
+    updateCategoryValue(state, value) {
+      state.apply_category.value = value
+    },
+
+    updateDetailsValue(state, value) {
+      state.sellerFormDetails.value = value
     },
 
   },

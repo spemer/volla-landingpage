@@ -16,41 +16,42 @@
             :required="list.required"
           )
           input.sellerform__form--input(
-            @input="updateValue"
-            v-model="list.value"
-            :type="list.type"
-            :name="list.name"
-            :minlength="list.minlength"
-            :maxlength="list.maxlength"
-            :placeholder="list.placeholder"
-            :required="list.required"
+            @input="updateValue" v-model="list.value"
+            :type="list.type" :name="list.name"
+            :minlength="list.minlength" :maxlength="list.maxlength"
+            :placeholder="list.placeholder" :required="list.required"
           )
 
-        p.sellerform__form--title.host 호스트 지원 희망여부 선택
+        p.sellerform__form--title.host {{ apply_category.text }}
           span(required="true")
           br
           input#hostTrue.sellerform__form--input.radio(
-            type="radio" name="apply_category" required="true"
-            v-model="apply_category" v-bind:value="'직접 방송'"
+            :type="apply_category.type" :name="apply_category.name"
+            :required="apply_category.required" :value="apply_category.prevalue[0]"
+            v-model="apply_category.value"
           )
           label.sellerform__form--label.first(
-            for="hostTrue" v-model="apply_category"
-          ) 직접 방송
+            for="hostTrue"
+            v-model="apply_category.value"
+          ) {{ apply_category.prevalue[0] }}
           input#hostFalse.sellerform__form--input.radio(
-            type="radio" name="apply_category" required="true"
-            v-model="apply_category" v-bind:value="'호스트 지원 필요'"
+            :type="apply_category.type" :name="apply_category.name"
+            :required="apply_category.required" :value="apply_category.prevalue[1]"
+            v-model="apply_category.value"
           )
           label.sellerform__form--label(
-            for="hostFalse" v-model="apply_category"
-          ) 호스트 지원 필요
+            for="hostFalse"
+            v-model="apply_category.value"
+          ) {{ apply_category.prevalue[1] }}
 
-        p.sellerform__form--title 기타 문의사항
+        p.sellerform__form--title {{ sellerFormDetails.text }}
           textarea.sellerform__form--input.textarea(
-            type="text" name="details" v-model="details"
-            placeholder="기타 문의사항을 적어주세요."
+            :type="sellerFormDetails.text" :name="sellerFormDetails.name"
+            v-model="sellerFormDetails.value" :placeholder="sellerFormDetails.placeholder"
           )
 
         button.sellerform__form--submit(
+          @click="checkRadio"
           name="sellerform__form"
         ) 제출하기
 </template>
@@ -72,18 +73,33 @@ export default {
       return this.$store.state.sellerFormList
     },
 
-  },
+    apply_category() {
+      return this.$store.state.apply_category
+    },
 
-  data () {
-    return {
-      apply_category: '',
-      details: '',
-    }
+    sellerFormDetails() {
+      return this.$store.state.sellerFormDetails
+    },
+
   },
 
   methods: {
+    checkRadio() {
+      if (! this.apply_category.value) {
+        alert('호스트 지원 희망여부를 선택해주세요.')
+      }
+    },
+
     updateValue(e) {
       this.$store.commit('updateValue', e.target.value)
+    },
+
+    updateCategoryValue(e) {
+      this.$store.commit('updateCategoryValue', e.target.value)
+    },
+
+    updateDetailsValue(e) {
+      this.$store.commit('updateDetailsValue', e.target.value)
     },
 
     sendPost() {
@@ -96,8 +112,8 @@ export default {
           contact: this.$store.state.sellerFormList[2].value,
           site: this.$store.state.sellerFormList[3].value,
           sns: this.$store.state.sellerFormList[4].value,
-          apply_category: this.apply_category,
-          details: this.details,
+          apply_category: this.$store.state.apply_category.value,
+          details: this.$store.state.sellerFormDetails.value,
         },
         {
           headers: {
