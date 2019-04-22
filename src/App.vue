@@ -1,8 +1,8 @@
 <template lang="pug">
   div#app
-    Header(v-if="this.$route.path === '/' || this.$route.path === '/seller-form'")
+    Header(v-if="this.$route.path === '/' || this.$route.path === '/sellerform'")
     router-view
-    Footer(v-if="this.$route.path === '/' || this.$route.path === '/seller-form'")
+    Footer(v-if="this.$route.path === '/' || this.$route.path === '/sellerform'")
 </template>
 
 <script>
