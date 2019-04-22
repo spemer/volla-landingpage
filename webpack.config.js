@@ -14,8 +14,7 @@ module.exports = {
     new Dotenv()
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
