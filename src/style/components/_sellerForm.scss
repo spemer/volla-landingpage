@@ -106,7 +106,7 @@ $mobile-width: 288px;
         outline: none;
         display: inline-block;
         margin-bottom: $grid12x;
-        padding: $grid4x 0 $grid;
+        padding: $grid4x 0 $grid2x;
         border-bottom: 1px solid $textccc;
         @include font-size($grid4x);
         @include transition(all 0.25s ease);
