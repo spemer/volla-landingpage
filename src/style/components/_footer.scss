@@ -34,8 +34,8 @@
 
       .footer__terms--each {
         color: $black24;
-        transition: color 0.25s ease;
         @include font-size($grid3x);
+        @include transition(color 0.25s ease);
 
         &:hover {
           color: $black54;
