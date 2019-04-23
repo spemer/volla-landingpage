@@ -62,19 +62,19 @@ export default {
   },
 
   computed: {
-    thisYear() {
+    thisYear () {
       return this.$store.state.thisYear
     },
 
-    infoList() {
+    infoList () {
       return this.$store.state.infoList
     },
 
-    tosList() {
+    tosList () {
       return this.$store.state.tosList
     },
 
-    snsList() {
+    snsList () {
       return this.$store.state.snsList
     },
   },

@@ -17,7 +17,7 @@ export default {
   name: 'service',
 
   computed: {
-    serviceList() {
+    serviceList () {
       return this.$store.state.serviceList
     }
   },

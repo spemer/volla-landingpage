@@ -35,7 +35,7 @@ export default {
   name: 'header-el',
 
   methods: {
-    dlWait() {
+    dlWait () {
       alert('어플이 4월 중으로 곧 출시됩니다. 조금만 기다려주세요!')
     }
   },

@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import { globalVar } from '@/globalVar'
 import DownloadBtn from '@/components/misc/DownloadBtn'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'hero',

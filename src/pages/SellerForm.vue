@@ -76,43 +76,43 @@ export default {
 
   computed: {
     sellerForm_List: {
-      get() {
+      get () {
         return this.$store.state.sellerForm_List
       },
-      set(value) {
+      set (value) {
         this.$store.commit('UpdateSellerFormList', value)
       },
     },
 
     sellerForm_CategoryValue: {
-      get() {
+      get () {
         return this.$store.state.sellerForm_CategoryValue
       },
-      set(value) {
+      set (value) {
         this.$store.commit('UpdateSellerFormCategoryValue', value)
       },
     },
 
     sellerForm_Details: {
-      get() {
+      get () {
         return this.$store.state.sellerForm_Details
       },
-      set(value) {
+      set (value) {
         this.$store.commit('UpdateSellerFormDetails', value)
       },
     },
 
-    sellerForm_Category() { return this.$store.state.sellerForm_Category },
+    sellerForm_Category () { return this.$store.state.sellerForm_Category },
 
   },
 
   methods: {
-    checkCategoryValue() {
+    checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
     },
 
-    sendPost() {
+    sendPost () {
       let baseURI = globalVar.requestSellerUrl
 
       axios.post(baseURI,
