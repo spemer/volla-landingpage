@@ -24,10 +24,9 @@
 
         router-link.global__cta--link(
           :to="'/sellerform'"
-          target="_blank"
         )
           button.global__cta--btn.form(
-            v-tooltip.bottom="{content: '입점신청하기(새 창)', delay: {show: 500, hide: 100}}"
+            v-tooltip.bottom="{content: '입점신청하기', delay: {show: 500, hide: 100}}"
           ) 입점신청하기
 </template>
 
