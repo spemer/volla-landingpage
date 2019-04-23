@@ -88,7 +88,22 @@ $mobile-width: 288px;
           }
 
           input[type='radio'] {
-            display: none;
+            height: 0 !important;
+            width: 0 !important;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+            -ms-filter: "alpha(opacity=0)" !important;
+            filter: alpha(opacity=0) !important;
+            -webkit-opacity: 0 !important;
+            -khtml-opacity: 0 !important;
+            -moz-opacity: 0 !important;
+            -ms-opacity: 0 !important;
+            -o-opacity: 0 !important;
+            opacity: 0 !important;
+            -webkit-appearance: none !important;
+            -khtml-appearance: none !important;
+            -moz-appearance: none !important;
+            -ms-appearance: none !important;
+            -o-appearance: none !important;
           }
 
           input[type='radio']:checked+label {

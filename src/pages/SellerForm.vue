@@ -42,6 +42,7 @@
               )
               label.sellerform__form--label(
                 :for="category.id"
+                :name="category.name"
                 :class="category.class"
                 v-model="sellerForm_CategoryValue.value"
               ) {{ category.buttonText }}

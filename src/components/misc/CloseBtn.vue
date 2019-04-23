@@ -4,6 +4,7 @@
       @click="closeWindow"
     )
       button.global__cta--btn(
+        type="button"
       ) 창 닫기
 </template>
 
