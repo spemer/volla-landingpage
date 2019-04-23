@@ -114,6 +114,22 @@ span {
   background-color: transparent !important;
 }
 
+::-webkit-input-placeholder {
+  color: $black38;
+}
+
+::-moz-placeholder {
+  color: $black38;
+}
+
+::-ms-placeholder {
+  color: $black38;
+}
+
+::placeholder {
+  color: $black38;
+}
+
 button {
   border: none;
   outline: none;

@@ -54,6 +54,8 @@
             :placeholder="sellerForm_Details.placeholder"
           )
 
+        p.sellerform__form--condition * 입점 시 판매를 위한 사업자등록, 통신판매업 신고 등이 필요할 수 있습니다.
+
         button.sellerform__form--submit(
           name="sellerform__form"
           @click="checkCategoryValue"

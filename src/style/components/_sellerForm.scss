@@ -4,7 +4,7 @@ $mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid24x 0 $grid32x;
+  padding: $grid32x 0 $grid32x;
 
   .sellerform__form--subtitle {
     font-weight: 300;
@@ -17,6 +17,14 @@ $mobile-width: 288px;
         color: $brand-pink;
       }
     }
+  }
+
+  .sellerform__form--condition {
+    color: $black38;
+    text-align: left;
+    margin-top: -#{$grid8x};
+    margin-bottom: $grid24x;
+    @include font-size($grid3x);
   }
 
   .sellerform__form--form {
@@ -114,7 +122,7 @@ $mobile-width: 288px;
         &.textarea {
           resize: none;
           height: $grid32x;
-          padding-top: $grid2x;
+          padding-top: $grid4x;
           @include line-height($grid4x);
         }
 
@@ -130,15 +138,6 @@ $mobile-width: 288px;
         &::selection {
           color: #fff !important;
           background-color: $brand-pink !important;
-        }
-
-        &::placeholder,
-        &::-o-placeholder,
-        &::-moz-placeholder,
-        &:-ms-input-placeholder,
-        &::-ms-input-placeholder,
-        &::-webkit-input-placeholder {
-          color: $black24;
         }
       }
     }
