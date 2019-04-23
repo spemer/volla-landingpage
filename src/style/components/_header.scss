@@ -48,7 +48,7 @@
         display: inline-block;
         @include font-size($grid4x);
         @include line-height($grid4x);
-        @include transition(all 0.25s ease);
+        @include transition(opacity 0.25s ease);
 
         &.join {
           font-weight: 700;

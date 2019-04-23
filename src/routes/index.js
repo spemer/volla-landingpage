@@ -53,5 +53,11 @@ export default new VueRouter({
       path: '/app',
       component: RedirectDL,
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    };
+  },
 })
