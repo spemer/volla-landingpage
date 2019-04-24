@@ -2,10 +2,10 @@
   div#downloadBtn
     div.download__badge.if__mobile--false
       a.download__badge--link(
-        @click="dlWait"
         v-for="(value, key) in badges"
         :key="key"
         target="_blank"
+        @click="value.dlWait"
         v-tooltip.bottom="{content: key + ' ' + value.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
       )
         //- :href="value.href"
@@ -16,8 +16,8 @@
 
     div.download__badge.if__mobile--true
       a.download__badge--link(
-        @click="dlWait"
         target="_blank"
+        @click="badgesMobile.dlWait"
         v-tooltip.bottom="{content: badgesMobile.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
       )
         //- :href="badgesMobile.href"
@@ -30,12 +30,6 @@
 <script>
 export default {
   name: 'DownloadBtn',
-
-  methods: {
-    dlWait () {
-      alert('어플이 5월 중으로 곧 출시됩니다. 조금만 기다려주세요!')
-    }
-  },
 
   data () {
     return {

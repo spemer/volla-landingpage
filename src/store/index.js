@@ -20,12 +20,18 @@ export default new Vuex.Store({
         title: 'Google Play',
         class: 'fa-google-play',
         href: globalVar.androidStore,
+        dlWait: function () {
+          window.open(globalVar.androidStore, '_blank')
+        },
       },
       iOS: {
         src: '/src/assets/dist/appstore.png',
         title: 'App Store',
         class: 'fa-apple',
         href: globalVar.iosStore,
+        dlWait: function () {
+          alert('아이폰용 어플이 5월 중으로 곧 출시됩니다. 조금만 기다려주세요!')
+        },
       },
     },
 

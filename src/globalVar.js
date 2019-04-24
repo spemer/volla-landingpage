@@ -24,7 +24,7 @@ export const globalVar = new Vue({
     ceoWebsiteUrl: 'https://volla.live/admin',
     sellerRequestUrl: 'https://forms.gle/vrSC9rELrEoYutdN8',
     iosStore: '#',
-    androidStore: '#',
+    androidStore: 'https://play.google.com/store/apps/details?id=com.riversouthfive.volla',
 
     facebookUrl: 'https://facebook.com/vollaofficial/',
     instagramUrl: 'https://www.instagram.com/volla_official/',
