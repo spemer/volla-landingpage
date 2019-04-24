@@ -118,13 +118,13 @@ export default {
 
       axios.post(baseURI,
         {
-          email: this.sellerForm_List[0].value,
-          name: this.sellerForm_List[1].value,
-          contact: this.sellerForm_List[2].value,
-          site: this.sellerForm_List[3].value,
-          sns: this.sellerForm_List[4].value,
-          apply_categories: this.sellerForm_CategoryValue.value,
-          details: this.sellerForm_Details.value,
+          email: this.sellerForm_List[0].value.trim(),
+          name: this.sellerForm_List[1].value.trim(),
+          contact: this.sellerForm_List[2].value.trim(),
+          site: this.sellerForm_List[3].value.trim(),
+          sns: this.sellerForm_List[4].value.trim(),
+          apply_categories: this.sellerForm_CategoryValue.value.trim(),
+          details: this.sellerForm_Details.value.trim(),
         },
         {
           headers: {
@@ -135,7 +135,7 @@ export default {
       )
       .then(res => { console.log(res.data) })
 
-      alert(this.$store.state.sellerForm_List[1].value
+      alert(this.sellerForm_List[1].value.trim()
         + ' 님의 입점신청이 정상적으로 접수되었습니다.'
         + '\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
     },
