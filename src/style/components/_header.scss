@@ -59,10 +59,6 @@
           @include transform(translateY(63%));
         }
 
-        &:hover {
-          opacity: 0.5;
-        }
-
         &:first-child {
           margin-right: $grid8x;
 

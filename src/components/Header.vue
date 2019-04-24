@@ -19,12 +19,10 @@
         router-link.header__right--text.join(
           v-if="this.$route.path === '/'"
           :to="'/sellerform'"
-          v-tooltip.bottom="{content: '입점신청하기', delay: {show: 500, hide: 100}}"
         ) 입점신청
         router-link.header__right--text.home(
           v-if="this.$route.path === '/sellerform'"
           :to="'/'"
-          v-tooltip.bottom="{content: '볼라 홈페이지', delay: {show: 500, hide: 100}}"
         ) 홈페이지
 </template>
 
