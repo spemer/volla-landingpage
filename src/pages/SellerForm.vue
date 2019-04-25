@@ -2,7 +2,7 @@
   div#sellerForm
     div.container
       h1.sellerform__form--title 셀러 입점신청서
-      p.sellerform__form--subtitle Volla 셀러(판매자)용 입점 신청서입니다.
+      p.sellerform__form--subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
         span 는 필수 입력 항목입니다.
 
       form.sellerform__form--form(
@@ -70,6 +70,12 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'sellerForm',
 
+  data () {
+    return {
+      serviceKo: globalVar.serviceKo,
+    }
+  },
+
   metaInfo: {
     title: globalVar.serviceEn + ' - ' + globalVar.sellerForm,
     titleTemplate: '%s',
@@ -111,47 +117,38 @@ export default {
     checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
-      // else if (
-      //   this.sellerForm_List[0].value &&
-      //   this.sellerForm_List[1].value &&
-      //   this.sellerForm_List[2].value &&
-      //   this.sellerForm_CategoryValue.value
-      // ) this.clearForm()
+      else if (
+        this.sellerForm_List[0].value &&
+        this.sellerForm_List[1].value &&
+        this.sellerForm_List[2].value &&
+        this.sellerForm_CategoryValue.value
+      ) { this.$router.push('/submit') }
     },
 
-    // clearForm() {
-    //   for (let i = 0; i < this.sellerForm_List.length; i++) {
-    //     this.sellerForm_List[i].value = null
-    //   }
-    //   this.sellerForm_CategoryValue.value = null,
-    //   this.sellerForm_Details.value = null
-    // },
-
     sendPost () {
-      let baseURI = globalVar.requestSellerUrl
+      const baseURI = globalVar.requestSellerUrl
 
       axios.post(baseURI,
-        {
-          email: this.sellerForm_List[0].value,
-          name: this.sellerForm_List[1].value,
-          contact: this.sellerForm_List[2].value,
-          site: this.sellerForm_List[3].value,
-          sns: this.sellerForm_List[4].value,
-          apply_categories: this.sellerForm_CategoryValue.value,
-          details: this.sellerForm_Details.value,
-        },
-        {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          }
-        },
+        // {
+        //   email: this.sellerForm_List[0].value,
+        //   name: this.sellerForm_List[1].value,
+        //   contact: this.sellerForm_List[2].value,
+        //   site: this.sellerForm_List[3].value,
+        //   sns: this.sellerForm_List[4].value,
+        //   apply_categories: this.sellerForm_CategoryValue.value,
+        //   details: this.sellerForm_Details.value,
+        // },
+        // {
+        //   headers: {
+        //     'Accept': 'application/json',
+        //     'Content-Type': 'application/json',
+        //   }
+        // },
       )
-      .then(res => { console.log(res.data) })
 
-      alert(this.sellerForm_List[1].value
-        + ' 님의 입점신청이 정상적으로 접수되었습니다.'
-        + '\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
+      // alert(this.sellerForm_List[1].value
+      //   + ' 님의 입점신청이 정상적으로 접수되었습니다.'
+      //   + '\n빠른 시일 내로 안내 메일을 발송해드리겠습니다.')
     },
 
   },

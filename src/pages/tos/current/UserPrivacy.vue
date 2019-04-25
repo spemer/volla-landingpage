@@ -186,15 +186,10 @@
 
       h3 부칙
       p 이 약관은 {{ tosVars.tosDateNow }}부터 적용됩니다.
-
-
-    div.global__cta
-      CloseBtn
 </template>
 
 <script>
 import Header from '@/components/Header'
-import CloseBtn from '@components/misc/CloseBtn'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -216,7 +211,6 @@ export default {
   },
 
   components: {
-    CloseBtn,
     Header,
   },
 

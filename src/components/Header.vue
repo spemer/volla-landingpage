@@ -21,7 +21,7 @@
           :to="'/sellerform'"
         ) 입점신청
         router-link.header__right--text.home(
-          v-if="this.$route.path === '/sellerform'"
+          v-if="this.$route.path !== '/'"
           :to="'/'"
         ) 홈페이지
 </template>

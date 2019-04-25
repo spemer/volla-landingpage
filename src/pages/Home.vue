@@ -1,32 +1,23 @@
 <template lang="pug">
   div#home
-    Hero
-    Service
-    EasyStart.section__each
-    Download.section__each
-    JoinUs.section__each
+    Header
+    router-view
+    Footer
     Kakao
 </template>
 
 <script>
-import Hero from '@/components/Hero'
-import Service from '@/components/Service'
-import EasyStart from '@/components/EasyStart'
-import Download from '@/components/Download'
-import JoinUs from '@/components/JoinUs'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Kakao from '@/components/misc/Kakao'
 
 export default {
   name: 'home',
 
   components: {
-    Hero,
-    Service,
-    EasyStart,
-    Download,
-    JoinUs,
+    Header,
+    Footer,
     Kakao,
   },
-
 }
 </script>

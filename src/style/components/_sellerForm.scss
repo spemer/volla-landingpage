@@ -2,6 +2,19 @@ $width: 480px;
 $pablet-width: 320px;
 $mobile-width: 288px;
 
+.sbmt {
+  width: $width;
+  margin: 0 auto;
+
+  @media #{$pablet} {
+    width: $pablet-width;
+  }
+
+  @media #{$mobile} {
+    width: $mobile-width;
+  }
+}
+
 #sellerForm {
   text-align: center;
   padding: $grid24x 0 $grid32x;
