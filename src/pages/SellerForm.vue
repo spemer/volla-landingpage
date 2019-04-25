@@ -109,25 +109,23 @@ export default {
 
   methods: {
     checkCategoryValue () {
-      let getRequired = document.querySelectorAll('input[required]')
-
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
-      else if (
-        this.sellerForm_List[0].value &&
-        this.sellerForm_List[1].value &&
-        this.sellerForm_List[2].value &&
-        this.sellerForm_CategoryValue.value
-      ) this.clearForm()
+      // else if (
+      //   this.sellerForm_List[0].value &&
+      //   this.sellerForm_List[1].value &&
+      //   this.sellerForm_List[2].value &&
+      //   this.sellerForm_CategoryValue.value
+      // ) this.clearForm()
     },
 
-    clearForm() {
-      for (let i = 0; i < this.sellerForm_List.length; i++) {
-        this.sellerForm_List[i].value = null
-      }
-      this.sellerForm_CategoryValue.value = null,
-      this.sellerForm_Details.value = null
-    },
+    // clearForm() {
+    //   for (let i = 0; i < this.sellerForm_List.length; i++) {
+    //     this.sellerForm_List[i].value = null
+    //   }
+    //   this.sellerForm_CategoryValue.value = null,
+    //   this.sellerForm_Details.value = null
+    // },
 
     sendPost () {
       let baseURI = globalVar.requestSellerUrl
