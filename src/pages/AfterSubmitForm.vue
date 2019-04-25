@@ -72,7 +72,6 @@ export default {
       },
     },
 
-
     sellerForm_Category () {
       return this.$store.state.sellerForm_Category
     },

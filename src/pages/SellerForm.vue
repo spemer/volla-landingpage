@@ -113,13 +113,8 @@ export default {
       return this.$store.state.sellerForm_Category
     },
 
-    tokenState: {
-      get () {
-        return this.$store.state.tokenState
-      },
-      set () {
-        this.$store.commit('setTokenTrue')
-      }
+    tokenState () {
+      return this.$store.state.tokenState
     },
 
   },
