@@ -20,6 +20,11 @@
           p.sellerform__form--title.text 호스트 지원 희망여부
             span.value {{ sellerForm_CategoryValue.value }}
 
+          p.sellerform__form--title.text(
+            v-if="sellerForm_Details.value"
+          ) {{ sellerForm_Details.text }}
+            span.value {{ sellerForm_Details.value }}
+
         router-link.global__cta(
           :to="'/'"
         )

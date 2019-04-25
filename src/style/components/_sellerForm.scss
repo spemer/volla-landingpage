@@ -29,6 +29,7 @@ $mobile-width: 288px;
           color: $black54;
           font-weight: 400;
           margin-top: $grid2x;
+          word-wrap: break-word;
           @include font-size($grid4x);
         }
       }
