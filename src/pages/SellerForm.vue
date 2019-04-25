@@ -133,9 +133,8 @@ export default {
 
     sendPost () {
       const baseURI = globalVar.requestSellerUrl
-      const testUrl = globalVar.testUrl
 
-      axios.post(testUrl,
+      axios.post(baseURI,
       {
         email: this.sellerForm_List[0].value,
         name: this.sellerForm_List[1].value,
