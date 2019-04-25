@@ -109,7 +109,18 @@ export default {
       },
     },
 
-    sellerForm_Category () { return this.$store.state.sellerForm_Category },
+    sellerForm_Category () {
+      return this.$store.state.sellerForm_Category
+    },
+
+    tokenState: {
+      get () {
+        return this.$store.state.tokenState
+      },
+      set () {
+        this.$store.commit('setTokenTrue')
+      }
+    },
 
   },
 
@@ -122,29 +133,41 @@ export default {
         this.sellerForm_List[1].value &&
         this.sellerForm_List[2].value &&
         this.sellerForm_CategoryValue.value
-      ) { this.$router.push('/submit') }
+      ) { this.$store.state.tokenState = true }
     },
 
     sendPost () {
       const baseURI = globalVar.requestSellerUrl
+      const testUrl = globalVar.testUrl
 
-      axios.post(baseURI,
-        {
-          email: this.sellerForm_List[0].value,
-          name: this.sellerForm_List[1].value,
-          contact: this.sellerForm_List[2].value,
-          site: this.sellerForm_List[3].value,
-          sns: this.sellerForm_List[4].value,
-          apply_categories: this.sellerForm_CategoryValue.value,
-          details: this.sellerForm_Details.value,
-        },
-        {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          }
-        },
+      axios.post(testUrl,
+      {
+        email: this.sellerForm_List[0].value,
+        name: this.sellerForm_List[1].value,
+        contact: this.sellerForm_List[2].value,
+        site: this.sellerForm_List[3].value,
+        sns: this.sellerForm_List[4].value,
+        apply_categories: this.sellerForm_CategoryValue.value,
+        details: this.sellerForm_Details.value,
+      },
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        }
+      }
       )
+      .then(response => {
+        this.$store.state.tokenState = true
+        // alert('response: ' + this.tokenState)
+        console.log(response.data)
+        this.$router.push('/submit')
+      })
+      .catch(error => {
+        this.$store.state.tokenState = false
+        alert('오류입니다. 다시 시도해주세요!' + '\n' + error + '\nToken: ' + this.tokenState )
+        console.warn(error)
+      })
     },
 
   },

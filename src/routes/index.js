@@ -19,12 +19,9 @@ import CeoService from '@/pages/tos/current/CeoService'
 
 import RedirectDL from '@/pages/RedirectDL'
 
-function requireAuth(to, from, next) {
+function requireToken(to, from, next) {
   if (
-    store.state.sellerForm_List[0].value &&
-    store.state.sellerForm_List[1].value &&
-    store.state.sellerForm_List[2].value &&
-    store.state.sellerForm_CategoryValue.value
+    store.state.tokenState === true
   ) {
     return next()
   }
@@ -54,7 +51,7 @@ export default new VueRouter({
           path: '/submit',
           name: 'afterSubmitForm',
           component: AfterSubmitForm,
-          beforeEnter: requireAuth,
+          beforeEnter: requireToken,
         },
       ]
     },

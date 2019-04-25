@@ -45,20 +45,54 @@ export default {
   },
 
   computed: {
-    sellerForm_List () {
-      return this.$store.state.sellerForm_List
+    sellerForm_List: {
+      get () {
+        return this.$store.state.sellerForm_List
+      },
+      set (value) {
+        this.$store.commit('UpdateSellerFormList', value)
+      },
     },
 
-    sellerForm_CategoryValue () {
-      return this.$store.state.sellerForm_CategoryValue
+    sellerForm_CategoryValue: {
+      get () {
+        return this.$store.state.sellerForm_CategoryValue
+      },
+      set (value) {
+        this.$store.commit('UpdateSellerFormCategoryValue', value)
+      },
     },
 
-    sellerForm_Details () {
-      return this.$store.state.sellerForm_Details
+    sellerForm_Details: {
+      get () {
+        return this.$store.state.sellerForm_Details
+      },
+      set (value) {
+        this.$store.commit('UpdateSellerFormDetails', value)
+      },
     },
 
-    sellerForm_Category () { return this.$store.state.sellerForm_Category },
 
+    sellerForm_Category () {
+      return this.$store.state.sellerForm_Category
+    },
+
+    tokenState () {
+      return this.$store.state.tokenState
+    },
+
+  },
+
+  destroyed () {
+    this.sellerForm_List[0].value = '',
+    this.sellerForm_List[1].value = '',
+    this.sellerForm_List[2].value = '',
+    this.sellerForm_List[3].value = '',
+    this.sellerForm_List[4].value = '',
+    this.sellerForm_CategoryValue.value = '',
+    this.sellerForm_Details.value = ''
+
+    return this.$store.state.tokenState = false
   },
 
 }

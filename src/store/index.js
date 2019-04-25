@@ -190,6 +190,8 @@ export default new Vuex.Store({
       placeholder: '기타 문의사항을 적어주세요.',
     },
 
+    tokenState: false,
+
   },
 
   getters: {
