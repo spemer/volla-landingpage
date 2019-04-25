@@ -32,6 +32,7 @@
           :key="key"
           target="_blank"
           :href="value[0]"
+          :title="'볼라 ' + value[2] + '(새 창)'"
         )
           i.footer__sns--logo.fab(
             :class="value[1]"

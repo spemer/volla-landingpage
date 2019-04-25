@@ -92,11 +92,17 @@
       display: inline-block;
 
       .footer__sns--logo {
-        padding: 0 $grid4x $grid2x 0;
+        margin: $grid2x;
+        padding: $grid2x;
+        margin-bottom: $grid4x;
         @include transition(all 0.25s ease);
 
+        &:hover {
+          color: $black54;
+        }
+
         &.fa-facebook-square {
-          margin-right: $grid4x;
+          margin-left: -#{$grid2x};
 
           &:hover {
             color: $facebook;
@@ -104,8 +110,6 @@
         }
 
         &.fa-instagram {
-          // padding-left: $grid4x;
-
           &:hover {
             color: $instagram;
           }

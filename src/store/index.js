@@ -85,10 +85,22 @@ export default new Vuex.Store({
       facebook: [
         globalVar.facebookUrl,
         'fa-facebook-square',
+        '페이스북',
       ],
       instagram: [
         globalVar.instagramUrl,
         'fa-instagram',
+        '인스타그램',
+      ],
+      android: [
+        globalVar.androidStore,
+        'fa-google-play',
+        '구글 플레이 다운받기',
+      ],
+      appstore: [
+        globalVar.iosStore,
+        'fa-app-store-ios',
+        '앱 스토어 다운받기',
       ],
     },
 
