@@ -13,6 +13,27 @@ $mobile-width: 288px;
   @media #{$mobile} {
     width: $mobile-width;
   }
+
+  .sellerform__form--wrapper {
+    margin: $grid16x 0 $grid8x;
+
+    .sellerform__form--title {
+      &.text {
+        text-align: left;
+        font-weight: 900;
+        margin-bottom: $grid12x;
+        @include font-size($grid5x);
+
+        .value {
+          display: block;
+          color: $black54;
+          font-weight: 400;
+          margin-top: $grid2x;
+          @include font-size($grid4x);
+        }
+      }
+    }
+  }
 }
 
 #sellerForm {

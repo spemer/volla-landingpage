@@ -23,7 +23,7 @@
         router-link.header__right--text.home(
           v-if="this.$route.path !== '/'"
           :to="'/'"
-        ) 홈페이지
+        ) 메인으로
 </template>
 
 <script>
