@@ -5,7 +5,7 @@
       p.section__subtitle
         | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다.
         br
-        | 셀러 입점신청서를 작성하시려면 아래의 버튼을 클릭해주세요.
+        | 셀러 입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.
         br
         span.joinus__title--copyEmail(
           @click="toast"
