@@ -55,7 +55,7 @@
             :placeholder="sellerForm_Details.placeholder"
           )
 
-        p.sellerform__form--condition * 입점 시 판매를 위한 사업자등록, 통신판매업 신고 등이 필요할 수 있습니다.
+        p.sellerform__form--condition {{ sellerCondition }}
 
         button.sellerform__form--submit(
           name="sellerform__form"
@@ -73,6 +73,7 @@ export default {
   data () {
     return {
       serviceKo: globalVar.serviceKo,
+      sellerCondition: globalVar.sellerCondition,
     }
   },
 
@@ -159,7 +160,7 @@ export default {
       })
       .catch(error => {
         this.$store.state.tokenState = false
-        alert('오류입니다. 다시 시도해주세요!' + '\n' + error + '\nToken: ' + this.tokenState )
+        alert('오류입니다. 다시 시도해주세요!' + '\n' + error )
         console.warn(error)
       })
     },

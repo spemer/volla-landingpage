@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import Hero from '@/components/Hero'
-import Service from '@/components/Service'
-import EasyStart from '@/components/EasyStart'
-import Download from '@/components/Download'
-import JoinUs from '@/components/JoinUs'
+import Hero from '@/components/home/Hero'
+import Service from '@/components/home/Service'
+import EasyStart from '@/components/home/EasyStart'
+import Download from '@/components/home/Download'
+import JoinUs from '@/components/home/JoinUs'
 
 export default {
   name: 'homeView',

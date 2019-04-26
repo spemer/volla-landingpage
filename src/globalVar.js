@@ -16,6 +16,7 @@ export const globalVar = new Vue({
     tagline: '실시간 쇼핑 스트리밍',
     taglineLong: '라이브 방송으로 담는 오프라인 쇼핑',
     sellerForm: '셀러 입점신청',
+    sellerCondition: '* 입점 시 판매를 위한 사업자등록, 통신판매업 신고 등이 필요할 수 있습니다.',
 
     callTo: '+82-10-7422-8845',
     mailTo: 'ceo@volla.live',

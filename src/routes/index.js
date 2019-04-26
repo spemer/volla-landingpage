@@ -20,11 +20,8 @@ import CeoService from '@/pages/tos/current/CeoService'
 import RedirectDL from '@/pages/RedirectDL'
 
 function requireToken(to, from, next) {
-  if (
-    store.state.tokenState === true
-  ) {
+  if (store.state.tokenState === true)
     return next()
-  }
   next('/sellerform')
 }
 
@@ -34,6 +31,7 @@ export default new VueRouter({
       path: '*',
       redirect: '/'
     },
+
     {
       path: '/',
       component: Home,
@@ -55,6 +53,7 @@ export default new VueRouter({
         },
       ]
     },
+
     {
       path: '/tos',
       component: TosView,
@@ -80,11 +79,13 @@ export default new VueRouter({
         },
       ]
     },
+
     {
       path: '/app',
       component: RedirectDL,
     },
   ],
+
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
