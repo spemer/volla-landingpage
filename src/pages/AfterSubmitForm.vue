@@ -50,7 +50,7 @@ export default {
         return this.$store.state.sellerForm_List
       },
       set (value) {
-        this.$store.commit('UpdateSellerFormList', value)
+        this.$store.commit('UPDATE_FORM_LIST', value)
       },
     },
 
@@ -59,7 +59,7 @@ export default {
         return this.$store.state.sellerForm_CategoryValue
       },
       set (value) {
-        this.$store.commit('UpdateSellerFormCategoryValue', value)
+        this.$store.commit('UPDATE_FORM_CATEGORY', value)
       },
     },
 
@@ -68,7 +68,7 @@ export default {
         return this.$store.state.sellerForm_Details
       },
       set (value) {
-        this.$store.commit('UpdateSellerFormDetails', value)
+        this.$store.commit('UPDATE_FORM_DETAILS', value)
       },
     },
 
@@ -91,7 +91,7 @@ export default {
     this.sellerForm_CategoryValue.value = '',
     this.sellerForm_Details.value = ''
 
-    return this.$store.state.tokenState = false
+    return this.$store.commit('SET_TOKEN_BOOL', false)
   },
 
 }

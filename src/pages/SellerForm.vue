@@ -88,7 +88,7 @@ export default {
         return this.$store.state.sellerForm_List
       },
       set (value) {
-        this.$store.commit('UpdateSellerFormList', value)
+        this.$store.commit('UPDATE_FORM_LIST', value)
       },
     },
 
@@ -97,7 +97,7 @@ export default {
         return this.$store.state.sellerForm_CategoryValue
       },
       set (value) {
-        this.$store.commit('UpdateSellerFormCategoryValue', value)
+        this.$store.commit('UPDATE_FORM_CATEGORY', value)
       },
     },
 
@@ -106,7 +106,7 @@ export default {
         return this.$store.state.sellerForm_Details
       },
       set (value) {
-        this.$store.commit('UpdateSellerFormDetails', value)
+        this.$store.commit('UPDATE_FORM_DETAILS', value)
       },
     },
 
@@ -129,11 +129,12 @@ export default {
         this.sellerForm_List[1].value &&
         this.sellerForm_List[2].value &&
         this.sellerForm_CategoryValue.value
-      ) { this.$store.state.tokenState = true }
+      ) { this.$store.commit('SET_TOKEN_BOOL', true) }
     },
 
     sendPost () {
       const baseURI = globalVar.requestSellerUrl
+      // const testUrl = globalVar.testUrl
 
       axios.post(baseURI,
         {
@@ -153,13 +154,13 @@ export default {
         }
       )
       .then(response => {
-        this.$store.state.tokenState = true
+        this.$store.commit('SET_TOKEN_BOOL', true)
         // alert('response: ' + this.tokenState)
         console.log(response.data)
         this.$router.push('/submit')
       })
       .catch(error => {
-        this.$store.state.tokenState = false
+        this.$store.commit('SET_TOKEN_BOOL', false)
         alert('오류입니다. 다시 시도해주세요!' + '\n' + error)
         console.warn(error)
       })
