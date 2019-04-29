@@ -5,6 +5,7 @@
     EasyStart.section__each
     Download.section__each
     JoinUs.section__each
+    Kakao
 </template>
 
 <script>
@@ -13,6 +14,7 @@ import Service from '@/components/home/Service'
 import EasyStart from '@/components/home/EasyStart'
 import Download from '@/components/home/Download'
 import JoinUs from '@/components/home/JoinUs'
+import Kakao from '@/components/misc/Kakao'
 
 export default {
   name: 'homeView',
@@ -23,6 +25,7 @@ export default {
     EasyStart,
     Download,
     JoinUs,
+    Kakao,
   },
 
 }
