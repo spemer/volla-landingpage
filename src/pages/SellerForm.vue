@@ -129,7 +129,7 @@ export default {
         this.sellerForm_List[1].value &&
         this.sellerForm_List[2].value &&
         this.sellerForm_CategoryValue.value
-        ) { this.$store.commit('SET_TOKEN_BOOL', true) }
+      ) { this.$store.commit('SET_TOKEN_BOOL', true) }
     },
 
     start ()       { this.$Progress.start() },

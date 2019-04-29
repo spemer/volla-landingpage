@@ -41,6 +41,10 @@ $mobile-width: 288px;
   text-align: center;
   padding: $grid24x 0 $grid32x;
 
+  @media #{$mobile} {
+    margin: $grid20x 0 $grid24x;
+  }
+
   .sellerform__form--subtitle {
     font-weight: 300;
 
@@ -75,6 +79,7 @@ $mobile-width: 288px;
 
     @media #{$mobile} {
       width: $mobile-width;
+      margin-top: $grid16x;
     }
 
     .sellerform__form--title {
