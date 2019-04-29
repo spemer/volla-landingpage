@@ -12,15 +12,21 @@ import VTooltip from 'v-tooltip'
 import Toasted from 'vue-toasted'
 import VueScrollTo from 'vue-scrollto'
 import VueClipboard from 'vue-clipboard2'
+import VueProgressBar from 'vue-progressbar'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
+Kakao.init(process.env.KAKAO_KEY)
 
 Vue.use(Toasted)
 Vue.use(VTooltip)
 Vue.use(VueScrollTo)
 Vue.use(VueClipboard)
-Kakao.init(process.env.KAKAO_KEY)
+Vue.use(VueProgressBar, {
+  color: 'rgb(255, 121, 172)',
+  failedColor: 'rgb(255, 121, 172)',
+  height: '4px'
+})
 
 new Vue({
   el: '#app',

@@ -1,6 +1,7 @@
 <template lang="pug">
   div#app
     router-view
+    vue-progress-bar
 </template>
 
 <script>

@@ -129,10 +129,19 @@ export default {
         this.sellerForm_List[1].value &&
         this.sellerForm_List[2].value &&
         this.sellerForm_CategoryValue.value
-      ) { this.$store.commit('SET_TOKEN_BOOL', true) }
+        ) { this.$store.commit('SET_TOKEN_BOOL', true) }
     },
 
+    start ()       { this.$Progress.start() },
+    set (num)      { this.$Progress.set(num) },
+    increase (num) { this.$Progress.increase(num) },
+    decrease (num) { this.$Progress.decrease(num) },
+    finish ()      { this.$Progress.finish() },
+    fail ()        { this.$Progress.fail() },
+
     sendPost () {
+      this.$Progress.start()
+
       const baseURI = globalVar.requestSellerUrl
       // const testUrl = globalVar.testUrl
 
@@ -154,14 +163,16 @@ export default {
         }
       )
       .then(response => {
+        this.$Progress.finish()
         this.$store.commit('SET_TOKEN_BOOL', true)
         // alert('response: ' + this.tokenState)
         console.log(response.data)
         this.$router.push('/submit')
       })
       .catch(error => {
+        this.$Progress.fail()
         this.$store.commit('SET_TOKEN_BOOL', false)
-        alert('오류입니다. 다시 시도해주세요!' + '\n' + error)
+        alert('오류입니다. 다시 시도해주세요!\n' + error)
         console.warn(error)
       })
     },
