@@ -42,7 +42,7 @@ $mobile-width: 288px;
   padding: $grid24x 0 $grid32x;
 
   @media #{$mobile} {
-    margin: $grid20x 0 $grid24x;
+    padding: $grid20x 0 $grid24x;
   }
 
   .sellerform__form--subtitle {
