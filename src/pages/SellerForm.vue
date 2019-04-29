@@ -68,7 +68,7 @@ import axios from 'axios'
 import { globalVar } from '@/globalVar'
 
 export default {
-  name: 'sellerForm',
+  name: 'seller-form',
 
   data () {
     return {
@@ -132,12 +132,12 @@ export default {
       ) { this.$store.commit('SET_TOKEN_BOOL', true) }
     },
 
-    start ()       { this.$Progress.start() },
-    set (num)      { this.$Progress.set(num) },
+    start () { this.$Progress.start() },
+    set (num) { this.$Progress.set(num) },
     increase (num) { this.$Progress.increase(num) },
     decrease (num) { this.$Progress.decrease(num) },
-    finish ()      { this.$Progress.finish() },
-    fail ()        { this.$Progress.fail() },
+    finish () { this.$Progress.finish() },
+    fail () { this.$Progress.fail() },
 
     sendPost () {
       this.$Progress.start()
@@ -160,7 +160,7 @@ export default {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
           }
-        }
+        },
       )
       .then(response => {
         this.$Progress.finish()
