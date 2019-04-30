@@ -44,6 +44,7 @@
                 :for="category.id"
                 :name="category.name"
                 :class="category.class"
+                :title="category.buttonText"
                 v-model="sellerForm_CategoryValue.value"
               ) {{ category.buttonText }}
 
