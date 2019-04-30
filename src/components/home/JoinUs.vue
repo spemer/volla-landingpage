@@ -10,7 +10,7 @@
         span.joinus__title--copyEmail(
           @click="toast"
           v-clipboard:copy="mailTo"
-          v-tooltip.bottom="{content: '이메일 주소를 복사하려면 클릭하세요', delay: {show: 500, hide: 100}}"
+          title="이메일 주소를 복사하려면 클릭하세요"
         ) 이메일 주소 복사하기
           i.far.fa-copy
 
@@ -19,14 +19,14 @@
           :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
         )
           button.global__cta--btn.mailto(
-            v-tooltip.bottom="{content: '메일 앱 열기(새 창)', delay: {show: 500, hide: 100}}"
+            title="메일 앱 열기(새 창)"
           ) 메일로 문의하기
 
         router-link.global__cta--link(
           :to="'/sellerform'"
         )
           button.global__cta--btn.form(
-            v-tooltip.bottom="{content: '입점신청하기', delay: {show: 500, hide: 100}}"
+            title="입점신청하기"
           ) 입점신청하기
 </template>
 

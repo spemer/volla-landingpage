@@ -58,22 +58,22 @@ export default new VueRouter({
       path: '/tos',
       component: TosView,
       children: [{
-          path: '/tos/user/privacy',
+          path: 'user/privacy',
           name: 'privacy',
           component: UserPrivacy,
         },
         {
-          path: '/tos/user/service',
+          path: 'user/service',
           name: 'UserService',
           component: UserService,
         },
         {
-          path: '/tos/ceo/privacy',
+          path: 'ceo/privacy',
           name: 'CeoPrivacy',
           component: CeoPrivacy,
         },
         {
-          path: '/tos/ceo/service',
+          path: 'ceo/service',
           name: 'CeoService',
           component: CeoService,
         },

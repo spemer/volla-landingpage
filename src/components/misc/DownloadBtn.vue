@@ -6,7 +6,7 @@
         :key="key"
         target="_blank"
         @click="value.dlWait"
-        v-tooltip.bottom="{content: key + ' ' + value.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
+        :title="key + ' ' + value.title + '에서 다운받기'"
       )
         //- :href="value.href"
         img.download__badge--each(
@@ -18,7 +18,7 @@
       a.download__badge--link(
         target="_blank"
         @click="badgesMobile.dlWait"
-        v-tooltip.bottom="{content: badgesMobile.title + '에서 다운받기', delay: {show: 500, hide: 100}}"
+        :title="badgesMobile.title + '에서 다운받기'"
       )
         //- :href="badgesMobile.href"
         img.download__badge--each(
