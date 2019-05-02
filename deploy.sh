@@ -14,7 +14,7 @@ echo "============================================================"
 dev_or_deploy() {
   while true; do
     printf "\n"
-    read -p "${BOLD}${GREEN}Run dev server(R) or Deploy directly?(D) ${RESET}" rd
+    read -p "${BOLD}${GREEN}Run dev server (R) or Deploy directly? (D) ${RESET}" rd
     case ${rd} in
       [Rr]* )
         image_resizer
@@ -25,7 +25,14 @@ dev_or_deploy() {
         git_push
         break;;
 
-      [Dd]* ) npm run build && firebase deploy; break;;
+      [Dd]* )
+        printf "\n"
+        echo "${BOLD}${GREEN}npm run build${RESET}"
+        npm run build;
+        printf "\n"
+        echo "${BOLD}${GREEN}firebase deploy${RESET}"
+        firebase deploy;
+        break;;
       * ) echo "Please answer R(un) or D(eploy).";;
     esac
   done
@@ -41,7 +48,7 @@ image_resizer() {
     case ${yn} in
       [Yy]* )
         trap 'echo Stop gulp-watch' SIGINT
-        sudo gulp watch
+        sudo gulp watch;
         trap SIGINT
         break;;
 
@@ -134,7 +141,11 @@ git_push() {
     read -p "${BOLD}${GREEN}git push? (Y/n) ${RESET}" yn
     case ${yn} in
       [Yy]* )
+        printf "\n"
+        echo "${BOLD}${GREEN}Push: GitLab${RESET}"
         git push origin;
+        printf "\n"
+        echo "${BOLD}${GREEN}Push: GitHub${RESET}"
         git push github;
         break;;
       [Nn]* ) return 0;;

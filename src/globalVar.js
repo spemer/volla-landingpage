@@ -22,8 +22,6 @@ export const globalVar = new Vue({
     mailTo: 'ceo@volla.live',
 
     websiteUrl: 'https://volla.live',
-    ceoWebsiteUrl: 'https://volla.live/admin',
-    sellerRequestUrl: 'https://forms.gle/vrSC9rELrEoYutdN8',
     iosStore: '#',
     androidStore: 'https://play.google.com/store/apps/details?id=com.riversouthfive.volla',
 
@@ -31,7 +29,6 @@ export const globalVar = new Vue({
     instagramUrl: 'https://www.instagram.com/volla_official/',
 
     requestSellerUrl: 'https://operator-apis.volla.live/requestSeller',
-    testUrl: 'http://jsonplaceholder.typicode.com/users',
 
     tosDateNow: '2019년 3월 26일',
 

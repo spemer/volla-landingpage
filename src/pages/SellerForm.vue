@@ -144,7 +144,6 @@ export default {
       this.$Progress.start()
 
       const baseURI = globalVar.requestSellerUrl
-      // const testUrl = globalVar.testUrl
 
       axios.post(baseURI,
         {
@@ -166,7 +165,6 @@ export default {
       .then(response => {
         this.$Progress.finish()
         this.$store.commit('SET_TOKEN_BOOL', true)
-        // alert('response: ' + this.tokenState)
         console.log(response.data)
         this.$router.push('/submit')
       })

@@ -291,10 +291,6 @@ export default {
     titleTemplate: '%s',
   },
 
-  components: {
-    Header,
-  },
-
   updated () {
     window.postMessage(document.title)
   },

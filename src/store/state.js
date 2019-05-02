@@ -99,7 +99,6 @@ const state = {
   // pages/tos
   tosVars: {
     companyNameFullKo: globalVar.companyNameFullKo,
-    ceoWebsiteUrl: globalVar.ceoWebsiteUrl,
     companyName: globalVar.companyName,
     companyCEO: globalVar.companyCEO,
     websiteUrl: globalVar.websiteUrl,
@@ -153,7 +152,7 @@ const state = {
   ],
 
   sellerForm_Category: [{
-      text: '호스트 지원 희망여부 선택',
+      text: '호스트 지원 희망여부',
       buttonText: '직접 방송',
       id: 'hostTrue',
       type: 'radio',

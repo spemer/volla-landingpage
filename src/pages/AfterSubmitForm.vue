@@ -17,7 +17,7 @@
             ) {{ list.text }}
               span.value {{ list.value }}
 
-          p.sellerform__form--title.text 호스트 지원 희망여부
+          p.sellerform__form--title.text {{ sellerForm_Category[0].text }}
             span.value {{ sellerForm_CategoryValue.value }}
 
           p.sellerform__form--title.text(
@@ -45,31 +45,16 @@ export default {
   },
 
   computed: {
-    sellerForm_List: {
-      get () {
-        return this.$store.state.sellerForm_List
-      },
-      set (value) {
-        this.$store.commit('UPDATE_FORM_LIST', value)
-      },
+    sellerForm_List () {
+      return this.$store.state.sellerForm_List
     },
 
-    sellerForm_CategoryValue: {
-      get () {
-        return this.$store.state.sellerForm_CategoryValue
-      },
-      set (value) {
-        this.$store.commit('UPDATE_FORM_CATEGORY', value)
-      },
+    sellerForm_CategoryValue () {
+      return this.$store.state.sellerForm_CategoryValue
     },
 
-    sellerForm_Details: {
-      get () {
-        return this.$store.state.sellerForm_Details
-      },
-      set (value) {
-        this.$store.commit('UPDATE_FORM_DETAILS', value)
-      },
+    sellerForm_Details () {
+      return this.$store.state.sellerForm_Details
     },
 
     sellerForm_Category () {
