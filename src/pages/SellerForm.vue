@@ -143,9 +143,9 @@ export default {
     sendPost () {
       this.$Progress.start()
 
-      const baseURI = globalVar.requestSellerUrl
+      const BASE_URI = globalVar.requestSellerUrl
 
-      axios.post(baseURI,
+      axios.post(BASE_URI,
         {
           email: this.sellerForm_List[0].value,
           name: this.sellerForm_List[1].value,

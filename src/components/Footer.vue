@@ -7,11 +7,11 @@
 
         p.footer__terms
           router-link.footer__terms--each(
-            :key="key"
-            :title="value[0]"
-            target="_blank"
-            :to="'tos/' + value[1]"
             v-for="(value, key) in tosList"
+            :key="key"
+            target="_blank"
+            :title="value[0]"
+            :to="'tos/' + value[1]"
           ) {{ value[0] }}
 
         p.footer__copyright--info

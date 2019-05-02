@@ -40,10 +40,6 @@ export default {
     return {
       mailTo: globalVar.mailTo,
       serviceKo: globalVar.serviceKo,
-      serviceEn: globalVar.serviceEn,
-      baseURI: globalVar.ceoWebsiteUrl,
-      companyMailTo: globalVar.companyMailTo,
-      sellerRequestUrl: globalVar.sellerRequestUrl,
     }
   },
 

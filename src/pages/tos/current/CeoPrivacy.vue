@@ -181,7 +181,6 @@
 </template>
 
 <script>
-import Header from '@/components/Header'
 import { globalVar } from '@/globalVar'
 
 export default {

@@ -59,7 +59,7 @@ export default new VueRouter({
       component: TosView,
       children: [{
           path: 'user/privacy',
-          name: 'privacy',
+          name: 'UserPrivacy',
           component: UserPrivacy,
         },
         {

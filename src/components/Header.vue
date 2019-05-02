@@ -40,11 +40,8 @@ export default {
 
   data () {
     return {
-      mailTo: globalVar.mailTo,
       tagline: globalVar.tagline,
       serviceKo: globalVar.serviceKo,
-      serviceEn: globalVar.serviceEn,
-      sellerRequestUrl: globalVar.sellerRequestUrl,
     }
   },
 
