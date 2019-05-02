@@ -68,11 +68,9 @@ export default {
   },
 
   destroyed () {
-    this.sellerForm_List[0].value = '',
-    this.sellerForm_List[1].value = '',
-    this.sellerForm_List[2].value = '',
-    this.sellerForm_List[3].value = '',
-    this.sellerForm_List[4].value = '',
+    [...this.sellerForm_List].forEach(list => {
+      list.value = ''
+    })
     this.sellerForm_CategoryValue.value = '',
     this.sellerForm_Details.value = ''
 

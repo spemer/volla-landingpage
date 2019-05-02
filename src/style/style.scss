@@ -1,6 +1,6 @@
 @charset 'UTF-8';
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
+// modules
 @import './modules/spoqa',
 './modules/grid',
 './modules/color',
@@ -8,12 +8,15 @@
 './modules/global',
 './modules/layout',
 './modules/class',
-'./modules/tos',
 './modules/tooltip';
 
-@import './components/home',
-'./components/sellerForm',
-'./components/header',
+// pages
+@import './pages/home',
+'./pages/sellerForm',
+'./pages/tos';
+
+// components
+@import './components/header',
 './components/footer',
 './components/hero',
 './components/service',
@@ -21,7 +24,7 @@
 './components/download',
 './components/joinUs';
 
-
+// misc
 @import './components/misc/kakao',
 './components/misc/downloadBtn',
 './components/misc/closeBtn';

@@ -142,10 +142,10 @@ git_push() {
     case ${yn} in
       [Yy]* )
         printf "\n"
-        echo "${BOLD}${GREEN}Push: GitLab${RESET}"
+        echo "${BOLD}Push: GitLab${RESET}"
         git push origin;
         printf "\n"
-        echo "${BOLD}${GREEN}Push: GitHub${RESET}"
+        echo "${BOLD}Push: GitHub${RESET}"
         git push github;
         break;;
       [Nn]* ) return 0;;
