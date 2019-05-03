@@ -144,6 +144,7 @@ export default {
       this.$Progress.start()
 
       const BASE_URI = globalVar.requestSellerUrl
+      // const TEST_URI = globalVar.testUrl
 
       axios.post(BASE_URI,
         {
