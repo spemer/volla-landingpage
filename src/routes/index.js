@@ -10,6 +10,7 @@ import Home from '@/pages/Home'
 import HomeView from '@/pages/HomeView'
 import SellerForm from '@/pages/SellerForm'
 import AfterSubmitForm from '@/pages/AfterSubmitForm'
+import Microsite from '@/pages/Microsite'
 
 import TosView from '@/pages/tos/TosView'
 import UserPrivacy from '@/pages/tos/current/UserPrivacy'
@@ -54,6 +55,11 @@ export default new VueRouter({
           name: 'afterSubmitForm',
           component: AfterSubmitForm,
           beforeEnter: requireToken,
+        },
+        {
+          path: '/seller',
+          name: 'microsite',
+          component: Microsite,
         },
       ]
     },

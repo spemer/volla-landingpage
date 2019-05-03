@@ -1,4 +1,5 @@
-#service {
+#service,
+#benefits {
   overflow-y: hidden;
   padding-top: $grid16x;
   padding-bottom: $grid8x;
@@ -58,7 +59,7 @@
       }
 
       .service__card--title {
-        font-weight: 600;
+        font-weight: 500;
         margin: $grid4x 0 $grid6x;
       }
 

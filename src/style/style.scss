@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
-// modules
+/*
+modules
+*/
 @import './modules/spoqa',
 './modules/grid',
 './modules/color',
@@ -8,23 +10,40 @@
 './modules/global',
 './modules/layout',
 './modules/class',
-'./modules/tooltip';
+'./modules/tooltip'
+;
 
-// pages
+/*
+pages
+*/
 @import './pages/home',
 './pages/sellerForm',
-'./pages/tos';
+'./pages/tos'
+;
 
-// components
-@import './components/header',
-'./components/footer',
-'./components/hero',
-'./components/service',
-'./components/easyStart',
-'./components/download',
-'./components/joinUs';
+/*
+components/home
+*/
+@import './components/home/header',
+'./components/home/footer',
+'./components/home/hero',
+'./components/home/service',
+'./components/home/easyStart',
+'./components/home/download',
+'./components/home/joinUs'
+;
 
-// misc
+/*
+components/seller
+*/
+@import './components/seller/benefits'
+
+;
+
+/*
+misc
+*/
 @import './components/misc/kakao',
 './components/misc/downloadBtn',
-'./components/misc/closeBtn';
+'./components/misc/closeBtn'
+;

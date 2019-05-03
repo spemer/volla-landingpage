@@ -1,0 +1,9 @@
+#benefits {
+  .section__title {
+    margin-bottom: $grid8x;
+
+    &.subtitle {
+      @include font-size($grid6x);
+    }
+  }
+}
