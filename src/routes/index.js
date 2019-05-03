@@ -46,6 +46,10 @@ export default new VueRouter({
           component: SellerForm,
         },
         {
+          path: '/seller-form',
+          redirect: '/sellerform',
+        },
+        {
           path: '/submit',
           name: 'afterSubmitForm',
           component: AfterSubmitForm,
