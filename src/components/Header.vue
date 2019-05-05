@@ -18,7 +18,7 @@
         ) 다운로드
         router-link.header__right--text.join(
           v-if="this.$route.path === '/'"
-          :to="'/sellerform'"
+          :to="'/seller'"
         ) 입점신청
         router-link.header__right--text.home(
           v-if="this.$route.path !== '/'"

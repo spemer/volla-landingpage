@@ -23,7 +23,15 @@
           ) 메일로 문의하기
 
         router-link.global__cta--link(
-          :to="'/sellerform'"
+          v-if="this.$route.path === '/'"
+          :to="'/seller'"
+        )
+          button.global__cta--btn.form(
+            title="입점신청하기"
+          ) 입점신청하기
+        router-link.global__cta--link(
+          v-if="this.$route.path === '/seller'"
+          :to="'/seller-form'"
         )
           button.global__cta--btn.form(
             title="입점신청하기"
