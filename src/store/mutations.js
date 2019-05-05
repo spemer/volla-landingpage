@@ -15,7 +15,7 @@ export default {
     state.tokenState = bool
   },
 
-  REMOVE_FORM_DATA: (state) => {
+  REMOVE_FORM_VAL: (state) => {
     [...state.sellerForm_List].forEach(list => {
       list.value = null
     })

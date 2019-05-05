@@ -58,14 +58,14 @@ export default {
 
   methods: {
     ...mapMutations([
-      'REMOVE_FORM_DATA',
+      'REMOVE_FORM_VAL',
       'SET_TOKEN_BOOL',
     ]),
 
   },
 
   destroyed () {
-    this.REMOVE_FORM_DATA()
+    this.REMOVE_FORM_VAL()
     this.SET_TOKEN_BOOL(false)
   },
 
