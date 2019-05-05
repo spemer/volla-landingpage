@@ -3,9 +3,9 @@
     div.container
       h1.joinus__title.section__title {{ serviceKo }}에 입점하세요
       p.section__subtitle
-        | {{ serviceKo }}와 함께 성장하실 셀러분들을 모십니다.
+        | {{ stringUpper }}
         br
-        | 셀러 입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.
+        | {{ stringBelow }}
         br
         span.joinus__title--copyEmail(
           @click="toast"
@@ -40,6 +40,8 @@ export default {
     return {
       mailTo: globalVar.mailTo,
       serviceKo: globalVar.serviceKo,
+      stringUpper: '',
+      stringBelow: '',
       btnPath: '',
       btnText: '',
     }
@@ -60,9 +62,13 @@ export default {
     if (this.$route.path === '/') {
       this.btnPath = '/seller'
       this.btnText = '셀러입점소개'
+      this.stringUpper = this.serviceKo + '와 함께 성장하실 셀러분들을 모십니다.'
+      this.stringBelow = '셀러 입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.'
     } else if (this.$route.path === '/seller') {
       this.btnPath = '/sellerform'
       this.btnText = '셀러입점신청'
+      this.stringUpper = '라이브로 담는 오프라인 쇼핑,'
+      this.stringBelow = this.serviceKo + '에 지금 바로 입점하세요!'
     }
   },
 
