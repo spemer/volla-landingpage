@@ -1,14 +1,19 @@
-$baseURI: '/src/assets/dist/hero.png';
+$img_home: '/src/assets/dist/hero.png';
+$img_seller: '/src/assets/dist/hero_2.png';
 
 #hero {
   width: 100%;
   height: $grid128x;
   position: relative;
   margin-top: $header;
-  background-image: url('#{$baseURI}');
+  background-image: url('#{$img_home}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+
+  &.sellerHero {
+    background-image: url('#{$img_seller}');
+  }
 
   @media #{$tablet} {
     max-height: calc(92vh - #{$grid16x});

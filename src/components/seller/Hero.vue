@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#hero
+  div#hero.sellerHero
     div.hero__dim
       div.container
         div.hero__text
