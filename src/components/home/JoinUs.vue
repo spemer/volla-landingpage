@@ -23,19 +23,11 @@
           ) 메일로 문의하기
 
         router-link.global__cta--link(
-          v-if="this.$route.path === '/'"
-          :to="'/seller'"
+          :to="btnPath"
         )
           button.global__cta--btn.form(
-            title="입점신청하기"
-          ) 입점신청하기
-        router-link.global__cta--link(
-          v-if="this.$route.path === '/seller'"
-          :to="'/seller-form'"
-        )
-          button.global__cta--btn.form(
-            title="입점신청하기"
-          ) 입점신청하기
+            :title="btnText"
+          ) {{ btnText }}
 </template>
 
 <script>
@@ -48,6 +40,8 @@ export default {
     return {
       mailTo: globalVar.mailTo,
       serviceKo: globalVar.serviceKo,
+      btnPath: '',
+      btnText: '',
     }
   },
 
@@ -58,6 +52,17 @@ export default {
         position: "bottom-center",
         duration : 2000
       })
+    },
+
+  },
+
+  mounted () {
+    if (this.$route.path === '/') {
+      this.btnPath = '/seller'
+      this.btnText = '입점신청소개'
+    } else if (this.$route.path === '/seller') {
+      this.btnPath = '/sellerform'
+      this.btnText = '셀러입점신청'
     }
   },
 

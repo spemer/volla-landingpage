@@ -46,6 +46,11 @@ export default new VueRouter({
           component: HomeView,
         },
         {
+          path: '/seller',
+          name: 'microsite',
+          component: Microsite,
+        },
+        {
           path: '/sellerform',
           name: 'sellerForm',
           component: SellerForm,
@@ -55,11 +60,6 @@ export default new VueRouter({
           name: 'afterSubmitForm',
           component: AfterSubmitForm,
           beforeEnter: requireToken,
-        },
-        {
-          path: '/seller',
-          name: 'microsite',
-          component: Microsite,
         },
       ]
     },

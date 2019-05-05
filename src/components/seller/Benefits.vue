@@ -5,7 +5,7 @@
         | {{ serviceKo }}를 선택해야 하는 이유는 당연합니다
       div.service__card
         div.service__card--each(
-          v-for="value in benefits.top"
+          v-for="(value, key) in benefits.top"
           :key="key"
         )
           p.service__card--text.section__subtitle {{ value }}
@@ -18,7 +18,7 @@
         | 이런 혜택들을 준비했습니다.
       div.service__card
         div.service__card--each(
-          v-for="value in benefits.bottom"
+          v-for="(value, key) in benefits.bottom"
           :key="key"
         )
           p.service__card--text.section__subtitle {{ value }}
