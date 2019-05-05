@@ -1,9 +1,12 @@
 #benefits {
+  border-top: 1px solid $texteee;
+
   .section__title {
     margin-bottom: $grid8x;
 
     &.subtitle {
-      @include font-size($grid6x);
+      font-weight: 400;
+      @include font-size($grid5x);
     }
   }
 }

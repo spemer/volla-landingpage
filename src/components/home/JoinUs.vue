@@ -59,7 +59,7 @@ export default {
   mounted () {
     if (this.$route.path === '/') {
       this.btnPath = '/seller'
-      this.btnText = '입점신청소개'
+      this.btnText = '셀러입점소개'
     } else if (this.$route.path === '/seller') {
       this.btnPath = '/sellerform'
       this.btnText = '셀러입점신청'

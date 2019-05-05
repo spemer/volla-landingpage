@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -37,9 +38,10 @@ export default {
   },
 
   computed: {
-    benefits () {
-      return this.$store.state.benefits
-    }
+    ...mapState([
+      'benefits',
+    ]),
+
   }
 }
 </script>

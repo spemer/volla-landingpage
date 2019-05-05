@@ -19,7 +19,7 @@
         router-link.header__right--text.join(
           v-if="this.$route.path === '/'"
           :to="'/seller'"
-        ) 입점신청
+        ) 입점소개
         router-link.header__right--text.home(
           v-if="this.$route.path !== '/'"
           :to="'/'"
