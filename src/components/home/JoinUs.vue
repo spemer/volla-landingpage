@@ -40,10 +40,10 @@ export default {
     return {
       mailTo: globalVar.mailTo,
       serviceKo: globalVar.serviceKo,
-      stringUpper: '',
-      stringBelow: '',
       btnPath: '',
       btnText: '',
+      stringUpper: '',
+      stringBelow: '',
     }
   },
 

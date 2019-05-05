@@ -13,7 +13,7 @@
     }
 
     right: $grid4x;
-    bottom: $grid4x;
+    bottom: $grid6x;
     position: fixed;
     animation: popup 0.25s ease-in-out 2.5s 1 forwards;
     @include transform(scale(0));
