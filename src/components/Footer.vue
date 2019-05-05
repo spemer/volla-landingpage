@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -63,21 +64,13 @@ export default {
   },
 
   computed: {
-    thisYear () {
-      return this.$store.state.thisYear
-    },
+    ...mapState([
+      'thisYear',
+      'infoList',
+      'tosList',
+      'snsList',
+    ]),
 
-    infoList () {
-      return this.$store.state.infoList
-    },
-
-    tosList () {
-      return this.$store.state.tosList
-    },
-
-    snsList () {
-      return this.$store.state.snsList
-    },
   },
 }
 </script>

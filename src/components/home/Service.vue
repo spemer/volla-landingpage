@@ -13,14 +13,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'service',
 
   computed: {
-    serviceList () {
-      return this.$store.state.serviceList
-    }
+    ...mapState([
+      'serviceList',
+    ]),
   },
-
 }
 </script>

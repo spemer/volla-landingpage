@@ -270,19 +270,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
   name: 'UserService',
 
   computed: {
-    tosList () {
-      return this.$store.state.tosList
-    },
+    ...mapState([
+      'tosList',
+      'tosVars',
+    ]),
 
-    tosVars () {
-      return this.$store.state.tosVars
-    },
   },
 
   metaInfo: {

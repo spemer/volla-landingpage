@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -45,36 +46,27 @@ export default {
   },
 
   computed: {
-    sellerForm_List () {
-      return this.$store.state.sellerForm_List
-    },
+    ...mapState([
+      'sellerForm_List',
+      'sellerForm_CategoryValue',
+      'sellerForm_Details',
+      'sellerForm_Category',
+      'tokenState',
+    ]),
 
-    sellerForm_CategoryValue () {
-      return this.$store.state.sellerForm_CategoryValue
-    },
+  },
 
-    sellerForm_Details () {
-      return this.$store.state.sellerForm_Details
-    },
-
-    sellerForm_Category () {
-      return this.$store.state.sellerForm_Category
-    },
-
-    tokenState () {
-      return this.$store.state.tokenState
-    },
+  methods: {
+    ...mapMutations([
+      'REMOVE_FORM_DATA',
+      'SET_TOKEN_BOOL',
+    ]),
 
   },
 
   destroyed () {
-    [...this.sellerForm_List].forEach(list => {
-      list.value = ''
-    })
-    this.sellerForm_CategoryValue.value = '',
-    this.sellerForm_Details.value = ''
-
-    return this.$store.commit('SET_TOKEN_BOOL', false)
+    this.REMOVE_FORM_DATA()
+    this.SET_TOKEN_BOOL(false)
   },
 
 }

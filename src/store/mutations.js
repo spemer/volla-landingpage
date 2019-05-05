@@ -14,4 +14,12 @@ export default {
   SET_TOKEN_BOOL: (state, bool) => {
     state.tokenState = bool
   },
+
+  REMOVE_FORM_DATA: (state) => {
+    [...state.sellerForm_List].forEach(list => {
+      list.value = null
+    })
+    state.sellerForm_CategoryValue.value = null,
+      state.sellerForm_Details.value = null
+  },
 }

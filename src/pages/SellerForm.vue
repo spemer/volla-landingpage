@@ -66,6 +66,7 @@
 
 <script>
 import axios from 'axios'
+import { mapState, mapMutations } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -84,6 +85,11 @@ export default {
   },
 
   computed: {
+    ...mapState([
+      'sellerForm_Category',
+      'tokenState',
+    ]),
+
     sellerForm_List: {
       get () {
         return this.$store.state.sellerForm_List
@@ -111,17 +117,13 @@ export default {
       },
     },
 
-    sellerForm_Category () {
-      return this.$store.state.sellerForm_Category
-    },
-
-    tokenState () {
-      return this.$store.state.tokenState
-    },
-
   },
 
   methods: {
+    ...mapMutations([
+      'SET_TOKEN_BOOL',
+    ]),
+
     checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
@@ -130,7 +132,7 @@ export default {
         this.sellerForm_List[1].value &&
         this.sellerForm_List[2].value &&
         this.sellerForm_CategoryValue.value
-      ) { this.$store.commit('SET_TOKEN_BOOL', true) }
+      ) { this.SET_TOKEN_BOOL(true) }
     },
 
     start () { this.$Progress.start() },
@@ -143,10 +145,10 @@ export default {
     sendPost () {
       this.$Progress.start()
 
-      const BASE_URI = globalVar.requestSellerUrl
-      // const TEST_URI = globalVar.testUrl
+      // const BASE_URI = globalVar.requestSellerUrl
+      const TEST_URI = globalVar.testUrl
 
-      axios.post(BASE_URI,
+      axios.post(TEST_URI,
         {
           email: this.sellerForm_List[0].value,
           name: this.sellerForm_List[1].value,
@@ -165,13 +167,13 @@ export default {
       )
       .then(response => {
         this.$Progress.finish()
-        this.$store.commit('SET_TOKEN_BOOL', true)
+        this.SET_TOKEN_BOOL(true)
         console.log(response.data)
         this.$router.push('/submit')
       })
       .catch(error => {
         this.$Progress.fail()
-        this.$store.commit('SET_TOKEN_BOOL', false)
+        this.SET_TOKEN_BOOL(false)
         alert('오류입니다. 다시 시도해주세요!\n' + error)
         console.warn(error)
       })

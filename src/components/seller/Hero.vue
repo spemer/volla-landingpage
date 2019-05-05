@@ -6,7 +6,6 @@
           h1.hero__text--title
             | 당신의 고객을 만날 수 있는
             span.hero__title--nbsp &nbsp;&nbsp;
-            //- span.hero__br
             br
             | 새로운 라이브 쇼핑 서비스
           p.hero__text--subtitle {{ serviceEn }}를 소개합니다

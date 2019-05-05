@@ -4,7 +4,7 @@ import { globalVar } from '@/globalVar'
 export default {
   data () {
     return {
-      userAgent: undefined,
+      userAgent: null,
     }
   },
 

@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'DownloadBtn',
 
@@ -38,17 +40,17 @@ export default {
   },
 
   computed: {
-    badges () {
-      return this.$store.state.badges
-    },
+    ...mapState([
+      'badges',
+    ]),
 
     badgesMobile () {
       if (this.userAgent == 'Android') {
-        return this.$store.state.badges.Android
+        return this.badges.Android
       } else if (this.userAgent == 'iOS') {
-        return this.$store.state.badges.iOS
+        return this.badges.iOS
       } else {
-        return this.$store.state.badges.iOS
+        return this.badges.iOS
       }
     },
   },

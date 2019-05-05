@@ -21,7 +21,7 @@ import CeoService from '@/pages/tos/current/CeoService'
 import RedirectDL from '@/pages/RedirectDL'
 
 function requireToken(to, from, next) {
-  if (store.state.tokenState === true)
+  if (store.state.tokenState)
     return next()
   next('/sellerform')
 }
@@ -31,6 +31,10 @@ export default new VueRouter({
   routes: [{
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/seller-form',
+      redirect: '/sellerform',
     },
 
     {
@@ -45,10 +49,6 @@ export default new VueRouter({
           path: '/sellerform',
           name: 'sellerForm',
           component: SellerForm,
-        },
-        {
-          path: '/seller-form',
-          redirect: '/sellerform',
         },
         {
           path: '/submit',
@@ -97,9 +97,9 @@ export default new VueRouter({
   ],
 
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
+    if (savedPosition)
       return savedPosition
-    } else {
+    else {
       return {
         x: 0,
         y: 0

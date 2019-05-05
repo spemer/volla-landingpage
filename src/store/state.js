@@ -12,7 +12,7 @@ const state = {
       title: 'Google Play',
       class: 'fa-google-play',
       href: globalVar.androidStore,
-      dlWait: function () {
+      dlWait() {
         window.open(globalVar.androidStore, '_blank')
       },
     },
@@ -21,7 +21,7 @@ const state = {
       title: 'App Store',
       class: 'fa-apple',
       href: globalVar.iosStore,
-      dlWait: function () {
+      dlWait() {
         alert('아이폰용 어플이 5월 중으로 곧 출시됩니다. 조금만 기다려주세요!')
       },
     },
