@@ -15,11 +15,15 @@ export default {
     state.tokenState = bool
   },
 
-  REMOVE_FORM_VAL: (state) => {
+  SET_MARKETING_BOOL: (state, bool) => {
+    state.marketing = bool
+  },
+
+  REMOVE_FORM_VAL: state => {
     [...state.sellerForm_List].forEach(list => {
       list.value = null
     })
-    state.sellerForm_CategoryValue.value = null,
-      state.sellerForm_Details.value = null
+    state.sellerForm_CategoryValue.value = null
+    state.sellerForm_Details.value = null
   },
 }

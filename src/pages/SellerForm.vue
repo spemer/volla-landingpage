@@ -58,6 +58,17 @@
 
         p.sellerform__form--condition {{ sellerCondition }}
 
+        label.sellerform__form--checkbox(
+          for="checkbox"
+        ) (필수) 마케팅 수신에 동의합니다.
+          input(
+            id="checkbox"
+            type="checkbox"
+            v-model="marketing"
+            @click="setAgreementBool"
+          )
+          span.checkmark
+
         button.sellerform__form--submit(
           name="sellerform__form"
           @click="checkCategoryValue"
@@ -85,6 +96,7 @@ export default {
   computed: {
     ...mapState([
       'sellerForm_Category',
+      'marketing',
       'tokenState',
     ]),
 
@@ -115,12 +127,25 @@ export default {
       },
     },
 
+    marketing: {
+      get () {
+        return this.$store.state.marketing
+      },
+      set (value) {
+        this.$store.commit('SET_MARKETING_BOOL', value)
+      },
+    },
+
   },
 
   methods: {
     ...mapMutations([
       'SET_TOKEN_BOOL',
     ]),
+
+    // setAgreementBool () {
+    //   console.warn('checked: ' + this.marketing)
+    // },
 
     checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
@@ -141,40 +166,46 @@ export default {
     fail () { this.$Progress.fail() },
 
     sendPost () {
-      this.$Progress.start()
+      if (this.marketing === true) {
+        this.$Progress.start()
 
-      const base = process.env.BASE_URL
-      // const test = process.env.TEST_URL
+        const base = process.env.BASE_URL
+        // const test = process.env.TEST_URL
 
-      axios.post(base + 'requestSeller',
-        {
-          email: this.sellerForm_List[0].value,
-          name: this.sellerForm_List[1].value,
-          contact: this.sellerForm_List[2].value,
-          site: this.sellerForm_List[3].value,
-          sns: this.sellerForm_List[4].value,
-          apply_categories: this.sellerForm_CategoryValue.value,
-          details: this.sellerForm_Details.value,
-        },
-        {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          }
-        },
-      )
-      .then(response => {
-        this.$Progress.finish()
-        this.SET_TOKEN_BOOL(true)
-        console.log(response.data)
-        this.$router.push('/submit')
-      })
-      .catch(error => {
-        this.$Progress.fail()
-        this.SET_TOKEN_BOOL(false)
-        alert('오류입니다. 다시 시도해주세요!\n' + error)
-        console.warn(error)
-      })
+        axios.post(test + 'requestSeller',
+        // axios.post(test,
+          {
+            email: this.sellerForm_List[0].value,
+            name: this.sellerForm_List[1].value,
+            contact: this.sellerForm_List[2].value,
+            site: this.sellerForm_List[3].value,
+            sns: this.sellerForm_List[4].value,
+            apply_categories: this.sellerForm_CategoryValue.value,
+            details: this.sellerForm_Details.value,
+            marketing: this.marketing,
+          },
+          {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            }
+          },
+        )
+        .then(response => {
+          this.$Progress.finish()
+          this.SET_TOKEN_BOOL(true)
+          console.info(response.data)
+          this.$router.push('/submit')
+        })
+        .catch(error => {
+          this.$Progress.fail()
+          this.SET_TOKEN_BOOL(false)
+          alert('오류입니다. 다시 시도해주세요!\n' + error)
+          console.warn(error)
+        })
+      } else {
+        alert('마케팅 수신 동의 여부를 선택해주세요.')
+      }
     },
 
   },

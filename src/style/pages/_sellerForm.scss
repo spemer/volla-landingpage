@@ -41,6 +41,26 @@ $mobile-width: 288px;
   text-align: center;
   padding: $grid24x 0 $grid32x;
 
+  input[type='radio'],
+  input[type='checkbox'] {
+    height: 0 !important;
+    width: 0 !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+    -ms-filter: "alpha(opacity=0)" !important;
+    filter: alpha(opacity=0) !important;
+    -webkit-opacity: 0 !important;
+    -khtml-opacity: 0 !important;
+    -moz-opacity: 0 !important;
+    -ms-opacity: 0 !important;
+    -o-opacity: 0 !important;
+    opacity: 0 !important;
+    -webkit-appearance: none !important;
+    -khtml-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+  }
+
   @media #{$mobile} {
     padding: $grid20x 0 $grid24x;
   }
@@ -62,7 +82,6 @@ $mobile-width: 288px;
     color: $black38;
     text-align: left;
     margin-top: -#{$grid8x};
-    margin-bottom: $grid24x;
     @include font-size($grid3x);
   }
 
@@ -121,29 +140,11 @@ $mobile-width: 288px;
             border: 1px solid $textccc;
             @include font-size($grid4x);
             @include border-radius($grid2x);
+            @include transition(all 0.1s ease);
 
             &.first {
               margin-right: $grid2x;
             }
-          }
-
-          input[type='radio'] {
-            height: 0 !important;
-            width: 0 !important;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
-            -ms-filter: "alpha(opacity=0)" !important;
-            filter: alpha(opacity=0) !important;
-            -webkit-opacity: 0 !important;
-            -khtml-opacity: 0 !important;
-            -moz-opacity: 0 !important;
-            -ms-opacity: 0 !important;
-            -o-opacity: 0 !important;
-            opacity: 0 !important;
-            -webkit-appearance: none !important;
-            -khtml-appearance: none !important;
-            -moz-appearance: none !important;
-            -ms-appearance: none !important;
-            -o-appearance: none !important;
           }
 
           input[type='radio']:checked+label {
@@ -209,13 +210,68 @@ $mobile-width: 288px;
       margin-top: $grid8x;
       background-color: #fff;
       border: 2px solid $brand-pink;
-      @include transition(all 0.25s ease);
       @include border-radius($grid16x);
+      @include transition(all 0.25s ease);
 
       &:hover {
         color: #fff;
         font-weight: 900;
         background-color: $brand-pink;
+      }
+    }
+
+    .sellerform__form--checkbox {
+      display: block;
+      cursor: pointer;
+      text-align: left;
+      position: relative;
+      margin-top: $grid16x;
+      padding-left: $grid10x;
+      margin-bottom: $grid24x;
+      -webkit-user-select: none !important;
+      -khtml-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      -o-user-select: none !important;
+      user-select: none !important;
+
+      .checkmark {
+        top: 0;
+        left: 0;
+        width: $grid6x;
+        height: $grid6x;
+        position: absolute;
+        background-color: $black08;
+        @include border-radius($grid);
+        @include transition(all 0.1s ease);
+      }
+
+      &:hover input~.checkmark {
+        background-color: $black16;
+      }
+
+      input:checked~.checkmark {
+        background-color: $brand-pink;
+      }
+
+      .checkmark:after {
+        content: "";
+        display: none;
+        position: absolute;
+      }
+
+      input:checked~.checkmark:after {
+        display: block;
+      }
+
+      .checkmark:after {
+        top: 2px;
+        right: 8px;
+        width: 6px;
+        height: 12px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        @include transform(rotate(45deg));
       }
     }
   }

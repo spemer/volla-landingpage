@@ -57,6 +57,7 @@ export default {
   methods: {
     ...mapMutations([
       'REMOVE_FORM_VAL',
+      'SET_MARKETING_BOOL',
       'SET_TOKEN_BOOL',
     ]),
 
@@ -64,6 +65,7 @@ export default {
 
   destroyed () {
     this.REMOVE_FORM_VAL()
+    this.SET_MARKETING_BOOL(false)
     this.SET_TOKEN_BOOL(false)
   },
 

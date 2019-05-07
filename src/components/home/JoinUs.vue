@@ -59,7 +59,7 @@ export default {
       this.stringUpper = this.serviceKo + '와 함께 성장하실 셀러분들을 모십니다.'
       this.stringBelow = '셀러 입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.'
     } else if (this.$route.path === '/seller') {
-      this.stringUpper = '라이브로 담는 오프라인 쇼핑,'
+      this.stringUpper = '라이브 방송으로 담는 오프라인 쇼핑,'
       this.stringBelow = this.serviceKo + '에 지금 바로 입점하세요!'
     }
   },

@@ -181,6 +181,7 @@ const state = {
     placeholder: '기타 문의사항을 적어주세요.',
   },
 
+  marketing: false,
   tokenState: false,
 
   benefits: {
