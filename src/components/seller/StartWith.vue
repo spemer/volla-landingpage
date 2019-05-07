@@ -8,11 +8,16 @@
           | 누구나 스마트폰으로 손쉽게
           br
           | 라이브 커머스를 시작할 수 있습니다
+
       div.service__card
-        p.service__card--text.section__subtitle(
-          v-for="(value, key) in startWith"
-          :key="key"
-        ) {{ value }}
+        div.service__card--each(
+        v-for="(value, key, index) in startWith"
+        :key="key"
+        )
+          div.service__card--img.seller(
+            :class="'img-' + index"
+          )
+          p.service__card--text.section__subtitle {{ value }}
       p.sellerform__form--condition {{ sellerCondition }}
 </template>
 

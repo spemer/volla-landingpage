@@ -9,7 +9,9 @@
         )
           h3.service__card--title {{ value.title }}
           p.service__card--text.section__subtitle {{ value.desc }}
-          div.service__card--img(:class="'img-' + index")
+          div.service__card--img.service(
+            :class="'img-' + index"
+          )
 </template>
 
 <script>

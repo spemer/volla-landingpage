@@ -1,3 +1,5 @@
+$BaseURI: '/src/assets/dist/serviceImage_';
+
 #service,
 #benefits,
 #startWith {
@@ -17,35 +19,45 @@
     }
 
     .service__card--each {
+
+      .section__subtitle {
+
+        @media #{$pro2} {
+          padding: 0 $grid4x;
+        }
+      }
+
       .service__card--img {
-        height: 480px;
-        margin: 0 auto;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        @include drop-shadow();
 
-        $BaseURI: '/src/assets/dist/serviceImage_';
+        &.service {
+          height: 480px;
+          margin: 0 auto;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          @include drop-shadow();
 
-        @for $i from 0 through 2 {
-          &.img-#{$i} {
-            background-image: url('#{$BaseURI + ($i + 1)}.png');
+          @for $i from 0 through 2 {
+
+            &.img-#{$i} {
+              background-image: url('#{$BaseURI + ($i + 1)}.png');
+            }
           }
         }
 
         @media #{$pro2} {
-          height: 560px;
           width: 320px;
+          height: 560px;
         }
 
         @media #{$pablet} {
-          height: 520px;
           width: 300px;
+          height: 520px;
         }
 
         @media #{$ip6} {
-          height: 480px;
           width: 280px;
+          height: 480px;
         }
       }
 
