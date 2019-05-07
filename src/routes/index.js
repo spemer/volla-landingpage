@@ -107,7 +107,3 @@ export default new VueRouter({
     }
   },
 })
-
-/*
-
-*/
