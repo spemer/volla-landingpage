@@ -27,11 +27,9 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'hero',
 
-  data () {
-    return {
-      serviceEn: globalVar.serviceEn,
-    }
-  },
+  data: () => ({
+    serviceEn: globalVar.serviceEn,
+  }),
 
   components: {
     DownloadBtn,

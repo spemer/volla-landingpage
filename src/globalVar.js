@@ -28,9 +28,6 @@ export const globalVar = new Vue({
     facebookUrl: 'https://facebook.com/vollaofficial/',
     instagramUrl: 'https://www.instagram.com/volla_official/',
 
-    requestSellerUrl: 'https://operator-apis.volla.live/requestSeller',
-    testUrl: 'https://jsonplaceholder.typicode.com/posts',
-
     tosDateNow: '2019년 3월 26일',
 
     userPrivacyPageTitle: '개인정보처리방침(이용자용)',

@@ -32,12 +32,10 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'header-el',
 
-  data () {
-    return {
-      tagline: globalVar.tagline,
-      serviceKo: globalVar.serviceKo,
-    }
-  },
+  data: () => ({
+    tagline: globalVar.tagline,
+    serviceKo: globalVar.serviceKo,
+  }),
 
   methods: {
     dlWait () {

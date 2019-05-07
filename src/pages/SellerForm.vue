@@ -72,12 +72,10 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'seller-form',
 
-  data () {
-    return {
-      serviceKo: globalVar.serviceKo,
-      sellerCondition: globalVar.sellerCondition,
-    }
-  },
+  data: () => ({
+    serviceKo: globalVar.serviceKo,
+    sellerCondition: globalVar.sellerCondition,
+  }),
 
   metaInfo: {
     title: globalVar.serviceEn + ' - ' + globalVar.sellerForm,
@@ -145,10 +143,10 @@ export default {
     sendPost () {
       this.$Progress.start()
 
-      const BASE_URI = globalVar.requestSellerUrl
-      // const TEST_URI = globalVar.testUrl
+      const base = process.env.BASE_URL
+      // const test = process.env.TEST_URL
 
-      axios.post(BASE_URI,
+      axios.post(base + 'requestSeller',
         {
           email: this.sellerForm_List[0].value,
           name: this.sellerForm_List[1].value,

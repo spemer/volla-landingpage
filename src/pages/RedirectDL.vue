@@ -2,11 +2,10 @@
 import { globalVar } from '@/globalVar'
 
 export default {
-  data () {
-    return {
-      userAgent: null,
-    }
-  },
+
+  data: () => ({
+    userAgent: null,
+  }),
 
   metaInfo: {
     title: globalVar.serviceEn,

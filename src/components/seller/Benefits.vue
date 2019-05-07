@@ -31,11 +31,9 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'benefits',
 
-  data () {
-    return {
-      serviceKo: globalVar.serviceKo,
-    }
-  },
+  data: () => ({
+    serviceKo: globalVar.serviceKo,
+  }),
 
   computed: {
     ...mapState([

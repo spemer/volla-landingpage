@@ -46,12 +46,10 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'footer-el',
 
-  data () {
-    return {
-      mailTo: globalVar.mailTo,
-      companyName: globalVar.companyName,
-    }
-  },
+  data: () => ({
+    mailTo: globalVar.mailTo,
+    companyName: globalVar.companyName,
+  }),
 
   methods: {
     toast () {

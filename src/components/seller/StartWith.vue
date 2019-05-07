@@ -23,12 +23,10 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'startWith',
 
-  data () {
-    return {
-      serviceKo: globalVar.serviceKo,
-      sellerCondition: globalVar.sellerCondition,
-    }
-  },
+  data: () => ({
+    serviceKo: globalVar.serviceKo,
+    sellerCondition: globalVar.sellerCondition,
+  }),
 
   computed: {
     ...mapState([

@@ -16,10 +16,8 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'easyStart',
 
-  data () {
-    return {
-      serviceKo: globalVar.serviceKo,
-    }
-  },
+  data: () => ({
+    serviceKo: globalVar.serviceKo,
+  }),
 }
 </script>

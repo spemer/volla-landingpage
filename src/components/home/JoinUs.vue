@@ -23,11 +23,11 @@
           ) 메일로 문의하기
 
         router-link.global__cta--link(
-          :to="btnPath"
+          :to="'/sellerform'"
         )
           button.global__cta--btn.form(
-            :title="btnText"
-          ) {{ btnText }}
+            title="셀러입점신청"
+          ) 셀러입점신청
 </template>
 
 <script>
@@ -36,16 +36,12 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'joinus',
 
-  data () {
-    return {
-      mailTo: globalVar.mailTo,
-      serviceKo: globalVar.serviceKo,
-      btnPath: '',
-      btnText: '',
-      stringUpper: '',
-      stringBelow: '',
-    }
-  },
+  data: () => ({
+    mailTo: globalVar.mailTo,
+    serviceKo: globalVar.serviceKo,
+    stringUpper: '',
+    stringBelow: '',
+  }),
 
   methods: {
     toast () {
@@ -60,13 +56,9 @@ export default {
 
   mounted () {
     if (this.$route.path === '/') {
-      this.btnPath = '/seller'
-      this.btnText = '셀러입점소개'
       this.stringUpper = this.serviceKo + '와 함께 성장하실 셀러분들을 모십니다.'
       this.stringBelow = '셀러 입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.'
     } else if (this.$route.path === '/seller') {
-      this.btnPath = '/sellerform'
-      this.btnText = '셀러입점신청'
       this.stringUpper = '라이브로 담는 오프라인 쇼핑,'
       this.stringBelow = this.serviceKo + '에 지금 바로 입점하세요!'
     }
