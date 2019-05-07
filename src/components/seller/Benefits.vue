@@ -8,7 +8,7 @@
           v-for="(value, key) in benefits.top"
           :key="key"
         )
-          p.service__card--text.section__subtitle {{ value }}
+          p.service__card--text.section__subtitle.withcount {{ value }}
 
       h1.service__title.section__title.subtitle
         | 또한 이와 더불어,

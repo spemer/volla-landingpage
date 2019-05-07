@@ -6,7 +6,7 @@
 
     &.subtitle {
       font-weight: 400;
-      margin-top: $grid8x;
+      margin-top: $grid16x;
       @include font-size($grid4x);
     }
   }
@@ -15,14 +15,18 @@
     counter-reset: section;
 
     .service__card--text {
+      padding: $grid4x $grid8x;
       counter-increment: section;
 
-      &::before {
-        font-weight: 900;
-        white-space: pre;
-        color: $brand-pink;
-        content: counter(section)'.\a';
-        @include font-size($grid6x);
+      &.withcount {
+
+        &::before {
+          font-weight: 900;
+          white-space: pre;
+          color: $brand-pink;
+          content: counter(section)'.\a';
+          @include font-size($grid6x);
+        }
       }
     }
   }
