@@ -14,7 +14,7 @@ $BaseURI: '/src/assets/dist/benefits_';
   }
 
   .service__card {
-    padding: $grid4x $grid8x;
+    padding: 0 $grid8x $grid4x;
 
     .service__card--each {
 
@@ -35,7 +35,6 @@ $BaseURI: '/src/assets/dist/benefits_';
   }
 
   .service__card {
-    counter-reset: section;
 
     .service__card--text {
       padding: $grid4x $grid8x;

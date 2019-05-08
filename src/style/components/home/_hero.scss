@@ -37,11 +37,13 @@ $img_seller: '/src/assets/dist/hero_2.png';
       }
 
       @media #{$middle} {
+
         .hero__title--nbsp {
           display: none !important;
         }
 
         .hero__br {
+
           &::after {
             content: '\a ';
             white-space: pre;

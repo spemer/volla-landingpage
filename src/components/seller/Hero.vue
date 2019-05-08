@@ -8,9 +8,7 @@
             span.hero__title--nbsp &nbsp;&nbsp;
             br
             | 새로운 라이브 쇼핑 서비스
-          p.hero__text--subtitle(
-            v-if="this.$route.path === '/'"
-          ) {{ serviceEn }}를 소개합니다
+          p.hero__text--subtitle {{ serviceEn }}를 소개합니다
           p.hero__text--spantext
             | 이제 소비자는 예쁜 제품 사진이 아닌,
             br

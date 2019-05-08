@@ -42,6 +42,7 @@
         }
 
         &:not(:first-child) {
+
           &::before {
             content: '·';
             color: $black24;
@@ -110,6 +111,7 @@
         }
 
         &.fa-instagram {
+
           &:hover {
             color: $instagram;
           }
