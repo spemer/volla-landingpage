@@ -65,7 +65,6 @@
             id="checkbox"
             type="checkbox"
             v-model="marketing"
-            @click="setAgreementBool"
           )
           span.checkmark
 
@@ -142,10 +141,6 @@ export default {
     ...mapMutations([
       'SET_TOKEN_BOOL',
     ]),
-
-    // setAgreementBool () {
-    //   console.warn('checked: ' + this.marketing)
-    // },
 
     checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
