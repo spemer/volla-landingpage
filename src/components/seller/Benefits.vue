@@ -5,9 +5,12 @@
         | {{ serviceKo }}를 선택해야 하는 이유는 당연합니다
       div.service__card
         div.service__card--each(
-          v-for="(value, key) in benefits.top"
+          v-for="(value, key, index) in benefits.top"
           :key="key"
         )
+          div.service__card--img.seller(
+            :class="'img-' + index"
+          )
           p.service__card--text.section__subtitle.withcount {{ value }}
 
       h1.service__title.section__title.subtitle

@@ -1,3 +1,5 @@
+$BaseURI: '/src/assets/dist/benefits_';
+
 #benefits {
   border-top: 1px solid $texteee;
 
@@ -12,22 +14,49 @@
   }
 
   .service__card {
+    padding: $grid4x $grid8x;
+
+    .service__card--each {
+
+      .service__card--img {
+
+        &.seller {
+          width: 80px;
+          height: 80px;
+          margin: 0 auto;
+          margin-bottom: $grid8x;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+
+          @for $i from 0 through 2 {
+
+            &.img-#{$i} {
+              background-image: url('#{$BaseURI + ($i + 1)}.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .service__card {
     counter-reset: section;
 
     .service__card--text {
       padding: $grid4x $grid8x;
       counter-increment: section;
 
-      &.withcount {
+      // &.withcount {
 
-        &::before {
-          font-weight: 900;
-          white-space: pre;
-          color: $brand-pink;
-          content: counter(section)'.\a';
-          @include font-size($grid6x);
-        }
-      }
+      //   &::before {
+      //     font-weight: 900;
+      //     white-space: pre;
+      //     color: $brand-pink;
+      //     content: counter(section)'.\a';
+      //     @include font-size($grid6x);
+      //   }
+      // }
     }
   }
 }
