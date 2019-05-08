@@ -171,7 +171,7 @@ export default {
         const base = process.env.BASE_URL
         // const test = process.env.TEST_URL
 
-        axios.post(test + 'requestSeller',
+        axios.post(base + 'requestSeller',
         // axios.post(test,
           {
             email: this.sellerForm_List[0].value,
