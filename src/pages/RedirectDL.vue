@@ -1,3 +1,20 @@
+<template lang="pug">
+  div#redirect
+    div.container
+      div.redirect__wrapper
+        img.redirect__wrapper--img(
+          src="/src/assets/dist/launcher.svg"
+        )
+        p.redirect__wrapper--text {{ serviceKo }}
+
+        router-link.global__cta(
+          :to="'/'"
+        )
+          button.global__cta--btn(
+            title="웹사이트 바로가기"
+          ) 웹사이트 바로가기
+</template>
+
 <script>
 import { globalVar } from '@/globalVar'
 
@@ -5,6 +22,7 @@ export default {
 
   data: () => ({
     userAgent: null,
+    serviceKo: globalVar.serviceKo,
   }),
 
   metaInfo: {

@@ -1,0 +1,28 @@
+#redirect {
+  text-align: center;
+
+  .redirect__wrapper {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 100%;
+    top: 50% !important;
+    transform: translateY(-50%);
+
+    .redirect__wrapper--img {
+      width: $grid16x;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .redirect__wrapper--text {
+      margin-top: $grid2x;
+    }
+
+    .global__cta {
+      display: block;
+      margin-top: $grid48x;
+      bottom: $grid8x;
+    }
+  }
+}
