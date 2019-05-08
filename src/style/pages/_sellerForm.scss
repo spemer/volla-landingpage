@@ -78,13 +78,6 @@ $mobile-width: 288px;
     }
   }
 
-  .sellerform__form--condition {
-    color: $black38;
-    text-align: left;
-    margin-top: -#{$grid8x};
-    @include font-size($grid3x);
-  }
-
   .sellerform__form--form {
     width: $width;
     display: block;
@@ -220,12 +213,35 @@ $mobile-width: 288px;
       }
     }
 
+    .sellerform__form--condition {
+      color: $black38;
+      text-align: left;
+      margin-top: -#{$grid8x};
+      @include font-size($grid3x);
+    }
+
+    .sellerform__form--terms {
+      height: $grid32x;
+      text-align: left;
+      font-weight: 300;
+      padding: 0 $grid4x;
+      overflow-y: scroll;
+      margin-top: $grid16x;
+      border: 1px solid $texteee;
+      @include border-radius($grid2x);
+
+      .sellerform__form--termsDetails {
+
+        @include font-size(14px);
+      }
+    }
+
     .sellerform__form--checkbox {
       display: block;
       cursor: pointer;
       text-align: left;
       position: relative;
-      margin-top: $grid16x;
+      margin-top: $grid6x;
       padding-left: $grid10x;
       margin-bottom: $grid24x;
       -webkit-user-select: none !important;

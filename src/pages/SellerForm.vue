@@ -58,9 +58,12 @@
 
         p.sellerform__form--condition {{ sellerCondition }}
 
+        div.sellerform__form--terms
+          p.sellerform__form--termsDetails {{ marketingTerms }}
+
         label.sellerform__form--checkbox(
           for="checkbox"
-        ) (필수) 마케팅 수신에 동의합니다.
+        ) (필수) [개인정보 수집/이용] 에 동의합니다.
           input(
             id="checkbox"
             type="checkbox"
@@ -96,6 +99,7 @@ export default {
     ...mapState([
       'sellerForm_Category',
       'marketing',
+      'marketingTerms',
       'tokenState',
     ]),
 
