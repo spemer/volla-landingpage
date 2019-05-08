@@ -17,18 +17,8 @@ $BaseURI: '/src/assets/dist/condition_';
         &.seller {
           width: 80px;
           height: 80px;
-          margin: 0 auto;
-          margin-bottom: $grid8x;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center center;
-
-          @for $i from 0 through 2 {
-
-            &.img-#{$i} {
-              background-image: url('#{$BaseURI + ($i + 1)}.svg');
-            }
-          }
+          margin-bottom: $grid8x !important;
+          @include setGridIcons($BaseURI);
         }
       }
     }

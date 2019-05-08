@@ -65,7 +65,7 @@
 
 
 /* ==============================
-    transition
+  transition
 ============================== */
 @mixin transition ($transition...) {
   -webkit-transition: $transition;
@@ -74,6 +74,24 @@
   -ms-transition: $transition;
   -o-transition: $transition;
   transition: $transition;
+}
+
+
+/* ==============================
+  setGridIcons - 3
+============================== */
+@mixin setGridIcons($base, $ext:'svg') {
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @for $i from 0 through 2 {
+
+    &.img-#{$i} {
+      background-image: url('#{$base + ($i + 1)}'+ '.'+ '#{$ext}');
+    }
+  }
 }
 
 

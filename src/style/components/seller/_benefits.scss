@@ -23,17 +23,11 @@ $BaseURI: '/src/assets/dist/benefits_';
         &.seller {
           width: 80px;
           height: 80px;
-          margin: 0 auto;
-          margin-bottom: $grid8x;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center center;
+          margin-bottom: $grid4x !important;
+          @include setGridIcons($BaseURI);
 
-          @for $i from 0 through 2 {
-
-            &.img-#{$i} {
-              background-image: url('#{$BaseURI + ($i + 1)}.svg');
-            }
+          @media #{$pro2} {
+            margin-bottom: $grid8x !important;
           }
         }
       }
@@ -45,18 +39,6 @@ $BaseURI: '/src/assets/dist/benefits_';
 
     .service__card--text {
       padding: $grid4x $grid8x;
-      counter-increment: section;
-
-      // &.withcount {
-
-      //   &::before {
-      //     font-weight: 900;
-      //     white-space: pre;
-      //     color: $brand-pink;
-      //     content: counter(section)'.\a';
-      //     @include font-size($grid6x);
-      //   }
-      // }
     }
   }
 }
