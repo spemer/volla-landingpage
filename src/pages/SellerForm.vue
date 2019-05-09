@@ -179,11 +179,11 @@ export default {
       if (this.marketing.val_1 === true) {
         this.$Progress.start()
 
-        // const base = process.env.BASE_URL
-        const test = process.env.TEST_URL
+        const base = process.env.BASE_URL
+        // const test = process.env.TEST_URL
 
-        // axios.post(base + 'requestSeller',
-        axios.post(test,
+        axios.post(base + 'requestSeller',
+        // axios.post(test,
           {
             email: this.sellerForm_List[0].value,
             name: this.sellerForm_List[1].value,
@@ -192,7 +192,8 @@ export default {
             sns: this.sellerForm_List[4].value,
             apply_categories: this.sellerForm_CategoryValue.value,
             details: this.sellerForm_Details.value,
-            marketing: this.marketing.val_2,
+            agree_personal_info: this.marketing.val_1,
+            agree_marketing_info: this.marketing.val_2,
           },
           {
             headers: {

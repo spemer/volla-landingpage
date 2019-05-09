@@ -27,9 +27,11 @@
           ) {{ sellerForm_Details.text }}
             span.value {{ sellerForm_Details.value }}
 
-          p.sellerform__form--title.text(
-            v-if="marketing.val_2"
-          ) 마케팅 정보 수신
+          p.sellerform__form--title.text 개인정보 수집 및 이용
+            span.value( v-if="marketing.val_1" ) 동의
+            span.value( v-else ) 미동의
+
+          p.sellerform__form--title.text 마케팅 정보 수신
             span.value( v-if="marketing.val_2" ) 동의
             span.value( v-else ) 미동의
 

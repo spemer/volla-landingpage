@@ -16,6 +16,7 @@ export default {
   },
 
   SET_MARKETING_BOOL: (state, bool) => {
+    state.marketing.val_1 = bool
     state.marketing.val_2 = bool
   },
 
