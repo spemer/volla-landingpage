@@ -59,11 +59,12 @@
         p.sellerform__form--condition {{ sellerCondition }}
 
         div.sellerform__form--terms
-          p.sellerform__form--termsDetails {{ marketingTerms }}
+          p.sellerform__form--termsDetails {{ marketingTerms[0] }}
+          p.sellerform__form--termsDetails {{ marketingTerms[1] }}
 
         label.sellerform__form--checkbox(
           for="checkbox"
-        ) (필수) [개인정보 수집/이용] 에 동의합니다.
+        ) (선택) 마케팅 정보 수신에 동의합니다
           input(
             id="checkbox"
             type="checkbox"
