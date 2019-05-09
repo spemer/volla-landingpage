@@ -4,7 +4,7 @@
       h1.service__title.section__title.subtitle
         | 또한 이와 더불어,
         br
-        | 볼라의 시작을 함께해주시는 분들을 위해서
+        | 볼라의 시작을 함께해주시는 분들을 위해
         br
         | 이런 혜택들을 준비했습니다.
       div.service__card

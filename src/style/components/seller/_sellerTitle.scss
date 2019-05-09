@@ -1,5 +1,5 @@
 #sellerTitle {
-  padding-top: $grid24x;
+  padding: $grid16x 0 $grid12x;
 
   .easy__text--title {
     @include font-size($grid7x);
