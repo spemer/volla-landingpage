@@ -16,7 +16,7 @@ export default {
   },
 
   SET_MARKETING_BOOL: (state, bool) => {
-    state.marketing = bool
+    state.marketing.val_2 = bool
   },
 
   REMOVE_FORM_VAL: state => {

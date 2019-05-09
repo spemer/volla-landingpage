@@ -181,7 +181,10 @@ const state = {
     placeholder: '기타 문의사항을 적어주세요.',
   },
 
-  marketing: false,
+  marketing: {
+    val_1: false,
+    val_2: false
+  },
   tokenState: false,
 
   marketingTerms: [
@@ -191,12 +194,12 @@ const state = {
 
   benefits: {
     top: {
-      benefits_1: '입점 비용이 없습니다. 상품만 있다면, 누구나 온라인 판매자가 됩니다.',
-      benefits_2: '매출 수수료는 당연히 타 업체들과 비교했을 때에도 더욱 저렴합니다.',
-      benefits_3: '전문장비가 없어도, 스마트폰만으로 손쉽게 라이브 방송을 시작할 수 있습니다.',
+      benefits_1: '입점비용이 없습니다. 상품만 있다면 누구나 온라인 셀러가 될 수 있습니다.',
+      benefits_2: '매출 수수료는 당연히 타 업체들과 비교했을 때에도 더욱 더 저렴합니다.',
+      benefits_3: '전문장비가 없어도 스마트폰만으로 쉽게 라이브 방송을 시작할 수 있습니다.',
     },
     bottom: {
-      benefits2_1: '보다 큰 수익을 위한 낮은 수수료율과, 수수료 할인',
+      benefits2_1: '보다 큰 수익을 위한 낮은 수수료율과 수수료 할인',
       benefits2_2: '보다 활발한 방송을 위한 방송 호스트 지원',
       benefits2_3: '보다 원활한 입점을 위한 입점 절차 및 방송 지원',
     },
@@ -205,7 +208,7 @@ const state = {
   startWith: {
     condition_1: '자신의 상품을 잘 보여줄 수 있도록 매장을 운영하고 있는 분',
     condition_2: '온라인 쇼핑몰 구축을 염두하고 있지만 어려움을 겪고 있는 분',
-    condition_3: '직접 소비자들과 소통하면서 매출을 올리고 싶은 분',
+    condition_3: '직접 소비자들과 소통하면서 동시에 매출을 올리고 싶은 분',
   },
 
 }

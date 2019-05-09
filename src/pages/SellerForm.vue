@@ -63,12 +63,22 @@
           p.sellerform__form--termsDetails {{ marketingTerms[1] }}
 
         label.sellerform__form--checkbox(
-          for="checkbox"
-        ) (선택) 마케팅 정보 수신에 동의합니다
+          for="checkbox_1"
+        ) (필수) 개인정보 수집 및 이용에 동의합니다.
           input(
-            id="checkbox"
+            id="checkbox_1"
             type="checkbox"
-            v-model="marketing"
+            v-model="marketing.val_1"
+          )
+          span.checkmark
+
+        label.sellerform__form--checkbox(
+          for="checkbox_2"
+        ) (선택) 마케팅 정보 수신에 동의합니다.
+          input(
+            id="checkbox_2"
+            type="checkbox"
+            v-model="marketing.val_2"
           )
           span.checkmark
 
@@ -166,14 +176,14 @@ export default {
     fail () { this.$Progress.fail() },
 
     sendPost () {
-      if (this.marketing === true) {
+      if (this.marketing.val_1 === true) {
         this.$Progress.start()
 
-        const base = process.env.BASE_URL
-        // const test = process.env.TEST_URL
+        // const base = process.env.BASE_URL
+        const test = process.env.TEST_URL
 
-        axios.post(base + 'requestSeller',
-        // axios.post(test,
+        // axios.post(base + 'requestSeller',
+        axios.post(test,
           {
             email: this.sellerForm_List[0].value,
             name: this.sellerForm_List[1].value,
@@ -182,7 +192,7 @@ export default {
             sns: this.sellerForm_List[4].value,
             apply_categories: this.sellerForm_CategoryValue.value,
             details: this.sellerForm_Details.value,
-            marketing: this.marketing,
+            marketing: this.marketing.val_2,
           },
           {
             headers: {
@@ -204,7 +214,7 @@ export default {
           console.warn(error)
         })
       } else {
-        alert('마케팅 수신 동의 여부를 선택해주세요.')
+        alert('개인정보 수집 및 이용 동의 여부를 선택해주세요.')
       }
     },
 

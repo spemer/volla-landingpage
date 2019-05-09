@@ -200,7 +200,7 @@ $mobile-width: 288px;
       height: $grid14x;
       font-weight: 900;
       color: $brand-pink;
-      margin-top: $grid8x;
+      margin-top: $grid24x;
       background-color: #fff;
       border: 2px solid $brand-pink;
       @include border-radius($grid16x);
@@ -241,21 +241,21 @@ $mobile-width: 288px;
       cursor: pointer;
       text-align: left;
       position: relative;
-      margin-top: $grid6x;
-      padding-left: $grid10x;
-      margin-bottom: $grid24x;
+      margin-top: $grid4x;
+      padding-left: $grid8x;
       -webkit-user-select: none !important;
       -khtml-user-select: none !important;
       -moz-user-select: none !important;
       -ms-user-select: none !important;
       -o-user-select: none !important;
       user-select: none !important;
+      @include font-size(14px);
 
       .checkmark {
-        top: 0;
+        top: 1px;
         left: 0;
-        width: $grid6x;
-        height: $grid6x;
+        width: $grid5x;
+        height: $grid5x;
         position: absolute;
         background-color: $black08;
         @include border-radius($grid);
@@ -281,10 +281,10 @@ $mobile-width: 288px;
       }
 
       .checkmark:after {
-        top: 2px;
-        right: 8px;
-        width: 6px;
-        height: 12px;
+        top: 3px;
+        right: 7px;
+        width: $grid;
+        height: 9px;
         border: solid #fff;
         border-width: 0 2px 2px 0;
         @include transform(rotate(45deg));

@@ -17,13 +17,21 @@
             ) {{ list.text }}
               span.value {{ list.value }}
 
-          p.sellerform__form--title.text {{ sellerForm_Category[0].text }}
+          p.sellerform__form--title.text(
+            v-if="sellerForm_CategoryValue.value"
+          ) {{ sellerForm_Category[0].text }}
             span.value {{ sellerForm_CategoryValue.value }}
 
           p.sellerform__form--title.text(
             v-if="sellerForm_Details.value"
           ) {{ sellerForm_Details.text }}
             span.value {{ sellerForm_Details.value }}
+
+          p.sellerform__form--title.text(
+            v-if="marketing.val_2"
+          ) 마케팅 정보 수신
+            span.value( v-if="marketing.val_2" ) 동의
+            span.value( v-else ) 미동의
 
         router-link.global__cta(
           :to="'/'"
@@ -49,6 +57,7 @@ export default {
       'sellerForm_CategoryValue',
       'sellerForm_Details',
       'sellerForm_Category',
+      'marketing',
       'tokenState',
     ]),
 
