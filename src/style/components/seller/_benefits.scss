@@ -1,16 +1,11 @@
 $BaseURI: '/src/assets/dist/benefits_';
+$BaseURI_2: '/src/assets/dist/benefits2_';
 
 #benefits {
   border-top: 1px solid $texteee;
 
   .section__title {
     margin-bottom: $grid8x;
-
-    &.subtitle {
-      font-weight: 400;
-      margin-top: $grid16x;
-      @include font-size($grid4x);
-    }
   }
 
   .service__card {
@@ -24,7 +19,14 @@ $BaseURI: '/src/assets/dist/benefits_';
           width: 80px;
           height: 80px;
           margin-bottom: $grid4x !important;
-          @include setGridIcons($BaseURI);
+
+          &.seller1 {
+            @include setGridIcons($BaseURI);
+          }
+
+          &.seller2 {
+            @include setGridIcons($BaseURI_2);
+          }
 
           @media #{$pro2} {
             margin-bottom: $grid8x !important;
@@ -38,6 +40,13 @@ $BaseURI: '/src/assets/dist/benefits_';
 
     .service__card--text {
       padding: $grid4x $grid8x;
+    }
+  }
+
+  &.benefits2 {
+
+    .subtitle {
+      @include font-size($grid6x);
     }
   }
 }

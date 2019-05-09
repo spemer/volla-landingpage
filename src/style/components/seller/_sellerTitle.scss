@@ -2,6 +2,18 @@
   padding-top: $grid24x;
 
   .easy__text--title {
-    @include font-size($grid6x);
+    @include font-size($grid7x);
+
+    @media #{$tablet} {
+      @include font-size($grid6x);
+    }
+
+    @media #{$ip6} {
+      @include font-size($grid5x);
+    }
+
+    @media #{$mini} {
+      @include font-size($grid4x);
+    }
   }
 }
