@@ -14,7 +14,7 @@
           a.sellerTitle__from--link(
             :href="videoLink"
             target="_blank"
-            :title="videoChannel"
+            v-tooltip.bottom="{content: videoChannel + '님 유튜브 채널 바로가기(새 창)', delay: {show: 500, hide: 100}}"
           ) &nbsp;{{ videoChannel }}&nbsp;
             i.sellerTitle__from--icon.fab.fa-youtube
 </template>
