@@ -46,10 +46,10 @@ $BaseURI_2: '/src/assets/dist/benefits2_';
   &.benefits2 {
 
     .subtitle {
-      @include font-size($grid6x);
+      @include font-size($grid8x);
 
       @media #{$pablet} {
-        @include font-size($grid5x);
+        @include font-size($grid7x);
       }
 
       @media #{$ip6} {

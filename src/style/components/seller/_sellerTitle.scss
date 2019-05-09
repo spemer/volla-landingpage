@@ -16,4 +16,31 @@
       @include font-size($grid4x);
     }
   }
+
+  iframe {
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+    margin-top: $grid8x;
+    display: inline-block;
+
+    @media #{$pablet} {
+      height: 240px;
+    }
+  }
+
+  .sellerTitle__from {
+    margin-top: $grid;
+    text-align: center;
+
+    .sellerTitle__from--text {
+      font-weight: 300;
+      display: inline-block;
+
+      .sellerTitle__from--link {
+        cursor: pointer;
+        font-weight: 700;
+      }
+    }
+  }
 }
