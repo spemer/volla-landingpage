@@ -31,7 +31,7 @@ const state = {
   serviceList: {
     serviceList1: {
       title: '라이브 방송 + 모바일 쇼핑',
-      desc: '눈과 손이 지루할 틈 없는 쇼핑시간, 볼라에는 실시간으로 보고 듣고 이야기하는 즐거움이 있습니다.',
+      desc: '눈과 손이 지루할 틈 없는 쇼핑시간, ' + globalVar.serviceKo + '에는 실시간으로 보고 듣고 이야기하는 즐거움이 있습니다.',
     },
     serviceList2: {
       title: '원하는 정보를 실시간으로',

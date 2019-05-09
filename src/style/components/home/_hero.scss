@@ -101,9 +101,14 @@ $img_seller: '/src/assets/dist/hero_2.png';
   &.sellerHero {
     margin: 0 auto;
     text-align: left !important;
-    height: $grid128x;
+    height: $grid140x;
     margin-top: $header;
     background-image: url('#{$img_seller}');
+
+    @media #{$tablet} {
+      height: $grid96x;
+      text-align: center !important;
+    }
 
     .hero__text {
       top: 50%;
@@ -112,8 +117,24 @@ $img_seller: '/src/assets/dist/hero_2.png';
       margin-right: -50%;
       @include transform(translate(0%, -50%));
 
+      @media #{$tablet} {
+        margin-top: -#{$grid8x};
+        color: #fff;
+        position: relative;
+        margin-right: 0%;
+        @include transform(translate(0%, 100%));
+      }
+
+      @media #{$mini} {
+        margin-top: 0;
+      }
+
       .hero__text--title {
         text-align: left;
+
+        @media #{$tablet} {
+          text-align: center;
+        }
       }
     }
 

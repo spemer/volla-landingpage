@@ -17,11 +17,21 @@
             v-tooltip.bottom="{content: videoChannel + '님 유튜브 채널 바로가기(새 창)', delay: {show: 500, hide: 100}}"
           ) &nbsp;{{ videoChannel }}&nbsp;
             i.sellerTitle__from--icon.fab.fa-youtube
+
+      div.global__cta
+        a.global__cta--link(
+          :href="ir"
+          target="_blank"
+        )
+          button.global__cta--btn(
+            :title="serviceKo + ' 입점소개서 다운로드(새 창)'"
+          ) 입점소개서 받기
 </template>
 
 <script>
 import Vue from 'vue'
 import VueYoutube from 'vue-youtube'
+import { globalVar } from '@/globalVar'
 
 Vue.use(VueYoutube)
 
@@ -29,8 +39,10 @@ export default {
   name: 'sellerTitle',
 
   data: () => ({
-    videoId: process.env.YT_ID,
+    ir: globalVar.ir,
     videoChannel: '춤추는 변호사',
+    videoId: process.env.YT_ID,
+    serviceKo: globalVar.serviceKo,
     videoLink: 'https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ',
   }),
 

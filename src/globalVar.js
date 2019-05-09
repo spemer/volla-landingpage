@@ -22,7 +22,7 @@ export const globalVar = new Vue({
     mailTo: 'ceo@volla.live',
 
     websiteUrl: 'https://volla.live',
-    iosStore: '#',
+    iosStore: 'https://itunes.apple.com/kr/app/id1454785070?mt=8',
     androidStore: 'https://play.google.com/store/apps/details?id=com.riversouthfive.volla',
 
     facebookUrl: 'https://facebook.com/vollaofficial/',
@@ -34,5 +34,7 @@ export const globalVar = new Vue({
     userServicePageTitle: '서비스이용약관(이용자용)',
     ceoPrivacyPageTitle: '개인정보처리방침(판매자용)',
     ceoServicePageTitle: '서비스이용약관(쇼핑몰사업자용)',
+
+    ir: 'https://firebasestorage.googleapis.com/v0/b/volla-landingpage.appspot.com/o/%E1%84%87%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1_%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9%E1%84%8F%E1%85%A5%E1%84%86%E1%85%A5%E1%84%89%E1%85%B3%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5_190503_ver.pdf?alt=media&token=cdcc1701-c523-4bfa-8038-a1ee37540915'
   }
 })
