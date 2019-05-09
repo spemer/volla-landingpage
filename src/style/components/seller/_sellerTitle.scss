@@ -1,0 +1,7 @@
+#sellerTitle {
+  padding-top: $grid24x;
+
+  .easy__text--title {
+    @include font-size($grid6x);
+  }
+}
