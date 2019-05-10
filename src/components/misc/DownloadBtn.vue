@@ -33,7 +33,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'DownloadBtn',
 
-  data: () => ({
+  data: _ => ({
     userAgent: undefined,
   }),
 

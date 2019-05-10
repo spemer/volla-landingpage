@@ -36,7 +36,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'joinus',
 
-  data: () => ({
+  data: _ => ({
     mailTo: globalVar.mailTo,
     serviceKo: globalVar.serviceKo,
     stringUpper: '',
@@ -51,7 +51,6 @@ export default {
         duration : 2000
       })
     },
-
   },
 
   mounted () {

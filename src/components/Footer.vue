@@ -46,7 +46,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'footer-el',
 
-  data: () => ({
+  data: _ => ({
     mailTo: globalVar.mailTo,
     serviceKo: globalVar.serviceKo,
     companyName: globalVar.companyName,
@@ -69,7 +69,7 @@ export default {
       'tosList',
       'snsList',
     ]),
-
   },
+
 }
 </script>

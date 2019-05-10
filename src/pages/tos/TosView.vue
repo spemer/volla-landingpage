@@ -14,5 +14,6 @@ export default {
   components: {
     CloseBtn,
   },
+
 }
 </script>

@@ -29,7 +29,7 @@ Vue.use(VueYoutube)
 export default {
   name: 'videoEmbed',
 
-  data: () => ({
+  data: _ => ({
     videoChannel: '춤추는 변호사',
     videoId: process.env.YT_ID,
     serviceKo: globalVar.serviceKo,

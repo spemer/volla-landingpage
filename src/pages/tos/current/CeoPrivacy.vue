@@ -192,7 +192,6 @@ export default {
       'tosList',
       'tosVars',
     ]),
-
   },
 
   metaInfo: {

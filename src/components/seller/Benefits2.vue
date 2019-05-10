@@ -23,7 +23,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'benefits',
 
-  data: () => ({
+  data: _ => ({
     serviceKo: globalVar.serviceKo,
   }),
 
@@ -31,7 +31,7 @@ export default {
     ...mapState([
       'benefits',
     ]),
+  },
 
-  }
 }
 </script>

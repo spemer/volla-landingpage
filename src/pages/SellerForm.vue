@@ -97,7 +97,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'seller-form',
 
-  data: () => ({
+  data: _ => ({
     serviceKo: globalVar.serviceKo,
     sellerCondition: globalVar.sellerCondition,
   }),
@@ -150,7 +150,6 @@ export default {
         this.$store.commit('SET_MARKETING_BOOL', value)
       },
     },
-
   },
 
   methods: {
@@ -219,7 +218,6 @@ export default {
         alert('개인정보 수집 및 이용 동의 여부를 선택해주세요.')
       }
     },
-
   },
 
 }

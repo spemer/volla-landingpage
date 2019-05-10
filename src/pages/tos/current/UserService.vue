@@ -281,7 +281,6 @@ export default {
       'tosList',
       'tosVars',
     ]),
-
   },
 
   metaInfo: {
@@ -292,5 +291,6 @@ export default {
   updated () {
     window.postMessage(document.title)
   },
+
 }
 </script>

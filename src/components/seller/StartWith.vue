@@ -28,7 +28,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'startWith',
 
-  data: () => ({
+  data: _ => ({
     serviceKo: globalVar.serviceKo,
     sellerCondition: globalVar.sellerCondition,
   }),
@@ -36,7 +36,7 @@ export default {
   computed: {
     ...mapState([
       'startWith',
-    ])
+    ]),
   },
 
 }

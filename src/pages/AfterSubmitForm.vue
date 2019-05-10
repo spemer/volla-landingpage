@@ -49,7 +49,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'afterSubmitForm',
 
-  data: () => ({
+  data: _ => ({
     serviceKo: globalVar.serviceKo,
   }),
 
@@ -62,7 +62,6 @@ export default {
       'marketing',
       'tokenState',
     ]),
-
   },
 
   methods: {
@@ -71,7 +70,6 @@ export default {
       'SET_MARKETING_BOOL',
       'SET_TOKEN_BOOL',
     ]),
-
   },
 
   destroyed () {

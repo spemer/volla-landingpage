@@ -15,7 +15,7 @@
 
       div.global__cta
         a.global__cta--link(
-          :href="ir"
+          :href="volla_pdf"
           target="_blank"
         )
           button.global__cta--btn(
@@ -30,8 +30,8 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'benefits',
 
-  data: () => ({
-    ir: globalVar.ir,
+  data: _ => ({
+    volla_pdf: globalVar.volla_pdf,
     serviceKo: globalVar.serviceKo,
   }),
 
@@ -39,7 +39,7 @@ export default {
     ...mapState([
       'benefits',
     ]),
+  },
 
-  }
 }
 </script>

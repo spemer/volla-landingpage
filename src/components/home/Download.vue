@@ -20,7 +20,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'download',
 
-  data: () => ({
+  data: _ => ({
       serviceKo: globalVar.serviceKo,
   }),
 

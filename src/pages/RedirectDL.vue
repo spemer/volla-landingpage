@@ -20,7 +20,7 @@ import { globalVar } from '@/globalVar'
 
 export default {
 
-  data: () => ({
+  data: _ => ({
     userAgent: null,
     serviceKo: globalVar.serviceKo,
   }),
@@ -35,7 +35,7 @@ export default {
         property: 'og:description',      content: globalVar.serviceEn + '앱 다운로드',
         name:     'twitter:description', content: globalVar.serviceEn + '앱 다운로드',
       }
-    ]
+    ],
   },
 
   created () {
@@ -74,5 +74,6 @@ export default {
       window.location.href = unknown
     }
   },
+
 }
 </script>

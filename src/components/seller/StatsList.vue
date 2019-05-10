@@ -38,7 +38,7 @@ Vue.use(VueScrollReveal, {
 export default {
   name: 'statsList',
 
-  data: () => ({
+  data: _ => ({
     serviceKo: globalVar.serviceKo,
   }),
 
