@@ -59,12 +59,13 @@
         p.sellerform__form--condition {{ sellerCondition }}
 
         div.sellerform__form--terms
-          p.sellerform__form--termsDetails {{ marketingTerms[0] }}
-          p.sellerform__form--termsDetails {{ marketingTerms[1] }}
+          p.sellerform__form--termsDetails(
+            v-for="(value, key, index) in marketingTerms"
+          ) {{ value.desc }}
 
         label.sellerform__form--checkbox(
           for="checkbox_1"
-        ) (필수) 개인정보 수집 및 이용에 동의합니다.
+        ) {{ marketingTerms.personal.title }}
           input(
             id="checkbox_1"
             type="checkbox"
@@ -74,7 +75,7 @@
 
         label.sellerform__form--checkbox(
           for="checkbox_2"
-        ) (선택) 마케팅 정보 수신에 동의합니다.
+        ) {{ marketingTerms.marketing.title }}
           input(
             id="checkbox_2"
             type="checkbox"

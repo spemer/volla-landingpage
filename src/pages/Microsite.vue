@@ -1,7 +1,8 @@
 <template lang="pug">
   div#microsite
     Hero
-    SellerTitle.section__each
+    VideoEmbed.section__each
+    StatsList.section__each
     StartWith.section__each
     Benefits.section__each
     Benefits2.section__each
@@ -10,7 +11,8 @@
 
 <script>
 import Hero from '@/components/seller/Hero'
-import SellerTitle from '@/components/seller/SellerTitle'
+import VideoEmbed from '@/components/seller/VideoEmbed'
+import StatsList from '@/components/seller/StatsList'
 import StartWith from '@/components/seller/StartWith'
 import Benefits from '@/components/seller/Benefits'
 import Benefits2 from '@/components/seller/Benefits2'
@@ -21,7 +23,8 @@ export default {
 
   components: {
     Hero,
-    SellerTitle,
+    VideoEmbed,
+    StatsList,
     StartWith,
     Benefits,
     Benefits2,

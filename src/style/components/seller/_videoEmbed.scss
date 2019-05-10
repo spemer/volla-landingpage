@@ -1,7 +1,8 @@
-#sellerTitle {
-  padding: $grid16x 0 $grid12x;
+#videoEmbed {
+  padding: $grid16x 0 $grid20x;
 
   .easy__text--title {
+    padding: $grid4x 0;
     @include font-size($grid7x);
 
     @media #{$tablet} {
@@ -29,15 +30,15 @@
     }
   }
 
-  .sellerTitle__from {
+  .videoEmbed__from {
     text-align: center;
     margin-top: $grid2x;
 
-    .sellerTitle__from--text {
+    .videoEmbed__from--text {
       font-weight: 300;
       display: inline-block;
 
-      .sellerTitle__from--link {
+      .videoEmbed__from--link {
         cursor: pointer;
         font-weight: 700;
       }

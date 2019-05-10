@@ -2,10 +2,15 @@ $BaseURI: '/src/assets/dist/benefits_';
 $BaseURI_2: '/src/assets/dist/benefits2_';
 
 #benefits {
+  padding-bottom: $grid24x;
   border-top: 1px solid $texteee;
 
   .section__title {
     margin-bottom: $grid8x;
+  }
+
+  .global__cta {
+    margin-top: -#{$grid8x};
   }
 
   .service__card {
@@ -44,6 +49,7 @@ $BaseURI_2: '/src/assets/dist/benefits2_';
   }
 
   &.benefits2 {
+    padding-bottom: $grid8x;
 
     .subtitle {
       @include font-size($grid8x);

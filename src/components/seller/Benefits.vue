@@ -12,6 +12,15 @@
             :class="'img-' + index"
           )
           p.service__card--text.section__subtitle.withcount {{ value }}
+
+      div.global__cta
+        a.global__cta--link(
+          :href="ir"
+          target="_blank"
+        )
+          button.global__cta--btn(
+            :title="serviceKo + ' 입점소개서 다운로드(새 창)'"
+          ) 입점소개서 받기
 </template>
 
 <script>

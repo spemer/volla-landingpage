@@ -1,0 +1,10 @@
+#statsList {
+  padding-bottom: $grid20x;
+  border-top: 1px solid $texteee;
+
+  .service__card--title {
+    color: $brand-pink;
+    font-weight: 700 !important;
+    @include font-size($grid8x);
+  }
+}

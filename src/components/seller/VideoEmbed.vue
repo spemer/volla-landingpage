@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#sellerTitle
+  div#videoEmbed
     div.container
       h1.easy__text--title.section__title
         | 이제 소비자는 예쁜 제품사진이 아닌
@@ -9,23 +9,14 @@
       youtube.video__body(
         video-id="_62t0IooHYw"
       )
-      p.sellerTitle__from
-        span.sellerTitle__from--text &nbsp;영상출처:
-          a.sellerTitle__from--link(
+      p.videoEmbed__from
+        span.videoEmbed__from--text &nbsp;영상출처:
+          a.videoEmbed__from--link(
             :href="videoLink"
             target="_blank"
             v-tooltip.bottom="{content: videoChannel + '님 유튜브 채널 바로가기(새 창)', delay: {show: 500, hide: 100}}"
           ) &nbsp;{{ videoChannel }}&nbsp;
-            i.sellerTitle__from--icon.fab.fa-youtube
-
-      div.global__cta
-        a.global__cta--link(
-          :href="ir"
-          target="_blank"
-        )
-          button.global__cta--btn(
-            :title="serviceKo + ' 입점소개서 다운로드(새 창)'"
-          ) 입점소개서 받기
+            i.videoEmbed__from--icon.fab.fa-youtube
 </template>
 
 <script>
@@ -36,7 +27,7 @@ import { globalVar } from '@/globalVar'
 Vue.use(VueYoutube)
 
 export default {
-  name: 'sellerTitle',
+  name: 'videoEmbed',
 
   data: () => ({
     ir: globalVar.ir,
