@@ -3,6 +3,7 @@
   border-top: 1px solid $texteee;
 
   .service__card--title {
+    display: block;
     color: $brand-pink;
     font-weight: 700 !important;
     @include font-size($grid8x);
