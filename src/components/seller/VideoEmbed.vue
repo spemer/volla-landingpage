@@ -30,7 +30,6 @@ export default {
   name: 'videoEmbed',
 
   data: () => ({
-    ir: globalVar.ir,
     videoChannel: '춤추는 변호사',
     videoId: process.env.YT_ID,
     serviceKo: globalVar.serviceKo,

@@ -23,7 +23,6 @@
     height: 480px;
     margin: 0 auto;
     display: inline-block;
-    @include border-radius();
 
     @media #{$pablet} {
       height: 240px;

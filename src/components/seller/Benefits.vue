@@ -31,6 +31,7 @@ export default {
   name: 'benefits',
 
   data: () => ({
+    ir: globalVar.ir,
     serviceKo: globalVar.serviceKo,
   }),
 
