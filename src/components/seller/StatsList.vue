@@ -32,7 +32,7 @@ import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 Vue.use(VueScrollReveal, {
-  delay: 1500
+  delay: 1500,
 })
 
 export default {

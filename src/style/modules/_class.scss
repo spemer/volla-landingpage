@@ -112,16 +112,9 @@
     border: 2px solid $brand-pink;
     @include transition(all .25s ease);
     @include border-radius($grid16x);
-    // @include box-shadow($grid2x, $grid4x);
-
-    &.ghost__white {
-      border: 2px solid #fff;
-    }
 
     &:hover {
-      color: #fff;
-      font-weight: 900;
-      background-color: $brand-pink;
+      opacity: 0.5;
     }
   }
 }

@@ -1,10 +1,17 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Meta from 'vue-meta'
+import VueGtm from 'vue-gtm'
+import VueRouter from 'vue-router'
 import store from '@/store/index'
 
-Vue.use(VueRouter)
 Vue.use(Meta)
+Vue.use(VueRouter)
+Vue.use(VueGtm, {
+  id: process.env.GTM_ID,
+  enabled: true,
+  debug: true,
+  vueRouter: router,
+})
 
 import Home from '@/pages/Home'
 import HomeView from '@/pages/HomeView'
@@ -22,11 +29,11 @@ import RedirectDL from '@/pages/RedirectDL'
 
 function requireToken(to, from, next) {
   if (store.state.tokenState)
-    return next()
+    return next
   next('/sellerform')
 }
 
-export default new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   routes: [{
       path: '*',
@@ -49,11 +56,17 @@ export default new VueRouter({
           path: '/seller',
           name: 'microsite',
           component: Microsite,
+          meta: {
+            gtm: 'Volla_Web_Page View_Seller',
+          },
         },
         {
           path: '/sellerform',
           name: 'sellerForm',
           component: SellerForm,
+          meta: {
+            gtm: 'Volla_Web_Page View_SellerForm',
+          },
         },
         {
           path: '/submit',
@@ -107,3 +120,5 @@ export default new VueRouter({
     }
   },
 })
+
+export default router

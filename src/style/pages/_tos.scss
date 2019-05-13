@@ -1,12 +1,10 @@
 #tosView {
 
   .global__cta--btn {
-    @include box-shadow(0, 0, transparent);
-  }
-
-  .global__cta--btn {
     display: inline-block;
-    margin: -#{$grid16x} auto $grid40x !important;
+    border: 2px solid transparent;
+    background-color: $brand-pink-16;
+    margin: -#{$grid16x} auto $grid48x !important;
   }
 
   #terms {

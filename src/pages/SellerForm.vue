@@ -107,6 +107,10 @@ export default {
     titleTemplate: '%s',
   },
 
+  mounted () {
+    this.$gtm.trackView('Volla_Web_Page View_SellerForm', this.$router.currentRoute.path)
+  },
+
   computed: {
     ...mapState([
       'sellerForm_Category',
@@ -168,12 +172,12 @@ export default {
       ) { this.SET_TOKEN_BOOL(true) }
     },
 
-    start () { this.$Progress.start() },
-    set (num) { this.$Progress.set(num) },
-    increase (num) { this.$Progress.increase(num) },
-    decrease (num) { this.$Progress.decrease(num) },
-    finish () { this.$Progress.finish() },
-    fail () { this.$Progress.fail() },
+    start: _ => this.$Progress.start(),
+    set: num => this.$Progress.set(num),
+    increase: num => this.$Progress.increase(num),
+    decrease: num => this.$Progress.decrease(num),
+    finish: _ => this.$Progress.finish(),
+    fail: _ => this.$Progress.fail(),
 
     sendPost () {
       if (this.marketing.val_1 === true) {

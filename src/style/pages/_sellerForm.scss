@@ -201,15 +201,12 @@ $mobile-width: 288px;
       font-weight: 900;
       color: $brand-pink;
       margin-top: $grid24x;
-      background-color: #fff;
-      border: 2px solid $brand-pink;
+      background-color: $brand-pink-16;
       @include border-radius($grid16x);
       @include transition(all 0.25s ease);
 
       &:hover {
-        color: #fff;
-        font-weight: 900;
-        background-color: $brand-pink;
+        opacity: .5;
       }
     }
 

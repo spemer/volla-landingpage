@@ -21,7 +21,7 @@ export default {
   name: 'download',
 
   data: _ => ({
-      serviceKo: globalVar.serviceKo,
+    serviceKo: globalVar.serviceKo,
   }),
 
   components: {

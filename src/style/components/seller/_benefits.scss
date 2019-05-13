@@ -11,6 +11,11 @@ $BaseURI_2: '/src/assets/dist/benefits2_';
 
   .global__cta {
     margin-top: -#{$grid8x};
+
+    .global__cta--btn {
+      border: 2px solid transparent;
+      background-color: $brand-pink-16;
+    }
   }
 
   .service__card {

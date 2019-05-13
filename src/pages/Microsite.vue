@@ -21,6 +21,10 @@ import JoinUs from '@/components/home/JoinUs'
 export default {
   name: 'microsite',
 
+  mounted () {
+    this.$gtm.trackView('Volla_Web_Page View_Seller', this.$router.currentRoute.path)
+  },
+
   components: {
     Hero,
     VideoEmbed,
