@@ -29,7 +29,7 @@ import RedirectDL from '@/pages/RedirectDL'
 
 function requireToken(to, from, next) {
   if (store.state.tokenState)
-    return next
+    return next()
   next('/sellerform')
 }
 

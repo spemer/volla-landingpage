@@ -3,11 +3,11 @@
     div.container
       h1.easy__text--title.section__title 스마트폰으로 언제 어디서든
       p.section__subtitle
-        | {{ serviceKo }}는 방송을 위한 전문장비가 필요 없습니다.
+        | {{ serviceKo }}는 방송용 전문장비가 필요 없습니다.
         br
-        | 언제 어디서든, 스마트폰 하나만으로
+        | 언제 어디서든, 스마트폰 하나만으로도
         br
-        | 손쉽고 빠르게 {{ serviceKo }}에서 방송을 시작해보세요.
+        | 쉽고 빠르게 {{ serviceKo }}에서 방송을 시작해보세요.
 </template>
 
 <script>

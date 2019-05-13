@@ -27,13 +27,13 @@
 
     .download__badge--link {
       cursor: pointer;
-      height: $grid10x;
+      height: $grid12x;
       display: inline-block;
       margin-bottom: $grid8x;
       border-radius: $grid16x;
-      background-color: #fff;
-      border: 1px solid $textddd;
-      padding: $grid2x $grid4x 0;
+      background-color: $black04;
+      padding: $grid2x $grid6x 0;
+      border: 1px solid transparent;
       @include transition(all 0.25s ease);
 
       &:hover {
@@ -46,14 +46,11 @@
         @media #{$pablet} {
           margin-right: 0;
         }
-
-        @media #{$mobile} {
-          padding: $grid2x $grid4x 0;
-        }
       }
 
       .download__badge--each {
         width: $grid6x;
+        margin-top: $grid2x;
         margin-right: $grid2x;
         vertical-align: bottom;
       }

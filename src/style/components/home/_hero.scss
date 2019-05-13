@@ -94,6 +94,10 @@ $img_seller: '/src/assets/dist/hero_2.png';
 
       .dlbtn {
         margin-top: $grid12x;
+
+        a {
+          background-color: #fff;
+        }
       }
     }
   }
@@ -146,9 +150,6 @@ $img_seller: '/src/assets/dist/hero_2.png';
 
       @media #{$tablet} {
         display: none;
-        // clear: both;
-        // width: 280px;
-        // margin: 0 auto;
       }
     }
   }
