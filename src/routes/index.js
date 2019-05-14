@@ -4,15 +4,6 @@ import VueGtm from 'vue-gtm'
 import VueRouter from 'vue-router'
 import store from '@/store/index'
 
-Vue.use(Meta)
-Vue.use(VueRouter)
-Vue.use(VueGtm, {
-  id: process.env.GTM_ID,
-  enabled: true,
-  debug: true,
-  vueRouter: router,
-})
-
 import Home from '@/pages/Home'
 import HomeView from '@/pages/HomeView'
 import SellerForm from '@/pages/SellerForm'
@@ -26,6 +17,15 @@ import CeoPrivacy from '@/pages/tos/current/CeoPrivacy'
 import CeoService from '@/pages/tos/current/CeoService'
 
 import RedirectDL from '@/pages/RedirectDL'
+
+Vue.use(Meta)
+Vue.use(VueRouter)
+Vue.use(VueGtm, {
+  id: process.env.GTM_ID,
+  enabled: true,
+  debug: true,
+  vueRouter: router,
+})
 
 function requireToken(to, from, next) {
   if (store.state.tokenState)
@@ -109,7 +109,7 @@ const router = new VueRouter({
     },
   ],
 
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior: (to, from, savedPosition) => {
     if (savedPosition)
       return savedPosition
     else {

@@ -215,7 +215,7 @@ export default {
         .catch(error => {
           this.$Progress.fail()
           this.SET_TOKEN_BOOL(false)
-          alert('오류입니다. 다시 시도해주세요!\n' + error)
+          alert(`오류입니다. 다시 시도해주세요!\n${error}`)
           console.warn(error)
         })
       } else {

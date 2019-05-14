@@ -7,14 +7,14 @@
         | 영상을 통한 소통으로 구매를 합니다
 
       youtube.video__body(
-        video-id="_62t0IooHYw"
+        :video-id="videoId"
       )
       p.videoEmbed__from
         span.videoEmbed__from--text 영상출처:
           a.videoEmbed__from--link(
             :href="videoLink"
             target="_blank"
-            v-tooltip.bottom="{content: videoChannel + '님 유튜브 채널 바로가기(새 창)', delay: {show: 500, hide: 100}}"
+            v-tooltip.bottom="{content: `${videoChannel} 님 유튜브 채널 바로가기(새 창)`, delay: {show: 500, hide: 100}}"
           ) &nbsp;{{ videoChannel }}&nbsp;
             i.videoEmbed__from--icon.fab.fa-youtube
 </template>
@@ -32,7 +32,6 @@ export default {
   data: _ => ({
     videoChannel: '춤추는 변호사',
     videoId: process.env.YT_ID,
-    serviceKo: globalVar.serviceKo,
     videoLink: 'https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ',
   }),
 

@@ -37,9 +37,5 @@ export default {
     serviceKo: globalVar.serviceKo,
   }),
 
-  methods: {
-    dlWait: _ => alert('어플이 4월 중으로 곧 출시됩니다. 조금만 기다려주세요!'),
-  },
-
 }
 </script>
