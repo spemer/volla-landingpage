@@ -199,9 +199,5 @@ export default {
     titleTemplate: '%s',
   },
 
-  updated () {
-    window.postMessage(document.title)
-  },
-
 }
 </script>

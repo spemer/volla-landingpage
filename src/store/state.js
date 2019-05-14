@@ -12,18 +12,12 @@ const state = {
       title: 'Google Play',
       class: 'fa-google-play',
       href: globalVar.androidStore,
-      dlWait: _ => {
-        window.open(globalVar.androidStore, '_blank')
-      },
     },
     iOS: {
       src: '/src/assets/dist/appstore.png',
       title: 'App Store',
       class: 'fa-apple',
       href: globalVar.iosStore,
-      dlWait: _ => {
-        alert('아이폰용 어플이 5월 중으로 곧 출시됩니다. 조금만 기다려주세요!')
-      },
     },
   },
 
@@ -132,7 +126,7 @@ const state = {
       name: 'contact',
       minlength: '8',
       maxlength: '12',
-      placeholder: '" - " 없이 숫자만 입력해주세요.',
+      placeholder: '숫자만 입력해주세요.',
       required: true,
     },
     {

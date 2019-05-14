@@ -30,7 +30,6 @@
 
       .global__cta--btn {
         width: $grid40x;
-        border: 2px solid transparent;
 
         &.form {
           color: #fff;
@@ -39,7 +38,6 @@
 
         &.mailto {
           margin-right: $grid4x;
-          background-color: $brand-pink-16;
 
           @media #{$pablet} {
             display: none;

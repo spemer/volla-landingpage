@@ -106,10 +106,10 @@
     cursor: pointer;
     height: $grid14x;
     font-weight: 900;
-    margin-top: $grid8x;
     color: $brand-pink;
-    background-color: #fff;
-    border: 2px solid $brand-pink;
+    margin-top: $grid8x;
+    border: 2px solid transparent;
+    background-color: $brand-pink-16;
     @include transition(all .25s ease);
     @include border-radius($grid16x);
 

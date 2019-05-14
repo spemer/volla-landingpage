@@ -37,10 +37,10 @@ export default {
   name: 'joinus',
 
   data: _ => ({
-    mailTo: globalVar.mailTo,
-    serviceKo: globalVar.serviceKo,
     stringUpper: '',
     stringBelow: '',
+    mailTo: globalVar.mailTo,
+    serviceKo: globalVar.serviceKo,
   }),
 
   methods: {

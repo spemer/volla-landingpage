@@ -10,7 +10,7 @@
         video-id="_62t0IooHYw"
       )
       p.videoEmbed__from
-        span.videoEmbed__from--text &nbsp;영상출처:
+        span.videoEmbed__from--text 영상출처:
           a.videoEmbed__from--link(
             :href="videoLink"
             target="_blank"

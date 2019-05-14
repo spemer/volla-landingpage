@@ -5,10 +5,9 @@
         v-for="(value, key) in badges"
         :key="key"
         target="_blank"
-        @click="value.dlWait"
+        :href="value.href"
         :title="key + ' ' + value.title + '에서 다운받기'"
       )
-        //- :href="value.href"
         img.download__badge--each(
           :src="value.src"
         )
@@ -17,10 +16,9 @@
     div.download__badge.if__mobile--true
       a.download__badge--link(
         target="_blank"
-        @click="badgesMobile.dlWait"
+        :href="badgesMobile.href"
         :title="badgesMobile.title + '에서 다운받기'"
       )
-        //- :href="badgesMobile.href"
         img.download__badge--each(
           :src="badgesMobile.src"
         )

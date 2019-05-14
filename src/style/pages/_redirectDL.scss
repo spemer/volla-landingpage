@@ -2,17 +2,16 @@
   text-align: center;
 
   .redirect__wrapper {
-    width: 200px;
-    margin: 0 auto;
-    display: block;
-    margin-top: 100%;
-    top: 50% !important;
-    transform: translateY(-50%);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
 
     .redirect__wrapper--img {
-      width: $grid16x;
       display: block;
       margin: 0 auto;
+      width: $grid16x;
     }
 
     .redirect__wrapper--text {
@@ -21,8 +20,7 @@
 
     .global__cta {
       display: block;
-      margin-top: $grid48x;
-      bottom: $grid8x;
+      margin-top: $grid32x;
     }
   }
 }

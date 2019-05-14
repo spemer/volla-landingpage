@@ -61,9 +61,7 @@ export default {
       window.location.href = android
     }
     else if (this.userAgent == "iOS") {
-      // TODO: ios 통과이후 url 변경
-      // window.location.href = ios
-      window.location.href = unknown
+      window.location.href = ios
     }
     else if (this.userAgent == "Windows Phone") {
       alert("안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.")
