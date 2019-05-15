@@ -32,7 +32,7 @@ export default {
   name: 'DownloadBtn',
 
   data: _ => ({
-    userAgent: undefined,
+    userAgent: null,
   }),
 
   computed: {

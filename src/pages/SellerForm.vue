@@ -1,7 +1,7 @@
 <template lang="pug">
   div#sellerForm
     div.container
-      h1.sellerform__form--title 셀러 입점신청서
+      h1.sellerform__form--title {{ sellerForm }}
       p.sellerform__form--subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
         span 는 필수 입력 항목입니다.
 
@@ -99,6 +99,7 @@ export default {
 
   data: _ => ({
     serviceKo: globalVar.serviceKo,
+    sellerForm: globalVar.sellerForm,
     sellerCondition: globalVar.sellerCondition,
   }),
 

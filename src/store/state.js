@@ -179,6 +179,7 @@ const state = {
     val_1: false,
     val_2: false
   },
+
   tokenState: false,
 
   marketingTerms: {

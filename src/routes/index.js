@@ -28,8 +28,7 @@ Vue.use(VueGtm, {
 })
 
 function requireToken(to, from, next) {
-  if (store.state.tokenState)
-    return next()
+  if (store.state.tokenState) return next()
   next('/sellerform')
 }
 
