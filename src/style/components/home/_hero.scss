@@ -5,7 +5,6 @@ $img_seller: '/src/assets/dist/hero_2.png';
   width: 100%;
   height: $grid128x;
   position: relative;
-  margin-top: $header;
   background-image: url('#{$img_home}');
   background-size: cover;
   background-repeat: no-repeat;
@@ -104,9 +103,8 @@ $img_seller: '/src/assets/dist/hero_2.png';
 
   &.sellerHero {
     margin: 0 auto;
-    text-align: left !important;
     height: $grid140x;
-    margin-top: $header;
+    text-align: left !important;
     background-image: url('#{$img_seller}');
 
     @media #{$tablet} {

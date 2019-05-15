@@ -3,8 +3,10 @@ import Vue from 'vue'
 export const globalVar = new Vue({
   data: {
     companyName: '알에스파이브',
-    companyNameFull: '(주)알에스파이브',
-    companyNameFullKo: '주식회사 알에스파이브',
+    companyNameFull: '알에스파이브',
+    // companyNameFull: '(주)알에스파이브',
+    companyNameFullKo: '알에스파이브',
+    // companyNameFullKo: '주식회사 알에스파이브',
     companyAdr: '서울특별시 송파구 송파대로 345, 209동 904호(가락동, 헬리오시티)',
     companyCEO: '이문규',
     companyID: '653-12-01150',

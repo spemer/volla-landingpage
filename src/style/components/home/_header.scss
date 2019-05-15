@@ -2,11 +2,16 @@
   top: 0;
   width: 100%;
   z-index: 10;
-  position: fixed;
   height: $header;
+  position: sticky;
   font-weight: 900;
   background-color: #fff;
   @include box-shadow();
+
+  @supports (position: sticky) or (position: -webkit-sticky) {
+    position: -webkit-sticky;
+    position: sticky;
+  }
 
   .container {
     height: $header;
