@@ -14,7 +14,7 @@ import VueScrollTo from 'vue-scrollto'
 import VueClipboard from 'vue-clipboard2'
 import VueProgressBar from 'vue-progressbar'
 
-Vue.config.productionTip = true
+Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Kakao.init(process.env.KAKAO_KEY)
 

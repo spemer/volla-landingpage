@@ -206,7 +206,7 @@ export default {
         .then(response => {
           this.$Progress.finish()
           this.SET_TOKEN_BOOL(true)
-          console.info(response.data)
+          // console.info(response.data)
           this.$router.push('/submit')
         })
         .catch(error => {
