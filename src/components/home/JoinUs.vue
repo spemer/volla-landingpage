@@ -22,8 +22,8 @@
             title="메일 앱 열기(새 창)"
           ) 메일로 문의하기
 
-        router-link.global__cta--link(
-          :to="'/sellerform'"
+        a.global__cta--link(
+          :href="'/sellerform'"
         )
           button.global__cta--btn.form(
             title="셀러입점신청"

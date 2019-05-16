@@ -16,13 +16,13 @@
           v-if="this.$route.path === '/'"
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
-        router-link.header__right--text.join(
+        a.header__right--text.join(
           v-if="this.$route.path === '/'"
-          :to="'/seller'"
+          :href="'/seller'"
         ) 입점소개
-        router-link.header__right--text.home(
+        a.header__right--text.home(
           v-if="this.$route.path !== '/'"
-          :to="'/'"
+          :href="'/'"
         ) 메인으로
 </template>
 
