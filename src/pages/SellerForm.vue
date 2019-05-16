@@ -108,10 +108,6 @@ export default {
     titleTemplate: '%s',
   },
 
-  mounted () {
-    this.$gtm.trackView('Volla_Web_Page View_SellerForm', this.$router.currentRoute.path)
-  },
-
   computed: {
     ...mapState([
       'sellerForm_Category',

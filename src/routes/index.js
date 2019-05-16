@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
-import VueGtm from 'vue-gtm'
 import VueRouter from 'vue-router'
 import store from '@/store/index'
 
@@ -20,12 +19,6 @@ import RedirectDL from '@/pages/RedirectDL'
 
 Vue.use(Meta)
 Vue.use(VueRouter)
-Vue.use(VueGtm, {
-  id: process.env.GTM_ID,
-  enabled: true,
-  debug: true,
-  vueRouter: router,
-})
 
 function requireToken(to, from, next) {
   if (store.state.tokenState) return next()
