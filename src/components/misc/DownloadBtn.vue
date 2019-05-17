@@ -46,7 +46,7 @@ export default {
       } else if (this.userAgent == 'iOS') {
         return this.badges.iOS
       } else {
-        return this.badges.iOS
+        return this.badges.Android
       }
     },
   },

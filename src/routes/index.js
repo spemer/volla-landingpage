@@ -3,6 +3,9 @@ import Meta from 'vue-meta'
 import VueRouter from 'vue-router'
 import store from '@/store/index'
 
+Vue.use(Meta)
+Vue.use(VueRouter)
+
 import Home from '@/pages/Home'
 import HomeView from '@/pages/HomeView'
 import SellerForm from '@/pages/SellerForm'
@@ -17,15 +20,12 @@ import CeoService from '@/pages/tos/current/CeoService'
 
 import RedirectDL from '@/pages/RedirectDL'
 
-Vue.use(Meta)
-Vue.use(VueRouter)
-
 function requireToken(to, from, next) {
   if (store.state.tokenState) return next()
   next('/sellerform')
 }
 
-const router = new VueRouter({
+export default new VueRouter({
   mode: 'history',
   routes: [{
       path: '*',
@@ -112,5 +112,3 @@ const router = new VueRouter({
     }
   },
 })
-
-export default router

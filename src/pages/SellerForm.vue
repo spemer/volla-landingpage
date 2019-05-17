@@ -108,6 +108,10 @@ export default {
     titleTemplate: '%s',
   },
 
+  // mounted () {
+  //   dataLayer.push({event: 'pageview'})
+  // },
+
   computed: {
     ...mapState([
       'sellerForm_Category',
