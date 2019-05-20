@@ -1,10 +1,10 @@
-$BaseURI: '/src/assets/dist/serviceImage_';
-$ext: 'png';
-
 #service,
 #benefits,
 #startWith,
 #statsList {
+  $BaseURI: '/src/assets/dist/serviceImage_';
+  $ext: 'png';
+
   overflow-y: hidden;
   padding-top: $grid16x;
   padding-bottom: $grid12x;
@@ -25,6 +25,14 @@ $ext: 'png';
       .section__subtitle {
 
         @media #{$pro2} {
+          padding: 0 $grid32x;
+        }
+
+        @media #{$landsc} {
+          padding: 0 $grid16x;
+        }
+
+        @media #{$pablet} {
           padding: 0 $grid4x;
         }
       }
@@ -39,18 +47,7 @@ $ext: 'png';
         }
 
         @media #{$pro2} {
-          width: 320px;
-          height: 560px;
-        }
-
-        @media #{$pablet} {
-          width: 300px;
-          height: 520px;
-        }
-
-        @media #{$ip6} {
           width: 280px;
-          height: 480px;
         }
       }
 

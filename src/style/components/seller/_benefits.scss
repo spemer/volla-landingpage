@@ -16,6 +16,14 @@ $BaseURI_2: '/src/assets/dist/benefits2_';
   .service__card {
     padding: 0 $grid8x $grid4x;
 
+    @media #{$middle} {
+      padding: 0 0 $grid4x;
+    }
+
+    @media #{$pablet} {
+      padding: 0 $grid8x $grid4x;
+    }
+
     .service__card--each {
 
       .service__card--img {

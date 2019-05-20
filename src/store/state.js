@@ -10,13 +10,11 @@ export default {
     Android: {
       src: '/src/assets/dist/playstore.png',
       title: 'Google Play',
-      class: 'fa-google-play',
       href: globalVar.androidStore,
     },
     iOS: {
       src: '/src/assets/dist/appstore.png',
       title: 'App Store',
-      class: 'fa-apple',
       href: globalVar.iosStore,
     },
   },

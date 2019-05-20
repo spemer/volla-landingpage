@@ -1,22 +1,24 @@
 #download {
-  height: 656px;
+  $height: 664px;
+
+  height: $height;
   overflow-y: hidden;
   border-top: 1px solid $texteee;
 
   @media #{$pablet2} {
-    height: 720px;
+    height: calc(#{$height} + 64px);
   }
 
   @media #{$pablet} {
-    height: 667px;
+    height: calc(#{$height} + 11px);
   }
 
   @media #{$middle2} {
-    height: 675px;
+    height: calc(#{$height} + 19px);
   }
 
   @media #{$mobile} {
-    height: 603px;
+    height: calc(#{$height} - 53px);
   }
 
   .download__mockup {

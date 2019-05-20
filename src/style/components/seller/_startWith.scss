@@ -1,6 +1,6 @@
-$BaseURI: '/src/assets/dist/condition_';
-
 #startWith {
+  $BaseURI: '/src/assets/dist/condition_';
+
   border-top: 1px solid $texteee;
 
   .service__card--title {
@@ -10,6 +10,14 @@ $BaseURI: '/src/assets/dist/condition_';
 
   .service__card {
     padding: $grid4x $grid8x;
+
+    @media #{$middle} {
+      padding: $grid4x 0;
+    }
+
+    @media #{$pablet} {
+      padding: $grid4x $grid8x;
+    }
 
     .service__card--each {
 
