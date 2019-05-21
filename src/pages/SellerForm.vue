@@ -108,10 +108,6 @@ export default {
     titleTemplate: '%s',
   },
 
-  // mounted () {
-  //   dataLayer.push({event: 'pageview'})
-  // },
-
   computed: {
     ...mapState([
       'sellerForm_Category',
@@ -165,12 +161,8 @@ export default {
     checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
-      else if (
-        this.sellerForm_List[0].value &&
-        this.sellerForm_List[1].value &&
-        this.sellerForm_List[2].value &&
-        this.sellerForm_CategoryValue.value
-      ) { this.SET_TOKEN_BOOL(true) }
+      else if (this.sellerForm_List[0].value && this.sellerForm_List[1].value && this.sellerForm_List[2].value && this.sellerForm_CategoryValue.value)
+        this.SET_TOKEN_BOOL(true)
     },
 
     start: _ => this.$Progress.start(),
@@ -184,11 +176,10 @@ export default {
       if (this.marketing.val_1 === true) {
         this.$Progress.start()
 
-        const base = process.env.BASE_URL
         // const test = process.env.TEST_URL
-
-        axios.post(base + 'requestSeller',
         // axios.post(test,
+        const base = process.env.BASE_URL
+        axios.post(`${base}requestSeller`,
           {
             email: this.sellerForm_List[0].value,
             name: this.sellerForm_List[1].value,
@@ -210,8 +201,8 @@ export default {
         .then(response => {
           this.$Progress.finish()
           this.SET_TOKEN_BOOL(true)
-          // console.info(response.data)
           this.$router.push('/submit')
+          // console.info(response.data)
         })
         .catch(error => {
           this.$Progress.fail()

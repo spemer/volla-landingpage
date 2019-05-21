@@ -4,7 +4,7 @@
       div.container
         div.hero__text.center
           h1.hero__text--title
-            | 라이브 방송으로 담는
+            | 라이브 방송으로 만나는
             span.hero__title--nbsp &nbsp;&nbsp;
             span.hero__br
             | 오프라인 쇼핑

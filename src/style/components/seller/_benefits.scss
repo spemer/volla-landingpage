@@ -1,7 +1,7 @@
-$BaseURI: '/src/assets/dist/benefits_';
-$BaseURI_2: '/src/assets/dist/benefits2_';
-
 #benefits {
+  $BaseURI: '/src/assets/dist/benefits_';
+  $BaseURI_2: '/src/assets/dist/benefits2_';
+
   padding-bottom: $grid24x;
   border-top: 1px solid $texteee;
 
@@ -14,7 +14,7 @@ $BaseURI_2: '/src/assets/dist/benefits2_';
   }
 
   .service__card {
-    padding: 0 $grid8x $grid4x;
+    padding: 0 $grid4x $grid4x;
 
     @media #{$middle} {
       padding: 0 0 $grid4x;
@@ -52,7 +52,11 @@ $BaseURI_2: '/src/assets/dist/benefits2_';
   .service__card {
 
     .service__card--text {
-      padding: $grid4x $grid8x;
+      padding: $grid4x $grid4x;
+
+      @media #{$pablet} {
+        padding: 0 $grid8x;
+      }
     }
   }
 

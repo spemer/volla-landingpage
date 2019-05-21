@@ -16,10 +16,6 @@ export default {
     titleTemplate: '%s' + ' - ' + globalVar.tagline,
   },
 
-  // mounted () {
-  //   dataLayer.push({event: 'pageview'})
-  // },
-
 }
 </script>
 

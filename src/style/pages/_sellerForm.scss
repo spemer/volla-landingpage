@@ -59,6 +59,7 @@ $mobile-width: 288px;
     -moz-appearance: none !important;
     -ms-appearance: none !important;
     -o-appearance: none !important;
+    appearance: none !important;
   }
 
   @media #{$mobile} {
@@ -157,6 +158,7 @@ $mobile-width: 288px;
         margin-bottom: $grid12x;
         padding: $grid4x 0 $grid2x;
         border-bottom: 1px solid $textccc;
+        @include border-radius(0);
         @include font-size($grid4x);
         @include transition(all 0.25s ease);
 

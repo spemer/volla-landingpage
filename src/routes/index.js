@@ -20,7 +20,7 @@ import CeoService from '@/pages/tos/current/CeoService'
 
 import RedirectDL from '@/pages/RedirectDL'
 
-function requireToken(to, from, next) {
+const requireToken = (to, from, next) => {
   if (store.state.tokenState) return next()
   next('/sellerform')
 }
@@ -48,17 +48,11 @@ export default new VueRouter({
           path: '/seller',
           name: 'microsite',
           component: Microsite,
-          meta: {
-            gtm: 'Volla_Web_Page View_Seller',
-          },
         },
         {
           path: '/sellerform',
           name: 'sellerForm',
           component: SellerForm,
-          meta: {
-            gtm: 'Volla_Web_Page View_SellerForm',
-          },
         },
         {
           path: '/submit',

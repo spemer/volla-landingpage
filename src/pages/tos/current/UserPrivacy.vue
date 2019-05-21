@@ -195,16 +195,16 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'UserPrivacy',
 
+  metaInfo: {
+    title: globalVar.serviceEn + ' - ' + globalVar.userPrivacyPageTitle,
+    titleTemplate: '%s',
+  },
+
   computed: {
     ...mapState([
       'tosList',
       'tosVars',
     ]),
-  },
-
-  metaInfo: {
-    title: globalVar.serviceEn + ' - ' + globalVar.userPrivacyPageTitle,
-    titleTemplate: '%s',
   },
 
 }

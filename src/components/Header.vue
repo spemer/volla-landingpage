@@ -16,14 +16,10 @@
           v-if="this.$route.path === '/'"
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
-        a.header__right--text.join(
-          v-if="this.$route.path === '/'"
-          :href="'/seller'"
-        ) 입점소개
-        a.header__right--text.home(
-          v-if="this.$route.path !== '/'"
-          :href="'/'"
-        ) 메인으로
+        a.header__right--text(
+          :href="href"
+          :class="(this.$route.path === '/') ? 'join' : 'home'"
+        ) {{ text }}
 </template>
 
 <script>
@@ -33,9 +29,21 @@ export default {
   name: 'header-el',
 
   data: _ => ({
+    href: '',
+    text: '',
     tagline: globalVar.tagline,
     serviceKo: globalVar.serviceKo,
   }),
+
+  mounted () {
+    if (this.$route.path === '/') {
+      this.href = '/seller'
+      this.text = '입점소개'
+    } else if (this.$route.path !== '/') {
+      this.href = '/'
+      this.text = '메인으로'
+    }
+  },
 
 }
 </script>

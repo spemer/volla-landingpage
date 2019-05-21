@@ -21,10 +21,6 @@ import JoinUs from '@/components/home/JoinUs'
 export default {
   name: 'microsite',
 
-  // mounted () {
-  //   dataLayer.push({event: 'pageview'})
-  // },
-
   components: {
     Hero,
     VideoEmbed,

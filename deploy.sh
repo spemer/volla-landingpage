@@ -3,10 +3,13 @@ BOLD=$(tput bold)
 RESET=$(tput sgr0)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+PURPLE=$(tput setaf 5)
 
-echo "============================================================"
-echo "${BOLD}${PWD##*/}${RESET}"
-echo "============================================================"
+echo "${BOLD}============================================================"
+echo "${PWD##*/}"
+echo "============================================================${RESET}"
 
 #============================================================
 # run dev server or deploy directly
@@ -17,6 +20,8 @@ dev_or_deploy() {
     read -p "${BOLD}${GREEN}Run dev server (R) or Deploy directly? (D) ${RESET}" rd
     case ${rd} in
       [Rr]* )
+        printf "\n"
+        echo "${BOLD}${PURPLE}🔥 Run dev server 🔥${RESET}"
         image_resizer
         npm_run_dev
         npm_run_build
@@ -27,13 +32,13 @@ dev_or_deploy() {
 
       [Dd]* )
         printf "\n"
-        echo "${BOLD}${GREEN}npm run build${RESET}"
+        echo "${BOLD}${PURPLE}🔥 npm run build 🔥${RESET}"
         npm run build;
         printf "\n"
-        echo "${BOLD}${GREEN}firebase deploy${RESET}"
+        echo "${BOLD}${PURPLE}🔥 firebase deploy 🔥${RESET}"
         firebase deploy;
         break;;
-      * ) echo "Please answer R(un) or D(eploy).";;
+      * ) echo "${YELLOW}Please answer R(un) or D(eploy).${RESET}";;
     esac
   done
 }
@@ -53,7 +58,7 @@ image_resizer() {
         break;;
 
       [Nn]* ) return 0;;
-      * ) echo "Please answer yes or no.";;
+      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
 }
@@ -68,7 +73,7 @@ npm_run_dev() {
     case ${yn} in
       [Yy]* ) npm run dev; break;;
       [Nn]* ) return 0;;
-      * ) echo "Please answer yes or no.";;
+      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
 }
@@ -83,7 +88,7 @@ npm_run_build() {
     case ${yn} in
       [Yy]* ) npm run build; break;;
       [Nn]* ) return 0;;
-      * ) echo "Please answer yes or no.";;
+      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
 }
@@ -98,7 +103,7 @@ firebase_deploy() {
     case ${yn} in
       [Yy]* ) firebase deploy; break;;
       [Nn]* ) return 0;;
-      * ) echo "Please answer yes or no.";;
+      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
 }
@@ -117,7 +122,7 @@ git_commit() {
         # if commitmsg empty
         if [ -z "$commitmsg" ]
         then
-          echo "${BOLD}${RED}Commit message is empty${RESET}"
+          echo "${BOLD}${RED}👻 Commit message is empty 👻${RESET}"
           commitmsg="Add files via upload"
         fi
 
@@ -127,7 +132,7 @@ git_commit() {
         break;;
 
       [Nn]* ) return 0;;
-      * ) echo "Please answer yes or no.";;
+      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
 }
@@ -142,14 +147,14 @@ git_push() {
     case ${yn} in
       [Yy]* )
         printf "\n"
-        echo "${BOLD}Push: GitLab${RESET}"
+        echo "${BOLD}${PURPLE}🔥 Push: GitLab 🔥${RESET}"
         git push origin;
         printf "\n"
-        echo "${BOLD}Push: GitHub${RESET}"
+        echo "${BOLD}${PURPLE}🔥 Push: GitHub 🔥${RESET}"
         git push github;
         break;;
       [Nn]* ) return 0;;
-      * ) echo "Please answer yes or no.";;
+      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
 }
