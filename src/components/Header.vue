@@ -7,8 +7,8 @@
         img.header__left--img(
           src="../assets/dist/launcher.svg"
         )
-        p.header__left--text {{ serviceKo }}
-        p.header__left--text.sub &nbsp;- {{ tagline }}
+        p.header__left--text {{ serviceEn }}
+        //- p.header__left--text.sub &nbsp;{{ tagline }}
 
       div.header__right(
       )
@@ -32,7 +32,7 @@ export default {
     href: '',
     text: '',
     tagline: globalVar.tagline,
-    serviceKo: globalVar.serviceKo,
+    serviceEn: globalVar.serviceEn,
   }),
 
   mounted () {

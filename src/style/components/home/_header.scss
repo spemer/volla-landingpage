@@ -27,14 +27,17 @@
       }
 
       .header__left--text {
-        color: $black78;
-        margin-left: $grid4x;
+        font-weight: 700;
+        color: $brand-pink;
+        margin-left: $grid2x;
         display: inline-block;
         @include transform(translateY(-75%));
 
-        &.sub {
-          margin-left: 0;
-        }
+        // &.sub {
+        //   margin-left: 0;
+        //   color: $black78;
+        //   font-weight: 300;
+        // }
 
         @media #{$pablet} {
           display: none;

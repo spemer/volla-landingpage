@@ -161,7 +161,11 @@ export default {
     checkCategoryValue () {
       if (! this.sellerForm_CategoryValue.value)
         alert('호스트 지원 희망여부를 선택해주세요.')
-      else if (this.sellerForm_List[0].value && this.sellerForm_List[1].value && this.sellerForm_List[2].value && this.sellerForm_CategoryValue.value)
+      else if (
+        this.sellerForm_List[0].value &&
+        this.sellerForm_List[1].value &&
+        // this.sellerForm_List[2].value &&
+        this.sellerForm_CategoryValue.value)
         this.SET_TOKEN_BOOL(true)
     },
 
@@ -173,19 +177,19 @@ export default {
     fail: _ => this.$Progress.fail(),
 
     sendPost () {
-      if (this.marketing.val_1 === true) {
+      if (this.marketing.val_1) {
         this.$Progress.start()
 
-        // const test = process.env.TEST_URL
-        // axios.post(test,
-        const base = process.env.BASE_URL
-        axios.post(`${base}requestSeller`,
+        const test = process.env.TEST_URL
+        axios.post(test,
+        // const base = process.env.BASE_URL
+        // axios.post(`${base}requestSeller`,
           {
             email: this.sellerForm_List[0].value,
             name: this.sellerForm_List[1].value,
-            contact: this.sellerForm_List[2].value,
-            site: this.sellerForm_List[3].value,
-            sns: this.sellerForm_List[4].value,
+            // contact: this.sellerForm_List[2].value,
+            site: this.sellerForm_List[2].value,
+            sns: this.sellerForm_List[3].value,
             apply_categories: this.sellerForm_CategoryValue.value,
             details: this.sellerForm_Details.value,
             agree_personal_info: this.marketing.val_1,
