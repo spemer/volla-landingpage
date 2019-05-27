@@ -39,7 +39,7 @@ $mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid24x 0 $grid32x;
+  padding: $grid20x 0 $grid32x;
 
   input[type='radio'],
   input[type='checkbox'] {
@@ -215,7 +215,7 @@ $mobile-width: 288px;
     .sellerform__form--condition {
       color: $black38;
       text-align: left;
-      margin-top: -#{$grid8x};
+      margin-top: -#{$grid10x};
       @include font-size($grid3x);
     }
 

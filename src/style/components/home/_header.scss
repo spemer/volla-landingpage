@@ -30,6 +30,7 @@
         font-weight: 700;
         color: $brand-pink;
         margin-left: $grid2x;
+        letter-spacing: .25px;
         display: inline-block;
         @include transform(translateY(-75%));
 

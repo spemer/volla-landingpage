@@ -134,13 +134,13 @@ export default {
       name: 'site',
       placeholder: '웹사이트 주소를 입력해주세요.',
     },
-    {
-      value: '',
-      text: 'SNS 주소',
-      type: 'text',
-      name: 'sns',
-      placeholder: '대표 SNS 주소를 입력해주세요.',
-    },
+    // {
+    //   value: '',
+    //   text: 'SNS 주소',
+    //   type: 'text',
+    //   name: 'sns',
+    //   placeholder: '대표 SNS 주소를 입력해주세요.',
+    // },
   ],
 
   sellerForm_Category: [{

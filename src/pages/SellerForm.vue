@@ -189,7 +189,7 @@ export default {
             name: this.sellerForm_List[1].value,
             // contact: this.sellerForm_List[2].value,
             site: this.sellerForm_List[2].value,
-            sns: this.sellerForm_List[3].value,
+            // sns: this.sellerForm_List[3].value,
             apply_categories: this.sellerForm_CategoryValue.value,
             details: this.sellerForm_Details.value,
             agree_personal_info: this.marketing.val_1,
