@@ -19,7 +19,7 @@
             :endVal="value.endVal"
             :suffix="value.suffix"
             :decimals="value.decimals"
-            v-scroll-reveal="{delay: 100}"
+            v-scroll-reveal="{delay:500}"
           )
           p.service__card--text.section__subtitle {{ value.title }}
 </template>

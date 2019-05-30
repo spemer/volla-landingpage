@@ -180,10 +180,10 @@ export default {
       if (this.marketing.val_1) {
         this.$Progress.start()
 
-        const test = process.env.TEST_URL
-        axios.post(test,
-        // const base = process.env.BASE_URL
-        // axios.post(`${base}requestSeller`,
+        // const test = process.env.TEST_URL
+        // axios.post(test,
+        const base = process.env.BASE_URL
+        axios.post(`${base}requestSeller`,
           {
             email: this.sellerForm_List[0].value,
             name: this.sellerForm_List[1].value,
@@ -205,7 +205,11 @@ export default {
         .then(response => {
           this.$Progress.finish()
           this.SET_TOKEN_BOOL(true)
-          this.$router.push('/submit')
+          if (this.$route.path == '/sellerform') {
+            this.$router.push('/submit')
+          } else if (this.$route.path == '/sellerform-app') {
+            this.$router.push('/submit-app')
+          }
           // console.info(response.data)
         })
         .catch(error => {

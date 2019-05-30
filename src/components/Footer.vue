@@ -1,5 +1,7 @@
 <template lang="pug">
-  div#footer
+  div#footer(
+    v-if="this.$route.path !== '/sellerform-app' && this.$route.path !== '/submit-app'"
+  )
     div.container
       div.footer__copyright
         p.footer__copyright--text

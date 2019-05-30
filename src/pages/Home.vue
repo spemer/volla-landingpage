@@ -3,7 +3,7 @@
     Header
     router-view
     Footer
-    Kakao(v-if="this.$route.path === '/' || this.$route.path === '/seller'")
+    Kakao
 </template>
 
 <script>

@@ -1,5 +1,7 @@
 <template lang="pug">
-  div#header
+  div#header(
+    v-if="this.$route.path !== '/sellerform-app' && this.$route.path !== '/submit-app'"
+  )
     div.container
       div.header__left(
         v-scroll-to="{el: 'body', duration: 0}"

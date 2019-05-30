@@ -21,12 +21,15 @@ import CeoService from '@/pages/tos/current/CeoService'
 import RedirectDL from '@/pages/RedirectDL'
 
 const requireToken = (to, from, next) => {
-  if (store.state.tokenState) return next()
+  if (store.state.tokenState) {
+    return next()
+  }
   next('/sellerform')
 }
 
 export default new VueRouter({
   mode: 'history',
+  functional: true,
   routes: [{
       path: '*',
       redirect: '/'
@@ -35,7 +38,6 @@ export default new VueRouter({
       path: '/seller-form',
       redirect: '/sellerform',
     },
-
     {
       path: '/',
       component: Home,
@@ -51,18 +53,19 @@ export default new VueRouter({
         },
         {
           path: '/sellerform',
+          alias: '/sellerform-app',
           name: 'sellerForm',
           component: SellerForm,
         },
         {
           path: '/submit',
+          alias: '/submit-app',
           name: 'afterSubmitForm',
           component: AfterSubmitForm,
           beforeEnter: requireToken,
         },
       ]
     },
-
     {
       path: '/tos',
       component: TosView,
@@ -88,7 +91,6 @@ export default new VueRouter({
         },
       ]
     },
-
     {
       path: '/app',
       component: RedirectDL,

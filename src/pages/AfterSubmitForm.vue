@@ -36,6 +36,7 @@
             span.value( v-else ) 미동의
 
         router-link.global__cta(
+          v-if="this.$router.path === '/submit'"
           :to="'/'"
         )
           button.global__cta--btn(

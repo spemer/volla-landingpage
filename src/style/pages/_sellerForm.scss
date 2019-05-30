@@ -18,6 +18,7 @@ $mobile-width: 288px;
     margin: $grid16x 0 $grid8x;
 
     .sellerform__form--title {
+
       &.text {
         text-align: left;
         font-weight: 900;
@@ -39,7 +40,7 @@ $mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid20x 0 $grid32x;
+  padding: $grid16x 0 $grid32x;
 
   input[type='radio'],
   input[type='checkbox'] {
