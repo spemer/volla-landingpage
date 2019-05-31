@@ -12,6 +12,9 @@ import SellerForm from '@/pages/SellerForm'
 import AfterSubmitForm from '@/pages/AfterSubmitForm'
 import Microsite from '@/pages/Microsite'
 
+import Lists from '@/pages/boards/Lists'
+import Details from '@/pages/boards/Details'
+
 import TosView from '@/pages/tos/TosView'
 import UserPrivacy from '@/pages/tos/current/UserPrivacy'
 import UserService from '@/pages/tos/current/UserService'
@@ -64,8 +67,18 @@ export default new VueRouter({
           component: AfterSubmitForm,
           beforeEnter: requireToken,
         },
-      ]
+      ],
     },
+    // {
+    //   path: '/notice',
+    //   name: 'notice',
+    //   component: Lists,
+    // },
+    // {
+    //   path: '/notice/:no',
+    //   name: 'details',
+    //   component: Details,
+    // },
     {
       path: '/tos',
       component: TosView,
@@ -89,7 +102,7 @@ export default new VueRouter({
           name: 'CeoService',
           component: CeoService,
         },
-      ]
+      ],
     },
     {
       path: '/app',

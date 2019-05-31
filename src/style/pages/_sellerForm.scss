@@ -64,7 +64,7 @@ $mobile-width: 288px;
   }
 
   @media #{$mobile} {
-    padding: $grid20x 0 $grid24x;
+    padding: $grid16x 0 $grid24x;
   }
 
   .sellerform__form--subtitle {

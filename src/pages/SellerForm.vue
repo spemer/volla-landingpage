@@ -164,7 +164,6 @@ export default {
       else if (
         this.sellerForm_List[0].value &&
         this.sellerForm_List[1].value &&
-        // this.sellerForm_List[2].value &&
         this.sellerForm_CategoryValue.value)
         this.SET_TOKEN_BOOL(true)
     },
@@ -187,9 +186,7 @@ export default {
           {
             email: this.sellerForm_List[0].value,
             name: this.sellerForm_List[1].value,
-            // contact: this.sellerForm_List[2].value,
             site: this.sellerForm_List[2].value,
-            // sns: this.sellerForm_List[3].value,
             apply_categories: this.sellerForm_CategoryValue.value,
             details: this.sellerForm_Details.value,
             agree_personal_info: this.marketing.val_1,
@@ -210,7 +207,7 @@ export default {
           } else if (this.$route.path == '/sellerform-app') {
             this.$router.push('/submit-app')
           }
-          // console.info(response.data)
+          console.info(response.data)
         })
         .catch(error => {
           this.$Progress.fail()
