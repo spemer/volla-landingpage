@@ -205,21 +205,18 @@ export default {
 
   statsList: {
     first: {
-      endVal: 66,
+      value: 66,
       suffix: '%',
-      decimals: 0,
       title: '모바일 점유율',
     },
     second: {
-      endVal: 5.15,
+      value: 5.15,
       suffix: '배',
-      decimals: 2,
       title: '평균 구매 전환율 (온라인 쇼핑 대비)',
     },
     third: {
-      endVal: 4.9,
+      value: 4.9,
       suffix: '배',
-      decimals: 1,
       title: '평균 구매량 (온라인 쇼핑 대비)',
     },
   },
