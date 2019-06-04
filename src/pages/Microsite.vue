@@ -17,9 +17,15 @@ import StartWith from '@/components/seller/StartWith'
 import Benefits from '@/components/seller/Benefits'
 import Benefits2 from '@/components/seller/Benefits2'
 import JoinUs from '@/components/home/JoinUs'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'microsite',
+
+  metaInfo: {
+    title: globalVar.serviceEn,
+    titleTemplate: `%s - ${globalVar.taglineSeller}`,
+  },
 
   components: {
     Hero,

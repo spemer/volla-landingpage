@@ -277,7 +277,7 @@ export default {
   name: 'UserService',
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - ' + globalVar.userServicePageTitle,
+    title: `${globalVar.serviceEn} - ${globalVar.userServicePageTitle}`,
     titleTemplate: '%s',
   },
 

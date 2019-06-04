@@ -13,9 +13,15 @@ import Service from '@/components/home/Service'
 import EasyStart from '@/components/home/EasyStart'
 import Download from '@/components/home/Download'
 import JoinUs from '@/components/home/JoinUs'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'homeView',
+
+  metaInfo: {
+    title: globalVar.serviceEn,
+    titleTemplate: `%s - ${globalVar.tagline}`,
+  },
 
   components: {
     Hero,

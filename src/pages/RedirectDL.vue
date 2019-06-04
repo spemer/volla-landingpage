@@ -27,7 +27,7 @@ export default {
 
   metaInfo: {
     title: globalVar.serviceEn,
-    titleTemplate: '%s' + ' 앱 다운로드',
+    titleTemplate: `%s 앱 다운로드`,
     meta: [
       {
         name:     'description',         content: globalVar.serviceEn + '앱 다운로드',

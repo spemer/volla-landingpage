@@ -54,6 +54,11 @@ export default {
     serviceKo: globalVar.serviceKo,
   }),
 
+  metaInfo: {
+    title: `${globalVar.serviceEn} - ${globalVar.sellerForm}`,
+    titleTemplate: '%s',
+  },
+
   computed: {
     ...mapState([
       'sellerForm_List',

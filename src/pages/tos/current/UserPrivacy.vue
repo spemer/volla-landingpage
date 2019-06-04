@@ -196,7 +196,7 @@ export default {
   name: 'UserPrivacy',
 
   metaInfo: {
-    title: globalVar.serviceEn + ' - ' + globalVar.userPrivacyPageTitle,
+    title: `${globalVar.serviceEn} - ${globalVar.userPrivacyPageTitle}`,
     titleTemplate: '%s',
   },
 
