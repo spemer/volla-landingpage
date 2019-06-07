@@ -1,6 +1,6 @@
 <template lang="pug">
   div#header(
-    v-if="this.$route.path !== '/sellerform-app' && this.$route.path !== '/submit-app'"
+    v-if="!isApp"
   )
     div.container
       div.header__left(
@@ -10,7 +10,6 @@
           src="../assets/dist/launcher.svg"
         )
         p.header__left--text {{ serviceEn }}
-        //- p.header__left--text.sub &nbsp;{{ tagline }}
 
       div.header__right(
       )
@@ -25,6 +24,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -36,6 +36,12 @@ export default {
     tagline: globalVar.tagline,
     serviceEn: globalVar.serviceEn,
   }),
+
+  computed: {
+    ...mapState([
+      'isApp',
+    ]),
+  },
 
   mounted () {
     if (this.$route.path === '/') {

@@ -172,6 +172,7 @@ export default {
   },
 
   tokenState: false,
+  isApp: false,
 
   marketingTerms: {
     personal: {

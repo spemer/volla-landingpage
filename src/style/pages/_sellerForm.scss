@@ -40,7 +40,7 @@ $mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid16x 0 $grid32x;
+  padding: $grid16x 0 $grid24x;
 
   input[type='radio'],
   input[type='checkbox'] {
@@ -296,6 +296,7 @@ $mobile-width: 288px;
     $ipx_safearea: 34px;
 
     padding-top: $grid12x;
+    padding-bottom: $grid32x;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

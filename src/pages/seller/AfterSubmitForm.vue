@@ -1,5 +1,7 @@
 <template lang="pug">
-  div#sellerForm
+  div#sellerForm(
+    :class="{app: isApp}"
+  )
     div.container
       div.sbmt
         h1.sellerform__form--title 감사합니다
@@ -67,6 +69,7 @@ export default {
       'sellerForm_Category',
       'marketing',
       'tokenState',
+      'isApp',
     ]),
   },
 

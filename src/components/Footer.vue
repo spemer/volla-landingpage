@@ -1,6 +1,6 @@
 <template lang="pug">
   div#footer(
-    v-if="this.$route.path !== '/sellerform-app' && this.$route.path !== '/submit-app'"
+    v-if="!isApp"
   )
     div.container
       div.footer__copyright
@@ -70,6 +70,7 @@ export default {
       'infoList',
       'tosList',
       'snsList',
+      'isApp',
     ]),
   },
 

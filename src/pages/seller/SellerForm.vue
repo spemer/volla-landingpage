@@ -100,7 +100,6 @@ export default {
   name: 'seller-form',
 
   data: _ => ({
-    isApp: false,
     serviceKo: globalVar.serviceKo,
     sellerForm: globalVar.sellerForm,
     sellerCondition: globalVar.sellerCondition,
@@ -113,7 +112,9 @@ export default {
 
   mounted () {
     if (this.$route.path == '/sellerform-app')
-      this.isApp = true
+      this.SET_CLASS_APP(true)
+    else if (this.$route.path == '/sellerform')
+      this.SET_CLASS_APP(false)
   },
 
   computed: {
@@ -122,6 +123,7 @@ export default {
       'marketing',
       'marketingTerms',
       'tokenState',
+      'isApp',
     ]),
 
     sellerForm_List: {
@@ -164,6 +166,7 @@ export default {
   methods: {
     ...mapMutations([
       'SET_TOKEN_BOOL',
+      'SET_CLASS_APP',
     ]),
 
     checkCategoryValue () {
@@ -210,9 +213,9 @@ export default {
         .then(response => {
           this.$Progress.finish()
           this.SET_TOKEN_BOOL(true)
-          if (this.$route.path == '/sellerform') {
+          if (! this.isApp) {
             this.$router.push('/submit')
-          } else if (this.$route.path == '/sellerform-app') {
+          } else if (this.isApp) {
             this.$router.push('/submit-app')
           }
           console.info(response.data)
