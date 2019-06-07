@@ -15,6 +15,14 @@ $mini: "screen and (max-width : 320px )";
 
 
 /* ==============================
+  iPhone X, XS, XR, Max
+============================== */
+$ipx: "only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)";
+$ipxr: "only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait)";
+$ipxm: "only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)";
+
+
+/* ==============================
   browser specific
 ============================== */
 $chrome: "screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm)";

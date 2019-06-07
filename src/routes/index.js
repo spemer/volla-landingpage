@@ -8,12 +8,11 @@ Vue.use(VueRouter)
 
 import Home from '@/pages/Home'
 import HomeView from '@/pages/HomeView'
-import SellerForm from '@/pages/SellerForm'
-import AfterSubmitForm from '@/pages/AfterSubmitForm'
+import SellerForm from '@/pages/seller/SellerForm'
+import AfterSubmitForm from '@/pages/seller/AfterSubmitForm'
 import Microsite from '@/pages/Microsite'
 
 import Lists from '@/pages/boards/Lists'
-import Details from '@/pages/boards/Details'
 
 import TosView from '@/pages/tos/TosView'
 import UserPrivacy from '@/pages/tos/current/UserPrivacy'
@@ -69,16 +68,11 @@ export default new VueRouter({
         },
       ],
     },
-    // {
-    //   path: '/notice',
-    //   name: 'notice',
-    //   component: Lists,
-    // },
-    // {
-    //   path: '/notice/:no',
-    //   name: 'details',
-    //   component: Details,
-    // },
+    {
+      path: '/notice',
+      name: 'notice',
+      component: Lists,
+    },
     {
       path: '/tos',
       component: TosView,

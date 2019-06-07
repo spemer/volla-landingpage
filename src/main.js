@@ -11,7 +11,6 @@ import router from '@/routes'
 import VTooltip from 'v-tooltip'
 import Toasted from 'vue-toasted'
 import Firebase from 'firebase/app'
-import VueFirestore from 'vue-firestore'
 import VueScrollTo from 'vue-scrollto'
 import VueClipboard from 'vue-clipboard2'
 import VueProgressBar from 'vue-progressbar'
@@ -29,9 +28,6 @@ Vue.use(VueProgressBar, {
   failedColor: 'rgb(255, 121, 172)',
   height: '4px',
 })
-
-require('firebase/firestore')
-Vue.use(VueFirestore)
 
 new Vue({
   el: '#app',

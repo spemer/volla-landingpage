@@ -1,0 +1,127 @@
+#lists {
+
+  .card-header-icon {
+    display: inline-block;
+
+    svg {
+      width: $grid6x !important;
+    }
+  }
+
+  .accordion__container {
+    z-index: 1;
+    padding-top: $grid2x;
+
+    .accordion__container--wrapper {
+
+      &:nth-child(2n) {
+
+        .accordion__container--header,
+        .accordion__container--box {
+          background-color: $textf4;
+        }
+      }
+
+      $icon_width: $grid8x;
+
+      .accordion__container--header {
+        width: 100%;
+        border: none;
+        outline: none;
+        color: $text333;
+        cursor: pointer;
+        text-align: left;
+        background-color: #fff;
+        padding: $grid5x $grid4x;
+        @include transition(all .25s ease);
+
+        @media #{$ie} {
+          margin-bottom: 0 !important;
+        }
+
+        @supports (-ms-ime-align:auto) {
+          margin-bottom: 0 !important;
+        }
+
+        &:active {
+          border: none;
+          color: $text333;
+        }
+
+        .accordion__container--icon {
+          float: left;
+          width: $icon_width;
+
+          &::after {
+            content: "\02795";
+            @include font-size($grid3x);
+            @include line-height($grid4x);
+          }
+        }
+
+        &.active {
+
+          .accordion__container--icon {
+
+            &::after {
+              content: "\2796";
+            }
+          }
+        }
+
+        .accordion__container--title {
+          float: right;
+          font-weight: 900;
+          width: calc(100% - #{$icon_width});
+          @include font-size($grid4x);
+          @include line-height($grid4x);
+
+          .accordion__container--date {
+            color: $text999;
+            font-weight: 400;
+            display: inline-block;
+            vertical-align: baseline;
+            @include font-size(14px);
+
+            &::before {
+              content: "\00a0";
+            }
+          }
+        }
+
+        .accordion__container--icon {
+          float: left;
+          width: $icon_width;
+
+          &::after {
+            color: $textccc;
+            content: "\02795";
+            @include font-size($grid3x);
+          }
+        }
+      }
+
+      .accordion__container--box {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 $grid4x;
+        background-color: #fff;
+        @include transition(max-height 0.25s ease);
+
+        @media #{$ie} {
+          margin-top: 0 !important;
+        }
+
+        @supports (-ms-ime-align:auto) {
+          margin-top: 0 !important;
+        }
+
+        .accordion__container--text {
+          padding: 0 0 $grid8x;
+          @include font-size($grid4x);
+          @include line-height($grid4x);
+        }
+      }
+    }
+  }
+}

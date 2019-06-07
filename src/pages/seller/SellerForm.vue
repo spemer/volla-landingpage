@@ -1,5 +1,7 @@
 <template lang="pug">
-  div#sellerForm
+  div#sellerForm(
+    :class="{app: isApp}"
+  )
     div.container
       h1.sellerform__form--title {{ sellerForm }}
       p.sellerform__form--subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
@@ -98,6 +100,7 @@ export default {
   name: 'seller-form',
 
   data: _ => ({
+    isApp: false,
     serviceKo: globalVar.serviceKo,
     sellerForm: globalVar.sellerForm,
     sellerCondition: globalVar.sellerCondition,
@@ -106,6 +109,11 @@ export default {
   metaInfo: {
     title: `${globalVar.serviceEn} - ${globalVar.sellerForm}`,
     titleTemplate: '%s',
+  },
+
+  mounted () {
+    if (this.$route.path == '/sellerform-app')
+      this.isApp = true
   },
 
   computed: {

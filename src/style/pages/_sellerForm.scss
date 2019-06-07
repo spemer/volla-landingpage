@@ -64,7 +64,7 @@ $mobile-width: 288px;
   }
 
   @media #{$mobile} {
-    padding: $grid16x 0 $grid24x;
+    padding: $grid12x 0 $grid24x;
   }
 
   .sellerform__form--subtitle {
@@ -85,7 +85,7 @@ $mobile-width: 288px;
     display: block;
     margin: 0 auto;
     text-align: center;
-    margin-top: $grid20x;
+    margin-top: $grid16x;
 
     @media #{$pablet} {
       width: $pablet-width;
@@ -125,14 +125,14 @@ $mobile-width: 288px;
           display: inline-block;
 
           .sellerform__form--label {
-            color: $black54;
+            color: $black38;
             cursor: pointer;
-            font-weight: 300;
+            font-weight: 700;
             text-align: center;
             margin-top: $grid4x;
             display: inline-block;
-            padding: $grid2x $grid4x;
-            border: 1px solid $textccc;
+            padding: $grid3x $grid6x;
+            background-color: $black04;
             @include font-size($grid4x);
             @include border-radius($grid2x);
             @include transition(all 0.1s ease);
@@ -144,9 +144,9 @@ $mobile-width: 288px;
 
           input[type='radio']:checked+label {
             color: #fff;
-            font-weight: 900;
-            border: 1px solid $brand-pink;
-            background-color: $brand-pink;
+            font-weight: 700;
+            color: $brand-pink;
+            background-color: $brand-pink-10;
           }
         }
       }
@@ -204,7 +204,7 @@ $mobile-width: 288px;
       font-weight: 900;
       color: $brand-pink;
       margin-top: $grid24x;
-      background-color: $brand-pink-16;
+      background-color: $brand-pink-10-solid;
       @include border-radius($grid16x);
       @include transition(all 0.25s ease);
 
@@ -257,17 +257,17 @@ $mobile-width: 288px;
         width: $grid5x;
         height: $grid5x;
         position: absolute;
-        background-color: $black08;
+        background-color: $black04;
         @include border-radius($grid);
         @include transition(all 0.1s ease);
       }
 
       &:hover input~.checkmark {
-        background-color: $black16;
+        background-color: $black04;
       }
 
       input:checked~.checkmark {
-        background-color: $brand-pink;
+        background-color: $brand-pink-10-solid;
       }
 
       .checkmark:after {
@@ -285,9 +285,47 @@ $mobile-width: 288px;
         right: 7px;
         width: $grid;
         height: 9px;
-        border: solid #fff;
+        border: solid $brand-pink;
         border-width: 0 2px 2px 0;
         @include transform(rotate(45deg));
+      }
+    }
+  }
+
+  &.app {
+    $ipx_safearea: 34px;
+
+    padding-top: $grid12x;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    @media #{$ipx},
+    #{$ipxr},
+    #{$ipxm} {
+      padding-bottom: $grid40x;
+    }
+
+    .sellerform__form--title {
+      margin-top: 0;
+    }
+
+    .sellerform__form--submit {
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      position: fixed;
+      background-color: $brand-pink-10-solid;
+      @include border-radius(0);
+
+      @media #{$ipx},
+      #{$ipxr},
+      #{$ipxm} {
+        padding-bottom: $grid8x;
+        height: calc(#{$ipx_safearea} + #{$grid14x});
       }
     }
   }
