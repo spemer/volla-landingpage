@@ -29,9 +29,7 @@ export default {
   },
 
   computed: {
-    entries: _ => {
-      return NOTICE_ENTRIES
-    },
+    entries: _ => NOTICE_ENTRIES,
   },
 
 }

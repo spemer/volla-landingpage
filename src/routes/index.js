@@ -12,6 +12,13 @@ import SellerForm from '@/pages/seller/SellerForm'
 import AfterSubmitForm from '@/pages/seller/AfterSubmitForm'
 import Microsite from '@/pages/Microsite'
 
+const requireToken = (to, from, next) => {
+  if (store.state.tokenState) {
+    return next()
+  }
+  next('/sellerform')
+}
+
 import TosView from '@/pages/tos/TosView'
 import UserPrivacy from '@/pages/tos/current/UserPrivacy'
 import UserService from '@/pages/tos/current/UserService'
@@ -20,23 +27,15 @@ import CeoService from '@/pages/tos/current/CeoService'
 
 import RedirectDL from '@/pages/RedirectDL'
 
-const requireToken = (to, from, next) => {
-  if (store.state.tokenState) {
-    return next()
-  }
-  next('/sellerform')
-}
-
-// notice
 import Notices from '@/pages/boards/Notices'
 import Details from '@/pages/boards/Details'
 import NoticeEntries from '@/statics/data/notice.json'
 
-const blogRoutes = Object.keys(NoticeEntries).map(section => {
+const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
     path: child.id,
     name: child.id,
-    component: resolve => require([`@/markdowns/${child.id}.md`], resolve)
+    component: resolve => require([`@/markdowns/${child.id}.md`], resolve),
   }))
   return {
     path: `/${section}`,
@@ -46,12 +45,11 @@ const blogRoutes = Object.keys(NoticeEntries).map(section => {
   }
 })
 
-// router
 export default new Router({
   mode: 'history',
   functional: true,
   routes: [
-    ...blogRoutes,
+    ...noticeRoutes,
     {
       path: '*',
       redirect: '/'
@@ -120,6 +118,7 @@ export default new Router({
     },
     {
       path: '/app',
+      name: 'redirect_dl',
       component: RedirectDL,
     },
   ],

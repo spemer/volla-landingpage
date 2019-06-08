@@ -11,8 +11,8 @@
           :to="'/'"
         )
           button.global__cta--btn(
-            title="웹사이트 바로가기"
-          ) 웹사이트 바로가기
+            :title="website"
+          ) {{ website }}
 </template>
 
 <script>
@@ -20,8 +20,10 @@ import { globalVar } from '@/globalVar'
 import { userAgent } from '@/mixins/userAgent'
 
 export default {
+  name: 'redirect_dl',
 
   data: _ => ({
+    website: '웹사이트 바로가기',
     serviceKo: globalVar.serviceKo,
   }),
 
@@ -34,10 +36,10 @@ export default {
     titleTemplate: `%s 앱 다운로드`,
     meta: [
       {
-        name:     'description',         content: globalVar.serviceEn + '앱 다운로드',
-        itemprop: 'description',         content: globalVar.serviceEn + '앱 다운로드',
-        property: 'og:description',      content: globalVar.serviceEn + '앱 다운로드',
-        name:     'twitter:description', content: globalVar.serviceEn + '앱 다운로드',
+        name:     'description',         content: `${globalVar.serviceEn} 앱 다운로드`,
+        itemprop: 'description',         content: `${globalVar.serviceEn} 앱 다운로드`,
+        property: 'og:description',      content: `${globalVar.serviceEn} 앱 다운로드`,
+        name:     'twitter:description', content: `${globalVar.serviceEn} 앱 다운로드`,
       }
     ],
   },
@@ -47,13 +49,13 @@ export default {
         ios     = globalVar.iosStore,
         unknown = globalVar.websiteUrl
 
-    if      (this.userAgent == "Android") {
+    if      (this.userAgent == 'Android') {
       window.location.href = android
     }
-    else if (this.userAgent == "iOS") {
+    else if (this.userAgent == 'iOS') {
       window.location.href = ios
     }
-    else if (this.userAgent == "Windows Phone") {
+    else if (this.userAgent == 'Windows Phone') {
       alert("안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.")
       window.location.href = unknown
     }

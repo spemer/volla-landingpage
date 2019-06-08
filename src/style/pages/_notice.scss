@@ -1,10 +1,10 @@
 #notices {
-  padding-top: $grid2x;
+  padding-top: $grid4x;
 
   .notices__wrapper {
 
     .notice__list {
-      padding: 0 $grid4x;
+      padding: 0 $grid2x;
       cursor: pointer;
 
       .notice__list--each {
@@ -31,9 +31,10 @@
 
 section,
 #markdown {
+  margin: 0 auto;
   width: calc(100% - #{$grid32x});
   padding: $grid4x $grid16x;
-  margin: 0 auto;
+  padding-top: $grid4x !important;
   @include user-select();
 
   #closebtn {
@@ -60,8 +61,8 @@ section,
   }
 
   @media #{$tablet} {
-    width: calc(100% - #{$grid8x});
-    padding: $grid4x;
+    width: calc(100% - #{$grid4x});
+    padding: $grid2x;
   }
 
 
