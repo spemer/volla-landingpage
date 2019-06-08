@@ -2,6 +2,8 @@ import 'babel-polyfill'
 import 'es6-promise/auto'
 import 'event-source-polyfill'
 import 'promise-polyfill/src/polyfill'
+import 'core-js/modules/es6.promise'
+import 'core-js/modules/es6.array.iterator'
 
 import Vue from 'vue'
 import axios from 'axios'

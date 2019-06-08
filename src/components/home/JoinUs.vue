@@ -32,6 +32,7 @@
 
 <script>
 import { globalVar } from '@/globalVar'
+import { toast } from '@/mixins/toast'
 
 export default {
   name: 'joinus',
@@ -43,15 +44,9 @@ export default {
     serviceKo: globalVar.serviceKo,
   }),
 
-  methods: {
-    toast () {
-      this.$toasted.show('이메일 주소가 복사되었습니다', {
-        theme: 'primary',
-        position: 'bottom-center',
-        duration : 2000,
-      })
-    },
-  },
+  mixins: [
+    toast
+  ],
 
   mounted () {
     if (this.$route.path === '/') {

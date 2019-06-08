@@ -44,6 +44,7 @@
 <script>
 import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
+import { toast } from '@/mixins/toast'
 
 export default {
   name: 'footer-el',
@@ -54,15 +55,9 @@ export default {
     companyName: globalVar.companyName,
   }),
 
-  methods: {
-    toast () {
-      this.$toasted.show('이메일 주소가 복사되었습니다', {
-        theme: 'primary',
-        position: 'bottom-center',
-        duration : 2000,
-      })
-    },
-  },
+  mixins: [
+    toast
+  ],
 
   computed: {
     ...mapState([

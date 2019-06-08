@@ -27,13 +27,14 @@
 
 <script>
 import { mapState } from 'vuex'
+import { userAgent } from '@/mixins/userAgent'
 
 export default {
   name: 'DownloadBtn',
 
-  data: _ => ({
-    userAgent: null,
-  }),
+  mixins: [
+    userAgent
+  ],
 
   computed: {
     ...mapState([
@@ -49,20 +50,6 @@ export default {
         return this.badges.Android
       }
     },
-  },
-
-  created () {
-    let userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/windows phone/i.test(userAgent)) {
-      this.userAgent = "Windows Phone"
-    }
-    else if (/android/i.test(userAgent)) {
-      this.userAgent = "Android"
-    }
-    else if (/iPad|iPhone|iPod/.test(userAgent) || navigator.appVersion.indexOf("Mac")!=-1 && !window.MSStream) {
-      this.userAgent = "iOS"
-    }
-    else this.userAgent = "unknown"
   },
 
 }

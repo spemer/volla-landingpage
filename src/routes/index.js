@@ -1,18 +1,16 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import store from '@/store/index'
 
 Vue.use(Meta)
-Vue.use(VueRouter)
+Vue.use(Router)
 
 import Home from '@/pages/Home'
 import HomeView from '@/pages/HomeView'
 import SellerForm from '@/pages/seller/SellerForm'
 import AfterSubmitForm from '@/pages/seller/AfterSubmitForm'
 import Microsite from '@/pages/Microsite'
-
-import Lists from '@/pages/boards/Lists'
 
 import TosView from '@/pages/tos/TosView'
 import UserPrivacy from '@/pages/tos/current/UserPrivacy'
@@ -29,10 +27,32 @@ const requireToken = (to, from, next) => {
   next('/sellerform')
 }
 
-export default new VueRouter({
+// notice
+import Notices from '@/pages/boards/Notices'
+import Details from '@/pages/boards/Details'
+import NoticeEntries from '@/statics/data/notice.json'
+
+const blogRoutes = Object.keys(NoticeEntries).map(section => {
+  const children = NoticeEntries[section].map(child => ({
+    path: child.id,
+    name: child.id,
+    component: resolve => require([`@/markdowns/${child.id}.md`], resolve)
+  }))
+  return {
+    path: `/${section}`,
+    name: section,
+    component: Details,
+    children,
+  }
+})
+
+// router
+export default new Router({
   mode: 'history',
   functional: true,
-  routes: [{
+  routes: [
+    ...blogRoutes,
+    {
       path: '*',
       redirect: '/'
     },
@@ -69,9 +89,9 @@ export default new VueRouter({
       ],
     },
     {
-      path: '/notice',
-      name: 'notice',
-      component: Lists,
+      path: '/notices',
+      name: 'notices',
+      component: Notices,
     },
     {
       path: '/tos',

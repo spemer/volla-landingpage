@@ -85,6 +85,10 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-plain-loader'
       },
+      {
+        test: /\.md$/,
+        loader: 'vue-markdown-loader'
+      },
     ]
   },
   resolve: {

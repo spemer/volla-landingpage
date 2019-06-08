@@ -5,6 +5,19 @@ import {
 export default {
   thisYear: new Date().getFullYear(),
 
+  // notice list
+  noticeList: [
+    [
+      'test'
+    ],
+    [
+      'test2'
+    ],
+    [
+      'test3'
+    ],
+  ],
+
   // DownloadBtn.vue
   badges: {
     Android: {

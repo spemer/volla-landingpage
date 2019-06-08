@@ -1,127 +1,48 @@
-// #lists {
+section,
+#markdown {
+  width: 640px;
+  margin: 0 auto;
 
-//   .card-header-icon {
-//     display: inline-block;
+  @media #{$default} {
+    width: calc(100% - #{$grid32x});
+    padding: 0 $grid16x;
+  }
 
-//     svg {
-//       width: $grid6x !important;
-//     }
-//   }
+  @media #{$basic} {
+    width: calc(100% - #{$grid16x});
+    padding: 0 $grid8x;
+  }
 
-//   .accordion__container {
-//     z-index: 1;
-//     padding-top: $grid2x;
+  @media #{$tablet} {
+    width: 100%;
+    padding: 0;
+  }
 
-//     .accordion__container--wrapper {
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: $grid8x;
+    display: inline-block;
+    margin-bottom: $grid4x;
+    border: 1px solid $texteee;
 
-//       &:nth-child(2n) {
+    @media #{$pablet} {
+      width: 100%;
+    }
+  }
 
-//         .accordion__container--header,
-//         .accordion__container--box {
-//           background-color: $textf4;
-//         }
-//       }
+  em {
+    margin: 0 auto;
+    display: block;
+    max-width: 80%;
+    text-align: center;
 
-//       $icon_width: $grid8x;
+    @media #{$tablet} {
+      max-width: 100%;
+    }
+  }
 
-//       .accordion__container--header {
-//         width: 100%;
-//         border: none;
-//         outline: none;
-//         color: $text333;
-//         cursor: pointer;
-//         text-align: left;
-//         background-color: #fff;
-//         padding: $grid5x $grid4x;
-//         @include transition(all .25s ease);
-
-//         @media #{$ie} {
-//           margin-bottom: 0 !important;
-//         }
-
-//         @supports (-ms-ime-align:auto) {
-//           margin-bottom: 0 !important;
-//         }
-
-//         &:active {
-//           border: none;
-//           color: $text333;
-//         }
-
-//         .accordion__container--icon {
-//           float: left;
-//           width: $icon_width;
-
-//           &::after {
-//             content: "\02795";
-//             @include font-size($grid3x);
-//             @include line-height($grid4x);
-//           }
-//         }
-
-//         &.active {
-
-//           .accordion__container--icon {
-
-//             &::after {
-//               content: "\2796";
-//             }
-//           }
-//         }
-
-//         .accordion__container--title {
-//           float: right;
-//           font-weight: 900;
-//           width: calc(100% - #{$icon_width});
-//           @include font-size($grid4x);
-//           @include line-height($grid4x);
-
-//           .accordion__container--date {
-//             color: $text999;
-//             font-weight: 400;
-//             display: inline-block;
-//             vertical-align: baseline;
-//             @include font-size(14px);
-
-//             &::before {
-//               content: "\00a0";
-//             }
-//           }
-//         }
-
-//         .accordion__container--icon {
-//           float: left;
-//           width: $icon_width;
-
-//           &::after {
-//             color: $textccc;
-//             content: "\02795";
-//             @include font-size($grid3x);
-//           }
-//         }
-//       }
-
-//       .accordion__container--box {
-//         max-height: 0;
-//         overflow: hidden;
-//         padding: 0 $grid4x;
-//         background-color: #fff;
-//         @include transition(max-height 0.25s ease);
-
-//         @media #{$ie} {
-//           margin-top: 0 !important;
-//         }
-
-//         @supports (-ms-ime-align:auto) {
-//           margin-top: 0 !important;
-//         }
-
-//         .accordion__container--text {
-//           padding: 0 0 $grid8x;
-//           @include font-size($grid4x);
-//           @include line-height($grid4x);
-//         }
-//       }
-//     }
-//   }
-// }
+  hr {
+    margin: $grid16x 0;
+  }
+}
