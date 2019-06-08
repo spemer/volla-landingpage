@@ -1,27 +1,116 @@
+#notices {
+  padding-top: $grid2x;
+
+  .notices__wrapper {
+
+    .notice__list {
+      padding: 0 $grid4x;
+      cursor: pointer;
+
+      .notice__list--each {
+        border-bottom: 1px solid $texteee;
+
+        .notice__list--title {
+          @include font-size($grid4x);
+        }
+
+        .notice__list--date {
+          color: $black54;
+          font-weight: 400;
+          @include font-size($grid3x);
+
+          &::before {
+            content: '\a';
+            white-space: pre;
+          }
+        }
+      }
+    }
+  }
+}
+
 section,
 #markdown {
-  width: 640px;
+  width: calc(100% - #{$grid32x});
+  padding: $grid4x $grid16x;
   margin: 0 auto;
+  @include user-select();
+
+  #closebtn {
+    margin: $grid16x 0;
+
+    @media #{$pablet} {
+      display: block;
+    }
+
+    .global__cta--btn {
+      display: block;
+      margin: 0 auto;
+    }
+  }
 
   @media #{$default} {
     width: calc(100% - #{$grid32x});
-    padding: 0 $grid16x;
+    padding: $grid16x;
   }
 
   @media #{$basic} {
     width: calc(100% - #{$grid16x});
-    padding: 0 $grid8x;
+    padding: $grid8x;
   }
 
   @media #{$tablet} {
-    width: 100%;
-    padding: 0;
+    width: calc(100% - #{$grid8x});
+    padding: $grid4x;
+  }
+
+
+  h1 {
+    text-align: left;
+    font-weight: 700;
+    @include font-size($grid5x);
+  }
+
+  h4 {
+    color: $black54;
+    font-weight: 400;
+    margin-top: -#{$grid};
+  }
+
+  h6 {
+    font-weight: 400;
+    margin-bottom: -#{$grid};
+    @include font-size($grid5x);
+  }
+
+  h3 {
+    font-weight: 400;
+    margin-top: $grid16x;
+    @include font-size($grid4x);
+  }
+
+  hr {
+    margin: $grid8x 0 !important;
+    border-top: 0.5px solid $texteee;
+  }
+
+  ul,
+  ol {
+    margin-left: -#{$grid4x};
+
+    li {
+      color: $black78;
+    }
+  }
+
+  a {
+    font-weight: 700;
   }
 
   img {
     margin: 0 auto;
     max-width: 100%;
-    margin-top: $grid8x;
+    margin-top: $grid4x;
     display: inline-block;
     margin-bottom: $grid4x;
     border: 1px solid $texteee;

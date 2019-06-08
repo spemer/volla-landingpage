@@ -35,12 +35,6 @@
         display: inline-block;
         @include transform(translateY(-75%));
 
-        // &.sub {
-        //   margin-left: 0;
-        //   color: $black78;
-        //   font-weight: 300;
-        // }
-
         @media #{$pablet} {
           display: none;
         }

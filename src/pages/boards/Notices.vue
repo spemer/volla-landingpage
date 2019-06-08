@@ -1,20 +1,19 @@
 <template lang="pug">
   div#notices
     div.container
-      div.group(
+      div.notices__wrapper(
         v-for="(section, index) in Object.keys(entries)"
         :key="index"
       )
-        h2.center {{ section }}
-        div.section(
+        div.notice__list(
           v-for="entry in entries[section]"
           :key="entry.id"
         )
-          div.entry
-            h3(
+          div.notice__list--each
+            h3.notice__list--title(
               @click="$router.push({name: entry.id})"
             ) {{ entry.title }}
-              span.subtitle {{ entry.date }}
+              span.notice__list--date {{ entry.date }}
 </template>
 
 <script>
@@ -30,19 +29,9 @@ export default {
   },
 
   computed: {
-    entries() {
+    entries: _ => {
       return NOTICE_ENTRIES
     },
-  },
-
-  mounted () {
-    let getAnchorTags = document.querySelectorAll('section a');
-
-    [...getAnchorTags].forEach(anchor => {
-      let getAnchorTarget = anchor.getAttribute('target')
-      if(! getAnchorTarget)
-        anchor.setAttribute('target', '_blank')
-    })
   },
 
 }

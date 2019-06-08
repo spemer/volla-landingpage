@@ -297,12 +297,7 @@ $mobile-width: 288px;
 
     padding-top: $grid12x;
     padding-bottom: $grid32x;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+    @include user-select();
 
     @media #{$ipx},
     #{$ipxr},
@@ -325,8 +320,10 @@ $mobile-width: 288px;
       @media #{$ipx},
       #{$ipxr},
       #{$ipxm} {
-        padding-bottom: $grid8x;
-        height: calc(#{$ipx_safearea} + #{$grid14x});
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+        // padding-bottom: $grid8x;
+        // height: calc(#{$ipx_safearea} + #{$grid14x});
       }
     }
   }

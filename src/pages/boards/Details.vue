@@ -1,10 +1,15 @@
 <template lang="pug">
-  div#markdown.blog
-    router-view
-    router-link.back(
-      to="/notices"
-      tag="a"
-    ) &laquo; Back
+  div#markdown
+    router-view.container
+
+    div#closebtn
+      router-link.global__cta(
+        to="/notices"
+        tag="a"
+      )
+        button.global__cta--btn(
+            type="button"
+          ) 뒤로가기
 </template>
 
 <script>
@@ -16,6 +21,16 @@ export default {
   metaInfo: {
     title: `${globalVar.serviceEn} - 공지사항`,
     titleTemplate: `%s`,
+  },
+
+  mounted () {
+    let getAnchorTags = document.querySelectorAll('section a');
+
+    [...getAnchorTags].forEach(anchor => {
+      let getAnchorTarget = anchor.getAttribute('target')
+      if(! getAnchorTarget)
+        anchor.setAttribute('target', '_blank')
+    })
   },
 
 }

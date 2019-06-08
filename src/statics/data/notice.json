@@ -1,7 +1,13 @@
 {
   "notice": [{
-    "id": "1",
-    "date": "2019. 06. 08",
-    "title": "TESTTESTTEST"
-  }]
+      "id": "join_seller",
+      "date": "2019. 06. 08",
+      "title": "볼라와 함께 성장하실 셀러분들을 모십니다."
+    },
+    {
+      "id": "welcome",
+      "date": "2019. 06. 08",
+      "title": "볼라에 오신것을 환영합니다!"
+    }
+  ]
 }
