@@ -10,6 +10,8 @@
 - 온라인 쇼핑몰 구축을 염두하고 있지만 어려움을 겪고 있는 분
 - 직접 소비자들과 소통하면서, 동시에 매출을 올리고 싶은 분
 
+![Volla](https://github.com/spemer/volla-landingpage/blob/master/src/notices/images/store_last.png?raw=true)
+
 라이브 방송으로 담는 오프라인 쇼핑, 볼라에 지금 바로 입점하세요!
 
 - [셀러 소개 페이지 바로가기](https://volla.live/seller)
