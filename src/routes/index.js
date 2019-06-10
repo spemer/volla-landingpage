@@ -33,9 +33,9 @@ import NoticeEntries from '@/statics/data/notice.json'
 
 const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
-    path: child.id,
+    path: `${child.ymd}/${child.id}`,
     name: child.id,
-    component: resolve => require([`@/markdowns/${child.id}.md`], resolve),
+    component: resolve => require([`@/notices/markdowns/${child.id}.md`], resolve),
   }))
   return {
     path: `/${section}`,

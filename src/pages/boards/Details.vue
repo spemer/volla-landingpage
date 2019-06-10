@@ -9,7 +9,7 @@
       )
         button.global__cta--btn(
             type="button"
-          ) 뒤로가기
+          ) 목록으로
 </template>
 
 <script>

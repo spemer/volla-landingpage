@@ -190,8 +190,6 @@ export default {
       if (this.marketing.val_1) {
         this.$Progress.start()
 
-        // const test = process.env.TEST_URL
-        // axios.post(test,
         const base = process.env.BASE_URL
         axios.post(`${base}/requestSeller`,
           {

@@ -29,16 +29,16 @@
   }
 }
 
-section,
 #markdown {
+  $p_font_size: 14px;
+
   margin: 0 auto;
   width: calc(100% - #{$grid32x});
-  padding: $grid4x $grid16x;
   padding-top: $grid4x !important;
   @include user-select();
 
   #closebtn {
-    margin: $grid16x 0;
+    margin: $grid12x 0 $grid16x;
 
     @media #{$pablet} {
       display: block;
@@ -63,36 +63,24 @@ section,
   @media #{$tablet} {
     width: calc(100% - #{$grid4x});
     padding: $grid2x;
+    padding-top: $grid8x !important;
   }
 
 
   h1 {
+    margin-top: 0;
     text-align: left;
     font-weight: 700;
-    @include font-size($grid5x);
+    @include font-size($grid4x);
   }
 
   h4 {
     color: $black54;
     font-weight: 400;
     margin-top: -#{$grid};
-  }
-
-  h6 {
-    font-weight: 400;
-    margin-bottom: -#{$grid};
-    @include font-size($grid5x);
-  }
-
-  h3 {
-    font-weight: 400;
-    margin-top: $grid16x;
-    @include font-size($grid4x);
-  }
-
-  hr {
-    margin: $grid8x 0 !important;
-    border-top: 0.5px solid $texteee;
+    padding-bottom: $grid4x;
+    border-bottom: 0.5px solid $texteee;
+    @include font-size($p_font_size);
   }
 
   ul,
@@ -134,5 +122,10 @@ section,
 
   hr {
     margin: $grid16x 0;
+  }
+
+  p,
+  li {
+    @include font-size($p_font_size);
   }
 }
