@@ -192,6 +192,15 @@ $mobile-width: 288px;
           background-color: $brand-pink !important;
         }
       }
+
+      .sellerform__form--helpText {
+        display: block;
+        font-weight: 400;
+        color: $warning_red;
+        margin-top: -#{$grid10x};
+        margin-bottom: $grid14x;
+        @include font-size($grid3x);
+      }
     }
 
     .sellerform__form--submit {

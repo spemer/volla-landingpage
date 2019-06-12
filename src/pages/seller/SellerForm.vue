@@ -21,11 +21,13 @@
             :type="list.type"
             :name="list.name"
             v-model.trim="list.value"
+            :pattern="list.pattern"
             :required="list.required"
             :minlength="list.minlength"
             :maxlength="list.maxlength"
             :placeholder="list.placeholder"
           )
+          span.sellerform__form--helpText {{ list.helpText }}
 
         p.sellerform__form--title.host {{ sellerForm_Category[0].text }}
           span(
@@ -167,16 +169,36 @@ export default {
     ...mapMutations([
       'SET_TOKEN_BOOL',
       'SET_CLASS_APP',
+      'ADD_FORM_HELPTEXT',
     ]),
 
     checkCategoryValue () {
-      if (! this.sellerForm_CategoryValue.value)
-        alert('호스트 지원 희망여부를 선택해주세요.')
-      else if (
-        this.sellerForm_List[0].value &&
-        this.sellerForm_List[1].value &&
-        this.sellerForm_CategoryValue.value)
-        this.SET_TOKEN_BOOL(true)
+      if (! this.sellerForm_List[0].value) {
+        this.ADD_FORM_HELPTEXT([0, '이메일 주소는 필수 입력사항입니다.'])
+      }
+      else if (this.sellerForm_List[0].value) {
+        this.ADD_FORM_HELPTEXT([0, ''])
+
+        if (! this.sellerForm_List[1].value) {
+          this.ADD_FORM_HELPTEXT([1, '담당자 이름은 필수 입력사항입니다.'])
+        }
+        else if (this.sellerForm_List[1].value) {
+          this.ADD_FORM_HELPTEXT([1, ''])
+
+          if (this.sellerForm_List[2].value) {
+            if (this.sellerForm_List[2].value.indexOf('http') === -1 || this.sellerForm_List[2].value.indexOf('://') === -1) {
+              this.ADD_FORM_HELPTEXT([2, `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`])
+            }
+            else {
+              this.ADD_FORM_HELPTEXT([2, ''])
+            }
+          }
+
+          if (! this.sellerForm_CategoryValue.value) {
+            alert('호스트 지원 희망여부를 선택해주세요.')
+          }
+        }
+      }
     },
 
     start: _ => this.$Progress.start(),
@@ -187,7 +209,7 @@ export default {
     fail: _ => this.$Progress.fail(),
 
     sendPost () {
-      if (this.marketing.val_1) {
+      if (this.sellerForm_List[0].value && this.sellerForm_List[1].value && this.sellerForm_CategoryValue.value && this.marketing.val_1) {
         this.$Progress.start()
 
         const base = process.env.BASE_URL

@@ -47,6 +47,9 @@
     .global__cta--btn {
       display: block;
       margin: 0 auto;
+      width: $grid36x;
+      height: $grid12x;
+      @include font-size($p_font_size);
     }
   }
 
@@ -79,10 +82,10 @@
   h4 {
     color: $black54;
     font-weight: 400;
-    margin-top: -#{$grid};
-    padding-bottom: $grid4x;
-    border-bottom: 0.5px solid $texteee;
-    @include font-size($p_font_size);
+    margin-top: -#{6px};
+    padding-bottom: 17px;
+    border-bottom: 1px solid $texteee;
+    @include font-size($grid3x);
   }
 
   ul,

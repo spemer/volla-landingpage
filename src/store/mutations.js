@@ -11,6 +11,10 @@ export default {
     state.sellerForm_Details.value = value
   },
 
+  ADD_FORM_HELPTEXT: (state, [n, helpText]) => {
+    state.sellerForm_List[n].helpText = helpText
+  },
+
   SET_TOKEN_BOOL: (state, bool) => {
     state.tokenState = bool
   },
