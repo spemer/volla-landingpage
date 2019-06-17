@@ -236,7 +236,7 @@ $mobile-width: 288px;
       padding: 0 $grid4x;
       overflow-y: scroll;
       margin-top: $grid16x;
-      border: 1px solid $texteee;
+      background-color: $black03;
       @include border-radius($grid2x);
 
       .sellerform__form--termsDetails {

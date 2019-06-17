@@ -28,8 +28,9 @@ export default {
 
     [...getAnchorTags].forEach(anchor => {
       let getAnchorTarget = anchor.getAttribute('target')
-      if(! getAnchorTarget)
+      if (! getAnchorTarget) {
         anchor.setAttribute('target', '_blank')
+      }
     })
   },
 
