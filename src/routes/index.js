@@ -35,7 +35,7 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
     path: `${child.ymd}/${child.id}`,
     name: child.id,
-    component: resolve => require([`@/notices/markdowns/${child.id}.md`], resolve),
+    component: resolve => require([`@/notice/markdown/${child.id}.md`], resolve),
   }))
   return {
     path: `/${section}`,
@@ -129,7 +129,7 @@ export default new Router({
     else {
       return {
         x: 0,
-        y: 0
+        y: 0,
       }
     }
   },

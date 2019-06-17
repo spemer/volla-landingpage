@@ -3,18 +3,18 @@
 
   .notices__wrapper {
 
-    .notice__list {
+    .notices__list {
       padding: 0 $grid2x;
       cursor: pointer;
 
-      .notice__list--each {
+      .notices__list--each {
         border-bottom: 1px solid $texteee;
 
-        .notice__list--title {
+        .notices__list--title {
           @include font-size($grid4x);
         }
 
-        .notice__list--date {
+        .notices__list--date {
           color: $black54;
           font-weight: 400;
           @include font-size($grid3x);

@@ -5,15 +5,15 @@
         v-for="(section, index) in Object.keys(entries)"
         :key="index"
       )
-        div.notice__list(
+        div.notices__list(
           v-for="entry in entries[section]"
           :key="entry.id"
         )
-          div.notice__list--each
-            h3.notice__list--title(
+          div.notices__list--each
+            h3.notices__list--title(
               @click="$router.push({name: entry.id})"
             ) {{ entry.title }}
-              span.notice__list--date {{ entry.date }}
+              span.notices__list--date {{ entry.date }}
 </template>
 
 <script>
