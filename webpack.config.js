@@ -1,6 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
 require('es6-promise').polyfill()
 
 module.exports = {
@@ -8,20 +9,31 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.js',
   },
   plugins: [
-    new Dotenv()
+    new Dotenv(),
+    new PrerenderSpaPlugin(
+      // Path to compiled app
+      path.join(__dirname, './dist'),
+      // List of endpoints you wish to prerender
+      [
+        '/',
+        '/seller',
+        '/sellerform',
+        '/app',
+      ],
+    ),
   ],
   node: {
-    fs: 'empty'
+    fs: 'empty',
   },
   module: {
     rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
         ],
       },
       {
@@ -29,7 +41,7 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
       {
@@ -37,7 +49,7 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader',
-          'sass-loader?indentedSyntax'
+          'sass-loader?indentedSyntax',
         ],
       },
       {
@@ -56,38 +68,38 @@ module.exports = {
                 options: {
                   data: `
                     @import "./src/style/style.scss";
-                  `
-                }
-              }
+                  `,
+                },
+              },
             ],
             'sass': [
               'vue-style-loader',
               'css-loader',
-              'sass-loader?indentedSyntax'
-            ]
-          }
+              'sass-loader?indentedSyntax',
+            ],
+          },
           // other vue-loader options go here
-        }
+        },
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
-        }
+          name: '[name].[ext]?[hash]',
+        },
       },
       {
         test: /\.pug$/,
-        loader: 'pug-plain-loader'
+        loader: 'pug-plain-loader',
       },
       {
         test: /\.md$/,
-        loader: 'vue-markdown-loader'
+        loader: 'vue-markdown-loader',
       },
     ]
   },
@@ -97,18 +109,18 @@ module.exports = {
       "@": path.join(__dirname, "/src"),
       "@components": path.join(__dirname, "/src/components"),
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: ['*', '.js', '.vue', '.json'],
   },
   devServer: {
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
-    port: 5814
+    port: 5814,
   },
   performance: {
-    hints: false
+    hints: false,
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -117,17 +129,17 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
-      }
+        NODE_ENV: '"production"',
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+      minimize: true,
+    }),
   ])
 }
