@@ -1,0 +1,17 @@
+{
+  "tos": {
+    "190602": [{
+        "id": "user/privacy"
+      },
+      {
+        "id": "user/service"
+      },
+      {
+        "id": "ceo/privacy"
+      },
+      {
+        "id": "ceo/service"
+      }
+    ]
+  }
+}

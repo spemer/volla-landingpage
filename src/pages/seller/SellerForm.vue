@@ -87,10 +87,12 @@
           )
           span.checkmark
 
-        button.sellerform__form--submit(
-          name="sellerform__form"
-          @click="checkCategoryValue"
-        ) 제출하기
+        div.sellerform__form--wrapper
+          div.sellerform__form--box
+            button.sellerform__form--submit(
+              name="sellerform__form"
+              @click="checkCategoryValue"
+            ) 제출하기
 </template>
 
 <script>

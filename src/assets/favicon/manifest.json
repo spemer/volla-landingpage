@@ -1,7 +1,6 @@
 {
   "name": "volla.live",
   "short_name": "volla.live",
-  "background_color": "#fff",
   "icons": [{
       "src": "\/android-icon-36x36.png",
       "sizes": "36x36",
@@ -38,5 +37,9 @@
       "type": "image\/png",
       "density": "4.0"
     }
-  ]
+  ],
+  "background_color": "#FFFFFF",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#FFFFFF"
 }

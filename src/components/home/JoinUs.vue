@@ -45,7 +45,7 @@ export default {
   }),
 
   mixins: [
-    toast
+    toast,
   ],
 
   mounted () {

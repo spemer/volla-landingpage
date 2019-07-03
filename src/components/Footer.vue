@@ -56,7 +56,7 @@ export default {
   }),
 
   mixins: [
-    toast
+    toast,
   ],
 
   computed: {
