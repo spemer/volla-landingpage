@@ -55,3 +55,88 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#header {
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: $header;
+  position: sticky;
+  font-weight: 900;
+  background-color: #fff;
+  @include box-shadow();
+
+  @supports (position: sticky) or (position: -webkit-sticky) {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  .container {
+    height: $header;
+
+    .header__left {
+      cursor: pointer;
+      height: $header;
+      font-weight: 400;
+      display: inline-block;
+
+      .header__left--img {
+        width: 40px;
+        height: 40px;
+        padding: $grid2x 0;
+        margin-left: -6px;
+      }
+
+      .header__left--text {
+        font-weight: 700;
+        color: $brand-pink;
+        margin-left: $grid2x;
+        letter-spacing: 0.25px;
+        display: inline-block;
+        @include transform(translateY(-75%));
+
+        @media #{$pablet} {
+          display: none;
+        }
+      }
+    }
+
+    .header__right {
+      float: right;
+      height: $header;
+      font-weight: 400;
+
+      .header__right--text {
+        cursor: pointer;
+        display: inline-block;
+        @include font-size($grid4x);
+        @include line-height($grid4x);
+        @include transition(opacity 0.25s ease);
+
+        &.join {
+          font-weight: 700;
+        }
+
+        &.home {
+          font-weight: 700;
+          margin-right: 0 !important;
+          @include transform(translateY(63%));
+        }
+
+        &:first-child {
+          margin-right: $grid8x;
+
+          @media #{$pablet} {
+            margin-right: $grid6x;
+          }
+
+          @media #{$mini} {
+            margin-right: $grid4x;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

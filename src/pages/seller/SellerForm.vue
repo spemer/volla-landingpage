@@ -203,16 +203,10 @@ export default {
       }
     },
 
-    start: _ => this.$Progress.start(),
-    set: num => this.$Progress.set(num),
-    increase: num => this.$Progress.increase(num),
-    decrease: num => this.$Progress.decrease(num),
-    finish: _ => this.$Progress.finish(),
-    fail: _ => this.$Progress.fail(),
-
     sendPost () {
       if (this.sellerForm_List[0].value && this.sellerForm_List[1].value && this.sellerForm_CategoryValue.value && this.marketing.val_1) {
         this.$Progress.start()
+
         this.$toasted.show('요청중입니다. 잠시만 기다려주세요!', {
           theme: 'primary',
           position: 'bottom-center',
@@ -237,8 +231,10 @@ export default {
             }
           },
         )
+
         .then(response => {
           this.$Progress.finish()
+
           this.SET_TOKEN_BOOL(true)
           if (! this.isApp) {
             this.$router.push('/submit')
@@ -247,8 +243,10 @@ export default {
           }
           console.info(response.data)
         })
+
         .catch(error => {
           this.$Progress.fail()
+
           this.SET_TOKEN_BOOL(false)
           alert(`오류입니다. 다시 시도해주세요!\n${error}`)
           console.warn(error)

@@ -1,5 +1,4 @@
-#tosView {
-
+#tosDetails {
   .global__cta--btn {
     display: inline-block;
     border: 2px solid transparent;
@@ -32,7 +31,7 @@
         padding-bottom: $grid32x !important;
       }
 
-      .terms_mid--title {
+      h2 {
         text-align: center;
         margin-top: $grid16x;
         color: $black78 !important;
@@ -64,7 +63,6 @@
       }
 
       ul {
-
         li {
           margin-bottom: $grid2x;
           list-style-type: disc !important;
@@ -117,7 +115,7 @@
               counter-increment: item;
 
               &:before {
-                content: counters(item, ".") "";
+                content: counters(item, '.') '';
               }
             }
           }
@@ -133,7 +131,7 @@
             padding-right: $grid2x;
             font-weight: bolder;
             text-align: right;
-            content: counter(item) ".";
+            content: counter(item) '.';
 
             @media #{$mobile} {
               padding-right: $grid;
@@ -142,7 +140,6 @@
 
           >ul,
           >ol {
-
             >li {
               margin: 0;
               padding: 0 0 0 1.5em;

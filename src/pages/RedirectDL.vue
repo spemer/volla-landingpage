@@ -67,3 +67,32 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#redirect {
+  text-align: center;
+
+  .redirect__wrapper {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+
+    .redirect__wrapper--img {
+      display: block;
+      margin: 0 auto;
+      width: $grid16x;
+    }
+
+    .redirect__wrapper--text {
+      margin-top: $grid2x;
+    }
+
+    .global__cta {
+      display: block;
+      margin-top: $grid32x;
+    }
+  }
+}
+</style>

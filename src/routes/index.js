@@ -6,12 +6,6 @@ import store from '@/store/index'
 Vue.use(Meta)
 Vue.use(Router)
 
-import Home from '@/pages/Home'
-import HomeView from '@/pages/HomeView'
-import SellerForm from '@/pages/seller/SellerForm'
-import AfterSubmitForm from '@/pages/seller/AfterSubmitForm'
-import Microsite from '@/pages/Microsite'
-
 const requireToken = (to, from, next) => {
   if (store.state.tokenState) {
     return next()
@@ -19,37 +13,55 @@ const requireToken = (to, from, next) => {
   next('/sellerform')
 }
 
-import TosView from '@/pages/tos/TosView'
-import UserPrivacy from '@/pages/tos/current/UserPrivacy'
-import UserService from '@/pages/tos/current/UserService'
-import CeoPrivacy from '@/pages/tos/current/CeoPrivacy'
-import CeoService from '@/pages/tos/current/CeoService'
-
-import RedirectDL from '@/pages/RedirectDL'
-
-import Notices from '@/pages/boards/Notices'
-import Details from '@/pages/boards/Details'
+// NoticeEntries
 import NoticeEntries from '@/statics/data/notice.json'
 
 const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
     path: `${child.ymd}/${child.id}`,
     name: child.id,
-    component: resolve => require([`@/notice/markdown/${child.id}.md`], resolve),
+    component: _ => {
+      return import(`@/markdowns/notice/markdown/${child.id}.md`)
+    }
   }))
   return {
     path: `/${section}`,
     name: section,
-    component: Details,
+    component: _ => {
+      return import('@/pages/boards/Details')
+    },
     children,
   }
 })
 
+// TosEntries
+import TosEntries from '@/statics/data/tos.json'
+
+const tosRoutes = Object.keys(TosEntries).map(section => {
+  const children = TosEntries[section].map(child => ({
+    path: '/tos/:id',
+    name: child.id,
+    component: _ => {
+      return import(`@/markdowns/tos/${section}/${child.id}.md`)
+    }
+  }))
+  return {
+    path: '/tos/:id',
+    name: section,
+    component: _ => {
+      return import('@/pages/tos/TosDetails')
+    },
+    children,
+  }
+})
+
+// Router
 export default new Router({
   mode: 'history',
   functional: true,
   routes: [
     ...noticeRoutes,
+    ...tosRoutes,
     {
       path: '*',
       redirect: '/'
@@ -60,28 +72,38 @@ export default new Router({
     },
     {
       path: '/',
-      component: Home,
+      component: _ => {
+        return import('@/pages/Home')
+      },
       children: [{
           path: '/',
           name: 'homeView',
-          component: HomeView,
+          component: _ => {
+            return import('@/pages/HomeView')
+          },
         },
         {
           path: '/seller',
           name: 'microsite',
-          component: Microsite,
+          component: _ => {
+            return import('@/pages/Microsite')
+          },
         },
         {
           path: '/sellerform',
           alias: '/sellerform-app',
           name: 'sellerForm',
-          component: SellerForm,
+          component: _ => {
+            return import('@/pages/seller/SellerForm')
+          },
         },
         {
           path: '/submit',
           alias: '/submit-app',
           name: 'afterSubmitForm',
-          component: AfterSubmitForm,
+          component: _ => {
+            return import('@/pages/seller/AfterSubmitForm')
+          },
           beforeEnter: requireToken,
         },
       ],
@@ -89,40 +111,36 @@ export default new Router({
     {
       path: '/notices',
       name: 'notices',
-      component: Notices,
-    },
-    {
-      path: '/tos',
-      component: TosView,
-      children: [{
-          path: 'user/privacy',
-          name: 'UserPrivacy',
-          component: UserPrivacy,
-        },
-        {
-          path: 'user/service',
-          name: 'UserService',
-          component: UserService,
-        },
-        {
-          path: 'ceo/privacy',
-          name: 'CeoPrivacy',
-          component: CeoPrivacy,
-        },
-        {
-          path: 'ceo/service',
-          name: 'CeoService',
-          component: CeoService,
-        },
-      ],
+      component: _ => {
+        return import('@/pages/boards/Notices')
+      },
     },
     {
       path: '/app',
       name: 'redirect_dl',
-      component: RedirectDL,
+      component: _ => {
+        return import('@/pages/RedirectDL')
+      },
+    },
+    {
+      path: '/tos/user/privacy',
+      redirect: '/tos/user_privacy',
+    },
+    {
+      path: '/tos/user/service',
+      redirect: '/tos/user_service',
+    },
+    {
+      path: '/tos/ceo/privacy',
+      redirect: '/tos/ceo_privacy',
+    },
+    {
+      path: '/tos/ceo/service',
+      redirect: '/tos/ceo_service',
     },
   ],
 
+  // scrollBehavior
   scrollBehavior: (to, from, savedPosition) => {
     if (savedPosition)
       return savedPosition

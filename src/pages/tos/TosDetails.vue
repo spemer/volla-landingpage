@@ -1,15 +1,16 @@
 <template lang="pug">
-  div#tosView
-    router-view
-    div.global__cta
-      CloseBtn
+  div#tosDetails
+    div#terms
+
+      router-view.terms-wrapper
+
 </template>
 
 <script>
 import CloseBtn from '@components/misc/CloseBtn'
 
 export default {
-  name: 'tosView',
+  name: 'tosDetails',
 
   components: {
     CloseBtn,

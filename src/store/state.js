@@ -88,18 +88,6 @@ export default {
     ],
   },
 
-  // pages/tos
-  tosVars: {
-    companyNameFullKo: globalVar.companyNameFullKo,
-    companyName: globalVar.companyName,
-    companyCEO: globalVar.companyCEO,
-    websiteUrl: globalVar.websiteUrl,
-    tosDateNow: globalVar.tosDateNow,
-    serviceEn: globalVar.serviceEn,
-    callTo: globalVar.callTo,
-    mailTo: globalVar.mailTo,
-  },
-
   // SellerForm.vue
   sellerForm_List: [{
       value: '',

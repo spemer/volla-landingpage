@@ -1,17 +1,19 @@
 {
-  "tos": {
-    "190602": [{
-        "id": "user/privacy"
-      },
-      {
-        "id": "user/service"
-      },
-      {
-        "id": "ceo/privacy"
-      },
-      {
-        "id": "ceo/service"
-      }
-    ]
-  }
+  "190326": [{
+      "id": "user_privacy",
+      "title": "개인정보처리방침(이용자용)"
+    },
+    {
+      "id": "user_service",
+      "title": "서비스이용약관(이용자용)"
+    },
+    {
+      "id": "ceo_privacy",
+      "title": "개인정보처리방침(판매자용)"
+    },
+    {
+      "id": "ceo_service",
+      "title": "서비스이용약관(쇼핑몰사업자용)"
+    }
+  ]
 }

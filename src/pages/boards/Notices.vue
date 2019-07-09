@@ -2,11 +2,11 @@
   div#notices
     div.container
       div.notices__wrapper(
-        v-for="(section, index) in Object.keys(entries)"
+        v-for="(section, index) in Object.keys(noticeEntries)"
         :key="index"
       )
         div.notices__list(
-          v-for="entry in entries[section]"
+          v-for="entry in noticeEntries[section]"
           :key="entry.id"
         )
           div.notices__list--each
@@ -29,7 +29,7 @@ export default {
   },
 
   computed: {
-    entries: _ => NOTICE_ENTRIES,
+    noticeEntries: _ => NOTICE_ENTRIES,
   },
 
 }

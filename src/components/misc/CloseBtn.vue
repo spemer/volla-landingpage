@@ -25,3 +25,11 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#closebtn {
+  @media #{$pablet} {
+    display: none;
+  }
+}
+</style>
