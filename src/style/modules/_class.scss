@@ -3,8 +3,6 @@
 ============================== */
 @mixin box-shadow ($val:$grid, $val2:$grid2x, $color:$black08) {
   -webkit-box-shadow: 0 $val $val2 $color;
-  -khtml-box-shadow: 0 $val $val2 $color;
-  -moz-box-shadow: 0 $val $val2 $color;
   -ms-box-shadow: 0 $val $val2 $color;
   -o-box-shadow: 0 $val $val2 $color;
   box-shadow: 0 $val $val2 $color;
@@ -28,11 +26,6 @@
   border-radius
 ============================== */
 @mixin border-radius ($val:$grid4x) {
-  -webkit-border-radius: $val;
-  -khtml-border-radius: $val;
-  -moz-border-radius: $val;
-  -ms-border-radius: $val;
-  -o-border-radius: $val;
   border-radius: $val;
 }
 
@@ -42,7 +35,6 @@
 ============================== */
 @mixin user-select () {
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
@@ -56,9 +48,6 @@
 @mixin transform ($val) {
   -webkit-transform: $val;
   -khtml-transform: $val;
-  -moz-transform: $val;
-  -ms-transform: $val;
-  -o-transform: $val;
   transform: $val;
 }
 
@@ -81,10 +70,6 @@
 ============================== */
 @mixin transition ($transition...) {
   -webkit-transition: $transition;
-  -khtml-transition: $transition;
-  -moz-transition: $transition;
-  -ms-transition: $transition;
-  -o-transition: $transition;
   transition: $transition;
 }
 

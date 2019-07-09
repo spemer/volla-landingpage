@@ -2,7 +2,7 @@ import {
   globalVar
 } from '@/globalVar'
 
-export default {
+export const state = {
   thisYear: new Date().getFullYear(),
 
   // DownloadBtn.vue

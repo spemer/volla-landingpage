@@ -1,4 +1,4 @@
-export default {
+export const mutations = {
   UPDATE_FORM_LIST: (state, value) => {
     state.sellerForm_List.value = value
   },

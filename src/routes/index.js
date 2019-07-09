@@ -22,7 +22,7 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
     name: child.id,
     component: _ => {
       return import(`@/markdowns/notice/markdown/${child.id}.md`)
-    }
+    },
   }))
   return {
     path: `/${section}`,
@@ -43,7 +43,7 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
     name: child.id,
     component: _ => {
       return import(`@/markdowns/tos/${section}/${child.id}.md`)
-    }
+    },
   }))
   return {
     path: '/tos/:id',
