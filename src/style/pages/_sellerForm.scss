@@ -309,7 +309,7 @@ $mobile-width: 288px;
 
     // iPhone X safearea
     @supports (padding-bottom: env(safe-area-inset-bottom)) {
-      padding-bottom: calc(env(safe-area-inset-bottom + #{$grid24x})) !important;
+      padding-bottom: calc(env(safe-area-inset-bottom + #{$grid32x})) !important;
     }
 
     h1 {
@@ -378,7 +378,6 @@ $mobile-width: 288px;
           width: 100%;
           margin: 0 auto;
           display: block;
-          // position: absolute;
           background-color: $brand-pink-16;
           @include border-radius();
 

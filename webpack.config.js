@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
-const PrerenderSpaPlugin = require('prerender-spa-plugin')
 require('es6-promise').polyfill()
 
 module.exports = {
@@ -13,17 +12,6 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
-    new PrerenderSpaPlugin(
-      // Path to compiled app
-      path.join(__dirname, './dist'),
-      // List of endpoints you wish to prerender
-      [
-        '/',
-        '/seller',
-        '/sellerform',
-        '/app',
-      ],
-    ),
   ],
   node: {
     fs: 'empty',
