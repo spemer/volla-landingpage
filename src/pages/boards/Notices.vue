@@ -34,3 +34,35 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#notices {
+  padding-top: $grid2x;
+
+  .notices__wrapper {
+    .notices__list {
+      padding: 0 $grid2x;
+      cursor: pointer;
+
+      .notices__list--each {
+        border-bottom: 1px solid $texteee;
+
+        .notices__list--title {
+          @include font-size($grid4x);
+        }
+
+        .notices__list--date {
+          color: $black54;
+          font-weight: 400;
+          @include font-size($grid3x);
+
+          &::before {
+            content: '\a';
+            white-space: pre;
+          }
+        }
+      }
+    }
+  }
+}
+</style>
