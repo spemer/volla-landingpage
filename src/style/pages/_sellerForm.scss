@@ -146,7 +146,7 @@ $mobile-width: 288px;
             color: #fff;
             font-weight: 700;
             color: $brand-pink;
-            background-color: $brand-pink-10;
+            background-color: $brand-pink-16;
           }
         }
       }
@@ -157,11 +157,12 @@ $mobile-width: 288px;
         outline: none;
         display: inline-block;
         margin-bottom: $grid12x;
+        color: $black78 !important;
         padding: $grid4x 0 $grid2x;
         border-bottom: 1px solid $textccc;
         @include border-radius(0);
         @include font-size($grid4x);
-        @include transition(all 0.25s ease);
+        @include transition(border-bottom 0.25s ease);
 
         @media #{$pablet} {
           width: $pablet-width;
@@ -213,7 +214,7 @@ $mobile-width: 288px;
       font-weight: 900;
       color: $brand-pink;
       margin-top: $grid24x;
-      background-color: $brand-pink-10-solid;
+      background-color: $brand-pink-16;
       @include border-radius($grid16x);
       @include transition(all 0.25s ease);
 
@@ -276,7 +277,7 @@ $mobile-width: 288px;
       }
 
       input:checked~.checkmark {
-        background-color: $brand-pink-10-solid;
+        background-color: $brand-pink-16;
       }
 
       .checkmark:after {
@@ -378,7 +379,7 @@ $mobile-width: 288px;
           margin: 0 auto;
           display: block;
           // position: absolute;
-          background-color: $brand-pink-10-solid;
+          background-color: $brand-pink-16;
           @include border-radius();
 
           @media #{$tablet} {
