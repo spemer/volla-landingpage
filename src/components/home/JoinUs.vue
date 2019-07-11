@@ -60,3 +60,54 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#joinus {
+  padding: $grid12x 0 $grid24x;
+  border-top: 1px solid $texteee;
+
+  .container {
+    .section__subtitle {
+      margin-bottom: 0;
+
+      .joinus__title--copyEmail {
+        cursor: pointer;
+        font-weight: 400;
+        color: $brand-pink;
+        display: inline-block;
+        @include transition(all 0.25s ease);
+
+        &:hover {
+          opacity: 0.5;
+        }
+
+        .fa-copy {
+          margin-left: $grid;
+        }
+      }
+    }
+
+    .global__cta {
+      width: 100%;
+      display: inline-block;
+
+      .global__cta--btn {
+        width: $grid40x;
+
+        &.form {
+          color: #fff;
+          background-color: $brand-pink;
+        }
+
+        &.mailto {
+          margin-right: $grid4x;
+
+          @media #{$pablet} {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

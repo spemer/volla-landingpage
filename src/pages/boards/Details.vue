@@ -36,3 +36,14 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#markdown {
+  padding: auto 0 !important;
+
+  .container {
+    width: calc(100% - #{$grid4x});
+    padding: 0 $grid2x !important;
+  }
+}
+</style>

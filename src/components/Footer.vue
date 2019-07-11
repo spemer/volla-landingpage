@@ -73,6 +73,7 @@ export default {
           date: date,
         },
       })
+
       window.open(popupTos.href, '_blank')
     },
   },

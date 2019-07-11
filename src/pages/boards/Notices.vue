@@ -40,8 +40,9 @@ export default {
   padding-top: $grid2x;
 
   .notices__wrapper {
+    // padding: 0 $grid2x;
+
     .notices__list {
-      padding: 0 $grid2x;
       cursor: pointer;
 
       .notices__list--each {

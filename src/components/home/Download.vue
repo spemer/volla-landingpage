@@ -30,3 +30,42 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+#download {
+  $height: 664px;
+
+  height: $height;
+  overflow-y: hidden;
+  border-top: 1px solid $texteee;
+
+  @media #{$pablet2} {
+    height: calc(#{$height} + 64px);
+  }
+
+  @media #{$pablet} {
+    height: calc(#{$height} + 11px);
+  }
+
+  @media #{$middle2} {
+    height: calc(#{$height} + 19px);
+  }
+
+  @media #{$mobile} {
+    height: calc(#{$height} - 53px);
+  }
+
+  .download__mockup {
+    text-align: center;
+
+    .download__mockup--img {
+      width: 320px;
+      margin: 0 auto;
+
+      @media #{$mobile} {
+        width: 280px;
+      }
+    }
+  }
+}
+</style>

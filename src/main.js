@@ -10,26 +10,31 @@ import axios from 'axios'
 import App from '@/App.vue'
 import store from '@/store'
 import router from '@/routes'
+
 import VTooltip from 'v-tooltip'
-import Toasted from 'vue-toasted'
-import Firebase from 'firebase/app'
-import VueScrollTo from 'vue-scrollto'
-import VueClipboard from 'vue-clipboard2'
-import VueProgressBar from 'vue-progressbar'
-
-Vue.config.productionTip = false
-Vue.prototype.$http = axios
-Kakao.init(process.env.KAKAO_KEY)
-
-Vue.use(Toasted)
 Vue.use(VTooltip)
+
+import Toasted from 'vue-toasted'
+Vue.use(Toasted)
+
+import VueScrollTo from 'vue-scrollto'
 Vue.use(VueScrollTo)
+
+import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard)
+
+import VueProgressBar from 'vue-progressbar'
 Vue.use(VueProgressBar, {
   color: 'rgb(255, 121, 172)',
   failedColor: 'rgb(255, 121, 172)',
   height: '4px',
 })
+
+// import Firebase from 'firebase/app'
+
+Vue.config.productionTip = false
+Vue.prototype.$http = axios
+Kakao.init(process.env.KAKAO_KEY)
 
 new Vue({
   el: '#app',
