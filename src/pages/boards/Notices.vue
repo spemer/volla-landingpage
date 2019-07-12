@@ -6,12 +6,12 @@
         :key="index"
       )
         div.notices__list(
-          v-for="entry in noticeEntries[section]"
-          :key="entry.id"
+          v-for="(entry, i) in noticeEntries[section]"
+          :key="`${entry.id}`"
         )
           div.notices__list--each
             h3.notices__list--title(
-              @click="$router.push({name: entry.id})"
+              @click="goDetails(entry.id)"
             ) {{ entry.title }}
               span.notices__list--date {{ entry.date }}
 </template>
@@ -26,6 +26,17 @@ export default {
   metaInfo: {
     title: `${globalVar.serviceEn} - 공지사항`,
     titleTemplate: `%s`,
+  },
+
+  methods: {
+    goDetails (id) {
+      this.$router.push({
+        name: id,
+        params: {
+          id: id,
+        },
+      })
+    },
   },
 
   computed: {

@@ -15,7 +15,10 @@ const imagemin = require('gulp-imagemin');
   image resizer
 ============================== */
 function _imagemin() {
-  return src('./src/assets/src/*', {
+  return src([
+      './src/assets/src/*',
+      './src/markdowns/notice/image/*'
+    ], {
       since: lastRun(_imagemin)
     })
     .pipe(imagemin())

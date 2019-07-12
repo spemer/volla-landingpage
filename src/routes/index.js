@@ -18,7 +18,7 @@ import NoticeEntries from '@/statics/data/notice.json'
 
 const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
-    path: `${child.ymd}/${child.id}`,
+    path: `${child.ymd}/:id`,
     name: child.id,
     component: _ => {
       return import(`@/markdowns/notice/markdown/${child.id}.md`)
@@ -122,6 +122,8 @@ export default new Router({
         return import('@/pages/RedirectDL')
       },
     },
+
+    // tmp redirect
     {
       path: '/tos/user/privacy',
       redirect: '/tos/user_privacy',

@@ -13,10 +13,15 @@
 </template>
 
 <script>
+import NOTICE_ENTRIES from '@/statics/data/notice.json'
 import { globalVar } from '@/globalVar'
 
 export default {
   name: 'markdown',
+
+  computed: {
+    noticeEntries: _ => NOTICE_ENTRIES,
+  },
 
   metaInfo: {
     title: `${globalVar.serviceEn} - 공지사항`,
@@ -24,6 +29,19 @@ export default {
   },
 
   mounted () {
+    // append date info
+    let arr = this.noticeEntries['notice']
+
+    let idx = arr.findIndex((item, idx) => {
+      return item.id === this.$route.params.id
+    })
+
+    let getTitle = document.querySelectorAll('section h1')[0]
+    let setDate = document.createElement('h4')
+    getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
+    setDate.innerHTML = arr[idx].date
+
+    // set _blank to a tags
     let getAnchorTags = document.querySelectorAll('section a');
 
     [...getAnchorTags].forEach(anchor => {
