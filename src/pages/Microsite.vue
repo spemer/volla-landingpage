@@ -1,12 +1,12 @@
 <template lang="pug">
   div#microsite
-    Hero
-    VideoEmbed.section__each
-    StatsList.section__each
-    StartWith.section__each
-    Benefits.section__each
-    Benefits2.section__each
-    JoinUs.section__each
+    Hero(data-aos="fade")
+    VideoEmbed.section__each(data-aos="fade")
+    StatsList.section__each(data-aos="fade")
+    StartWith.section__each(data-aos="fade")
+    Benefits.section__each(data-aos="fade")
+    Benefits2.section__each(data-aos="fade")
+    JoinUs.section__each(data-aos="fade")
 </template>
 
 <script>

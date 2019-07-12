@@ -1,7 +1,5 @@
 <template lang="pug">
-  div#download(
-    v-scroll-reveal
-  )
+  div#download
     div.container
       h1.download__title.section__title 앱으로 간편하게 즐겨보세요
       p.section__subtitle

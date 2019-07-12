@@ -1,10 +1,10 @@
 <template lang="pug">
   div#homeView
-    Hero
-    Service
-    EasyStart.section__each
-    Download.section__each
-    JoinUs.section__each
+    Hero(data-aos="fade")
+    Service(data-aos="fade")
+    EasyStart.section__each(data-aos="fade")
+    Download.section__each(data-aos="fade")
+    JoinUs.section__each(data-aos="fade")
 </template>
 
 <script>
