@@ -60,8 +60,8 @@ export default {
   padding: auto 0 !important;
 
   .container {
-    width: calc(100% - #{$grid4x});
     padding: 0 $grid2x !important;
+    width: calc(100% - #{$grid4x});
   }
 }
 </style>

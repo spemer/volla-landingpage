@@ -303,116 +303,118 @@ $mobile-width: 288px;
   }
 
   &.app {
-    padding-top: 0;
-    padding-bottom: $grid32x;
-    @include user-select();
 
-    // iPhone X safearea
-    @supports (padding-bottom: env(safe-area-inset-bottom)) {
-      padding-bottom: calc(env(safe-area-inset-bottom + #{$grid32x})) !important;
-    }
-
-    h1 {
-
-      &.sellerform__form--title {
-        display: none;
-      }
-    }
-
-    p {
-
-      &.sellerform__form--subtitle {
-        display: none;
-      }
-    }
-
-    .sellerform__form--form {
-      margin-top: $grid12x;
-    }
-
-    .sellerform__form--wrapper {
-      left: 0;
-      bottom: 0;
-      padding: 0;
-      width: 100vw;
-      position: fixed;
-      background-color: #fff;
-      height: calc(#{$grid24x});
-      background: rgba(255, 255, 255, 0);
-      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
-      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(12%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
-      background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
-      background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
-
-      @media #{$tablet} {
-        width: calc(100% - #{$grid16x});
-        padding: 0 $grid8x;
-      }
-
-      @media #{$landsc} {
-        padding: 0 $grid8x;
-      }
-
-      @media #{$pablet} {
-        width: calc(100% - #{$grid8x});
-        padding: 0 $grid4x;
-      }
-
-      @media #{$mobile} {
-        padding: 0 $grid4x;
-      }
+    &:not(.submit) {
+      padding-top: 0;
+      padding-bottom: $grid32x;
+      @include user-select();
 
       // iPhone X safearea
       @supports (padding-bottom: env(safe-area-inset-bottom)) {
-        padding-bottom: calc(env(safe-area-inset-bottom)) !important;
+        padding-bottom: calc(env(safe-area-inset-bottom + #{$grid40x})) !important;
       }
 
-      .sellerform__form--box {
+      h1 {
 
-        .sellerform__form--submit {
-          opacity: 1;
-          margin-top: $grid6x !important;
-          width: 100%;
-          margin: 0 auto;
-          display: block;
-          background-color: $brand-pink-16;
-          @include border-radius();
-
-          @media #{$tablet} {
-            width: calc(100% - #{$grid14x});
-            padding: 0 $grid8x;
-          }
-
-          @media #{$landsc} {
-            padding: 0 $grid8x;
-          }
-
-          @media #{$pablet} {
-            width: calc(100% - #{$grid14x});
-            padding: 0 $grid4x;
-          }
-
-          @media #{$ip6} {
-            width: calc(100% - #{$grid6x});
-          }
-
-          @media #{$mobile} {
-            width: calc(100% - #{$grid10x});
-          }
-
-          @media #{$mini} {
-            width: calc(100%);
-          }
-
-          &:hover {
-            opacity: 1;
-          }
+        &.sellerform__form--title {
+          display: none;
         }
       }
 
+      p {
+
+        &.sellerform__form--subtitle {
+          display: none;
+        }
+      }
+
+      .sellerform__form--form {
+        margin-top: $grid12x;
+      }
+
+      .sellerform__form--wrapper {
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        width: 100vw;
+        position: fixed;
+        background-color: #fff;
+        height: calc(#{$grid24x});
+        background: rgba(255, 255, 255, 0);
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(12%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
+        background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 12%, rgba(255, 255, 255, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+
+        @media #{$tablet} {
+          width: calc(100% - #{$grid16x});
+          padding: 0 $grid8x;
+        }
+
+        @media #{$landsc} {
+          padding: 0 $grid8x;
+        }
+
+        @media #{$pablet} {
+          width: calc(100% - #{$grid8x});
+          padding: 0 $grid4x;
+        }
+
+        @media #{$mobile} {
+          padding: 0 $grid4x;
+        }
+
+        // iPhone X safearea
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+          padding-bottom: calc(env(safe-area-inset-bottom)) !important;
+        }
+
+        .sellerform__form--box {
+
+          .sellerform__form--submit {
+            opacity: 1;
+            margin-top: $grid6x !important;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+            background-color: $brand-pink-16;
+            @include border-radius();
+
+            @media #{$tablet} {
+              width: calc(100% - #{$grid14x});
+              padding: 0 $grid8x;
+            }
+
+            @media #{$landsc} {
+              padding: 0 $grid8x;
+            }
+
+            @media #{$pablet} {
+              width: calc(100% - #{$grid14x});
+              padding: 0 $grid4x;
+            }
+
+            @media #{$ip6} {
+              width: calc(100% - #{$grid6x});
+            }
+
+            @media #{$mobile} {
+              width: calc(100% - #{$grid10x});
+            }
+
+            @media #{$mini} {
+              width: calc(100%);
+            }
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
 }

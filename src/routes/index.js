@@ -19,15 +19,15 @@ import NoticeEntries from '@/statics/data/notice.json'
 const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
     path: `${child.ymd}/:id`,
-    name: child.id,
-    component: _ => {
+    name: `${child.id}`,
+    component: () => {
       return import(`@/markdowns/notice/markdown/${child.id}.md`)
     },
   }))
   return {
     path: `/${section}`,
-    name: section,
-    component: _ => {
+    name: `${section}`,
+    component: () => {
       return import('@/pages/boards/Details')
     },
     children,
@@ -41,16 +41,12 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
   const children = TosEntries[section].map(child => ({
     path: '/tos/:id',
     name: child.id,
-    component: _ => {
-      return import(`@/markdowns/tos/${section}/${child.id}.md`)
-    },
+    component: _ => import(`@/markdowns/tos/${section}/${child.id}.md`),
   }))
   return {
     path: '/tos/:id',
     name: section,
-    component: _ => {
-      return import('@/pages/tos/TosDetails')
-    },
+    component: _ => import('@/pages/tos/TosDetails'),
     children,
   }
 })
@@ -60,8 +56,7 @@ export default new Router({
   mode: 'history',
   functional: true,
   routes: [
-    ...noticeRoutes,
-    ...tosRoutes,
+    ...noticeRoutes, ...tosRoutes,
     {
       path: '*',
       redirect: '/'
@@ -108,6 +103,12 @@ export default new Router({
         },
       ],
     },
+
+    // app notice lists
+    {
+      path: '/notice',
+      redirect: '/notices',
+    },
     {
       path: '/notices',
       name: 'notices',
@@ -115,6 +116,8 @@ export default new Router({
         return import('@/pages/boards/Notices')
       },
     },
+
+    // appstore download link
     {
       path: '/app',
       name: 'redirect_dl',
@@ -123,7 +126,7 @@ export default new Router({
       },
     },
 
-    // tmp redirect
+    // tmp redirect (tos)
     {
       path: '/tos/user/privacy',
       redirect: '/tos/user_privacy',

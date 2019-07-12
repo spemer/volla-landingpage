@@ -2,8 +2,6 @@ import 'babel-polyfill'
 import 'es6-promise/auto'
 import 'event-source-polyfill'
 import 'promise-polyfill/src/polyfill'
-import 'core-js/modules/es6.promise'
-import 'core-js/modules/es6.array.iterator'
 
 import Vue from 'vue'
 import axios from 'axios'
@@ -39,6 +37,7 @@ Kakao.init(process.env.KAKAO_KEY)
 new Vue({
   created() {
     AOS.init({
+      delay: 0,
       offset: 160,
       duration: 500,
       once: true,

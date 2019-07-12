@@ -75,6 +75,7 @@
     margin-top: $grid4x;
     display: inline-block;
     margin-bottom: $grid4x;
+    @include border-radius();
 
     @media #{$pablet} {
       width: 100%;

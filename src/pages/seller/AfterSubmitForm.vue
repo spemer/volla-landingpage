@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#sellerForm(
+  div#sellerForm.submit(
     :class="{app: isApp}"
   )
     div.container
@@ -61,6 +61,13 @@ export default {
     titleTemplate: '%s',
   },
 
+  mounted () {
+    if (this.$route.path == '/submit-app')
+      this.SET_CLASS_APP(true)
+    else if (this.$route.path == '/submit')
+      this.SET_CLASS_APP(false)
+  },
+
   computed: {
     ...mapState([
       'sellerForm_List',
@@ -78,6 +85,7 @@ export default {
       'REMOVE_FORM_VAL',
       'SET_MARKETING_BOOL',
       'SET_TOKEN_BOOL',
+      'SET_CLASS_APP',
     ]),
   },
 
@@ -89,3 +97,11 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.app {
+  &.submit {
+    padding-top: $grid8x !important;
+  }
+}
+</style>

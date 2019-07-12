@@ -6,8 +6,8 @@
         :key="index"
       )
         div.notices__list(
-          v-for="(entry, i) in noticeEntries[section]"
-          :key="`${entry.id}`"
+          v-for="entry in noticeEntries[section]"
+          :key="entry.id"
         )
           div.notices__list--each
             h3.notices__list--title(
