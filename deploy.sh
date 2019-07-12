@@ -51,8 +51,8 @@ image_resizer() {
     read -p "${BOLD}${GREEN}Run gulpfile.js(image resizer)? (Y/n) ${RESET}" yn
     case ${yn} in
       [Yy]* )
-        trap 'echo Stop gulp-watch' SIGINT
-        sudo gulp watch;
+        trap 'echo Stop gulp' SIGINT
+        sudo gulp;
         trap SIGINT
         break;;
 

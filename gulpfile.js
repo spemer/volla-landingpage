@@ -1,20 +1,29 @@
 "use strict";
-const gulp = require('gulp'),
-  watch = require('gulp-watch'),
-  imagemin = require('gulp-imagemin');
+
+const {
+  src,
+  dest,
+  lastRun,
+  watch,
+  series
+} = require('gulp');
+
+const imagemin = require('gulp-imagemin');
 
 
 /* ==============================
-    image resizer
+  image resizer
 ============================== */
-gulp.task('img-resize', () =>
-  gulp.src('./src/assets/src/*')
-  .pipe(imagemin())
-  .pipe(gulp.dest('./src/assets/dist'))
-);
+function _imagemin() {
+  return src('./src/assets/src/*', {
+      since: lastRun(_imagemin)
+    })
+    .pipe(imagemin())
+    .pipe(dest('./src/assets/dist'));
+}
 
 
 /* ==============================
-    gulp watch
+  exports
 ============================== */
-gulp.task('watch', ['img-resize'])
+exports.default = series(_imagemin);
