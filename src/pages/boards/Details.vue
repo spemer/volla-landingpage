@@ -7,8 +7,8 @@
         to="/notices"
       )
         button.global__cta--btn(
-            type="button"
-          ) 목록으로
+          type="button"
+        ) 목록으로
 </template>
 
 <script>
@@ -64,10 +64,39 @@ export default {
 <style lang="scss" scoped>
 #markdown {
   padding: auto 0 !important;
+  padding-bottom: $grid32x;
 
   .container {
     padding: 0 $grid2x !important;
     width: calc(100% - #{$grid4x});
+  }
+
+  #closebtn {
+    left: 0;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: -#{$grid16x};
+    background-color: #fff;
+    padding: $grid2x 0 $grid4x;
+    @include gradient();
+
+    // iPhone X safearea
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      padding-bottom: calc(env(safe-area-inset-bottom)) !important;
+    }
+
+    padding-bottom: 0 !important;
+
+    .global__cta--btn {
+      height: $header;
+      color: $brand_pink;
+      margin: $grid4x auto;
+      width: calc(100% - #{$grid8x});
+      background-color: $brand_pink_16;
+      @include border-radius();
+      @include font-size($grid4x);
+    }
   }
 }
 </style>
