@@ -1,6 +1,6 @@
 <template lang="pug">
   div#plusfriend-addfriend-button(
-    v-if="this.$route.path === '/' || this.$route.path === '/seller'"
+    v-if="this.$route.path === '/' || this.$route.path === '/seller' || this.$route.path === '/sellerform'"
   )
     img#kakao__pf(
       title="카카오톡 문의하기"

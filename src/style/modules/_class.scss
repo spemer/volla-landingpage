@@ -1,18 +1,13 @@
-/* ==============================
-  box-shadow
-============================== */
-@mixin box-shadow ($val:$grid, $val2:$grid2x, $color:$black08) {
+// box-shadow
+@mixin box-shadow ($val:$grid2x, $val2:$grid4x, $color:$black08) {
   -webkit-box-shadow: 0 $val $val2 $color;
   -ms-box-shadow: 0 $val $val2 $color;
   -o-box-shadow: 0 $val $val2 $color;
   box-shadow: 0 $val $val2 $color;
 }
 
-
-/* ==============================
-  drop-shadow
-============================== */
-@mixin drop-shadow ($val:0, $val2:$grid, $val3:$grid2x, $color:$black16) {
+// drop-shadow
+@mixin drop-shadow ($val:0, $val2:$grid2x, $val3:$grid4x, $color:$black08) {
   -webkit-filter: drop-shadow($val $val2 $val3 $color);
   -khtml-filter: drop-shadow($val $val2 $val3 $color);
   -moz-filter: drop-shadow($val $val2 $val3 $color);
@@ -21,18 +16,13 @@
   filter: drop-shadow($val $val2 $val3 $color);
 }
 
-
-/* ==============================
-  border-radius
-============================== */
+// border-radius
 @mixin border-radius ($val:$grid4x) {
+  -webkit-border-radius: $val;
   border-radius: $val;
 }
 
-
-/* ==============================
-  user-select
-============================== */
+// user-select
 @mixin user-select () {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -41,42 +31,28 @@
   user-select: none;
 }
 
-
-/* ==============================
-  transform
-============================== */
+// transform
 @mixin transform ($val) {
   -webkit-transform: $val;
   -khtml-transform: $val;
   transform: $val;
 }
 
-
-/* ==============================
-  css grid layout
-============================== */
+// css grid layout
 @mixin grid-layout($col:3, $row:$grid12x, $gap:$grid24x) {
-  // display: -ms-grid;
   display: grid;
-  //  -ms-grid-columns: (1fr)[$col];
   grid-template-columns: repeat($col, 1fr);
   grid-auto-rows: minmax($row, auto);
   grid-gap: $gap;
 }
 
-
-/* ==============================
-  transition
-============================== */
+// transition
 @mixin transition ($transition...) {
   -webkit-transition: $transition;
   transition: $transition;
 }
 
-
-/* ==============================
-  setGridIcons - 3
-============================== */
+// setGridIcons - 3
 @mixin setGridIcons($base, $ext:'svg') {
   margin: 0 auto;
   background-size: cover;
@@ -91,10 +67,7 @@
   }
 }
 
-
-/* ==============================
-  global btn
-============================== */
+// global btn
 .global__cta {
   text-align: center;
 
@@ -117,10 +90,7 @@
   }
 }
 
-
-/* ==============================
-  toast
-============================== */
+// toast
 .toasted.primary.default {
   color: #fff;
   font-weight: 400;

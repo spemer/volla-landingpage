@@ -23,28 +23,28 @@
     height: 480px;
     margin: 0 auto;
     display: inline-block;
+  }
 
-    @media #{$pablet} {
-      height: 240px;
+  @media #{$pablet} {
+    height: 240px;
+  }
+}
+
+.videoEmbed__from {
+  text-align: center;
+  margin-top: $grid2x;
+
+  .videoEmbed__from--text {
+    font-weight: 300;
+    display: inline-block;
+
+    .videoEmbed__from--link {
+      cursor: pointer;
+      font-weight: 700;
     }
   }
+}
 
-  .videoEmbed__from {
-    text-align: center;
-    margin-top: $grid2x;
-
-    .videoEmbed__from--text {
-      font-weight: 300;
-      display: inline-block;
-
-      .videoEmbed__from--link {
-        cursor: pointer;
-        font-weight: 700;
-      }
-    }
-  }
-
-  .global__cta {
-    margin-bottom: $grid12x;
-  }
+.global__cta {
+  margin-bottom: $grid12x;
 }

@@ -1,8 +1,6 @@
 @charset 'UTF-8';
 
-/*
-modules
-*/
+// modules
 @import './modules/spoqa',
 './modules/grid',
 './modules/color',
@@ -10,29 +8,22 @@ modules
 './modules/global',
 './modules/layout',
 './modules/class',
-'./modules/tooltip',
 './modules/aos'
 ;
 
-/*
-pages
-*/
+// pages
 @import './pages/home',
 './pages/sellerForm',
 './pages/tos',
 './pages/notice'
 ;
 
-/*
-components/home
-*/
+// components/home
 @import './components/home/hero',
 './components/home/service'
 ;
 
-/*
-components/seller
-*/
+// components/seller
 @import './components/seller/videoEmbed',
 './components/seller/statsList',
 './components/seller/benefits',

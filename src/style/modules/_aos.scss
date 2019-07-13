@@ -1,7 +1,7 @@
 [data-aos] {
   opacity: 0;
-  transform: translateY($grid4x);
-  @include transition(all, .5s, ease);
+  transform: translateY($grid8x);
+  @include transition(all, .75s, ease);
 
   &.aos-animate {
     opacity: 1;

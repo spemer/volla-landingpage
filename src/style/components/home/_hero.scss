@@ -75,8 +75,8 @@
 
       .hero__text--spantext,
       .hero__br {
-        font-weight: 300;
         opacity: 0.8;
+        font-weight: 300;
         margin-bottom: -#{$grid2x};
         @include font-size($grid4x);
 

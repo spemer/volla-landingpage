@@ -23,20 +23,20 @@
   }
 
   @media #{$default} {
-    width: calc(100% - #{$grid32x});
     padding: $grid16x;
+    width: calc(100% - #{$grid32x});
     padding-top: $grid6x !important;
   }
 
   @media #{$basic} {
-    width: calc(100% - #{$grid16x});
     padding: $grid8x;
+    width: calc(100% - #{$grid16x});
     padding-top: $grid6x !important;
   }
 
   @media #{$tablet} {
-    width: calc(100% - #{$grid4x});
     padding: $grid2x;
+    width: calc(100% - #{$grid4x});
     padding-top: $grid6x !important;
   }
 

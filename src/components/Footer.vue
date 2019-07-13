@@ -87,7 +87,9 @@ export default {
       'isApp',
     ]),
 
-    tosEntries: _ => TOS_ENTRIES,
+    tosEntries: _ => {
+      return TOS_ENTRIES
+    },
   },
 
 }

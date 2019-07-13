@@ -5,7 +5,6 @@
     div#closebtn
       router-link.global__cta(
         to="/notices"
-        tag="a"
       )
         button.global__cta--btn(
             type="button"
