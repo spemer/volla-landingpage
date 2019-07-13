@@ -1,32 +1,42 @@
-"use strict";
+"use strict"
 
 const {
   src,
   dest,
   lastRun,
-  watch,
-  series
-} = require('gulp');
+  series,
+} = require('gulp')
 
-const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin')
 
-
-/* ==============================
-  image resizer
-============================== */
-function _imagemin() {
+// image resize - asset
+function imagemin_asset() {
   return src([
       './src/assets/src/*',
-      './src/markdowns/notice/image/*'
     ], {
-      since: lastRun(_imagemin)
+      since: lastRun(imagemin_asset)
     })
     .pipe(imagemin())
-    .pipe(dest('./src/assets/dist'));
+    .pipe(dest([
+      './src/assets/dist',
+    ]))
 }
 
+// image resize - notice
+function imagemin_notice() {
+  return src([
+      './src/markdowns/notice/image/src/*',
+    ], {
+      since: lastRun(imagemin_notice)
+    })
+    .pipe(imagemin())
+    .pipe(dest([
+      './src/markdowns/notice/image/dist',
+    ]))
+}
 
-/* ==============================
-  exports
-============================== */
-exports.default = series(_imagemin);
+// exports
+exports.default = series(
+  imagemin_asset,
+  imagemin_notice,
+)

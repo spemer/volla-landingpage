@@ -63,6 +63,8 @@ export default new Router({
       path: '/seller-form',
       redirect: '/sellerform',
     },
+
+    // app
     {
       path: '/',
       component: _ => {
@@ -102,7 +104,7 @@ export default new Router({
       ],
     },
 
-    // app notice lists
+    // mobile notice lists
     ...noticeRoutes,
     {
       path: '/notice',
