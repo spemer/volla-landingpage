@@ -13,6 +13,7 @@
 
 <script>
 import NOTICE_ENTRIES from '@/statics/data/notice.json'
+import { dateFormatting } from '@/mixins/dateFormatting'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -23,6 +24,10 @@ export default {
       return NOTICE_ENTRIES
     },
   },
+
+  mixins: [
+    dateFormatting,
+  ],
 
   metaInfo: {
     title: `${globalVar.serviceEn} - 공지사항`,
@@ -40,7 +45,7 @@ export default {
     let getTitle = document.querySelectorAll('section h1')[0]
     let setDate = document.createElement('h4')
     getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
-    setDate.innerHTML = `20${arr[idx].ymd.toString().replace(/\B(?=(\d{2})+(?!\d))/g, '. ')}`
+    setDate.innerHTML = this.dateFormatting(arr[idx].ymd)
 
     // set _blank to a tags
     let getAnchorTags = document.querySelectorAll('section a');

@@ -13,11 +13,12 @@
             h3.notices__list--title(
               @click="goDetails(entry.id)"
             ) {{ entry.title }}
-              span.notices__list--date {{ `20${dateFormatting(entry.ymd)}` }}
+              span.notices__list--date {{ dateFormatting(entry.ymd) }}
 </template>
 
 <script>
 import NOTICE_ENTRIES from '@/statics/data/notice.json'
+import { dateFormatting } from '@/mixins/dateFormatting'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -28,6 +29,10 @@ export default {
     titleTemplate: `%s`,
   },
 
+  mixins: [
+    dateFormatting,
+  ],
+
   methods: {
     goDetails (id) {
       this.$router.push({
@@ -36,10 +41,6 @@ export default {
           id: id,
         },
       })
-    },
-
-    dateFormatting: date => {
-      return date.toString().replace(/\B(?=(\d{2})+(?!\d))/g, '. ')
     },
   },
 

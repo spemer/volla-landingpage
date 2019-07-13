@@ -8,9 +8,9 @@
         | {{ stringBelow }}
         br
         span.joinus__title--copyEmail(
-          @click="toast"
           v-clipboard:copy="mailTo"
           title="이메일 주소를 복사하려면 클릭하세요"
+          @click="toast('이메일 주소가 복사되었습니다')"
         ) 이메일 주소 복사하기
           i.far.fa-copy
 
@@ -65,6 +65,27 @@ export default {
 #joinus {
   padding: $grid12x 0 $grid24x;
   border-top: 1px solid $texteee;
+
+  &.aos-animate {
+    .form {
+      color: $brand-pink !important;
+      background-color: #fff !important;
+      border: 1px solid $brand-pink !important;
+      animation: btn 0.5s ease-in-out 1.5s 1 forwards;
+
+      @keyframes btn {
+        from {
+          color: $brand-pink !important;
+          background-color: #fff !important;
+        }
+
+        to {
+          color: #fff;
+          background-color: $brand-pink;
+        }
+      }
+    }
+  }
 
   .container {
     .section__subtitle {

@@ -9,7 +9,7 @@
             | 새로운 라이브 쇼핑 서비스
           p.hero__text--subtitle {{ serviceEn }}를 소개합니다
         img.hero__text--image(
-          src="/src/assets/dist/mockup.png"
+          src="/src/assets/dist/white.png"
         )
 </template>
 

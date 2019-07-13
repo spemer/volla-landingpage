@@ -98,6 +98,7 @@
 <script>
 import axios from 'axios'
 import { mapState, mapMutations } from 'vuex'
+import { toast } from '@/mixins/toast'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -119,6 +120,10 @@ export default {
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false)
   },
+
+  mixins: [
+    toast,
+  ],
 
   computed: {
     ...mapState([
@@ -203,11 +208,7 @@ export default {
       if (this.sellerForm_List[0].value && this.sellerForm_List[1].value && this.sellerForm_CategoryValue.value && this.marketing.val_1) {
         this.$Progress.start()
 
-        this.$toasted.show('요청중입니다. 잠시만 기다려주세요!', {
-          theme: 'primary',
-          position: 'bottom-center',
-          duration: 2000,
-        })
+        this.toast('요청중입니다. 잠시만 기다려주세요!')
 
         const base = process.env.BASE_URL
         axios.post(`${base}/requestSeller`,
