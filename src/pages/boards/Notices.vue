@@ -13,7 +13,7 @@
             h3.notices__list--title(
               @click="goDetails(entry.id)"
             ) {{ entry.title }}
-              span.notices__list--date {{ entry.date }}
+              span.notices__list--date {{ `20${dateFormatting(entry.ymd)}` }}
 </template>
 
 <script>
@@ -37,6 +37,10 @@ export default {
         },
       })
     },
+
+    dateFormatting: date => {
+      return date.toString().replace(/\B(?=(\d{2})+(?!\d))/g, '. ')
+    },
   },
 
   computed: {
@@ -51,8 +55,6 @@ export default {
   padding-top: $grid2x;
 
   .notices__wrapper {
-    // padding: 0 $grid2x;
-
     .notices__list {
       cursor: pointer;
 

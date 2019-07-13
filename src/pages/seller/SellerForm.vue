@@ -115,10 +115,9 @@ export default {
   },
 
   mounted () {
-    if (this.$route.path == '/sellerform-app')
-      this.SET_CLASS_APP(true)
-    else if (this.$route.path == '/sellerform')
-      this.SET_CLASS_APP(false)
+    (this.$route.path == '/sellerform-app')
+      ? this.SET_CLASS_APP(true)
+      : this.SET_CLASS_APP(false)
   },
 
   computed: {
@@ -188,12 +187,9 @@ export default {
           this.ADD_FORM_HELPTEXT([1, ''])
 
           if (this.sellerForm_List[2].value) {
-            if (this.sellerForm_List[2].value.indexOf('http') === -1 || this.sellerForm_List[2].value.indexOf('://') === -1) {
-              this.ADD_FORM_HELPTEXT([2, `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`])
-            }
-            else {
-              this.ADD_FORM_HELPTEXT([2, ''])
-            }
+            (this.sellerForm_List[2].value.indexOf('http') === -1 || this.sellerForm_List[2].value.indexOf('://') === -1)
+              ? this.ADD_FORM_HELPTEXT([2, `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`])
+              : this.ADD_FORM_HELPTEXT([2, ''])
           }
 
           if (! this.sellerForm_CategoryValue.value) {
@@ -236,11 +232,11 @@ export default {
           this.$Progress.finish()
 
           this.SET_TOKEN_BOOL(true)
-          if (! this.isApp) {
-            this.$router.push('/submit')
-          } else if (this.isApp) {
-            this.$router.push('/submit-app')
-          }
+
+          (this.isApp)
+            ? this.$router.push('/submit-app')
+            : this.$router.push('/submit')
+
           console.info(response.data)
         })
 

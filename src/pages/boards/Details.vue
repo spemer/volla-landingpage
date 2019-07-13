@@ -39,7 +39,7 @@ export default {
     let getTitle = document.querySelectorAll('section h1')[0]
     let setDate = document.createElement('h4')
     getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
-    setDate.innerHTML = arr[idx].date
+    setDate.innerHTML = `20${arr[idx].ymd.toString().replace(/\B(?=(\d{2})+(?!\d))/g, '. ')}`
 
     // set _blank to a tags
     let getAnchorTags = document.querySelectorAll('section a');
