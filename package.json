@@ -25,7 +25,6 @@
     "promise-polyfill": "^8.1.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
-    "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.6.6",
     "vue-clipboard2": "^0.2.1",
     "vue-meta": "^1.5.6",

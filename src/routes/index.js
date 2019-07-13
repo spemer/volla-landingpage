@@ -55,9 +55,7 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
 export default new Router({
   mode: 'history',
   functional: true,
-  routes: [
-    ...noticeRoutes, ...tosRoutes,
-    {
+  routes: [{
       path: '*',
       redirect: '/'
     },
@@ -105,6 +103,7 @@ export default new Router({
     },
 
     // app notice lists
+    ...noticeRoutes,
     {
       path: '/notice',
       redirect: '/notices',
@@ -117,16 +116,8 @@ export default new Router({
       },
     },
 
-    // appstore download link
-    {
-      path: '/app',
-      name: 'redirect_dl',
-      component: _ => {
-        return import('@/pages/RedirectDL')
-      },
-    },
-
-    // tmp redirect (tos)
+    // tos
+    ...tosRoutes,
     {
       path: '/tos/user/privacy',
       redirect: '/tos/user_privacy',
@@ -142,6 +133,15 @@ export default new Router({
     {
       path: '/tos/ceo/service',
       redirect: '/tos/ceo_service',
+    },
+
+    // appstore download link
+    {
+      path: '/app',
+      name: 'redirect_dl',
+      component: _ => {
+        return import('@/pages/RedirectDL')
+      },
     },
   ],
 

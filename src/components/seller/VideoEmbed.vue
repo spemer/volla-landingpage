@@ -14,7 +14,7 @@
           a.videoEmbed__from--link(
             :href="videoLink"
             target="_blank"
-            v-tooltip.bottom="{content: `${videoChannel} 님 유튜브 채널 바로가기(새 창)`, delay: {show: 500, hide: 100}}"
+            :title="`${videoChannel} 님 유튜브 채널 바로가기(새 창)`"
           ) &nbsp;{{ videoChannel }}&nbsp;
             i.videoEmbed__from--icon.fab.fa-youtube
 </template>

@@ -3,7 +3,7 @@
     v-if="this.$route.path === '/' || this.$route.path === '/seller'"
   )
     img#kakao__pf(
-      v-tooltip.left="{content: '카카오톡 문의하기', delay: {show: 500, hide: 100}}"
+      title="카카오톡 문의하기"
       @click="plusFriendChat"
       src="/src/assets/dist/kakao.svg"
     )

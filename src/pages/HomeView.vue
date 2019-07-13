@@ -1,6 +1,6 @@
 <template lang="pug">
   div#homeView
-    Hero(data-aos="fade")
+    Hero
     Service(data-aos="fade")
     EasyStart.section__each(data-aos="fade")
     Download.section__each(data-aos="fade")

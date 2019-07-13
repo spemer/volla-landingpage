@@ -1,6 +1,6 @@
 <template lang="pug">
   div#microsite
-    Hero(data-aos="fade")
+    Hero
     VideoEmbed.section__each(data-aos="fade")
     StatsList.section__each(data-aos="fade")
     StartWith.section__each(data-aos="fade")

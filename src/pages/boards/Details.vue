@@ -20,7 +20,9 @@ export default {
   name: 'markdown',
 
   computed: {
-    noticeEntries: _ => NOTICE_ENTRIES,
+    noticeEntries: _ => {
+      return NOTICE_ENTRIES
+    },
   },
 
   metaInfo: {
@@ -47,7 +49,7 @@ export default {
     [...getAnchorTags].forEach(anchor => {
       let getAnchorTarget = anchor.getAttribute('target')
       if (! getAnchorTarget) {
-        anchor.setAttribute('target', '_blank')
+        return anchor.setAttribute('target', '_blank')
       }
     })
   },
