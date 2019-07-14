@@ -7,9 +7,7 @@ Vue.use(Meta)
 Vue.use(Router)
 
 const requireToken = (to, from, next) => {
-  if (store.state.tokenState) {
-    return next()
-  }
+  (store.state.tokenState) && next()
   next('/sellerform')
 }
 
@@ -149,13 +147,9 @@ export default new Router({
 
   // scrollBehavior
   scrollBehavior: (to, from, savedPosition) => {
-    if (savedPosition)
-      return savedPosition
-    else {
-      return {
-        x: 0,
-        y: 0,
-      }
+    return (savedPosition) ? savedPosition : {
+      x: 0,
+      y: 0,
     }
   },
 })

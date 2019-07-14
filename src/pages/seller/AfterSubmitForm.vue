@@ -62,7 +62,7 @@ export default {
   },
 
   mounted () {
-    (this.$route.path == '/submit-app')
+    return (this.$route.path == '/submit-app')
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false)
   },

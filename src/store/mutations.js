@@ -1,4 +1,5 @@
 export const mutations = {
+
   UPDATE_FORM_LIST: (state, value) => {
     state.sellerForm_List.value = value
   },
@@ -35,4 +36,5 @@ export const mutations = {
     state.sellerForm_CategoryValue.value = null
     state.sellerForm_Details.value = null
   },
+
 }

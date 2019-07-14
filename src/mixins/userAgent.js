@@ -13,5 +13,4 @@ export const userAgent = {
       this.userAgent = "iOS"
     } else this.userAgent = "unknown"
   },
-
 }

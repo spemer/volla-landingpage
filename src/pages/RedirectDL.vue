@@ -28,7 +28,7 @@ export default {
   }),
 
   mixins: [
-    userAgent
+    userAgent,
   ],
 
   metaInfo: {
@@ -36,11 +36,11 @@ export default {
     titleTemplate: `%s 앱 다운로드`,
     meta: [
       {
-        name:     'description',         content: `${globalVar.serviceEn} 앱 다운로드`,
-        itemprop: 'description',         content: `${globalVar.serviceEn} 앱 다운로드`,
-        property: 'og:description',      content: `${globalVar.serviceEn} 앱 다운로드`,
+        name:     'description', content: `${globalVar.serviceEn} 앱 다운로드`,
+        itemprop: 'description', content: `${globalVar.serviceEn} 앱 다운로드`,
+        property: 'og:description', content: `${globalVar.serviceEn} 앱 다운로드`,
         name:     'twitter:description', content: `${globalVar.serviceEn} 앱 다운로드`,
-      }
+      },
     ],
   },
 
@@ -49,19 +49,15 @@ export default {
         ios     = globalVar.iosStore,
         unknown = globalVar.websiteUrl
 
-    if      (this.userAgent == 'Android') {
-      window.location.href = android
+    if (this.userAgent == 'Android') {
+      return window.location.href = android
     }
     else if (this.userAgent == 'iOS') {
-      window.location.href = ios
-    }
-    else if (this.userAgent == 'Windows Phone') {
-      alert("안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.")
-      window.location.href = unknown
+      return window.location.href = ios
     }
     else {
       alert("안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.")
-      window.location.href = unknown
+      return window.location.href = unknown
     }
   },
 
@@ -73,10 +69,10 @@ export default {
   text-align: center;
 
   .redirect__wrapper {
-    margin: 0;
-    position: absolute;
     top: 50%;
     left: 50%;
+    margin: 0;
+    position: absolute;
     @include transform(translate(-50%, -50%));
 
     .redirect__wrapper--img {

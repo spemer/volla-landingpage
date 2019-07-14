@@ -16,11 +16,9 @@ export default {
     closeWindow: _ => {
       window.close()
       window.postMessage('close')
-      if (window.ReactNativeWebView) {
-        console.log('RN WebView Detected!')
-        window.ReactNativeWebView.postMessage('close')
-      }
-    }
+      (window.ReactNativeWebView)
+        && window.ReactNativeWebView.postMessage('close')
+    },
   },
 
 }

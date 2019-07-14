@@ -42,13 +42,9 @@ export default {
     ]),
 
     badgesMobile () {
-      if (this.userAgent == 'Android') {
-        return this.badges.Android
-      } else if (this.userAgent == 'iOS') {
-        return this.badges.iOS
-      } else {
-        return this.badges.Android
-      }
+      return (this.userAgent === 'iOS')
+        ? this.badges.iOS
+        : this.badges.Android
     },
   },
 

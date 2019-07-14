@@ -44,7 +44,7 @@ export default {
   },
 
   mounted () {
-    (this.$route.path === '/')
+    return (this.$route.path === '/')
       ? (this.href = '/seller', this.text = '입점소개')
       : (this.href = '/', this.text = '메인으로')
   },

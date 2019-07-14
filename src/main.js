@@ -23,9 +23,6 @@ Vue.use(VueProgressBar, {
   height: '4px',
 })
 
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 // import Firebase from 'firebase/app'
 
 Vue.config.productionTip = false
@@ -33,14 +30,6 @@ Vue.prototype.$http = axios
 Kakao.init(process.env.KAKAO_KEY)
 
 new Vue({
-  created() {
-    AOS.init({
-      delay: 100,
-      offset: 160,
-      duration: 750,
-      once: true,
-    })
-  },
   el: '#app',
   store,
   router,

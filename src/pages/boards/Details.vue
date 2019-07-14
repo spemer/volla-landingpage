@@ -35,6 +35,13 @@ export default {
   },
 
   mounted () {
+    // set _blank every anchor tags
+    [...document.querySelectorAll('section a')].forEach(anchor => {
+      let getAnchorTarget = anchor.getAttribute('target')
+      return (! getAnchorTarget)
+        && anchor.setAttribute('target', '_blank')
+    })
+
     // append date info
     let arr = this.noticeEntries['notice']
 
@@ -46,16 +53,6 @@ export default {
     let setDate = document.createElement('h4')
     getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
     setDate.innerHTML = this.dateFormatting(arr[idx].ymd)
-
-    // set _blank to a tags
-    let getAnchorTags = document.querySelectorAll('section a');
-
-    [...getAnchorTags].forEach(anchor => {
-      let getAnchorTarget = anchor.getAttribute('target')
-      if (! getAnchorTarget) {
-        return anchor.setAttribute('target', '_blank')
-      }
-    })
   },
 
 }

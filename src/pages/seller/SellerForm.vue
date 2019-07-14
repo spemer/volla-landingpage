@@ -116,7 +116,7 @@ export default {
   },
 
   mounted () {
-    (this.$route.path == '/sellerform-app')
+    return (this.$route.path == '/sellerform-app')
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false)
   },
@@ -192,7 +192,7 @@ export default {
           this.ADD_FORM_HELPTEXT([1, ''])
 
           if (this.sellerForm_List[2].value) {
-            (this.sellerForm_List[2].value.indexOf('http') === -1 || this.sellerForm_List[2].value.indexOf('://') === -1)
+            return (this.sellerForm_List[2].value.indexOf('http') === -1 || this.sellerForm_List[2].value.indexOf('://') === -1)
               ? this.ADD_FORM_HELPTEXT([2, `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`])
               : this.ADD_FORM_HELPTEXT([2, ''])
           }
@@ -234,7 +234,7 @@ export default {
 
           this.SET_TOKEN_BOOL(true)
 
-          (this.isApp)
+          return (this.isApp)
             ? this.$router.push('/submit-app')
             : this.$router.push('/submit')
 
