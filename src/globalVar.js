@@ -21,7 +21,7 @@ export const globalVar = new Vue({
     sellerForm: '셀러 입점신청서',
     sellerCondition: '* 입점 시 판매를 위한 사업자등록, 통신판매업 신고 등이 필요할 수 있습니다.',
 
-    callTo: '+82-10-7422-8845',
+    callTo: '02-401-2155',
     mailTo: 'ceo@volla.live',
 
     websiteUrl: 'https://volla.live',
