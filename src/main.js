@@ -23,8 +23,6 @@ Vue.use(VueProgressBar, {
   height: '4px',
 })
 
-// import Firebase from 'firebase/app'
-
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Kakao.init(process.env.KAKAO_KEY)

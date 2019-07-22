@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export const globalVar = new Vue({
-  data: {
+  data: _ => ({
     companyName: '알에스파이브',
     companyNameFull: '알에스파이브',
     // companyNameFull: '(주)알에스파이브',
@@ -39,5 +39,5 @@ export const globalVar = new Vue({
     ceoServicePageTitle: '서비스이용약관(쇼핑몰사업자용)',
 
     volla_pdf: 'https://firebasestorage.googleapis.com/v0/b/volla-landingpage.appspot.com/o/%E1%84%87%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1_%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9%E1%84%8F%E1%85%A5%E1%84%86%E1%85%A5%E1%84%89%E1%85%B3_%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5.pdf?alt=media&token=d55ea123-e275-4858-864b-cecafbb756fb',
-  }
+  })
 })

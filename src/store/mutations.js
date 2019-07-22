@@ -1,3 +1,14 @@
+import {
+  UPDATE_FORM_LIST,
+  UPDATE_FORM_CATEGORY,
+  UPDATE_FORM_DETAILS,
+  ADD_FORM_HELPTEXT,
+  SET_TOKEN_BOOL,
+  SET_MARKETING_BOOL,
+  SET_CLASS_APP,
+  REMOVE_FORM_VAL
+} from '@/store/mutation-types'
+
 export const mutations = {
 
   UPDATE_FORM_LIST: (state, value) => {
