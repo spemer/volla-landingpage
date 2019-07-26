@@ -21,6 +21,7 @@
     "firebase": "^6.1.0",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^6.0.0",
+    "lodash": "^4.17.15",
     "promise": "^8.0.3",
     "promise-polyfill": "^8.1.0",
     "pug": "^2.0.3",
@@ -64,7 +65,7 @@
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.5.21",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^2.11.5"
   },
   "eslintConfig": {
     "root": true,
