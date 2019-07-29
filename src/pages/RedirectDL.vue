@@ -1,22 +1,34 @@
 <template lang="pug">
   div#redirect
-    div.redirect__wrapper
-      img.redirect__img(
-        src="/src/assets/dist/volla_bridge.png"
-      )
-      JoinUs
+    div.container
+      div.redirect__wrapper
+        img.redirect__wrapper--img(
+          src="/src/assets/dist/launcher.svg"
+        )
+        p.redirect__wrapper--text {{ serviceKo }}
+
+        router-link.global__cta(
+          :to="'/'"
+        )
+          button.global__cta--btn(
+            :title="website"
+          ) {{ website }}
 </template>
 
 <script>
-import JoinUs from '@/components/home/JoinUs'
 import { globalVar } from '@/globalVar'
 import { userAgent } from '@/mixins/userAgent'
 
 export default {
   name: 'redirect_dl',
 
+  data: _ => ({
+    website: '웹사이트 바로가기',
+    serviceKo: globalVar.serviceKo,
+  }),
+
   mixins: [
-    userAgent,
+    userAgent
   ],
 
   metaInfo: {
@@ -24,58 +36,57 @@ export default {
     titleTemplate: `%s 앱 다운로드`,
     meta: [
       {
-        name:     'description', content: `${globalVar.serviceEn} 앱 다운로드`,
-        itemprop: 'description', content: `${globalVar.serviceEn} 앱 다운로드`,
-        property: 'og:description', content: `${globalVar.serviceEn} 앱 다운로드`,
+        name:     'description',         content: `${globalVar.serviceEn} 앱 다운로드`,
+        itemprop: 'description',         content: `${globalVar.serviceEn} 앱 다운로드`,
+        property: 'og:description',      content: `${globalVar.serviceEn} 앱 다운로드`,
         name:     'twitter:description', content: `${globalVar.serviceEn} 앱 다운로드`,
-      },
+      }
     ],
   },
 
   mounted () {
-    this.$Progress.start()
+    let android = globalVar.androidStore,
+        ios     = globalVar.iosStore,
+        unknown = globalVar.websiteUrl
 
-    redirecting: setTimeout(function() {
-      this.$Progress.finish()
-
-      let android = globalVar.androidStore,
-          ios     = globalVar.iosStore,
-          unknown = globalVar.websiteUrl
-
-      if (this.userAgent == 'Android') {
-        return window.open(android, '_blank')
-      }
-      else if (this.userAgent == 'iOS') {
-        return window.open(ios, '_blank')
-      }
-      else {
-        alert('안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.')
-        return window.open(unknown, '_blank')
-      }
-
-    }.bind(this), 1500)
+    if      (this.userAgent == 'Android') {
+      window.location.href = android
+    }
+    else if (this.userAgent == 'iOS') {
+      window.location.href = ios
+    }
+    else {
+      alert('안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.')
+      window.location.href = unknown
+    }
   },
-
-  components: {
-    JoinUs,
-  },
-
 }
 </script>
 
 <style lang="scss" scoped>
 #redirect {
   text-align: center;
-  padding: $grid8x 0 $grid4x;
-
-  #joinus {
-    border: none !important;
-  }
 
   .redirect__wrapper {
-    .redirect__img {
-      width: 100%;
-      max-width: 590px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+
+    .redirect__wrapper--img {
+      display: block;
+      margin: 0 auto;
+      width: $grid16x;
+    }
+
+    .redirect__wrapper--text {
+      margin-top: $grid2x;
+    }
+
+    .global__cta {
+      display: block;
+      margin-top: $grid32x;
     }
   }
 }

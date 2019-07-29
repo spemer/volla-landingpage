@@ -143,6 +143,15 @@ export default new Router({
         return import('@/pages/RedirectDL')
       },
     },
+
+    // in-app landing page
+    {
+      path: '/event_landing',
+      name: 'eventLanding',
+      component: _ => {
+        return import('@/pages/EventLanding')
+      },
+    },
   ],
 
   // scrollBehavior

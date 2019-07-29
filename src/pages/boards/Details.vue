@@ -60,8 +60,10 @@ export default {
 
 <style lang="scss" scoped>
 #markdown {
+  max-width: 480px;
   padding: auto 0 !important;
   padding-bottom: $grid32x;
+  margin: 0 auto;
 
   .container {
     padding: 0 $grid2x !important;

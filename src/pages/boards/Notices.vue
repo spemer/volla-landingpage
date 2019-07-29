@@ -55,7 +55,9 @@ export default {
 
 <style lang="scss" scoped>
 #notices {
+  max-width: 480px;
   padding-top: $grid2x;
+  margin: 0 auto;
 
   .notices__wrapper {
     .notices__list {

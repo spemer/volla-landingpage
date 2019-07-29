@@ -3,11 +3,12 @@
 
   margin: 0 auto;
   width: calc(100% - #{$grid32x});
+  max-width: 480px;
   padding-top: $grid4x !important;
   @include user-select();
 
   #closebtn {
-    margin: $grid12x 0 $grid16x;
+    margin: $grid12x auto $grid16x;
 
     @media #{$pablet} {
       display: block;
