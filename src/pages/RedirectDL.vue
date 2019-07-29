@@ -5,18 +5,6 @@
         src="/src/assets/dist/volla_bridge.png"
       )
       JoinUs
-      //- div.redirect__wrapper
-        img.redirect__wrapper--img(
-          src="/src/assets/dist/launcher.svg"
-        )
-        p.redirect__wrapper--text {{ serviceKo }}
-
-        router-link.global__cta(
-          :to="'/'"
-        )
-          button.global__cta--btn(
-            :title="website"
-          ) {{ website }}
 </template>
 
 <script>
@@ -26,11 +14,6 @@ import { userAgent } from '@/mixins/userAgent'
 
 export default {
   name: 'redirect_dl',
-
-  data: _ => ({
-    website: '웹사이트 바로가기',
-    serviceKo: globalVar.serviceKo,
-  }),
 
   mixins: [
     userAgent,
@@ -50,22 +33,27 @@ export default {
   },
 
   mounted () {
+    this.$Progress.start()
+
     redirecting: setTimeout(function() {
+      this.$Progress.finish()
+
       let android = globalVar.androidStore,
           ios     = globalVar.iosStore,
           unknown = globalVar.websiteUrl
 
       if (this.userAgent == 'Android') {
-        return window.location.href = android
+        return window.open(android, '_blank')
       }
       else if (this.userAgent == 'iOS') {
-        return window.location.href = ios
+        return window.open(ios, '_blank')
       }
       else {
         alert('안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.')
-        return window.location.href = unknown
+        return window.open(unknown, '_blank')
       }
-    }.bind(this), 1000)
+
+    }.bind(this), 1500)
   },
 
   components: {
@@ -77,40 +65,18 @@ export default {
 
 <style lang="scss" scoped>
 #redirect {
-  padding: $grid8x 0 $grid4x;
   text-align: center;
+  padding: $grid8x 0 $grid4x;
 
   #joinus {
     border: none !important;
   }
 
   .redirect__wrapper {
-    width: 100%;
-    height: 100%;
-
     .redirect__img {
       width: 100%;
+      max-width: 590px;
     }
-    // top: 50%;
-    // left: 50%;
-    // margin: 0;
-    // position: absolute;
-    // @include transform(translate(-50%, -50%));
-
-    // .redirect__wrapper--img {
-    //   display: block;
-    //   margin: 0 auto;
-    //   width: $grid16x;
-    // }
-
-    // .redirect__wrapper--text {
-    //   margin-top: $grid2x;
-    // }
-
-    // .global__cta {
-    //   display: block;
-    //   margin-top: $grid32x;
-    // }
   }
 }
 </style>

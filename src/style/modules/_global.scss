@@ -1,10 +1,7 @@
 // mixin default font
 @mixin font-stack-html() {
   -webkit-font-family: 'Spoqa Han Sans', Sans-serif;
-  -khtml-font-family: 'Spoqa Han Sans', Sans-serif;
   -moz-font-family: 'Spoqa Han Sans', Sans-serif;
-  -ms-font-family: 'Spoqa Han Sans', Sans-serif;
-  -o-font-family: 'Spoqa Han Sans', Sans-serif;
   font-family: 'Spoqa Han Sans', Sans-serif;
 }
 
@@ -12,15 +9,12 @@
 @mixin font-settings() {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
-  -khtml-font-feature-settings: 'liga';
-  -ms-font-feature-settings: 'liga';
-  -o-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
   font-feature-settings: 'liga';
-  -moz-osx-font-smoothing: grayscale !important;
-  -webkit-font-smoothing: antialiased !important;
-  text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   -webkit-text-decoration-skip: ink;
-  text-decoration-skip: ink;
 }
 
 // default font-size, line-height

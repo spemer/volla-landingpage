@@ -32,7 +32,7 @@
 }
 
 // transform
-@mixin transform ($val) {
+@mixin transform ($val...) {
   -webkit-transform: $val;
   -khtml-transform: $val;
   transform: $val;
