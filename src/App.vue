@@ -6,8 +6,6 @@
 
 <script>
 import Vue from 'vue'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -16,15 +14,6 @@ export default {
   metaInfo: {
     title: globalVar.serviceEn,
     titleTemplate: `%s - ${globalVar.tagline}`,
-  },
-
-  created () {
-    AOS.init({
-      delay: 100,
-      offset: 160,
-      duration: 750,
-      once: true,
-    })
   },
 
 }
