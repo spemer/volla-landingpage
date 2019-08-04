@@ -28,7 +28,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'startWith',
 
-  data: _ => ({
+  data: () => ({
     serviceKo: globalVar.serviceKo,
     sellerCondition: globalVar.sellerCondition,
   }),

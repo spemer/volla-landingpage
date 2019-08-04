@@ -16,14 +16,13 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
   name: 'statsList',
 
-  data: _ => ({
+  data: () => ({
     serviceKo: globalVar.serviceKo,
   }),
 

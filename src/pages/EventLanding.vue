@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import JoinUs from '@/components/home/JoinUs'
+const JoinUs = () => import('@/components/home/JoinUs')
 
 export default {
   name: 'EventLanding',

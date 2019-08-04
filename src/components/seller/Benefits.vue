@@ -30,7 +30,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'benefits',
 
-  data: _ => ({
+  data: () => ({
     volla_pdf: globalVar.volla_pdf,
     serviceKo: globalVar.serviceKo,
   }),

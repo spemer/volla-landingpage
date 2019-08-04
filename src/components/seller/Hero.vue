@@ -19,7 +19,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'hero',
 
-  data: _ => ({
+  data: () => ({
     serviceEn: globalVar.serviceEn,
   }),
 

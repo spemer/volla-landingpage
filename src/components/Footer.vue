@@ -52,7 +52,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'footer-el',
 
-  data: _ => ({
+  data: () => ({
     mailTo: globalVar.mailTo,
     serviceKo: globalVar.serviceKo,
     companyName: globalVar.companyName,
@@ -88,9 +88,7 @@ export default {
       'isApp',
     ]),
 
-    tosEntries: _ => {
-      return TOS_ENTRIES
-    },
+    tosEntries: _ => TOS_ENTRIES,
   },
 
 }

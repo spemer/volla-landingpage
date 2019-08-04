@@ -9,7 +9,6 @@
 @mixin font-settings() {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
-  -moz-font-feature-settings: 'liga';
   font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -141,8 +140,7 @@ button {
   tap-highlight-color: rgba(0, 0, 0, 0) !important;
 
   &:focus,
-  &:active,
-    {
+  &:active {
     border: none;
     outline: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
@@ -178,6 +176,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   background-color: #fff !important;
   -webkit-box-shadow: 0 0 0 $grid24x #fff inset !important;
+  box-shadow: 0 0 0 $grid24x #fff inset !important;
 }
 
 input:-webkit-autofill {

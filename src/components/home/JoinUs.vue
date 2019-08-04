@@ -37,7 +37,7 @@ import { toast } from '@/mixins/toast'
 export default {
   name: 'joinus',
 
-  data: _ => ({
+  data: () => ({
     stringUpper: '',
     stringBelow: '',
     sellerformLink: '/sellerform',

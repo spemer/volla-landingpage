@@ -30,7 +30,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'header-el',
 
-  data: _ => ({
+  data: () => ({
     href: '',
     text: '',
     tagline: globalVar.tagline,

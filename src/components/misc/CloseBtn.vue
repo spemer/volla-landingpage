@@ -13,7 +13,7 @@ export default {
   name: 'closebtn',
 
   methods: {
-    closeWindow: _ => {
+    closeWindow: () => {
       window.close()
       window.postMessage('close')
       (window.ReactNativeWebView)

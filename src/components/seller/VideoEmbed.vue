@@ -29,7 +29,7 @@ Vue.use(VueYoutube)
 export default {
   name: 'videoEmbed',
 
-  data: _ => ({
+  data: () => ({
     videoChannel: '춤추는 변호사',
     videoId: process.env.YT_ID,
     videoLink: 'https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ',

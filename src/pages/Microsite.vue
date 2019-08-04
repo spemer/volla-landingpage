@@ -10,13 +10,14 @@
 </template>
 
 <script>
-import Hero from '@/components/seller/Hero'
-import VideoEmbed from '@/components/seller/VideoEmbed'
-import StatsList from '@/components/seller/StatsList'
-import StartWith from '@/components/seller/StartWith'
-import Benefits from '@/components/seller/Benefits'
-import Benefits2 from '@/components/seller/Benefits2'
-import JoinUs from '@/components/home/JoinUs'
+const Hero = () => import('@/components/seller/Hero')
+const VideoEmbed = () => import('@/components/seller/VideoEmbed')
+const StatsList = () => import('@/components/seller/StatsList')
+const StartWith = () => import('@/components/seller/StartWith')
+const Benefits = () => import('@/components/seller/Benefits')
+const Benefits2 = () => import('@/components/seller/Benefits2')
+const JoinUs = () => import('@/components/home/JoinUs')
+
 import { globalVar } from '@/globalVar'
 
 export default {

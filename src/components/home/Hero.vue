@@ -21,13 +21,14 @@
 </template>
 
 <script>
-import DownloadBtn from '@/components/misc/DownloadBtn'
+const DownloadBtn = () => import('@/components/misc/DownloadBtn')
+
 import { globalVar } from '@/globalVar'
 
 export default {
   name: 'hero',
 
-  data: _ => ({
+  data: () => ({
     serviceEn: globalVar.serviceEn,
   }),
 

@@ -16,7 +16,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'easyStart',
 
-  data: _ => ({
+  data: () => ({
     serviceKo: globalVar.serviceKo,
   }),
 

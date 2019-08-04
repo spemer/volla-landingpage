@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Kakao from '@/components/misc/Kakao'
+const Header = () => import('@/components/Header')
+const Footer = () => import('@/components/Footer')
+const Kakao = () => import('@/components/misc/Kakao')
 
 export default {
   name: 'Home',

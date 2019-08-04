@@ -23,7 +23,7 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'benefits',
 
-  data: _ => ({
+  data: () => ({
     serviceKo: globalVar.serviceKo,
   }),
 

@@ -8,11 +8,12 @@
 </template>
 
 <script>
-import Hero from '@/components/home/Hero'
-import Service from '@/components/home/Service'
-import EasyStart from '@/components/home/EasyStart'
-import Download from '@/components/home/Download'
-import JoinUs from '@/components/home/JoinUs'
+const Hero = () => import('@/components/home/Hero')
+const Service = () => import('@/components/home/Service')
+const EasyStart = () => import('@/components/home/EasyStart')
+const Download = () => import('@/components/home/Download')
+const JoinUs = () => import('@/components/home/JoinUs')
+
 import { globalVar } from '@/globalVar'
 
 export default {

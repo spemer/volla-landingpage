@@ -22,9 +22,7 @@ export default {
   mixins: [dateFormatting],
 
   computed: {
-    noticeEntries: () => {
-      return NOTICE_ENTRIES
-    }
+    noticeEntries: () => NOTICE_ENTRIES
   },
 
   metaInfo: {

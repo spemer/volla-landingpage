@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import { globalVar } from '@/globalVar'
 
 export default {

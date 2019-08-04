@@ -18,16 +18,12 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
     path: `${child.ymd}/:id`,
     name: `${child.id}`,
-    component: () => {
-      return import(`@/markdowns/notice/markdown/${child.id}.md`)
-    },
+    component: () => import(`@/markdowns/notice/markdown/${child.id}.md`),
   }))
   return {
     path: `/${section}`,
     name: `${section}`,
-    component: () => {
-      return import('@/pages/boards/Details')
-    },
+    component: () => import('@/pages/boards/Details'),
     children,
   }
 })
@@ -39,12 +35,12 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
   const children = TosEntries[section].map(child => ({
     path: '/tos/:id',
     name: child.id,
-    component: _ => import(`@/markdowns/tos/${section}/${child.id}.md`),
+    component: () => import(`@/markdowns/tos/${section}/${child.id}.md`),
   }))
   return {
     path: '/tos/:id',
     name: section,
-    component: _ => import('@/pages/tos/TosDetails'),
+    component: () => import('@/pages/tos/TosDetails'),
     children,
   }
 })
@@ -65,38 +61,28 @@ export default new Router({
     // app
     {
       path: '/',
-      component: _ => {
-        return import('@/pages/Home')
-      },
+      component: () => import('@/pages/Home'),
       children: [{
           path: '/',
           name: 'homeView',
-          component: _ => {
-            return import('@/pages/HomeView')
-          },
+          component: () => import('@/pages/HomeView'),
         },
         {
           path: '/seller',
           name: 'microsite',
-          component: _ => {
-            return import('@/pages/Microsite')
-          },
+          component: () => import('@/pages/Microsite'),
         },
         {
           path: '/sellerform',
           alias: '/sellerform-app',
           name: 'sellerForm',
-          component: _ => {
-            return import('@/pages/seller/SellerForm')
-          },
+          component: () => import('@/pages/seller/SellerForm'),
         },
         {
           path: '/submit',
           alias: '/submit-app',
           name: 'afterSubmitForm',
-          component: _ => {
-            return import('@/pages/seller/AfterSubmitForm')
-          },
+          component: () => import('@/pages/seller/AfterSubmitForm'),
           beforeEnter: requireToken,
         },
       ],
@@ -111,9 +97,7 @@ export default new Router({
     {
       path: '/notices',
       name: 'notices',
-      component: _ => {
-        return import('@/pages/boards/Notices')
-      },
+      component: () => import('@/pages/boards/Notices'),
     },
 
     // tos
@@ -139,18 +123,14 @@ export default new Router({
     {
       path: '/app',
       name: 'redirect_dl',
-      component: _ => {
-        return import('@/pages/RedirectDL')
-      },
+      component: () => import('@/pages/RedirectDL'),
     },
 
     // in-app landing page
     {
       path: '/event_landing',
       name: 'eventLanding',
-      component: _ => {
-        return import('@/pages/EventLanding')
-      },
+      component: () => import('@/pages/EventLanding'),
     },
   ],
 

@@ -14,13 +14,14 @@
 </template>
 
 <script>
-import DownloadBtn from '@/components/misc/DownloadBtn'
+const DownloadBtn = () => import('@/components/misc/DownloadBtn')
+
 import { globalVar } from '@/globalVar'
 
 export default {
   name: 'download',
 
-  data: _ => ({
+  data: () => ({
     serviceKo: globalVar.serviceKo,
   }),
 
