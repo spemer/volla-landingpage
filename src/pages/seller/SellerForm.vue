@@ -69,6 +69,7 @@
 
         label.sellerform__form--checkbox(
           for="checkbox_1"
+          style="font-weight: 700"
         ) {{ marketingTerms.personal.title }}
           input(
             id="checkbox_1"
@@ -102,28 +103,26 @@ import { toast } from '@/mixins/toast'
 import { globalVar } from '@/globalVar'
 
 export default {
-  name: 'seller-form',
+  name: 'SellerForm',
 
-  data: _ => ({
+  mixins: [toast],
+
+  data: () => ({
     serviceKo: globalVar.serviceKo,
     sellerForm: globalVar.sellerForm,
-    sellerCondition: globalVar.sellerCondition,
+    sellerCondition: globalVar.sellerCondition
   }),
 
   metaInfo: {
     title: `${globalVar.serviceEn} - ${globalVar.sellerForm}`,
-    titleTemplate: '%s',
+    titleTemplate: '%s'
   },
 
-  mounted () {
-    return (this.$route.path == '/sellerform-app')
+  mounted() {
+    return this.$route.path == '/sellerform-app'
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false)
   },
-
-  mixins: [
-    toast,
-  ],
 
   computed: {
     ...mapState([
@@ -131,128 +130,132 @@ export default {
       'marketing',
       'marketingTerms',
       'tokenState',
-      'isApp',
+      'isApp'
     ]),
 
     sellerForm_List: {
-      get () {
+      get() {
         return this.$store.state.sellerForm_List
       },
-      set (value) {
+      set(value) {
         this.$store.commit('UPDATE_FORM_LIST', value)
-      },
+      }
     },
 
     sellerForm_CategoryValue: {
-      get () {
+      get() {
         return this.$store.state.sellerForm_CategoryValue
       },
-      set (value) {
+      set(value) {
         this.$store.commit('UPDATE_FORM_CATEGORY', value)
-      },
+      }
     },
 
     sellerForm_Details: {
-      get () {
+      get() {
         return this.$store.state.sellerForm_Details
       },
-      set (value) {
+      set(value) {
         this.$store.commit('UPDATE_FORM_DETAILS', value)
-      },
+      }
     },
 
     marketing: {
-      get () {
+      get() {
         return this.$store.state.marketing
       },
-      set (value) {
+      set(value) {
         this.$store.commit('SET_MARKETING_BOOL', value)
-      },
-    },
+      }
+    }
   },
 
   methods: {
-    ...mapMutations([
-      'SET_TOKEN_BOOL',
-      'SET_CLASS_APP',
-      'ADD_FORM_HELPTEXT',
-    ]),
+    ...mapMutations(['SET_TOKEN_BOOL', 'SET_CLASS_APP', 'ADD_FORM_HELPTEXT']),
 
-    checkCategoryValue () {
-      if (! this.sellerForm_List[0].value) {
+    checkCategoryValue() {
+      if (!this.sellerForm_List[0].value) {
         this.ADD_FORM_HELPTEXT([0, '이메일 주소는 필수 입력사항입니다.'])
-      }
-      else if (this.sellerForm_List[0].value) {
+      } else if (this.sellerForm_List[0].value) {
         this.ADD_FORM_HELPTEXT([0, ''])
 
-        if (! this.sellerForm_List[1].value) {
+        if (!this.sellerForm_List[1].value) {
           this.ADD_FORM_HELPTEXT([1, '담당자 이름은 필수 입력사항입니다.'])
-        }
-        else if (this.sellerForm_List[1].value) {
+        } else if (this.sellerForm_List[1].value) {
           this.ADD_FORM_HELPTEXT([1, ''])
 
           if (this.sellerForm_List[2].value) {
-            return (this.sellerForm_List[2].value.indexOf('http') === -1 || this.sellerForm_List[2].value.indexOf('://') === -1)
-              ? this.ADD_FORM_HELPTEXT([2, `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`])
+            return this.sellerForm_List[2].value.indexOf('http') === -1 ||
+              this.sellerForm_List[2].value.indexOf('://') === -1
+              ? this.ADD_FORM_HELPTEXT([
+                  2,
+                  `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`
+                ])
               : this.ADD_FORM_HELPTEXT([2, ''])
           }
 
-          if (! this.sellerForm_CategoryValue.value) {
+          if (!this.sellerForm_CategoryValue.value) {
             alert('호스트 지원 희망여부를 선택해주세요.')
           }
         }
       }
     },
 
-    sendPost () {
-      if (this.sellerForm_List[0].value && this.sellerForm_List[1].value && this.sellerForm_CategoryValue.value && this.marketing.val_1) {
+    sendPost() {
+      if (
+        this.sellerForm_List[0].value &&
+        this.sellerForm_List[1].value &&
+        this.sellerForm_CategoryValue.value &&
+        this.marketing.val_1
+      ) {
         this.$Progress.start()
 
         this.toast('요청중입니다. 잠시만 기다려주세요!')
 
         const base = process.env.BASE_URL
-        axios.post(`${base}/requestSeller`,
-          {
-            email: this.sellerForm_List[0].value,
-            name: this.sellerForm_List[1].value,
-            site: this.sellerForm_List[2].value,
-            apply_categories: this.sellerForm_CategoryValue.value,
-            details: this.sellerForm_Details.value,
-            agree_personal_info: this.marketing.val_1,
-            agree_marketing_info: this.marketing.val_2,
-          },
-          {
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
+        axios
+          .post(
+            `${base}/requestSeller`,
+            {
+              email: this.sellerForm_List[0].value,
+              name: this.sellerForm_List[1].value,
+              site: this.sellerForm_List[2].value,
+              apply_categories: this.sellerForm_CategoryValue.value,
+              details: this.sellerForm_Details.value,
+              agree_personal_info: this.marketing.val_1,
+              agree_marketing_info: this.marketing.val_2
+            },
+            {
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+              }
             }
-          },
-        )
+          )
 
-        .then(response => {
-          this.$Progress.finish()
+          .then((response) => {
+            this.$Progress.finish()
 
-          this.SET_TOKEN_BOOL(true)
+            this.SET_TOKEN_BOOL(true)
 
-          return (this.isApp)
-            ? this.$router.push('/submit-app')
-            : this.$router.push('/submit')
+            return this.isApp
+              ? this.$router.push('/submit-app')
+              : this.$router.push('/submit')
 
-          console.info(response.data)
-        })
+            console.info(response.data)
+          })
 
-        .catch(error => {
-          this.$Progress.fail()
+          .catch((error) => {
+            this.$Progress.fail()
 
-          this.SET_TOKEN_BOOL(false)
-          alert(`오류입니다. 다시 시도해주세요!\n${error}`)
-          console.warn(error)
-        })
+            this.SET_TOKEN_BOOL(false)
+            alert(`오류입니다. 다시 시도해주세요!\n${error}`)
+            console.warn(error)
+          })
       } else {
         alert('개인정보 수집 및 이용 동의 여부를 선택해주세요.')
       }
-    },
-  },
-
+    }
+  }
 }
 </script>

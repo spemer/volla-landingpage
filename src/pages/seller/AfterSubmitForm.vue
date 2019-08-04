@@ -50,19 +50,19 @@ import { mapState, mapMutations } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
-  name: 'afterSubmitForm',
+  name: 'AfterSubmitForm',
 
-  data: _ => ({
-    serviceKo: globalVar.serviceKo,
+  data: () => ({
+    serviceKo: globalVar.serviceKo
   }),
 
   metaInfo: {
     title: `${globalVar.serviceEn} - ${globalVar.sellerForm}`,
-    titleTemplate: '%s',
+    titleTemplate: '%s'
   },
 
-  mounted () {
-    return (this.$route.path == '/submit-app')
+  mounted() {
+    return this.$route.path == '/submit-app'
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false)
   },
@@ -75,8 +75,8 @@ export default {
       'sellerForm_Category',
       'marketing',
       'tokenState',
-      'isApp',
-    ]),
+      'isApp'
+    ])
   },
 
   methods: {
@@ -84,16 +84,15 @@ export default {
       'REMOVE_FORM_VAL',
       'SET_MARKETING_BOOL',
       'SET_TOKEN_BOOL',
-      'SET_CLASS_APP',
-    ]),
+      'SET_CLASS_APP'
+    ])
   },
 
-  destroyed () {
+  destroyed() {
     this.REMOVE_FORM_VAL()
     this.SET_MARKETING_BOOL(false)
     this.SET_TOKEN_BOOL(false)
-  },
-
+  }
 }
 </script>
 

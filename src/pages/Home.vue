@@ -12,13 +12,12 @@ import Footer from '@/components/Footer'
 import Kakao from '@/components/misc/Kakao'
 
 export default {
-  name: 'home',
+  name: 'Home',
 
   components: {
     Header,
     Footer,
-    Kakao,
-  },
-
+    Kakao
+  }
 }
 </script>

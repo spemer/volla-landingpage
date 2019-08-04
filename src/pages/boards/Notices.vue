@@ -22,44 +22,43 @@ import { dateFormatting } from '@/mixins/dateFormatting'
 import { globalVar } from '@/globalVar'
 
 export default {
-  name: 'notices',
+  name: 'Notices',
 
   metaInfo: {
     title: `${globalVar.serviceEn} - 공지사항`,
-    titleTemplate: `%s`,
+    titleTemplate: `%s`
   },
 
-  mixins: [
-    dateFormatting,
-  ],
+  mixins: [dateFormatting],
+
+  computed: {
+    noticeEntries: () => {
+      return NOTICE_ENTRIES
+    }
+  },
 
   methods: {
-    goDetails (id) {
+    goDetails(id) {
       this.$router.push({
         name: id,
         params: {
-          id: id,
-        },
+          id: id
+        }
       })
-    },
-  },
-
-  computed: {
-    noticeEntries: _ => {
-      return NOTICE_ENTRIES
-    },
-  },
-
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 #notices {
-  max-width: 480px;
-  padding-top: $grid2x;
   margin: 0 auto;
+  padding-top: $grid2x;
+  max-width: 480px !important;
 
   .notices__wrapper {
+    max-width: 480px !important;
+
     .notices__list {
       cursor: pointer;
 

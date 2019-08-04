@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import 'es6-promise/auto'
 import 'event-source-polyfill'
 import 'promise-polyfill/src/polyfill'

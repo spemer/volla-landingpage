@@ -17,8 +17,8 @@
           v-if="this.$route.path === '/'"
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
-        a.header__right--text(
-          :href="href"
+        router-link.header__right--text(
+          :to="href"
           :class="(this.$route.path === '/') ? 'join' : 'home'"
         ) {{ text }}
 </template>
@@ -41,6 +41,14 @@ export default {
     ...mapState([
       'isApp',
     ]),
+  },
+
+  watch: {
+    $route() {
+      return this.$route.path === '/'
+        ? ((this.href = '/seller'), (this.text = '입점소개'))
+        : ((this.href = '/'), (this.text = '메인으로'))
+    }
   },
 
   mounted () {

@@ -11,11 +11,11 @@
 import JoinUs from '@/components/home/JoinUs'
 
 export default {
-  name: 'eventLanding',
+  name: 'EventLanding',
 
   components: {
-    JoinUs,
-  },
+    JoinUs
+  }
 }
 </script>
 

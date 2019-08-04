@@ -17,24 +17,22 @@ import { dateFormatting } from '@/mixins/dateFormatting'
 import { globalVar } from '@/globalVar'
 
 export default {
-  name: 'markdown',
+  name: 'Markdown',
+
+  mixins: [dateFormatting],
 
   computed: {
-    noticeEntries: _ => {
+    noticeEntries: () => {
       return NOTICE_ENTRIES
-    },
+    }
   },
-
-  mixins: [
-    dateFormatting,
-  ],
 
   metaInfo: {
     title: `${globalVar.serviceEn} - 공지사항`,
-    titleTemplate: `%s`,
+    titleTemplate: `%s`
   },
 
-  mounted () {
+  mounted() {
     // append date info
     let arr = this.noticeEntries['notice']
 
@@ -45,27 +43,26 @@ export default {
     let getTitle = document.querySelectorAll('section h1')[0]
     let setDate = document.createElement('h4')
     getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
-    setDate.innerHTML = this.dateFormatting(arr[idx].ymd);
+    setDate.innerHTML = this.dateFormatting(arr[idx].ymd)
 
     // set _blank every anchor tags
-    [...document.querySelectorAll('section a')].forEach(anchor => {
+    ;[...document.querySelectorAll('section a')].forEach((anchor) => {
       let getAnchorTarget = anchor.getAttribute('target')
-      return (! getAnchorTarget)
-        && anchor.setAttribute('target', '_blank')
+      return !getAnchorTarget && anchor.setAttribute('target', '_blank')
     })
-  },
-
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 #markdown {
-  max-width: 480px;
-  padding: auto 0 !important;
-  padding-bottom: $grid32x;
   margin: 0 auto;
+  padding-bottom: $grid32x;
+  padding: auto 0 !important;
+  max-width: 480px !important;
 
   .container {
+    max-width: 480px !important;
     padding: 0 $grid2x !important;
     width: calc(100% - #{$grid4x});
   }

@@ -1,10 +1,10 @@
 <template lang="pug">
   div#homeView
     Hero
-    Service(data-aos="fade")
-    EasyStart.section__each(data-aos="fade")
-    Download.section__each(data-aos="fade")
-    JoinUs.section__each(data-aos="fade")
+    Service
+    EasyStart.section__each
+    Download.section__each
+    JoinUs.section__each
 </template>
 
 <script>
@@ -16,11 +16,11 @@ import JoinUs from '@/components/home/JoinUs'
 import { globalVar } from '@/globalVar'
 
 export default {
-  name: 'homeView',
+  name: 'HomeView',
 
   metaInfo: {
     title: globalVar.serviceEn,
-    titleTemplate: `%s - ${globalVar.tagline}`,
+    titleTemplate: `%s - ${globalVar.tagline}`
   },
 
   components: {
@@ -28,8 +28,7 @@ export default {
     Service,
     EasyStart,
     Download,
-    JoinUs,
-  },
-
+    JoinUs
+  }
 }
 </script>

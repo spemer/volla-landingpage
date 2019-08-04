@@ -31,11 +31,11 @@
             title="이메일 주소를 복사하려면 클릭하세요"
           ) {{ mailTo }}
 
-        a.footer__sns(
+        router-link.footer__sns(
           v-for="(value, key) in snsList"
           :key="key"
           target="_blank"
-          :href="value[0]"
+          :to="value[0]"
           :title="serviceKo + ' ' + value[2] + '(새 창)'"
         )
           i.footer__sns--logo.fab(
