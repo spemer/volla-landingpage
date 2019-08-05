@@ -32,6 +32,7 @@ export const globalVar = new Vue({
     instagramUrl: 'https://www.instagram.com/volla_official/',
 
     tosDateNow: '2019년 3월 26일',
+    tosDateNowNumber: '190326',
 
     userPrivacyPageTitle: '개인정보처리방침(이용자용)',
     userServicePageTitle: '서비스이용약관(이용자용)',

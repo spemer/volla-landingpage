@@ -5,7 +5,35 @@
 </template>
 
 <script>
+import TOS_ENTRIES from '@/statics/data/tos.json'
+import { globalVar } from '@/globalVar'
+
 export default {
-  name: 'TosDetails'
+  name: 'TosDetails',
+
+  data: () => ({
+    title: null
+  }),
+
+  computed: {
+    tosEntries: () => TOS_ENTRIES
+  },
+
+  metaInfo () {
+    return {
+      title: `${this.title}`,
+      titleTemplate: `%s`
+    }
+  },
+
+  mounted () {
+    let arr = this.tosEntries[globalVar.tosDateNowNumber]
+
+    let idx = arr.findIndex((item, idx) => {
+      return item.id === this.$route.params.id
+    })
+
+    this.title = arr[idx].title
+  }
 }
 </script>

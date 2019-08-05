@@ -9,14 +9,19 @@
 
 <script>
 const JoinUs = () =>
-import(/* webpackChunkName: 'components-JoinUs' */ '@/components/home/JoinUs')
+import(/* webpackChunkName: 'components/home/JoinUs' */ '@/components/home/JoinUs')
 
 export default {
   name: 'EventLanding',
 
   components: {
     JoinUs
-  }
+  },
+
+  metaInfo: {
+    title: `볼라와 함께할 셀러를 찾습니다!`,
+    titleTemplate: `%s`
+  },
 }
 </script>
 

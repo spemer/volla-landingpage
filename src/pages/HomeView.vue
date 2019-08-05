@@ -9,15 +9,15 @@
 
 <script>
 const Hero = () =>
-  import(/* webpackChunkName: 'components-Hero' */ '@/components/home/Hero')
+  import(/* webpackChunkName: 'components/home/Hero' */ '@/components/home/Hero')
 const Service = () =>
-  import(/* webpackChunkName: 'components-Service' */ '@/components/home/Service')
+  import(/* webpackChunkName: 'components/home/Service' */ '@/components/home/Service')
 const EasyStart = () =>
-  import(/* webpackChunkName: 'components-EasyStart' */ '@/components/home/EasyStart')
+  import(/* webpackChunkName: 'components/home/EasyStart' */ '@/components/home/EasyStart')
 const Download = () =>
-  import(/* webpackChunkName: 'components-Download' */ '@/components/home/Download')
+  import(/* webpackChunkName: 'components/home/Download' */ '@/components/home/Download')
 const JoinUs = () =>
-  import(/* webpackChunkName: 'components-JoinUs' */ '@/components/home/JoinUs')
+  import(/* webpackChunkName: 'components/home/JoinUs' */ '@/components/home/JoinUs')
 
 import { globalVar } from '@/globalVar'
 

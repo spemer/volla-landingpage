@@ -19,15 +19,21 @@ import { globalVar } from '@/globalVar'
 export default {
   name: 'Markdown',
 
+  data: () => ({
+    title: 'asdf'
+  }),
+
   mixins: [dateFormatting],
 
   computed: {
     noticeEntries: () => NOTICE_ENTRIES
   },
 
-  metaInfo: {
-    title: `${globalVar.serviceEn} - 공지사항`,
-    titleTemplate: `%s`
+  metaInfo () {
+    return {
+      title: `${this.title}`,
+      titleTemplate: `%s`
+    }
   },
 
   mounted() {
@@ -42,6 +48,7 @@ export default {
     let setDate = document.createElement('h4')
     getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
     setDate.innerHTML = this.dateFormatting(arr[idx].ymd)
+    this.title = arr[idx].title
 
     // set _blank every anchor tags
     ;[...document.querySelectorAll('section a')].forEach((anchor) => {

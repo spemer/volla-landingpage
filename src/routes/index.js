@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueMeta from 'vue-meta'
 import store from '@/store/index'
 
 Vue.use(Router)
+Vue.use(VueMeta)
 
 const requireToken = (to, from, next) => {
   (store.state.tokenState) && next()
