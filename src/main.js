@@ -28,6 +28,10 @@ Vue.use(Toast, {
     wordWrap: true,
 })
 
+// font-awesome
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Kakao.init(process.env.KAKAO_KEY)

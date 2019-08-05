@@ -16,15 +16,21 @@
             target="_blank"
             :title="`${videoChannel} 님 유튜브 채널 바로가기(새 창)`"
           ) &nbsp;{{ videoChannel }}&nbsp;
-            i.videoEmbed__from--icon.fab.fa-youtube
+            font-awesome-icon.videoEmbed__from--icon.fab.fa-youtube(
+              :icon="['fab', 'youtube']"
+            )
 </template>
 
 <script>
 import Vue from 'vue'
 import VueYoutube from 'vue-youtube'
+Vue.use(VueYoutube)
+
 import { globalVar } from '@/globalVar'
 
-Vue.use(VueYoutube)
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
+library.add(faYoutube)
 
 export default {
   name: 'videoEmbed',

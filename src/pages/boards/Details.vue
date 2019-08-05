@@ -20,7 +20,7 @@ export default {
   name: 'Markdown',
 
   data: () => ({
-    title: 'asdf'
+    title: null
   }),
 
   mixins: [dateFormatting],

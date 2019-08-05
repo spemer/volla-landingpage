@@ -19,7 +19,7 @@ export default {
   },
 
   metaInfo: {
-    title: `볼라와 함께할 셀러를 찾습니다!`,
+    title: `볼라 입점 이벤트`,
     titleTemplate: `%s`
   },
 }
@@ -37,7 +37,7 @@ export default {
   .eventlanding__wrapper {
     .eventlanding__img {
       width: 100%;
-      max-width: 590px;
+      max-width: 560px;
     }
   }
 }
