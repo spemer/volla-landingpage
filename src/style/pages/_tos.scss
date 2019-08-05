@@ -155,30 +155,30 @@
       }
 
       @media #{$tablet} {
-        padding: $grid24x $grid8x $grid24x;
+        padding: $grid16x $grid8x $grid20x;
       }
 
       @media #{$pablet} {
-        padding: $grid20x $grid6x $grid16x;
-
-        h1 {
-          @include font-size(28px);
-        }
-
-        h3 {
-          @include font-size(21px);
-        }
-      }
-
-      @media #{$mobile} {
-        padding: $grid16x $grid4x $grid16x;
+        padding: $grid12x $grid6x $grid16x;
 
         h1 {
           @include font-size($grid6x);
         }
 
         h3 {
-          @include font-size(21px);
+          @include font-size($grid5x);
+        }
+      }
+
+      @media #{$mobile} {
+        padding: $grid8x $grid4x $grid12x;
+
+        h1 {
+          @include font-size($grid6x);
+        }
+
+        h3 {
+          @include font-size($grid5x);
         }
       }
     }

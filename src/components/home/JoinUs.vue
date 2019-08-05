@@ -37,6 +37,7 @@ import { globalVar } from '@/globalVar'
 
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { faCopy } from '@fortawesome/free-solid-svg-icons/faCopy'
+
 // library.add(faCopy)
 
 export default {

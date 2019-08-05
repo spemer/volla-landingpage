@@ -3,6 +3,7 @@
     v-if="this.$route.path === '/' || this.$route.path === '/seller' || this.$route.path === '/sellerform'"
   )
     img#kakao__pf(
+      alt="카카오톡 문의하기"
       title="카카오톡 문의하기"
       @click="plusFriendChat"
       src="/src/assets/dist/kakao.svg"

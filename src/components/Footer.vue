@@ -14,7 +14,7 @@
           span.footer__terms--each(
             v-for="entry in tosEntries[section]"
             :key="entry.id"
-            target="_blank"
+            :title="entry.title"
             @click="tosRouter(entry.id, section)"
           ) {{ entry.title }}
 
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex/'
+import { mapState } from 'vuex'
 import { toast } from '@/mixins/toast'
 import TOS_ENTRIES from '@/statics/data/tos.json'
 import { globalVar } from '@/globalVar'
@@ -55,6 +55,7 @@ import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookS
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram'
 import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons/faAppStoreIos'
 import { faGooglePlay } from '@fortawesome/free-brands-svg-icons/faGooglePlay'
+
 library.add(faFacebookSquare, faInstagram, faAppStoreIos, faGooglePlay)
 
 export default {
@@ -73,7 +74,7 @@ export default {
 
   methods: {
     tosRouter (id, date) {
-      let popupTos = this.$router.resolve({
+      this.$router.push({
         name: id,
         params: {
           id: id,
@@ -82,8 +83,6 @@ export default {
           date: date,
         },
       })
-
-      window.open(popupTos.href, '_blank')
     },
   },
 

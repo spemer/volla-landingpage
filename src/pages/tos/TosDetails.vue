@@ -34,6 +34,14 @@ export default {
     })
 
     this.title = arr[idx].title
+
+    if (! this.$route.query.date) {
+      this.$router.replace({
+      	query: {
+          date: globalVar.tosDateNowNumber
+        }
+      })
+    }
   }
 }
 </script>
