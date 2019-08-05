@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import WebFontLoader from 'webfontloader'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -13,6 +14,22 @@ export default {
   metaInfo: {
     title: globalVar.serviceEn,
     titleTemplate: `%s - ${globalVar.tagline}`,
+  },
+
+  created () {
+    WebFontLoader.load({
+      custom: {
+        families: ['Spoqa Han Sans'],
+        urls: ['http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css']
+      },
+      active: this.setFontLoaded,
+    })
+  },
+
+  methods: {
+    setFontLoaded () {
+      this.$emit('font-loaded')
+    },
   },
 
 }
