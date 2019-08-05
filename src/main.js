@@ -8,12 +8,18 @@ import App from '@/App.vue'
 import store from '@/store'
 import router from '@/routes'
 
-import Toasted from 'vue-toasted'
 import VueScrollTo from 'vue-scrollto'
 import VueClipboard from 'vue-clipboard2'
 import VueProgressBar from 'vue-progressbar'
 
-Vue.use(Toasted)
+import 'vue2-toast/lib/toast.css'
+import Toast from 'vue2-toast'
+Vue.use(Toast, {
+    type: 'bottom',
+    duration: 2500,
+    wordWrap: true,
+})
+
 Vue.use(VueScrollTo)
 Vue.use(VueClipboard)
 Vue.use(VueProgressBar, {

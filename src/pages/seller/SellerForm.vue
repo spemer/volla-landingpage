@@ -99,13 +99,10 @@
 <script>
 import axios from 'axios'
 import { mapState, mapMutations } from 'vuex'
-import { toast } from '@/mixins/toast'
 import { globalVar } from '@/globalVar'
 
 export default {
   name: 'SellerForm',
-
-  mixins: [toast],
 
   data: () => ({
     serviceKo: globalVar.serviceKo,
@@ -210,7 +207,7 @@ export default {
       ) {
         this.$Progress.start()
 
-        this.toast('요청중입니다. 잠시만 기다려주세요!')
+        this.$toast('요청중입니다. 잠시만 기다려주세요!')
 
         const base = process.env.BASE_URL
         axios

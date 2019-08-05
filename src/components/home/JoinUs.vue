@@ -10,7 +10,7 @@
         span.joinus__title--copyEmail(
           v-clipboard:copy="mailTo"
           title="이메일 주소를 복사하려면 클릭하세요"
-          @click="toast('이메일 주소가 복사되었습니다')"
+          @click="copyToast('이메일 주소가 복사되었습니다')"
         ) 이메일 주소 복사하기
           i.far.fa-copy
 
@@ -32,7 +32,6 @@
 
 <script>
 import { globalVar } from '@/globalVar'
-import { toast } from '@/mixins/toast'
 
 export default {
   name: 'joinus',
@@ -45,9 +44,11 @@ export default {
     serviceKo: globalVar.serviceKo,
   }),
 
-  mixins: [
-    toast,
-  ],
+  methods: {
+    copyToast (str) {
+      this.$toast(str)
+    },
+  },
 
   mounted () {
     if (this.$route.path === '/') {
