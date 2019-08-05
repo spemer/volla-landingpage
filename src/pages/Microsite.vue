@@ -10,13 +10,20 @@
 </template>
 
 <script>
-const Hero = () => import('@/components/seller/Hero')
-const VideoEmbed = () => import('@/components/seller/VideoEmbed')
-const StatsList = () => import('@/components/seller/StatsList')
-const StartWith = () => import('@/components/seller/StartWith')
-const Benefits = () => import('@/components/seller/Benefits')
-const Benefits2 = () => import('@/components/seller/Benefits2')
-const JoinUs = () => import('@/components/home/JoinUs')
+const Hero = () =>
+  import(/* webpackChunkName: 'components-Hero' */ '@/components/seller/Hero')
+const VideoEmbed = () =>
+  import(/* webpackChunkName: 'components-VideoEmbed' */ '@/components/seller/VideoEmbed')
+const StatsList = () =>
+  import(/* webpackChunkName: 'components-StatsList' */ '@/components/seller/StatsList')
+const StartWith = () =>
+  import(/* webpackChunkName: 'components-StartWith' */ '@/components/seller/StartWith')
+const Benefits = () =>
+  import(/* webpackChunkName: 'components-Benefits' */ '@/components/seller/Benefits')
+const Benefits2 = () =>
+  import(/* webpackChunkName: 'components-Benefits2' */ '@/components/seller/Benefits2')
+const JoinUs = () =>
+  import(/* webpackChunkName: 'components-JoinUs' */ '@/components/home/JoinUs')
 
 import { globalVar } from '@/globalVar'
 

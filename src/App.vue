@@ -20,7 +20,7 @@ export default {
     WebFontLoader.load({
       custom: {
         families: ['Spoqa Han Sans'],
-        urls: ['http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css']
+        urls: ['https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css']
       },
       active: this.setFontLoaded,
     })

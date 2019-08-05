@@ -21,7 +21,8 @@
 </template>
 
 <script>
-const DownloadBtn = () => import('@/components/misc/DownloadBtn')
+const DownloadBtn = () =>
+  import(/* webpackChunkName: 'components-DownloadBtn' */ '@/components/misc/DownloadBtn')
 
 import { globalVar } from '@/globalVar'
 

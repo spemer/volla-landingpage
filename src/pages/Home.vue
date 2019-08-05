@@ -7,9 +7,12 @@
 </template>
 
 <script>
-const Header = () => import('@/components/Header')
-const Footer = () => import('@/components/Footer')
-const Kakao = () => import('@/components/misc/Kakao')
+const Header = () =>
+  import(/* webpackChunkName: 'components-Header' */ '@/components/Header')
+const Footer = () =>
+  import(/* webpackChunkName: 'components-Footer' */ '@/components/Footer')
+const Kakao = () =>
+  import(/* webpackChunkName: 'components-kakao' */ '@/components/misc/Kakao')
 
 export default {
   name: 'Home',

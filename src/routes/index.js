@@ -1,9 +1,7 @@
 import Vue from 'vue'
-import Meta from 'vue-meta'
 import Router from 'vue-router'
 import store from '@/store/index'
 
-Vue.use(Meta)
 Vue.use(Router)
 
 const requireToken = (to, from, next) => {
@@ -13,34 +11,36 @@ const requireToken = (to, from, next) => {
 
 // NoticeEntries
 import NoticeEntries from '@/statics/data/notice.json'
-
 const noticeRoutes = Object.keys(NoticeEntries).map(section => {
   const children = NoticeEntries[section].map(child => ({
     path: `${child.ymd}/:id`,
     name: `${child.id}`,
-    component: () => import(`@/markdowns/notice/markdown/${child.id}.md`),
+    component: () =>
+      import(/* webpackChunkName: 'router-Details-markdown' */ `@/markdowns/notice/markdown/${child.id}.md`),
   }))
   return {
     path: `/${section}`,
     name: `${section}`,
-    component: () => import('@/pages/boards/Details'),
+    component: () =>
+      import(/* webpackChunkName: 'router-Details' */ '@/pages/boards/Details'),
     children,
   }
 })
 
 // TosEntries
 import TosEntries from '@/statics/data/tos.json'
-
 const tosRoutes = Object.keys(TosEntries).map(section => {
   const children = TosEntries[section].map(child => ({
     path: '/tos/:id',
     name: child.id,
-    component: () => import(`@/markdowns/tos/${section}/${child.id}.md`),
+    component: () =>
+      import(/* webpackChunkName: 'router-TosDetails-markdown' */ `@/markdowns/tos/${section}/${child.id}.md`),
   }))
   return {
     path: '/tos/:id',
     name: section,
-    component: () => import('@/pages/tos/TosDetails'),
+    component: () =>
+      import(/* webpackChunkName: 'router-TosDetails' */ '@/pages/tos/TosDetails'),
     children,
   }
 })
@@ -61,28 +61,33 @@ export default new Router({
     // app
     {
       path: '/',
-      component: () => import('@/pages/Home'),
+      component: () =>
+        import(/* webpackChunkName: 'router-Home' */ '@/pages/Home'),
       children: [{
           path: '/',
           name: 'homeView',
-          component: () => import('@/pages/HomeView'),
+          component: () =>
+            import(/* webpackChunkName: 'router-HomeView' */ '@/pages/HomeView'),
         },
         {
           path: '/seller',
           name: 'microsite',
-          component: () => import('@/pages/Microsite'),
+          component: () =>
+            import(/* webpackChunkName: 'router-Microsite' */ '@/pages/Microsite'),
         },
         {
           path: '/sellerform',
           alias: '/sellerform-app',
           name: 'sellerForm',
-          component: () => import('@/pages/seller/SellerForm'),
+          component: () =>
+            import(/* webpackChunkName: 'router-SellerForm' */ '@/pages/seller/SellerForm'),
         },
         {
           path: '/submit',
           alias: '/submit-app',
           name: 'afterSubmitForm',
-          component: () => import('@/pages/seller/AfterSubmitForm'),
+          component: () =>
+            import(/* webpackChunkName: 'router-AfterSubmitForm' */ '@/pages/seller/AfterSubmitForm'),
           beforeEnter: requireToken,
         },
       ],
@@ -97,7 +102,8 @@ export default new Router({
     {
       path: '/notices',
       name: 'notices',
-      component: () => import('@/pages/boards/Notices'),
+      component: () =>
+        import(/* webpackChunkName: 'router-Notices' */ '@/pages/boards/Notices'),
     },
 
     // tos
@@ -123,14 +129,16 @@ export default new Router({
     {
       path: '/app',
       name: 'redirect_dl',
-      component: () => import('@/pages/RedirectDL'),
+      component: () =>
+        import(/* webpackChunkName: 'router-RedirectDL' */ '@/pages/RedirectDL'),
     },
 
     // in-app landing page
     {
       path: '/event_landing',
       name: 'eventLanding',
-      component: () => import('@/pages/EventLanding'),
+      component: () =>
+        import(/* webpackChunkName: 'router-EventLanding' */ '@/pages/EventLanding'),
     },
   ],
 

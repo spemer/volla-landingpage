@@ -12,20 +12,20 @@ import VueScrollTo from 'vue-scrollto'
 import VueClipboard from 'vue-clipboard2'
 import VueProgressBar from 'vue-progressbar'
 
-import 'vue2-toast/lib/toast.css'
-import Toast from 'vue2-toast'
-Vue.use(Toast, {
-    type: 'bottom',
-    duration: 2500,
-    wordWrap: true,
-})
-
 Vue.use(VueScrollTo)
 Vue.use(VueClipboard)
 Vue.use(VueProgressBar, {
   color: 'rgb(255, 121, 172)',
   failedColor: 'rgb(255, 121, 172)',
   height: '4px',
+})
+
+import 'vue2-toast/lib/toast.css'
+import Toast from 'vue2-toast'
+Vue.use(Toast, {
+    type: 'bottom',
+    duration: 2500,
+    wordWrap: true,
 })
 
 Vue.config.productionTip = false

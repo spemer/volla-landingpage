@@ -8,7 +8,8 @@
 </template>
 
 <script>
-const JoinUs = () => import('@/components/home/JoinUs')
+const JoinUs = () =>
+import(/* webpackChunkName: 'components-JoinUs' */ '@/components/home/JoinUs')
 
 export default {
   name: 'EventLanding',
