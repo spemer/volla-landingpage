@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
+
 require('es6-promise').polyfill()
 
 module.exports = {

@@ -1,5 +1,5 @@
 export const userAgent = {
-  data: _ => ({
+  data: () => ({
     userAgent: null,
   }),
 

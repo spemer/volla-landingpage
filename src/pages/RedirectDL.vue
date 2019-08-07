@@ -35,11 +35,17 @@ export default {
     meta: [
       {
         name: 'description',
-        content: `${globalVar.serviceEn} 앱 다운로드`,
+        content: `${globalVar.serviceEn} 앱 다운로드`
+      },
+      {
         itemprop: 'description',
-        content: `${globalVar.serviceEn} 앱 다운로드`,
+        content: `${globalVar.serviceEn} 앱 다운로드`
+      },
+      {
         property: 'og:description',
-        content: `${globalVar.serviceEn} 앱 다운로드`,
+        content: `${globalVar.serviceEn} 앱 다운로드`
+      },
+      {
         name: 'twitter:description',
         content: `${globalVar.serviceEn} 앱 다운로드`
       }

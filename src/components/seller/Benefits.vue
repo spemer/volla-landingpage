@@ -5,7 +5,7 @@
         | {{ serviceKo }}를 선택해야 하는 이유는 당연합니다
       div.service__card
         div.service__card--each(
-          v-for="(value, key, index) in benefits.top"
+          v-for="(value, key, index) in benefitsTop"
           :key="key"
         )
           div.service__card--img.seller.seller1(
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -33,13 +32,12 @@ export default {
   data: () => ({
     volla_pdf: globalVar.volla_pdf,
     serviceKo: globalVar.serviceKo,
+    benefitsTop: {
+      benefits_1: '입점비용이 없습니다. 상품만 있다면 누구나 온라인 셀러가 될 수 있습니다.',
+      benefits_2: '매출 수수료는 당연히 타 업체들과 비교했을 때에도, 더욱 더 저렴합니다.',
+      benefits_3: '전문장비가 없어도 스마트폰만으로 쉽게 라이브 방송을 시작할 수 있습니다.',
+    },
   }),
-
-  computed: {
-    ...mapState([
-      'benefits',
-    ]),
-  },
 
 }
 </script>

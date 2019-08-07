@@ -17,8 +17,8 @@ echo "============================================================${RESET}"
 dev_or_deploy() {
   while true; do
     printf "\n"
-    read -p "${BOLD}${GREEN}Run dev server (R) or Deploy directly? (D) ${RESET}" rd
-    case ${rd} in
+    read -p "${BOLD}${GREEN}Run dev server (R) / Deploy directly (D) / Lint fix (L)${RESET}" rdl
+    case ${rdl} in
       [Rr]* )
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 Run dev server 🔥${RESET}"
@@ -37,7 +37,14 @@ dev_or_deploy() {
         echo "${BOLD}${PURPLE}🔥 firebase deploy 🔥${RESET}"
         firebase deploy;
         break;;
-      * ) echo "${YELLOW}Please answer R(un) or D(eploy).${RESET}";;
+
+      [Ll]* )
+        printf "\n"
+        echo "${BOLD}${PURPLE}🔥 lint fix 🔥${RESET}"
+        npm run lintfix;
+        break;;
+
+      * ) echo "${YELLOW}Please answer with R(un) / D(eploy) / (L)int${RESET}";;
     esac
   done
 }

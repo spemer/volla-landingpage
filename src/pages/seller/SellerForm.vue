@@ -107,25 +107,34 @@ export default {
   data: () => ({
     serviceKo: globalVar.serviceKo,
     sellerForm: globalVar.sellerForm,
-    sellerCondition: globalVar.sellerCondition
+    sellerCondition: globalVar.sellerCondition,
+    marketingTerms: {
+      personal: {
+        title: '(필수) 개인정보 수집 및 이용에 동의합니다.',
+        desc: '[개인정보 수집/이용] 귀하는 개인(신용)정보의 선택적인 수집∙이용, 제공에 대한 동의를 거부할 수 있습니다. 다만, 동의하지 않을 경우 관련 편의제공 안내 등 이용 목적에 따른 혜택에 제한이 있을 수 있습니다. 동의한 경우에도 귀하는 동의를 철회하거나 마케팅 목적으로 귀하에게 연락하는 것을 중지하도록 요청할 수 있습니다.',
+      },
+      marketing: {
+        title: '(선택) 마케팅 정보 수신에 동의합니다.',
+        desc: '목적: 당사의 상품·서비스 안내 및 이용권유, 이벤트 및 광고성 정보 제공 및 참여기회 제공, 시장조사 및 상품·서비스 개발연구 등',
+      },
+    },
   }),
 
   metaInfo: {
-    title: `${globalVar.serviceEn} - ${globalVar.sellerForm}`,
-    titleTemplate: '%s'
+    title: `${globalVar.sellerFormTitle}`,
+    titleTemplate: `%s`,
   },
 
   mounted() {
-    return this.$route.path == '/sellerform-app'
-      ? this.SET_CLASS_APP(true)
-      : this.SET_CLASS_APP(false)
+    return this.$route.path === '/sellerform-app'
+      ? (this.SET_CLASS_APP(true))
+      : (this.SET_CLASS_APP(false))
   },
 
   computed: {
     ...mapState([
       'sellerForm_Category',
       'marketing',
-      'marketingTerms',
       'tokenState',
       'isApp'
     ]),
@@ -206,13 +215,10 @@ export default {
         this.marketing.val_1
       ) {
         this.$Progress.start()
-
         this.$toast('요청중입니다. 잠시만 기다려주세요!')
-
         const base = process.env.BASE_URL
         axios
-          .post(
-            `${base}/requestSeller`,
+          .post(`${base}/requestSeller`,
             {
               email: this.sellerForm_List[0].value,
               name: this.sellerForm_List[1].value,
@@ -229,28 +235,20 @@ export default {
               }
             }
           )
-
-          .then((response) => {
+          .then(() => {
             this.$Progress.finish()
-
             this.SET_TOKEN_BOOL(true)
-
             return this.isApp
-              ? this.$router.push('/submit-app')
-              : this.$router.push('/submit')
-
-            console.info(response.data)
+              ? (this.$router.replace('/submit-app'))
+              : (this.$router.replace('/submit'))
           })
-
           .catch((error) => {
             this.$Progress.fail()
-
             this.SET_TOKEN_BOOL(false)
             alert(`오류입니다. 다시 시도해주세요!\n${error}`)
-            console.warn(error)
           })
       } else {
-        alert('개인정보 수집 및 이용 동의 여부를 선택해주세요.')
+        this.$toast('개인정보 수집 및 이용 동의 여부를 선택해주세요.')
       }
     }
   }

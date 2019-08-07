@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -31,13 +30,12 @@ export default {
   data: () => ({
     serviceKo: globalVar.serviceKo,
     sellerCondition: globalVar.sellerCondition,
+    startWith: {
+    condition_1: '자신의 상품을 잘 보여줄 수 있도록 매장을 운영하고 있는 분',
+    condition_2: '온라인 쇼핑몰 구축을 염두하고 있지만 어려움을 겪고 있는 분',
+    condition_3: '직접 소비자들과 소통하면서, 동시에 매출을 올리고 싶은 분',
+  }
   }),
-
-  computed: {
-    ...mapState([
-      'startWith',
-    ]),
-  },
 
 }
 </script>

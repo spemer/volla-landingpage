@@ -7,7 +7,7 @@
         | 초기 입점 혜택을 준비했습니다.
       div.service__card
         div.service__card--each(
-          v-for="(value, key, index) in benefits.bottom"
+          v-for="(value, key, index) in benefitsBottom"
           :key="key"
         )
           div.service__card--img.seller.seller2(
@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -25,13 +24,12 @@ export default {
 
   data: () => ({
     serviceKo: globalVar.serviceKo,
+    benefitsBottom: {
+      benefits2_1: '보다 큰 수익을 위한 낮은 수수료율과 수수료 할인',
+      benefits2_2: '보다 활발한 방송을 위한 라이브 방송 호스트 지원',
+      benefits2_3: '보다 원활한 입점을 위한 입점 절차 및 방송 지원',
+    },
   }),
-
-  computed: {
-    ...mapState([
-      'benefits',
-    ]),
-  },
 
 }
 </script>

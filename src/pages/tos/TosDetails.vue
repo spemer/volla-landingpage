@@ -37,7 +37,7 @@ export default {
 
     if (! this.$route.query.date) {
       this.$router.replace({
-      	query: {
+        query: {
           date: globalVar.tosDateNowNumber
         }
       })

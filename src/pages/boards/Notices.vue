@@ -19,13 +19,12 @@
 <script>
 import NOTICE_ENTRIES from '@/statics/data/notice.json'
 import { dateFormatting } from '@/mixins/dateFormatting'
-import { globalVar } from '@/globalVar'
 
 export default {
   name: 'Notices',
 
   metaInfo: {
-    title: `${globalVar.serviceEn} - 공지사항`,
+    title: `공지사항`,
     titleTemplate: `%s`
   },
 

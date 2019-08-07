@@ -26,21 +26,32 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { userAgent } from '@/mixins/userAgent'
+import { globalVar } from '@/globalVar'
 
 export default {
   name: 'DownloadBtn',
+
+  data: () => ({
+    badges: {
+      Android: {
+        src: '/src/assets/dist/playstore.png',
+        title: 'Google Play',
+        href: globalVar.androidStore
+      },
+      iOS: {
+        src: '/src/assets/dist/appstore.png',
+        title: 'App Store',
+        href: globalVar.iosStore
+      }
+    }
+  }),
 
   mixins: [
     userAgent
   ],
 
   computed: {
-    ...mapState([
-      'badges',
-    ]),
-
     badgesMobile () {
       return (this.userAgent === 'iOS')
         ? this.badges.iOS

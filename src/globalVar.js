@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export const globalVar = new Vue({
-  data: _ => ({
+  data: () => ({
     companyName: '알에스파이브',
     companyNameFull: '알에스파이브',
     // companyNameFull: '(주)알에스파이브',
@@ -19,6 +19,7 @@ export const globalVar = new Vue({
     taglineSeller: '셀러 입점안내',
     taglineLong: '라이브 방송으로 만나는 오프라인 쇼핑',
     sellerForm: '셀러 입점신청서',
+    sellerFormTitle: '셀러 입점신청',
     sellerCondition: '* 입점 시 판매를 위한 사업자등록, 통신판매업 신고 등이 필요할 수 있습니다.',
 
     callTo: '02-401-2155',

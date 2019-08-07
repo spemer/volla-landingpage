@@ -7,11 +7,11 @@ $mobile-width: 288px;
   margin: 0 auto;
 
   @media #{$pablet} {
-    width: $pablet-width;
+    width: calc(100% - #{$grid8x});
   }
 
-  @media #{$mobile} {
-    width: $mobile-width;
+  @media #{$ip6} {
+    width: calc(100% - #{$grid8x});
   }
 
   .sellerform__form--wrapper {
@@ -88,11 +88,11 @@ $mobile-width: 288px;
     margin-top: $grid16x;
 
     @media #{$pablet} {
-      width: $pablet-width;
+      width: calc(100% - #{$grid8x});
     }
 
-    @media #{$mobile} {
-      width: $mobile-width;
+    @media #{$ip6} {
+      width: calc(100% - #{$grid8x});
       margin-top: $grid16x;
     }
 
@@ -165,11 +165,7 @@ $mobile-width: 288px;
         @include transition(border-bottom 0.25s ease);
 
         @media #{$pablet} {
-          width: $pablet-width;
-        }
-
-        @media #{$mobile} {
-          width: $mobile-width;
+          width: 100%
         }
 
         &.textarea {
@@ -253,11 +249,7 @@ $mobile-width: 288px;
       position: relative;
       margin-top: $grid4x;
       padding-left: $grid8x;
-      -webkit-user-select: none !important;
-      -moz-user-select: none !important;
-      -ms-user-select: none !important;
-      -o-user-select: none !important;
-      user-select: none !important;
+      @include user-select();
       @include font-size(14px);
 
       .checkmark {
@@ -302,7 +294,6 @@ $mobile-width: 288px;
   }
 
   &.app {
-
     &:not(.submit) {
       padding-top: 0;
       padding-bottom: calc(#{$grid32x} + #{$grid8x});
@@ -314,21 +305,61 @@ $mobile-width: 288px;
       }
 
       h1 {
-
         &.sellerform__form--title {
           display: none;
         }
       }
 
       p {
+        &.sellerform__form--title {
+          @include font-size($grid4x);
+
+          &.host {
+            margin-bottom: $grid12x;
+          }
+
+          input {
+            margin-bottom: $grid4x;
+            @include font-size(14px);
+          }
+
+          .sellerform__form--helpText {
+            margin-bottom: $grid10x;
+            margin-top: -#{$grid2x};
+          }
+        }
 
         &.sellerform__form--subtitle {
           display: none;
         }
       }
 
+      .sellerform__form--input {
+        padding-top: $grid2x;
+
+        &.textarea {
+          height: $grid24x;
+          padding-top: $grid2x;
+          @include font-size(14px);
+        }
+      }
+
+      .sellerform__form--label {
+        margin-top: $grid2x !important;
+      }
+
       .sellerform__form--form {
-        margin-top: $grid12x;
+        margin-top: $grid8x !important;
+
+
+        @media #{$pablet} {
+          width: calc(100% - #{$grid4x});
+        }
+
+        @media #{$ip6} {
+          width: calc(100%);
+          margin-top: $grid16x;
+        }
       }
 
       .sellerform__form--wrapper {
@@ -374,32 +405,6 @@ $mobile-width: 288px;
             display: block;
             background-color: $brand-pink-16;
             @include border-radius();
-
-            @media #{$tablet} {
-              width: calc(100% - #{$grid14x});
-              padding: 0 $grid8x;
-            }
-
-            @media #{$landsc} {
-              padding: 0 $grid8x;
-            }
-
-            @media #{$pablet} {
-              width: calc(100% - #{$grid14x});
-              padding: 0 $grid4x;
-            }
-
-            @media #{$ip6} {
-              width: calc(100% - #{$grid6x});
-            }
-
-            @media #{$mobile} {
-              width: calc(100% - #{$grid10x});
-            }
-
-            @media #{$mini} {
-              width: calc(100%);
-            }
 
             &:hover {
               opacity: 1;

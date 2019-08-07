@@ -26,8 +26,6 @@ import Vue from 'vue'
 import VueYoutube from 'vue-youtube'
 Vue.use(VueYoutube)
 
-import { globalVar } from '@/globalVar'
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
 library.add(faYoutube)

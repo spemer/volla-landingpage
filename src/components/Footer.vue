@@ -66,6 +66,54 @@ export default {
     serviceKo: globalVar.serviceKo,
     companyName: globalVar.companyName,
     toastText: '이메일 주소가 복사되었습니다',
+    infoList: {
+      상호명: globalVar.companyNameFull,
+      사업자등록번호: globalVar.companyID,
+      통신판매업신고번호: globalVar.companyItc,
+      대표이사: globalVar.companyCEO,
+      대표전화: globalVar.callTo,
+      주소: globalVar.companyAdr,
+    },
+    tosList: {
+      userPrivacyPageTitle: [
+        globalVar.userPrivacyPageTitle,
+        'user/privacy'
+      ],
+      userServicePageTitle: [
+        globalVar.userServicePageTitle,
+        'user/service'
+      ],
+      ceoPrivacyPageTitle: [
+        globalVar.ceoPrivacyPageTitle,
+        'ceo/privacy'
+      ],
+      ceoServicePageTitle: [
+        globalVar.ceoServicePageTitle,
+        'ceo/service'
+      ],
+    },
+    snsList: {
+      facebook: [
+        globalVar.facebookUrl,
+        'facebook-square',
+        '페이스북',
+      ],
+      instagram: [
+        globalVar.instagramUrl,
+        'instagram',
+        '인스타그램',
+      ],
+      appstore: [
+        globalVar.iosStore,
+        'app-store-ios',
+        '앱 스토어 다운받기',
+      ],
+      android: [
+        globalVar.androidStore,
+        'google-play',
+        '구글 플레이 다운받기',
+      ],
+    },
   }),
 
   mixins: [
@@ -89,13 +137,10 @@ export default {
   computed: {
     ...mapState([
       'thisYear',
-      'infoList',
-      'tosList',
-      'snsList',
       'isApp',
     ]),
 
-    tosEntries: _ => TOS_ENTRIES,
+    tosEntries: () => TOS_ENTRIES,
   },
 
 }

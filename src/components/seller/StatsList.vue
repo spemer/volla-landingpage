@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { globalVar } from '@/globalVar'
 
 export default {
@@ -24,13 +23,24 @@ export default {
 
   data: () => ({
     serviceKo: globalVar.serviceKo,
+    statsList: {
+      first: {
+        value: 66,
+        suffix: '%',
+        title: '모바일 점유율',
+      },
+      second: {
+        value: 5.15,
+        suffix: '배',
+        title: '평균 구매 전환율 (온라인 쇼핑 대비)',
+      },
+      third: {
+        value: 4.9,
+        suffix: '배',
+        title: '평균 구매량 (온라인 쇼핑 대비)',
+      },
+    },
   }),
-
-  computed: {
-    ...mapState([
-      'statsList',
-    ]),
-  },
 
 }
 </script>

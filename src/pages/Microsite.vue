@@ -31,7 +31,7 @@ export default {
   name: 'Microsite',
 
   metaInfo: {
-    title: `${globalVar.serviceEn} - ${globalVar.taglineSeller}`,
+    title: `${globalVar.taglineSeller}`,
     titleTemplate: `%s`
   },
 

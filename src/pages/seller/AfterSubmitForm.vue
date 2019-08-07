@@ -57,7 +57,7 @@ export default {
   }),
 
   metaInfo: {
-    title: `${globalVar.serviceEn} - ${globalVar.sellerForm}`,
+    title: `${globalVar.sellerFormTitle}`,
     titleTemplate: '%s'
   },
 

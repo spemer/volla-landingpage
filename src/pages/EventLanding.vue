@@ -19,7 +19,7 @@ export default {
   },
 
   metaInfo: {
-    title: `볼라 입점 이벤트`,
+    title: `볼라 입점이벤트`,
     titleTemplate: `%s`
   },
 }
@@ -29,6 +29,7 @@ export default {
 #eventlanding {
   text-align: center;
   padding: $grid8x 0 $grid4x;
+  @include user-select();
 
   #joinus {
     border: none !important;

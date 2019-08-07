@@ -14,7 +14,6 @@
 <script>
 import NOTICE_ENTRIES from '@/statics/data/notice.json'
 import { dateFormatting } from '@/mixins/dateFormatting'
-import { globalVar } from '@/globalVar'
 
 export default {
   name: 'Markdown',
@@ -31,7 +30,7 @@ export default {
 
   metaInfo () {
     return {
-      title: `${this.title}`,
+      title: `공지사항`,
       titleTemplate: `%s`
     }
   },

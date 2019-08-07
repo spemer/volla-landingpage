@@ -16,7 +16,7 @@ export default {
     closeWindow: () => {
       window.close()
       window.postMessage('close')
-      (window.ReactNativeWebView)
+      return (window.ReactNativeWebView)
         && window.ReactNativeWebView.postMessage('close')
     },
   },
