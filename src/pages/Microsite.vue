@@ -11,24 +11,38 @@
 
 <script>
 const Hero = () =>
-  import(/* webpackChunkName: 'components/seller/Hero' */ '@/components/seller/Hero')
+  import(
+    /* webpackChunkName: 'components/seller/Hero' */ "@/components/seller/Hero"
+  );
 const VideoEmbed = () =>
-  import(/* webpackChunkName: 'components/seller/VideoEmbed' */ '@/components/seller/VideoEmbed')
+  import(
+    /* webpackChunkName: 'components/seller/VideoEmbed' */ "@/components/seller/VideoEmbed"
+  );
 const StatsList = () =>
-  import(/* webpackChunkName: 'components/seller/StatsList' */ '@/components/seller/StatsList')
+  import(
+    /* webpackChunkName: 'components/seller/StatsList' */ "@/components/seller/StatsList"
+  );
 const StartWith = () =>
-  import(/* webpackChunkName: 'components/seller/StartWith' */ '@/components/seller/StartWith')
+  import(
+    /* webpackChunkName: 'components/seller/StartWith' */ "@/components/seller/StartWith"
+  );
 const Benefits = () =>
-  import(/* webpackChunkName: 'components/seller/Benefits' */ '@/components/seller/Benefits')
+  import(
+    /* webpackChunkName: 'components/seller/Benefits' */ "@/components/seller/Benefits"
+  );
 const Benefits2 = () =>
-  import(/* webpackChunkName: 'components/seller/Benefits2' */ '@/components/seller/Benefits2')
+  import(
+    /* webpackChunkName: 'components/seller/Benefits2' */ "@/components/seller/Benefits2"
+  );
 const JoinUs = () =>
-  import(/* webpackChunkName: 'components/home/JoinUs' */ '@/components/home/JoinUs')
+  import(
+    /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
+  );
 
-import { globalVar } from '@/globalVar'
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'Microsite',
+  name: "Microsite",
 
   metaInfo: {
     title: `${globalVar.taglineSeller}`,
@@ -44,5 +58,5 @@ export default {
     Benefits2,
     JoinUs
   }
-}
+};
 </script>

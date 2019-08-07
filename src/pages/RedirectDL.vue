@@ -3,7 +3,7 @@
     div.container
       div.redirect__wrapper
         img.redirect__wrapper--img(
-          src="/src/assets/dist/launcher.svg"
+          src="@/assets/dist/launcher.svg"
         )
         p.redirect__wrapper--text {{ serviceKo }}
 
@@ -16,16 +16,16 @@
 </template>
 
 <script>
-import { globalVar } from '@/globalVar'
-import { userAgent } from '@/mixins/userAgent'
+import { globalVar } from "@/globalVar";
+import { userAgent } from "@/mixins/userAgent";
 
 export default {
-  name: 'RedirectDl',
+  name: "RedirectDl",
 
   mixins: [userAgent],
 
   data: () => ({
-    website: '웹사이트 바로가기',
+    website: "웹사이트 바로가기",
     serviceKo: globalVar.serviceKo
   }),
 
@@ -34,19 +34,19 @@ export default {
     titleTemplate: `%s 앱 다운로드`,
     meta: [
       {
-        name: 'description',
+        name: "description",
         content: `${globalVar.serviceEn} 앱 다운로드`
       },
       {
-        itemprop: 'description',
+        itemprop: "description",
         content: `${globalVar.serviceEn} 앱 다운로드`
       },
       {
-        property: 'og:description',
+        property: "og:description",
         content: `${globalVar.serviceEn} 앱 다운로드`
       },
       {
-        name: 'twitter:description',
+        name: "twitter:description",
         content: `${globalVar.serviceEn} 앱 다운로드`
       }
     ]
@@ -55,18 +55,18 @@ export default {
   mounted() {
     let android = globalVar.androidStore,
       ios = globalVar.iosStore,
-      unknown = globalVar.websiteUrl
+      unknown = globalVar.websiteUrl;
 
-    if (this.userAgent == 'Android') {
-      window.location.href = android
-    } else if (this.userAgent == 'iOS') {
-      window.location.href = ios
+    if (this.userAgent == "Android") {
+      window.location.href = android;
+    } else if (this.userAgent == "iOS") {
+      window.location.href = ios;
     } else {
-      alert('안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.')
-      window.location.href = unknown
+      alert("안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.");
+      window.location.href = unknown;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

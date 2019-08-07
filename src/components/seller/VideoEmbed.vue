@@ -22,22 +22,21 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import VueYoutube from 'vue-youtube'
-Vue.use(VueYoutube)
+import Vue from "vue";
+import VueYoutube from "vue-youtube";
+Vue.use(VueYoutube);
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube'
-library.add(faYoutube)
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
+library.add(faYoutube);
 
 export default {
-  name: 'videoEmbed',
+  name: "videoEmbed",
 
   data: () => ({
-    videoChannel: '춤추는 변호사',
-    videoId: process.env.YT_ID,
-    videoLink: 'https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ',
-  }),
-
-}
+    videoChannel: "춤추는 변호사",
+    videoId: process.env.VUE_APP_YT_ID,
+    videoLink: "https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ"
+  })
+};
 </script>

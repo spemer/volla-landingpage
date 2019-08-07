@@ -11,16 +11,15 @@
 </template>
 
 <script>
-import { globalVar } from '@/globalVar'
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'easyStart',
+  name: "easyStart",
 
   data: () => ({
-    serviceKo: globalVar.serviceKo,
-  }),
-
-}
+    serviceKo: globalVar.serviceKo
+  })
+};
 </script>
 
 <style lang="scss" scoped>

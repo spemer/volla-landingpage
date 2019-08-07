@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import NOTICE_ENTRIES from '@/statics/data/notice.json'
-import { dateFormatting } from '@/mixins/dateFormatting'
+import NOTICE_ENTRIES from "@/statics/data/notice.json";
+import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
-  name: 'Markdown',
+  name: "Markdown",
 
   data: () => ({
     title: null
@@ -28,34 +28,34 @@ export default {
     noticeEntries: () => NOTICE_ENTRIES
   },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: `공지사항`,
       titleTemplate: `%s`
-    }
+    };
   },
 
   mounted() {
     // append date info
-    let arr = this.noticeEntries['notice']
+    let arr = this.noticeEntries["notice"];
 
     let idx = arr.findIndex((item, idx) => {
-      return item.id === this.$route.params.id
-    })
+      return item.id === this.$route.params.id;
+    });
 
-    let getTitle = document.querySelectorAll('section h1')[0]
-    let setDate = document.createElement('h4')
-    getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling)
-    setDate.innerHTML = this.dateFormatting(arr[idx].ymd)
-    this.title = arr[idx].title
+    let getTitle = document.querySelectorAll("section h1")[0];
+    let setDate = document.createElement("h4");
+    getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling);
+    setDate.innerHTML = this.dateFormatting(arr[idx].ymd);
+    this.title = arr[idx].title;
 
     // set _blank every anchor tags
-    ;[...document.querySelectorAll('section a')].forEach((anchor) => {
-      let getAnchorTarget = anchor.getAttribute('target')
-      return !getAnchorTarget && anchor.setAttribute('target', '_blank')
-    })
+    [...document.querySelectorAll("section a")].forEach(anchor => {
+      let getAnchorTarget = anchor.getAttribute("target");
+      return !getAnchorTarget && anchor.setAttribute("target", "_blank");
+    });
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

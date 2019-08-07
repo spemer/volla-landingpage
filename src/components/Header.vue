@@ -7,6 +7,7 @@
         v-scroll-to="{el: 'body', duration: 0}"
       )
         img.header__left--img(
+          :alt="serviceEn"
           src="../assets/dist/launcher.svg"
         )
         p.header__left--text {{ serviceEn }}
@@ -24,40 +25,37 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { globalVar } from '@/globalVar'
+import { mapState } from "vuex";
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'header-el',
+  name: "header-el",
 
   data: () => ({
-    href: '',
-    text: '',
+    href: "",
+    text: "",
     tagline: globalVar.tagline,
-    serviceEn: globalVar.serviceEn,
+    serviceEn: globalVar.serviceEn
   }),
 
   computed: {
-    ...mapState([
-      'isApp',
-    ]),
+    ...mapState(["isApp"])
   },
 
   watch: {
     $route() {
-      return this.$route.path === '/'
-        ? ((this.href = '/seller'), (this.text = '입점소개'))
-        : ((this.href = '/'), (this.text = '메인으로'))
+      return this.$route.path === "/"
+        ? ((this.href = "/seller"), (this.text = "입점소개"))
+        : ((this.href = "/"), (this.text = "메인으로"));
     }
   },
 
-  mounted () {
-    return (this.$route.path === '/')
-      ? (this.href = '/seller', this.text = '입점소개')
-      : (this.href = '/', this.text = '메인으로')
-  },
-
-}
+  mounted() {
+    return this.$route.path === "/"
+      ? ((this.href = "/seller"), (this.text = "입점소개"))
+      : ((this.href = "/"), (this.text = "메인으로"));
+  }
+};
 </script>
 
 <style lang="scss" scoped>

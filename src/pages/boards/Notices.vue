@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import NOTICE_ENTRIES from '@/statics/data/notice.json'
-import { dateFormatting } from '@/mixins/dateFormatting'
+import NOTICE_ENTRIES from "@/statics/data/notice.json";
+import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
-  name: 'Notices',
+  name: "Notices",
 
   metaInfo: {
     title: `공지사항`,
@@ -41,10 +41,10 @@ export default {
         params: {
           id: id
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -72,7 +72,7 @@ export default {
           @include font-size($grid3x);
 
           &::before {
-            content: '\a';
+            content: "\a";
             white-space: pre;
           }
         }

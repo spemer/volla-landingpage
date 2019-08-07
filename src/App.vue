@@ -5,34 +5,33 @@
 </template>
 
 <script>
-import WebFontLoader from 'webfontloader'
-import { globalVar } from '@/globalVar'
+import WebFontLoader from "webfontloader";
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'app',
+  name: "app",
 
   metaInfo: {
     title: globalVar.serviceEn,
-    titleTemplate: `%s`,
+    titleTemplate: `%s`
   },
 
-  created () {
+  created() {
     WebFontLoader.load({
       custom: {
-        families: ['Spoqa Han Sans'],
-        urls: ['https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css']
+        families: ["Spoqa Han Sans"],
+        urls: ["https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css"]
       },
-      active: this.setFontLoaded,
-    })
+      active: this.setFontLoaded
+    });
   },
 
   methods: {
-    setFontLoaded () {
-      this.$emit('font-loaded')
-    },
-  },
-
-}
+    setFontLoaded() {
+      this.$emit("font-loaded");
+    }
+  }
+};
 </script>
 
 <style lang="scss">

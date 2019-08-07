@@ -22,20 +22,21 @@
 
 <script>
 const DownloadBtn = () =>
-  import(/* webpackChunkName: 'components/misc/DownloadBtn' */ '@/components/misc/DownloadBtn')
+  import(
+    /* webpackChunkName: 'components/misc/DownloadBtn' */ "@/components/misc/DownloadBtn"
+  );
 
-import { globalVar } from '@/globalVar'
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'hero',
+  name: "hero",
 
   data: () => ({
-    serviceEn: globalVar.serviceEn,
+    serviceEn: globalVar.serviceEn
   }),
 
   components: {
-    DownloadBtn,
-  },
-
-}
+    DownloadBtn
+  }
+};
 </script>

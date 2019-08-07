@@ -8,6 +8,7 @@
   @include user-select();
 
   #closebtn {
+    padding-top: 0 !important;
     margin: $grid12x auto $grid16x;
 
     @media #{$pablet} {

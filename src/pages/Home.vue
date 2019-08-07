@@ -8,19 +8,21 @@
 
 <script>
 const Header = () =>
-  import(/* webpackChunkName: 'components/Header' */ '@/components/Header')
+  import(/* webpackChunkName: 'components/Header' */ "@/components/Header");
 const Footer = () =>
-  import(/* webpackChunkName: 'components/Footer' */ '@/components/Footer')
+  import(/* webpackChunkName: 'components/Footer' */ "@/components/Footer");
 const Kakao = () =>
-  import(/* webpackChunkName: 'components/misc/kakao' */ '@/components/misc/Kakao')
+  import(
+    /* webpackChunkName: 'components/misc/kakao' */ "@/components/misc/Kakao"
+  );
 
 export default {
-  name: 'Home',
+  name: "Home",
 
   components: {
     Header,
     Footer,
     Kakao
   }
-}
+};
 </script>

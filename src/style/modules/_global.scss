@@ -8,6 +8,7 @@
 // text rendering
 @mixin font-settings() {
   direction: ltr;
+  font-display: auto;
   -webkit-font-feature-settings: 'liga';
   font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale;

@@ -6,23 +6,22 @@
       alt="카카오톡 문의하기"
       title="카카오톡 문의하기"
       @click="plusFriendChat"
-      src="/src/assets/dist/kakao.svg"
+      src="@/assets/dist/kakao.svg"
     )
 </template>
 
 <script>
 export default {
-  name: 'kakao-btn',
+  name: "kakao-btn",
 
   methods: {
     plusFriendChat: () => {
       Kakao.PlusFriend.chat({
-        plusFriendId: process.env.KAKAO_URL,
-      })
-    },
-  },
-
-}
+        plusFriendId: process.env.VUE_APP_KAKAO_URL
+      });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

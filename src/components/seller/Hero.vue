@@ -9,19 +9,19 @@
             | 새로운 라이브 쇼핑 서비스
           p.hero__text--subtitle {{ serviceEn }}를 소개합니다
         img.hero__text--image(
-          src="/src/assets/dist/white.png"
+          :alt="serviceEn"
+          src="@/assets/dist/white.png"
         )
 </template>
 
 <script>
-import { globalVar } from '@/globalVar'
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'hero',
+  name: "hero",
 
   data: () => ({
-    serviceEn: globalVar.serviceEn,
-  }),
-
-}
+    serviceEn: globalVar.serviceEn
+  })
+};
 </script>

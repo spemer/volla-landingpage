@@ -1,6 +1,6 @@
 #hero {
-  $img_home: '/src/assets/dist/hero.png';
-  $img_seller: '/src/assets/dist/hero_2.png';
+  $img_home: '~@/assets/dist/hero.png';
+  $img_seller: '~@/assets/dist/hero_2.png';
 
   width: 100%;
   height: $grid128x;

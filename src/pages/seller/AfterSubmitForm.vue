@@ -46,11 +46,11 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import { globalVar } from '@/globalVar'
+import { mapState, mapMutations } from "vuex";
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'AfterSubmitForm',
+  name: "AfterSubmitForm",
 
   data: () => ({
     serviceKo: globalVar.serviceKo
@@ -58,42 +58,42 @@ export default {
 
   metaInfo: {
     title: `${globalVar.sellerFormTitle}`,
-    titleTemplate: '%s'
+    titleTemplate: "%s"
   },
 
   mounted() {
-    return this.$route.path == '/submit-app'
+    return this.$route.path == "/submit-app"
       ? this.SET_CLASS_APP(true)
-      : this.SET_CLASS_APP(false)
+      : this.SET_CLASS_APP(false);
   },
 
   computed: {
     ...mapState([
-      'sellerForm_List',
-      'sellerForm_CategoryValue',
-      'sellerForm_Details',
-      'sellerForm_Category',
-      'marketing',
-      'tokenState',
-      'isApp'
+      "sellerForm_List",
+      "sellerForm_CategoryValue",
+      "sellerForm_Details",
+      "sellerForm_Category",
+      "marketing",
+      "tokenState",
+      "isApp"
     ])
   },
 
   methods: {
     ...mapMutations([
-      'REMOVE_FORM_VAL',
-      'SET_MARKETING_BOOL',
-      'SET_TOKEN_BOOL',
-      'SET_CLASS_APP'
+      "REMOVE_FORM_VAL",
+      "SET_MARKETING_BOOL",
+      "SET_TOKEN_BOOL",
+      "SET_CLASS_APP"
     ])
   },
 
   destroyed() {
-    this.REMOVE_FORM_VAL()
-    this.SET_MARKETING_BOOL(false)
-    this.SET_TOKEN_BOOL(false)
+    this.REMOVE_FORM_VAL();
+    this.SET_MARKETING_BOOL(false);
+    this.SET_TOKEN_BOOL(false);
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

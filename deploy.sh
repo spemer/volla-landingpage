@@ -17,13 +17,13 @@ echo "============================================================${RESET}"
 dev_or_deploy() {
   while true; do
     printf "\n"
-    read -p "${BOLD}${GREEN}Run dev server (R) / Deploy directly (D) / Lint fix (L)${RESET}" rdl
+    read -p "${BOLD}${GREEN}Run dev server (R) / Deploy directly (D) / Lint (L)${RESET}" rdl
     case ${rdl} in
       [Rr]* )
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 Run dev server 🔥${RESET}"
         image_resizer
-        npm_run_dev
+        npm_run_serve
         npm_run_build
         firebase_deploy
         git_commit
@@ -40,8 +40,8 @@ dev_or_deploy() {
 
       [Ll]* )
         printf "\n"
-        echo "${BOLD}${PURPLE}🔥 lint fix 🔥${RESET}"
-        npm run lintfix;
+        echo "${BOLD}${PURPLE}🔥 lint 🔥${RESET}"
+        npm run lint;
         break;;
 
       * ) echo "${YELLOW}Please answer with R(un) / D(eploy) / (L)int${RESET}";;
@@ -72,12 +72,12 @@ image_resizer() {
 #============================================================
 # serve with hot reload at localhost:3000
 #============================================================
-npm_run_dev() {
+npm_run_serve() {
   while true; do
     printf "\n"
-    read -p "${BOLD}${GREEN}npm run dev? (Y/n) ${RESET}" yn
+    read -p "${BOLD}${GREEN}npm run serve? (Y/n) ${RESET}" yn
     case ${yn} in
-      [Yy]* ) npm run dev; break;;
+      [Yy]* ) npm run serve; break;;
       [Nn]* ) return 0;;
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac

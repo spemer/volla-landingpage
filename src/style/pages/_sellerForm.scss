@@ -15,10 +15,9 @@ $mobile-width: 288px;
   }
 
   .sellerform__form--wrapper {
-    margin: $grid16x 0 $grid8x;
+    margin: $grid8x 0;
 
     .sellerform__form--title {
-
       &.text {
         text-align: left;
         font-weight: 900;
@@ -40,7 +39,7 @@ $mobile-width: 288px;
 
 #sellerForm {
   text-align: center;
-  padding: $grid8x 0 $grid24x;
+  padding: $grid8x 0 $grid16x;
 
   input[type='radio'],
   input[type='checkbox'] {
@@ -86,6 +85,10 @@ $mobile-width: 288px;
     margin: 0 auto;
     text-align: center;
     margin-top: $grid16x;
+
+    label[for="checkbox_2"] {
+      margin-bottom: $grid16x;
+    }
 
     @media #{$pablet} {
       width: calc(100% - #{$grid8x});
@@ -209,7 +212,6 @@ $mobile-width: 288px;
       height: $grid14x;
       font-weight: 900;
       color: $brand-pink;
-      margin-top: $grid24x;
       background-color: $brand-pink-16;
       @include border-radius($grid16x);
       @include transition(all 0.25s ease);
@@ -296,7 +298,7 @@ $mobile-width: 288px;
   &.app {
     &:not(.submit) {
       padding-top: 0;
-      padding-bottom: calc(#{$grid32x} + #{$grid8x});
+      padding-bottom: $grid24x;
       @include user-select();
 
       // iPhone X safearea
@@ -368,8 +370,8 @@ $mobile-width: 288px;
         padding: 0;
         width: 100vw;
         position: fixed;
+        height: $grid22x;
         background-color: #fff;
-        height: calc(#{$grid24x});
         @include gradient();
 
         @media #{$tablet} {
@@ -399,10 +401,10 @@ $mobile-width: 288px;
 
           .sellerform__form--submit {
             opacity: 1;
-            margin-top: $grid6x !important;
             width: 100%;
             margin: 0 auto;
             display: block;
+            margin-top: $grid4x !important;
             background-color: $brand-pink-16;
             @include border-radius();
 

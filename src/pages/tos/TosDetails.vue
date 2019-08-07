@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import TOS_ENTRIES from '@/statics/data/tos.json'
-import { globalVar } from '@/globalVar'
+import TOS_ENTRIES from "@/statics/data/tos.json";
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'TosDetails',
+  name: "TosDetails",
 
   data: () => ({
     title: null
@@ -19,29 +19,29 @@ export default {
     tosEntries: () => TOS_ENTRIES
   },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: `${this.title}`,
       titleTemplate: `%s`
-    }
+    };
   },
 
-  mounted () {
-    let arr = this.tosEntries[globalVar.tosDateNowNumber]
+  mounted() {
+    let arr = this.tosEntries[globalVar.tosDateNowNumber];
 
     let idx = arr.findIndex((item, idx) => {
-      return item.id === this.$route.params.id
-    })
+      return item.id === this.$route.params.id;
+    });
 
-    this.title = arr[idx].title
+    this.title = arr[idx].title;
 
-    if (! this.$route.query.date) {
+    if (!this.$route.query.date) {
       this.$router.replace({
         query: {
           date: globalVar.tosDateNowNumber
         }
-      })
+      });
     }
   }
-}
+};
 </script>

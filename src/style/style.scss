@@ -3,29 +3,25 @@
 @import './normalize';
 
 // modules
-@import './modules/grid',
-'./modules/color',
-'./modules/mqbp',
-'./modules/global',
-'./modules/layout',
-'./modules/class'
-;
+@import './modules/grid';
+@import './modules/color';
+@import './modules/mqbp';
+@import './modules/global';
+@import './modules/layout';
+@import './modules/class';
 
 // pages
-@import './pages/home',
-'./pages/sellerForm',
-'./pages/tos',
-'./pages/notice'
-;
+@import './pages/home';
+@import './pages/sellerForm';
+@import './pages/tos';
+@import './pages/notice';
 
 // components/home
-@import './components/home/hero',
-'./components/home/service'
-;
+@import './components/home/hero';
+@import './components/home/service';
 
 // components/seller
-@import './components/seller/videoEmbed',
-'./components/seller/statsList',
-'./components/seller/benefits',
-'./components/seller/startWith'
-;
+@import './components/seller/videoEmbed';
+@import './components/seller/statsList';
+@import './components/seller/benefits';
+@import './components/seller/startWith';

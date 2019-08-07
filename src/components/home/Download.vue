@@ -9,28 +9,29 @@
 
       div.download__mockup
         img.download__mockup--img(
-          src="/src/assets/dist/screen.png"
+          src="@/assets/dist/screen.png"
         )
 </template>
 
 <script>
 const DownloadBtn = () =>
-  import(/* webpackChunkName: 'components/misc/DownloadBtn' */ '@/components/misc/DownloadBtn')
+  import(
+    /* webpackChunkName: 'components/misc/DownloadBtn' */ "@/components/misc/DownloadBtn"
+  );
 
-import { globalVar } from '@/globalVar'
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'download',
+  name: "download",
 
   data: () => ({
-    serviceKo: globalVar.serviceKo,
+    serviceKo: globalVar.serviceKo
   }),
 
   components: {
-    DownloadBtn,
-  },
-
-}
+    DownloadBtn
+  }
+};
 </script>
 
 <style lang="scss" scoped>

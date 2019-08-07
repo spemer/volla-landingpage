@@ -9,6 +9,7 @@
         :title="key + ' ' + value.title + '에서 다운받기'"
       )
         img.download__badge--each(
+          :alt="serviceEn"
           :src="value.src"
         )
         span.download__badge--text {{ value.title }}
@@ -20,46 +21,43 @@
         :title="badgesMobile.title + '에서 다운받기'"
       )
         img.download__badge--each(
+          :alt="serviceEn"
           :src="badgesMobile.src"
         )
         span.download__badge--text {{ badgesMobile.title }}
 </template>
 
 <script>
-import { userAgent } from '@/mixins/userAgent'
-import { globalVar } from '@/globalVar'
+import { userAgent } from "@/mixins/userAgent";
+import { globalVar } from "@/globalVar";
 
 export default {
-  name: 'DownloadBtn',
+  name: "DownloadBtn",
 
   data: () => ({
+    serviceEn: globalVar.serviceEn,
     badges: {
       Android: {
-        src: '/src/assets/dist/playstore.png',
-        title: 'Google Play',
+        src: require("@/assets/dist/playstore.png"),
+        title: "Google Play",
         href: globalVar.androidStore
       },
       iOS: {
-        src: '/src/assets/dist/appstore.png',
-        title: 'App Store',
+        src: require("@/assets/dist/appstore.png"),
+        title: "App Store",
         href: globalVar.iosStore
       }
     }
   }),
 
-  mixins: [
-    userAgent
-  ],
+  mixins: [userAgent],
 
   computed: {
-    badgesMobile () {
-      return (this.userAgent === 'iOS')
-        ? this.badges.iOS
-        : this.badges.Android
-    },
-  },
-
-}
+    badgesMobile() {
+      return this.userAgent === "iOS" ? this.badges.iOS : this.badges.Android;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -45,105 +45,72 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { toast } from '@/mixins/toast'
-import TOS_ENTRIES from '@/statics/data/tos.json'
-import { globalVar } from '@/globalVar'
+import { mapState } from "vuex";
+import { toast } from "@/mixins/toast";
+import TOS_ENTRIES from "@/statics/data/tos.json";
+import { globalVar } from "@/globalVar";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare'
-import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram'
-import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons/faAppStoreIos'
-import { faGooglePlay } from '@fortawesome/free-brands-svg-icons/faGooglePlay'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons/faFacebookSquare";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faAppStoreIos } from "@fortawesome/free-brands-svg-icons/faAppStoreIos";
+import { faGooglePlay } from "@fortawesome/free-brands-svg-icons/faGooglePlay";
 
-library.add(faFacebookSquare, faInstagram, faAppStoreIos, faGooglePlay)
+library.add(faFacebookSquare, faInstagram, faAppStoreIos, faGooglePlay);
 
 export default {
-  name: 'footer-el',
+  name: "footer-el",
 
   data: () => ({
     mailTo: globalVar.mailTo,
     serviceKo: globalVar.serviceKo,
     companyName: globalVar.companyName,
-    toastText: '이메일 주소가 복사되었습니다',
+    thisYear: new Date().getFullYear(),
+    toastText: "이메일 주소가 복사되었습니다",
     infoList: {
       상호명: globalVar.companyNameFull,
       사업자등록번호: globalVar.companyID,
       통신판매업신고번호: globalVar.companyItc,
       대표이사: globalVar.companyCEO,
       대표전화: globalVar.callTo,
-      주소: globalVar.companyAdr,
+      주소: globalVar.companyAdr
     },
     tosList: {
-      userPrivacyPageTitle: [
-        globalVar.userPrivacyPageTitle,
-        'user/privacy'
-      ],
-      userServicePageTitle: [
-        globalVar.userServicePageTitle,
-        'user/service'
-      ],
-      ceoPrivacyPageTitle: [
-        globalVar.ceoPrivacyPageTitle,
-        'ceo/privacy'
-      ],
-      ceoServicePageTitle: [
-        globalVar.ceoServicePageTitle,
-        'ceo/service'
-      ],
+      userPrivacyPageTitle: [globalVar.userPrivacyPageTitle, "user/privacy"],
+      userServicePageTitle: [globalVar.userServicePageTitle, "user/service"],
+      ceoPrivacyPageTitle: [globalVar.ceoPrivacyPageTitle, "ceo/privacy"],
+      ceoServicePageTitle: [globalVar.ceoServicePageTitle, "ceo/service"]
     },
     snsList: {
-      facebook: [
-        globalVar.facebookUrl,
-        'facebook-square',
-        '페이스북',
-      ],
-      instagram: [
-        globalVar.instagramUrl,
-        'instagram',
-        '인스타그램',
-      ],
-      appstore: [
-        globalVar.iosStore,
-        'app-store-ios',
-        '앱 스토어 다운받기',
-      ],
-      android: [
-        globalVar.androidStore,
-        'google-play',
-        '구글 플레이 다운받기',
-      ],
-    },
+      facebook: [globalVar.facebookUrl, "facebook-square", "페이스북"],
+      instagram: [globalVar.instagramUrl, "instagram", "인스타그램"],
+      appstore: [globalVar.iosStore, "app-store-ios", "앱 스토어 다운받기"],
+      android: [globalVar.androidStore, "google-play", "구글 플레이 다운받기"]
+    }
   }),
 
-  mixins: [
-    toast,
-  ],
+  mixins: [toast],
 
   methods: {
-    tosRouter (id, date) {
+    tosRouter(id, date) {
       this.$router.push({
         name: id,
         params: {
-          id: id,
+          id: id
         },
         query: {
-          date: date,
-        },
-      })
-    },
+          date: date
+        }
+      });
+    }
   },
 
   computed: {
-    ...mapState([
-      'thisYear',
-      'isApp',
-    ]),
+    ...mapState(["isApp"]),
 
-    tosEntries: () => TOS_ENTRIES,
-  },
-
-}
+    tosEntries: () => TOS_ENTRIES
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -193,7 +160,7 @@ export default {
 
         &:not(:first-child) {
           &::before {
-            content: '·';
+            content: "·";
             color: $black24;
             margin: 0 $grid2x;
           }
@@ -220,7 +187,7 @@ export default {
           display: inline;
 
           &::before {
-            content: ' ';
+            content: " ";
             margin-right: $grid;
           }
         }

@@ -2,17 +2,19 @@
   div#eventlanding
     div.eventlanding__wrapper
       img.eventlanding__img(
-        src="/src/assets/dist/event_landing.png"
+        src="@/assets/dist/event_landing.png"
       )
       JoinUs
 </template>
 
 <script>
 const JoinUs = () =>
-import(/* webpackChunkName: 'components/home/JoinUs' */ '@/components/home/JoinUs')
+  import(
+    /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
+  );
 
 export default {
-  name: 'EventLanding',
+  name: "EventLanding",
 
   components: {
     JoinUs
@@ -21,8 +23,8 @@ export default {
   metaInfo: {
     title: `볼라 입점이벤트`,
     titleTemplate: `%s`
-  },
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
