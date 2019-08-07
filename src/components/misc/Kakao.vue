@@ -15,7 +15,9 @@ export default {
   name: "kakao-btn",
 
   mounted() {
-    window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
+    setTimeout(() => {
+      window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
+    }, 2500);
   },
 
   methods: {
@@ -24,6 +26,15 @@ export default {
         plusFriendId: process.env.VUE_APP_KAKAO_URL
       });
     }
+  },
+
+  created() {
+    let injectScript = document.createElement("script");
+    injectScript.setAttribute(
+      "src",
+      "https://developers.kakao.com/sdk/js/kakao.min.js"
+    );
+    document.head.appendChild(injectScript);
   }
 };
 </script>

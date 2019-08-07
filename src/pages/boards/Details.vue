@@ -2,7 +2,9 @@
   div#markdown
     router-view.container
 
-    div#closebtn
+    div#closebtn(
+      :class="{ 'apply_border': !isBottom }"
+    )
       router-link.global__cta(
         to="/notices/"
       )
@@ -14,6 +16,7 @@
 <script>
 import NOTICE_ENTRIES from "@/statics/data/notice.json";
 import { dateFormatting } from "@/mixins/dateFormatting";
+import { applyBorder } from "@/mixins/applyBorder";
 
 export default {
   name: "Markdown",
@@ -22,7 +25,7 @@ export default {
     title: null
   }),
 
-  mixins: [dateFormatting],
+  mixins: [dateFormatting, applyBorder],
 
   computed: {
     noticeEntries: () => NOTICE_ENTRIES
@@ -76,10 +79,15 @@ export default {
     width: 100%;
     height: auto;
     position: fixed;
+    border-top: none;
     bottom: -#{$grid16x};
     background-color: #fff;
     padding: $grid2x 0 $grid4x;
     @include gradient();
+
+    &.apply_border {
+      border-top: 1px solid $texteee;
+    }
 
     // iPhone X safearea
     @supports (padding-bottom: env(safe-area-inset-bottom)) {

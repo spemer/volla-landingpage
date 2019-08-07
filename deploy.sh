@@ -31,6 +31,9 @@ dev_or_deploy() {
 
       [Dd]* )
         printf "\n"
+        echo "${BOLD}${PURPLE}🔥 lint 🔥${RESET}"
+        npm run lint;
+        printf "\n"
         echo "${BOLD}${PURPLE}🔥 npm run build 🔥${RESET}"
         npm run build;
         printf "\n"

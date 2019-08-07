@@ -351,8 +351,7 @@ $mobile-width: 288px;
       }
 
       .sellerform__form--form {
-        margin-top: $grid8x !important;
-
+        margin-top: $grid4x !important;
 
         @media #{$pablet} {
           width: calc(100% - #{$grid4x});

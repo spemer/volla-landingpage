@@ -8,7 +8,23 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: require("./aliases.config").webpack
-    }
+    },
+    plugins: [
+      new PrerenderSPAPlugin({
+        staticDir: path.join(__dirname, "dist"),
+        routes: [
+          "/",
+          "/seller/",
+          "/sellerform/",
+          "/sellerform-app/",
+          "/submit/",
+          "/submit-app/",
+          "/notices/",
+          "/event_landing/"
+        ],
+        renderer: new PuppeteerRenderer()
+      })
+    ]
   },
 
   chainWebpack: config => {
@@ -39,25 +55,5 @@ module.exports = {
               `
       }
     }
-  },
-
-  configureWebpack: {
-    plugins: [
-      new PrerenderSPAPlugin({
-        staticDir: path.join(__dirname, "dist"),
-        routes: [
-          "/",
-          "/app/",
-          "/seller/",
-          "/sellerform/",
-          "/sellerform-app/",
-          "/submit/",
-          "/submit-app/",
-          "/notices/",
-          "/event_landing/"
-        ],
-        renderer: new PuppeteerRenderer()
-      })
-    ]
   }
 };

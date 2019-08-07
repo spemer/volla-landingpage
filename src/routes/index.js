@@ -145,7 +145,7 @@ export default new Router({
 
     // appstore download link
     {
-      path: "/app/",
+      path: "/app",
       name: "redirect_dl",
       component: () =>
         import(/* webpackChunkName: 'router-RedirectDL' */ "@/pages/RedirectDL")
