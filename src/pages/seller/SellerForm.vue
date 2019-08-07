@@ -128,7 +128,7 @@ export default {
   },
 
   mounted() {
-    return this.$route.path === "/sellerform-app"
+    return this.$route.path === "/sellerform-app/"
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false);
   },
@@ -236,9 +236,10 @@ export default {
           .then(() => {
             this.$Progress.finish();
             this.SET_TOKEN_BOOL(true);
+            this.$toast("입점 신청이 완료되었습니다.");
             return this.isApp
-              ? this.$router.replace("/submit-app")
-              : this.$router.replace("/submit");
+              ? this.$router.replace("/submit-app/")
+              : this.$router.replace("/submit/");
           })
           .catch(error => {
             this.$Progress.fail();

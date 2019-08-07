@@ -4,7 +4,7 @@
 
     div#closebtn
       router-link.global__cta(
-        to="/notices"
+        to="/notices/"
       )
         button.global__cta--btn(
           type="button"

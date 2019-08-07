@@ -34,7 +34,6 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
-Kakao.init(process.env.VUE_APP_KAKAO_KEY);
 
 new Vue({
   el: "#app",

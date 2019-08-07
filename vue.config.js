@@ -1,3 +1,7 @@
+const path = require("path");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
+
 require("es6-promise").polyfill();
 
 module.exports = {
@@ -22,6 +26,10 @@ module.exports = {
       });
   },
 
+  devServer: {
+    port: 5814
+  },
+
   css: {
     sourceMap: true,
     loaderOptions: {
@@ -31,5 +39,25 @@ module.exports = {
               `
       }
     }
+  },
+
+  configureWebpack: {
+    plugins: [
+      new PrerenderSPAPlugin({
+        staticDir: path.join(__dirname, "dist"),
+        routes: [
+          "/",
+          "/app/",
+          "/seller/",
+          "/sellerform/",
+          "/sellerform-app/",
+          "/submit/",
+          "/submit-app/",
+          "/notices/",
+          "/event_landing/"
+        ],
+        renderer: new PuppeteerRenderer()
+      })
+    ]
   }
 };

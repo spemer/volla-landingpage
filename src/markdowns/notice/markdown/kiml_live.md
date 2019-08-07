@@ -4,6 +4,6 @@
 
 슬금슬금 더워지는 날씨, 볼라의 시원한 여름 패션 방송 보러오세요 :D
 
-![20190616](https://volla.live/src/markdowns/notice/image/dist/20190616.png)
+![20190616](../image/dist/20190616.png)
 
 라이브 방송으로 만나는 오프라인 쇼핑, Volla

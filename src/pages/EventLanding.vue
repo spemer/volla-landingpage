@@ -2,7 +2,7 @@
   div#eventlanding
     div.eventlanding__wrapper
       img.eventlanding__img(
-        src="@/assets/dist/event_landing.png"
+        src="@/markdowns/notice/image/dist/event_landing.png"
       )
       JoinUs
 </template>

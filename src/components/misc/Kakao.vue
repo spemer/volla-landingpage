@@ -1,6 +1,6 @@
 <template lang="pug">
   div#plusfriend-addfriend-button(
-    v-if="this.$route.path === '/' || this.$route.path === '/seller' || this.$route.path === '/sellerform'"
+    v-if="this.$route.path === '/' || this.$route.path === '/seller/' || this.$route.path === '/sellerform/'"
   )
     img#kakao__pf(
       alt="카카오톡 문의하기"
@@ -14,9 +14,13 @@
 export default {
   name: "kakao-btn",
 
+  mounted() {
+    window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
+  },
+
   methods: {
     plusFriendChat: () => {
-      Kakao.PlusFriend.chat({
+      window.Kakao.PlusFriend.chat({
         plusFriendId: process.env.VUE_APP_KAKAO_URL
       });
     }

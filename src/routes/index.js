@@ -23,7 +23,7 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
       )
   }));
   return {
-    path: `/${section}`,
+    path: `/${section}/`,
     name: `${section}`,
     component: () =>
       import(/* webpackChunkName: 'router-Details' */ "@/pages/boards/Details"),
@@ -64,7 +64,7 @@ export default new Router({
     },
     {
       path: "/seller-form",
-      redirect: "/sellerform"
+      redirect: "/sellerform/"
     },
 
     // app
@@ -80,7 +80,7 @@ export default new Router({
             import(/* webpackChunkName: 'router-HomeView' */ "@/pages/HomeView")
         },
         {
-          path: "/seller",
+          path: "/seller/",
           name: "microsite",
           component: () =>
             import(
@@ -88,8 +88,8 @@ export default new Router({
             )
         },
         {
-          path: "/sellerform",
-          alias: "/sellerform-app",
+          path: "/sellerform/",
+          alias: "/sellerform-app/",
           name: "sellerForm",
           component: () =>
             import(
@@ -97,8 +97,8 @@ export default new Router({
             )
         },
         {
-          path: "/submit",
-          alias: "/submit-app",
+          path: "/submit/",
+          alias: "/submit-app/",
           name: "afterSubmitForm",
           component: () =>
             import(
@@ -113,10 +113,10 @@ export default new Router({
     ...noticeRoutes,
     {
       path: "/notice",
-      redirect: "/notices"
+      redirect: "/notices/"
     },
     {
-      path: "/notices",
+      path: "/notices/",
       name: "notices",
       component: () =>
         import(
@@ -128,24 +128,24 @@ export default new Router({
     ...tosRoutes,
     {
       path: "/tos/user/privacy",
-      redirect: "/tos/user_privacy"
+      redirect: "/tos/user_privacy/"
     },
     {
       path: "/tos/user/service",
-      redirect: "/tos/user_service"
+      redirect: "/tos/user_service/"
     },
     {
       path: "/tos/ceo/privacy",
-      redirect: "/tos/ceo_privacy"
+      redirect: "/tos/ceo_privacy/"
     },
     {
       path: "/tos/ceo/service",
-      redirect: "/tos/ceo_service"
+      redirect: "/tos/ceo_service/"
     },
 
     // appstore download link
     {
-      path: "/app",
+      path: "/app/",
       name: "redirect_dl",
       component: () =>
         import(/* webpackChunkName: 'router-RedirectDL' */ "@/pages/RedirectDL")
@@ -153,7 +153,7 @@ export default new Router({
 
     // in-app landing page
     {
-      path: "/event_landing",
+      path: "/event_landing/",
       name: "eventLanding",
       component: () =>
         import(
