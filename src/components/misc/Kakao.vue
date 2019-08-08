@@ -34,7 +34,8 @@ export default {
       "src",
       "https://developers.kakao.com/sdk/js/kakao.min.js"
     );
-    document.head.appendChild(injectScript);
+    injectScript.style.display = 'none';
+    document.body.appendChild(injectScript);
   }
 };
 </script>

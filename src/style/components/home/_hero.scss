@@ -20,7 +20,6 @@
     background-color: $black78;
 
     .hero__text {
-
       &.center {
         top: 50%;
         left: 50%;
@@ -36,13 +35,11 @@
       }
 
       @media #{$middle} {
-
         .hero__title--nbsp {
           display: none !important;
         }
 
         .hero__br {
-
           &::after {
             content: '\a ';
             white-space: pre;

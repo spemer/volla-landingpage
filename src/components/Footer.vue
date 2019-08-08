@@ -26,9 +26,8 @@
             span.footer__copyright--desc {{ key }}
           span.footer__copyright--title 이메일
             span.footer__copyright--desc.clipboard(
-            @click="toast('이메일 주소가 복사되었습니다')"
-            v-clipboard:copy="mailTo"
             title="이메일 주소를 복사하려면 클릭하세요"
+            @click="copyToast(mailTo, '이메일 주소가 복사되었습니다')"
           ) {{ mailTo }}
 
         router-link.footer__sns(
@@ -46,9 +45,9 @@
 
 <script>
 import { mapState } from "vuex";
-import { toast } from "@/mixins/toast";
 import TOS_ENTRIES from "@/statics/data/tos.json";
 import { globalVar } from "@/globalVar";
+import { copyToast } from "@/mixins/copyToast";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons/faFacebookSquare";
@@ -89,7 +88,7 @@ export default {
     }
   }),
 
-  mixins: [toast],
+  mixins: [copyToast],
 
   methods: {
     tosRouter(id, date) {
@@ -107,7 +106,6 @@ export default {
 
   computed: {
     ...mapState(["isApp"]),
-
     tosEntries: () => TOS_ENTRIES
   }
 };

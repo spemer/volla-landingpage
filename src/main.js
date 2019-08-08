@@ -9,11 +9,8 @@ import store from "@/store";
 import router from "@/routes";
 
 import VueScrollTo from "vue-scrollto";
-import VueClipboard from "vue-clipboard2";
 import VueProgressBar from "vue-progressbar";
-
 Vue.use(VueScrollTo);
-Vue.use(VueClipboard);
 Vue.use(VueProgressBar, {
   color: "rgb(255, 121, 172)",
   failedColor: "rgb(255, 121, 172)",

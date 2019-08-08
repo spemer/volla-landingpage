@@ -29,7 +29,7 @@ export default {
   mounted() {
     let arr = this.tosEntries[globalVar.tosDateNowNumber];
 
-    let idx = arr.findIndex((item, idx) => {
+    let idx = arr.findIndex(item => {
       return item.id === this.$route.params.id;
     });
 

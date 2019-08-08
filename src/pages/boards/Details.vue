@@ -42,7 +42,7 @@ export default {
     // append date info
     let arr = this.noticeEntries["notice"];
 
-    let idx = arr.findIndex((item, idx) => {
+    let idx = arr.findIndex(item => {
       return item.id === this.$route.params.id;
     });
 

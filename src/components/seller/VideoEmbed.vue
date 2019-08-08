@@ -7,6 +7,7 @@
         | 영상을 통한 소통으로 구매를 합니다
 
       youtube.video__body(
+        v-if="onReady"
         :video-id="videoId"
       )
       p.videoEmbed__from
@@ -16,9 +17,9 @@
             target="_blank"
             :title="`${videoChannel} 님 유튜브 채널 바로가기(새 창)`"
           ) &nbsp;{{ videoChannel }}&nbsp;
-            font-awesome-icon.videoEmbed__from--icon.fab.fa-youtube(
-              :icon="['fab', 'youtube']"
-            )
+            //- font-awesome-icon.videoEmbed__from--icon.fab.fa-youtube(
+            //-   :icon="['fab', 'youtube']"
+            //- )
 </template>
 
 <script>
@@ -26,17 +27,24 @@ import Vue from "vue";
 import VueYoutube from "vue-youtube";
 Vue.use(VueYoutube);
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
-library.add(faYoutube);
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
+// library.add(faYoutube);
 
 export default {
   name: "videoEmbed",
 
   data: () => ({
+    onReady: false,
     videoChannel: "춤추는 변호사",
     videoId: process.env.VUE_APP_YT_ID,
     videoLink: "https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ"
-  })
+  }),
+
+  mounted() {
+    this.$nextTick(() => {
+      this.onReady = true;
+    });
+  }
 };
 </script>

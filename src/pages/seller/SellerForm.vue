@@ -127,9 +127,11 @@ export default {
 
   mixins: [applyBorder],
 
-  metaInfo: {
-    title: `${globalVar.sellerFormTitle}`,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: `${globalVar.sellerFormTitle}`,
+      titleTemplate: `%s`
+    };
   },
 
   mounted() {
@@ -244,9 +246,11 @@ export default {
             this.$Progress.finish();
             this.SET_TOKEN_BOOL(true);
             this.$toast("입점 신청이 완료되었습니다.");
-            return this.isApp
-              ? this.$router.replace("/submit-app/")
-              : this.$router.replace("/submit/");
+            if (this.isApp) {
+              return this.$router.replace("/submit-app/");
+            } else {
+              return this.$router.replace("/submit/");
+            }
           })
           .catch(error => {
             this.$Progress.fail();

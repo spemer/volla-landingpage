@@ -21,9 +21,7 @@
     }
 
     .service__card--each {
-
       .section__subtitle {
-
         @media #{$pro2} {
           padding: 0 $grid32x;
         }

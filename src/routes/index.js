@@ -128,19 +128,19 @@ export default new Router({
     ...tosRoutes,
     {
       path: "/tos/user/privacy",
-      redirect: "/tos/user_privacy/"
+      redirect: "/tos/user_privacy"
     },
     {
       path: "/tos/user/service",
-      redirect: "/tos/user_service/"
+      redirect: "/tos/user_service"
     },
     {
       path: "/tos/ceo/privacy",
-      redirect: "/tos/ceo_privacy/"
+      redirect: "/tos/ceo_privacy"
     },
     {
       path: "/tos/ceo/service",
-      redirect: "/tos/ceo_service/"
+      redirect: "/tos/ceo_service"
     },
 
     // appstore download link
