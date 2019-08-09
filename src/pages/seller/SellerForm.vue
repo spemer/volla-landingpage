@@ -143,7 +143,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["sellerForm_Category", "marketing", "tokenState", "isApp"]),
+    ...mapState(["sellerForm_Category", "tokenState", "isApp"]),
 
     sellerForm_List: {
       get() {

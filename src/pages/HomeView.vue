@@ -8,27 +8,6 @@
 </template>
 
 <script>
-const Hero = () =>
-  import(
-    /* webpackChunkName: 'components/home/Hero' */ "@/components/home/Hero"
-  );
-const Service = () =>
-  import(
-    /* webpackChunkName: 'components/home/Service' */ "@/components/home/Service"
-  );
-const EasyStart = () =>
-  import(
-    /* webpackChunkName: 'components/home/EasyStart' */ "@/components/home/EasyStart"
-  );
-const Download = () =>
-  import(
-    /* webpackChunkName: 'components/home/Download' */ "@/components/home/Download"
-  );
-const JoinUs = () =>
-  import(
-    /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
-  );
-
 import { globalVar } from "@/globalVar";
 
 export default {
@@ -40,11 +19,26 @@ export default {
   },
 
   components: {
-    Hero,
-    Service,
-    EasyStart,
-    Download,
-    JoinUs
+    Hero: () =>
+      import(
+        /* webpackChunkName: 'components/home/Hero' */ "@/components/home/Hero"
+      ),
+    Service: () =>
+      import(
+        /* webpackChunkName: 'components/home/Service' */ "@/components/home/Service"
+      ),
+    EasyStart: () =>
+      import(
+        /* webpackChunkName: 'components/home/EasyStart' */ "@/components/home/EasyStart"
+      ),
+    Download: () =>
+      import(
+        /* webpackChunkName: 'components/home/Download' */ "@/components/home/Download"
+      ),
+    JoinUs: () =>
+      import(
+        /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
+      )
   }
 };
 </script>

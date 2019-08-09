@@ -8,21 +8,21 @@
 </template>
 
 <script>
-const JoinUs = () =>
-  import(
-    /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
-  );
-
 export default {
   name: "EventLanding",
 
   components: {
-    JoinUs
+    JoinUs: () =>
+      import(
+        /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
+      )
   },
 
-  metaInfo: {
-    title: `볼라 입점이벤트`,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: `볼라 입점이벤트`,
+      titleTemplate: `%s`
+    };
   }
 };
 </script>

@@ -2,7 +2,8 @@
   div#plusfriend-addfriend-button(
     v-if="this.$route.path === '/' || this.$route.path === '/seller/' || this.$route.path === '/sellerform/'"
   )
-    img#kakao__pf(
+    img(
+      v-if="onReady"
       alt="카카오톡 문의하기"
       title="카카오톡 문의하기"
       @click="plusFriendChat"
@@ -14,10 +15,18 @@
 export default {
   name: "kakao-btn",
 
-  mounted() {
-    setTimeout(() => {
-      window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
-    }, 2500);
+  data: () => ({
+    onReady: false,
+    isInitialized: false
+  }),
+
+  updated() {
+    if (this.onReady && !this.isInitialized) {
+      setTimeout(() => {
+        window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
+        this.isInitialized = true;
+      }, 1500);
+    }
   },
 
   methods: {
@@ -29,13 +38,17 @@ export default {
   },
 
   created() {
-    let injectScript = document.createElement("script");
-    injectScript.setAttribute(
-      "src",
-      "https://developers.kakao.com/sdk/js/kakao.min.js"
-    );
-    injectScript.style.display = 'none';
-    document.body.appendChild(injectScript);
+    setTimeout(() => {
+      let injectScript = document.createElement("script");
+      injectScript.setAttribute(
+        "src",
+        "https://developers.kakao.com/sdk/js/kakao.min.js"
+      );
+      injectScript.style.display = "none";
+      injectScript.style.visibility = "hidden";
+      document.head.appendChild(injectScript);
+      this.onReady = true;
+    }, 1500);
   }
 };
 </script>
@@ -58,7 +71,7 @@ export default {
     right: $grid4x;
     bottom: $grid6x;
     position: fixed;
-    animation: popup 0.25s ease-in-out 2.5s 1 forwards;
+    animation: popup 0.25s ease-in-out 3s 1 forwards;
     @include transform(scale(0));
 
     img {

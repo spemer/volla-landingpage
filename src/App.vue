@@ -36,6 +36,6 @@ export default {
 
 <style lang="scss">
 #app {
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch !important;
 }
 </style>

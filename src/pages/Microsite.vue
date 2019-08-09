@@ -10,35 +10,6 @@
 </template>
 
 <script>
-const Hero = () =>
-  import(
-    /* webpackChunkName: 'components/seller/Hero' */ "@/components/seller/Hero"
-  );
-const VideoEmbed = () =>
-  import(
-    /* webpackChunkName: 'components/seller/VideoEmbed' */ "@/components/seller/VideoEmbed"
-  );
-const StatsList = () =>
-  import(
-    /* webpackChunkName: 'components/seller/StatsList' */ "@/components/seller/StatsList"
-  );
-const StartWith = () =>
-  import(
-    /* webpackChunkName: 'components/seller/StartWith' */ "@/components/seller/StartWith"
-  );
-const Benefits = () =>
-  import(
-    /* webpackChunkName: 'components/seller/Benefits' */ "@/components/seller/Benefits"
-  );
-const Benefits2 = () =>
-  import(
-    /* webpackChunkName: 'components/seller/Benefits2' */ "@/components/seller/Benefits2"
-  );
-const JoinUs = () =>
-  import(
-    /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
-  );
-
 import { globalVar } from "@/globalVar";
 
 export default {
@@ -50,13 +21,34 @@ export default {
   },
 
   components: {
-    Hero,
-    VideoEmbed,
-    StatsList,
-    StartWith,
-    Benefits,
-    Benefits2,
-    JoinUs
+    Hero: () =>
+      import(
+        /* webpackChunkName: 'components/seller/Hero' */ "@/components/seller/Hero"
+      ),
+    VideoEmbed: () =>
+      import(
+        /* webpackChunkName: 'components/seller/VideoEmbed' */ "@/components/seller/VideoEmbed"
+      ),
+    StatsList: () =>
+      import(
+        /* webpackChunkName: 'components/seller/StatsList' */ "@/components/seller/StatsList"
+      ),
+    StartWith: () =>
+      import(
+        /* webpackChunkName: 'components/seller/StartWith' */ "@/components/seller/StartWith"
+      ),
+    Benefits: () =>
+      import(
+        /* webpackChunkName: 'components/seller/Benefits' */ "@/components/seller/Benefits"
+      ),
+    Benefits2: () =>
+      import(
+        /* webpackChunkName: 'components/seller/Benefits2' */ "@/components/seller/Benefits2"
+      ),
+    JoinUs: () =>
+      import(
+        /* webpackChunkName: 'components/home/JoinUs' */ "@/components/home/JoinUs"
+      )
   }
 };
 </script>

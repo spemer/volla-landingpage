@@ -1,5 +1,7 @@
 <template lang="pug">
-  div#hero.sellerHero
+  div#hero.sellerHero(
+    :style="{ backgroundImage: backgroundImage }"
+  )
     div.hero__dim
       div.container
         div.hero__text
@@ -21,7 +23,8 @@ export default {
   name: "hero",
 
   data: () => ({
-    serviceEn: globalVar.serviceEn
+    serviceEn: globalVar.serviceEn,
+    backgroundImage: `url(${require("@/assets/dist/hero_2.png")})`
   })
 };
 </script>

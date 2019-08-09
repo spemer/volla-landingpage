@@ -5,17 +5,17 @@
     div.container
       div.footer__copyright
         p.footer__copyright--text
-          | ⓒ {{ thisYear }} {{ companyName }}., All Rights Reserved.
+          | ⓒ {{ new Date().getFullYear() }} {{ companyName }}., All Rights Reserved.
 
         p.footer__terms(
             v-for="(section, index) in Object.keys(tosEntries)"
             :key="index"
           )
-          span.footer__terms--each(
+          router-link.footer__terms--each(
             v-for="entry in tosEntries[section]"
             :key="entry.id"
             :title="entry.title"
-            @click="tosRouter(entry.id, section)"
+            :to="{ path: `/tos/${entry.id}/`, name: entry.id, params: {id: entry.id} }"
           ) {{ entry.title }}
 
         p.footer__copyright--info
@@ -30,11 +30,11 @@
             @click="copyToast(mailTo, '이메일 주소가 복사되었습니다')"
           ) {{ mailTo }}
 
-        router-link.footer__sns(
+        a.footer__sns(
           v-for="(value, key) in snsList"
           :key="key"
           target="_blank"
-          :to="value[0]"
+          :href="value[0]"
           :title="serviceKo + ' ' + value[2] + '(새 창)'"
         )
           font-awesome-icon.footer__sns--logo.fab(
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 import { mapState } from "vuex";
 import TOS_ENTRIES from "@/statics/data/tos.json";
 import { globalVar } from "@/globalVar";
@@ -54,8 +55,10 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons/faFacebookS
 import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
 import { faAppStoreIos } from "@fortawesome/free-brands-svg-icons/faAppStoreIos";
 import { faGooglePlay } from "@fortawesome/free-brands-svg-icons/faGooglePlay";
-
 library.add(faFacebookSquare, faInstagram, faAppStoreIos, faGooglePlay);
+
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 export default {
   name: "footer-el",
@@ -64,8 +67,6 @@ export default {
     mailTo: globalVar.mailTo,
     serviceKo: globalVar.serviceKo,
     companyName: globalVar.companyName,
-    thisYear: new Date().getFullYear(),
-    toastText: "이메일 주소가 복사되었습니다",
     infoList: {
       상호명: globalVar.companyNameFull,
       사업자등록번호: globalVar.companyID,
@@ -89,20 +90,6 @@ export default {
   }),
 
   mixins: [copyToast],
-
-  methods: {
-    tosRouter(id, date) {
-      this.$router.push({
-        name: id,
-        params: {
-          id: id
-        },
-        query: {
-          date: date
-        }
-      });
-    }
-  },
 
   computed: {
     ...mapState(["isApp"]),

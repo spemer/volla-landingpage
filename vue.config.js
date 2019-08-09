@@ -9,6 +9,7 @@ module.exports = {
     resolve: {
       alias: require("./aliases.config").webpack
     },
+
     plugins: [
       new PrerenderSPAPlugin({
         staticDir: path.join(__dirname, "dist"),
@@ -20,11 +21,32 @@ module.exports = {
           "/submit/",
           "/submit-app/",
           "/notices/",
-          "/event_landing/"
+          "/event_landing/",
+          "/tos/ceo_privacy/",
+          "/tos/ceo_service/",
+          "/tos/user_privacy/",
+          "/tos/user_service/"
         ],
-        renderer: new PuppeteerRenderer()
+        renderer: new PuppeteerRenderer(),
+        minify: {
+          caseSensitive: true,
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          collapseInlineTagWhitespace: true,
+          decodeEntities: true,
+          minifyCSS: true,
+          keepClosingSlash: true,
+          sortAttributes: true,
+          removeComments: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
+        }
       })
     ]
+  },
+
+  devServer: {
+    port: 5814
   },
 
   chainWebpack: config => {
@@ -40,10 +62,6 @@ module.exports = {
       .options({
         raw: true
       });
-  },
-
-  devServer: {
-    port: 5814
   },
 
   css: {

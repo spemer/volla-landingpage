@@ -9,7 +9,6 @@
 // drop-shadow
 @mixin drop-shadow ($val:0, $val2:$grid2x, $val3:$grid4x, $color:$black08) {
   -webkit-filter: drop-shadow($val $val2 $val3 $color);
-  -khtml-filter: drop-shadow($val $val2 $val3 $color);
   -moz-filter: drop-shadow($val $val2 $val3 $color);
   -ms-filter: drop-shadow($val $val2 $val3 $color);
   -o-filter: drop-shadow($val $val2 $val3 $color);

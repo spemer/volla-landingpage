@@ -57,8 +57,8 @@ export default {
   }),
 
   metaInfo: {
-    title: `${globalVar.sellerFormTitle}`,
-    titleTemplate: "%s"
+    title: `${globalVar.afterSubmitForm}`,
+    titleTemplate: `%s`
   },
 
   mounted() {

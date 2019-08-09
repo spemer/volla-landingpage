@@ -1,7 +1,6 @@
 <template lang="pug">
   div#markdown
     router-view.container
-
     div#closebtn(
       :class="{ 'apply_border': !isBottom }"
     )
@@ -61,12 +60,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #markdown {
+  $p_font_size: 14px;
+
   margin: 0 auto;
-  padding-bottom: $grid32x;
-  padding: auto 0 !important;
   max-width: 480px !important;
+  width: calc(100% - #{$grid32x});
+  padding-top: $grid4x !important;
+  padding-bottom: $grid32x !important;
+  @include user-select();
 
   .container {
     max-width: 480px !important;
@@ -82,11 +85,13 @@ export default {
     border-top: none;
     bottom: -#{$grid16x};
     background-color: #fff;
-    padding: $grid2x 0 $grid4x;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: $grid12x auto $grid16x;
     @include gradient();
 
-    &.apply_border {
-      border-top: 1px solid $texteee;
+    @media #{$pablet} {
+      display: block;
     }
 
     // iPhone X safearea
@@ -94,9 +99,12 @@ export default {
       padding-bottom: calc(env(safe-area-inset-bottom)) !important;
     }
 
-    padding-bottom: 0 !important;
+    &.apply_border {
+      border-top: 1px solid $texteee;
+    }
 
     .global__cta--btn {
+      display: block;
       height: $header;
       color: $brand_pink;
       margin: $grid4x auto;
@@ -105,6 +113,86 @@ export default {
       @include border-radius();
       @include font-size($grid4x);
     }
+  }
+
+  @media #{$default} {
+    padding: $grid16x;
+    width: calc(100% - #{$grid32x});
+    padding-top: $grid6x !important;
+  }
+
+  @media #{$basic} {
+    padding: $grid8x;
+    width: calc(100% - #{$grid16x});
+    padding-top: $grid6x !important;
+  }
+
+  @media #{$tablet} {
+    padding: $grid2x;
+    width: calc(100% - #{$grid4x});
+    padding-top: $grid6x !important;
+  }
+
+  h1 {
+    margin-top: 0;
+    text-align: left;
+    font-weight: 700;
+    @include font-size($grid4x);
+  }
+
+  h4 {
+    color: $black54;
+    font-weight: 400;
+    margin-top: -#{6px};
+    padding-bottom: 17px;
+    border-bottom: 1px solid $texteee;
+    @include font-size($grid3x);
+  }
+
+  ul,
+  ol {
+    margin-left: -#{$grid4x};
+
+    li {
+      color: $black78;
+    }
+  }
+
+  a {
+    font-weight: 700;
+  }
+
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: $grid4x;
+    display: inline-block;
+    margin-bottom: $grid4x;
+    @include border-radius();
+
+    @media #{$pablet} {
+      width: 100%;
+    }
+  }
+
+  em {
+    margin: 0 auto;
+    display: block;
+    max-width: 80%;
+    text-align: center;
+
+    @media #{$tablet} {
+      max-width: 100%;
+    }
+  }
+
+  hr {
+    margin: $grid16x 0;
+  }
+
+  p,
+  li {
+    @include font-size($p_font_size);
   }
 }
 </style>

@@ -1,11 +1,7 @@
 #hero {
-  $img_home: '~@/assets/dist/hero.png';
-  $img_seller: '~@/assets/dist/hero_2.png';
-
   width: 100%;
   height: $grid128x;
   position: relative;
-  background-image: url('#{$img_home}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -102,7 +98,6 @@
     margin: 0 auto;
     height: $grid140x;
     text-align: left !important;
-    background-image: url('#{$img_seller}');
 
     @media #{$tablet} {
       height: $grid96x;

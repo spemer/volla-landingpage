@@ -35,7 +35,7 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
 import TosEntries from "@/statics/data/tos.json";
 const tosRoutes = Object.keys(TosEntries).map(section => {
   const children = TosEntries[section].map(child => ({
-    path: "/tos/:id",
+    path: "/tos/:id/",
     name: child.id,
     component: () =>
       import(
@@ -43,7 +43,7 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
       )
   }));
   return {
-    path: "/tos/:id",
+    path: "/tos/:id/",
     name: section,
     component: () =>
       import(
@@ -91,6 +91,7 @@ export default new Router({
           path: "/sellerform/",
           alias: "/sellerform-app/",
           name: "sellerForm",
+          meta: { title: "셀러 입점신청" },
           component: () =>
             import(
               /* webpackChunkName: 'router-SellerForm' */ "@/pages/seller/SellerForm"
@@ -100,6 +101,7 @@ export default new Router({
           path: "/submit/",
           alias: "/submit-app/",
           name: "afterSubmitForm",
+          meta: { title: "입점신청 완료" },
           component: () =>
             import(
               /* webpackChunkName: 'router-AfterSubmitForm' */ "@/pages/seller/AfterSubmitForm"
@@ -128,19 +130,19 @@ export default new Router({
     ...tosRoutes,
     {
       path: "/tos/user/privacy",
-      redirect: "/tos/user_privacy"
+      redirect: "/tos/user_privacy/"
     },
     {
       path: "/tos/user/service",
-      redirect: "/tos/user_service"
+      redirect: "/tos/user_service/"
     },
     {
       path: "/tos/ceo/privacy",
-      redirect: "/tos/ceo_privacy"
+      redirect: "/tos/ceo_privacy/"
     },
     {
       path: "/tos/ceo/service",
-      redirect: "/tos/ceo_service"
+      redirect: "/tos/ceo_service/"
     },
 
     // appstore download link

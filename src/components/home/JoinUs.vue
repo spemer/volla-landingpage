@@ -11,9 +11,6 @@
           title="이메일 주소를 복사하려면 클릭하세요"
           @click="copyToast(mailTo, '이메일 주소가 복사되었습니다')"
         ) 이메일 주소 복사하기
-          //- font-awesome-icon.far.fa-copy(
-          //-   icon="copy"
-          //- )
 
       div.global__cta
         a.global__cta--link(
@@ -34,11 +31,6 @@
 <script>
 import { globalVar } from "@/globalVar";
 import { copyToast } from "@/mixins/copyToast";
-
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { faCopy } from '@fortawesome/free-solid-svg-icons/faCopy'
-
-// library.add(faCopy)
 
 export default {
   name: "joinus",

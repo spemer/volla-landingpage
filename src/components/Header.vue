@@ -25,8 +25,12 @@
 </template>
 
 <script>
+import Vue from "vue";
 import { mapState } from "vuex";
 import { globalVar } from "@/globalVar";
+
+import VueScrollTo from "vue-scrollto";
+Vue.use(VueScrollTo);
 
 export default {
   name: "header-el",

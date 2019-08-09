@@ -1,5 +1,7 @@
 <template lang="pug">
-  div#hero
+  div#hero(
+    :style="{ backgroundImage: backgroundImage }"
+  )
     div.hero__dim
       div.container
         div.hero__text.center
@@ -21,22 +23,21 @@
 </template>
 
 <script>
-const DownloadBtn = () =>
-  import(
-    /* webpackChunkName: 'components/misc/DownloadBtn' */ "@/components/misc/DownloadBtn"
-  );
-
 import { globalVar } from "@/globalVar";
 
 export default {
   name: "hero",
 
   data: () => ({
-    serviceEn: globalVar.serviceEn
+    serviceEn: globalVar.serviceEn,
+    backgroundImage: `url(${require("@/assets/dist/hero.png")})`
   }),
 
   components: {
-    DownloadBtn
+    DownloadBtn: () =>
+      import(
+        /* webpackChunkName: 'components/misc/DownloadBtn' */ "@/components/misc/DownloadBtn"
+      )
   }
 };
 </script>
