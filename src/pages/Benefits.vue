@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#microsite
+  div#benefits
     Hero
     VideoEmbed.section__each
     StatsList.section__each
@@ -13,7 +13,7 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "Microsite",
+  name: "benefits",
 
   metaInfo: {
     title: `${globalVar.taglineSeller}`,
@@ -39,11 +39,11 @@ export default {
       ),
     Benefits: () =>
       import(
-        /* webpackChunkName: 'components/seller/Benefits' */ "@/components/seller/Benefits"
+        /* webpackChunkName: 'components/seller/BenefitsComp' */ "@/components/seller/BenefitsComp"
       ),
     Benefits2: () =>
       import(
-        /* webpackChunkName: 'components/seller/Benefits2' */ "@/components/seller/Benefits2"
+        /* webpackChunkName: 'components/seller/BenefitsComp2' */ "@/components/seller/BenefitsComp2"
       ),
     JoinUs: () =>
       import(

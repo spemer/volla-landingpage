@@ -6,6 +6,7 @@
         :key="key"
         target="_blank"
         :href="value.href"
+        rel="noopener noreferrer"
         :title="key + ' ' + value.title + '에서 다운받기'"
       )
         img.download__badge--each(
@@ -18,6 +19,7 @@
       a.download__badge--link(
         target="_blank"
         :href="badgesMobile.href"
+        rel="noopener noreferrer"
         :title="badgesMobile.title + '에서 다운받기'"
       )
         img.download__badge--each(
@@ -32,8 +34,6 @@ import { userAgent } from "@/mixins/userAgent";
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "DownloadBtn",
-
   data: () => ({
     serviceEn: globalVar.serviceEn,
     badges: {

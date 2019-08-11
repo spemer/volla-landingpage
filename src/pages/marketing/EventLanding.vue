@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "EventLanding",
+  name: "eventLanding",
 
   components: {
     JoinUs: () =>

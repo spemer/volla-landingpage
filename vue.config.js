@@ -15,7 +15,7 @@ module.exports = {
         staticDir: path.join(__dirname, "dist"),
         routes: [
           "/",
-          "/seller/",
+          "/benefits/",
           "/sellerform/",
           "/sellerform-app/",
           "/submit/",

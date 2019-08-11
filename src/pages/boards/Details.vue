@@ -18,7 +18,7 @@ import { dateFormatting } from "@/mixins/dateFormatting";
 import { applyBorder } from "@/mixins/applyBorder";
 
 export default {
-  name: "Markdown",
+  name: "details",
 
   data: () => ({
     title: null
@@ -54,7 +54,10 @@ export default {
     // set _blank every anchor tags
     [...document.querySelectorAll("section a")].forEach(anchor => {
       let getAnchorTarget = anchor.getAttribute("target");
-      return !getAnchorTarget && anchor.setAttribute("target", "_blank");
+      if (!getAnchorTarget) {
+        anchor.setAttribute("target", "_blank");
+        anchor.setAttribute("rel", "noopener noreferrer");
+      }
     });
   }
 };

@@ -20,7 +20,7 @@ import { globalVar } from "@/globalVar";
 import { userAgent } from "@/mixins/userAgent";
 
 export default {
-  name: "RedirectDl",
+  name: "redirect_dl",
 
   mixins: [userAgent],
 

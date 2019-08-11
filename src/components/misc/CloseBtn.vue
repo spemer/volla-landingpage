@@ -10,8 +10,6 @@
 
 <script>
 export default {
-  name: "closebtn",
-
   methods: {
     closeWindow: () => {
       window.close();

@@ -33,8 +33,6 @@ import { globalVar } from "@/globalVar";
 import { copyToast } from "@/mixins/copyToast";
 
 export default {
-  name: "joinus",
-
   data: () => ({
     stringUpper: "",
     stringBelow: "",
@@ -51,7 +49,7 @@ export default {
       this.stringBelow =
         "셀러 입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.";
       this.sellerformLink = "/sellerform/";
-    } else if (this.$route.path === "/seller/") {
+    } else if (this.$route.path === "/benefits/") {
       this.stringUpper = "라이브 방송으로 만나는 오프라인 쇼핑,";
       this.stringBelow = `${this.serviceKo}에 지금 바로 입점하세요!`;
       this.sellerformLink = "/sellerform/";

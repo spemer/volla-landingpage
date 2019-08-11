@@ -7,14 +7,6 @@ import App from "@/App.vue";
 import store from "@/store";
 import router from "@/routes";
 
-import VueProgressBar from "vue-progressbar";
-Vue.use(VueProgressBar, {
-  color: "rgb(255, 121, 172)",
-  failedColor: "rgb(255, 121, 172)",
-  height: "6px"
-});
-
-import "vue2-toast/lib/toast.css";
 import Toast from "vue2-toast";
 Vue.use(Toast, {
   type: "bottom",

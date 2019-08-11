@@ -50,7 +50,7 @@ import { mapState, mapMutations } from "vuex";
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "AfterSubmitForm",
+  name: "afterSubmitForm",
 
   data: () => ({
     serviceKo: globalVar.serviceKo

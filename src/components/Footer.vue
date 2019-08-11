@@ -35,6 +35,7 @@
           :key="key"
           target="_blank"
           :href="value[0]"
+          rel="noopener noreferrer"
           :title="serviceKo + ' ' + value[2] + '(새 창)'"
         )
           font-awesome-icon.footer__sns--logo.fab(
@@ -61,8 +62,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 export default {
-  name: "footer-el",
-
   data: () => ({
     mailTo: globalVar.mailTo,
     serviceKo: globalVar.serviceKo,

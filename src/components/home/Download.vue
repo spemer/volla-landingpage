@@ -18,8 +18,6 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "download",
-
   data: () => ({
     serviceEn: globalVar.serviceEn,
     serviceKo: globalVar.serviceKo

@@ -66,6 +66,10 @@ export default new Router({
       path: "/seller-form",
       redirect: "/sellerform/"
     },
+    {
+      path: "/seller",
+      redirect: "/benefits/"
+    },
 
     // app
     {
@@ -80,18 +84,15 @@ export default new Router({
             import(/* webpackChunkName: 'router-HomeView' */ "@/pages/HomeView")
         },
         {
-          path: "/seller/",
-          name: "microsite",
+          path: "/benefits/",
+          name: "benefits",
           component: () =>
-            import(
-              /* webpackChunkName: 'router-Microsite' */ "@/pages/Microsite"
-            )
+            import(/* webpackChunkName: 'router-Benefits' */ "@/pages/Benefits")
         },
         {
           path: "/sellerform/",
           alias: "/sellerform-app/",
           name: "sellerForm",
-          meta: { title: "셀러 입점신청" },
           component: () =>
             import(
               /* webpackChunkName: 'router-SellerForm' */ "@/pages/seller/SellerForm"
@@ -101,7 +102,6 @@ export default new Router({
           path: "/submit/",
           alias: "/submit-app/",
           name: "afterSubmitForm",
-          meta: { title: "입점신청 완료" },
           component: () =>
             import(
               /* webpackChunkName: 'router-AfterSubmitForm' */ "@/pages/seller/AfterSubmitForm"
@@ -143,6 +143,21 @@ export default new Router({
     {
       path: "/tos/ceo/service",
       redirect: "/tos/ceo_service"
+    },
+
+    // seller special pages
+    {
+      path: "/sellers",
+      children: [
+        {
+          path: "/sumin/",
+          name: "sellers_sumin",
+          components: () =>
+            import(
+              /* webpackChunkName: 'router-sellers-sumin' */ "@/pages/marketing/sellers/Sellers-Sumin"
+            )
+        }
+      ]
     },
 
     // appstore download link

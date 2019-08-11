@@ -8,8 +8,6 @@
 
 <script>
 export default {
-  name: "Home",
-
   components: {
     Header: () =>
       import(/* webpackChunkName: 'components/Header' */ "@/components/Header"),

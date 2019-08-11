@@ -9,7 +9,7 @@ import TOS_ENTRIES from "@/statics/data/tos.json";
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "TosDetails",
+  name: "tosDetails",
 
   data: () => ({
     title: null

@@ -105,7 +105,7 @@ import { globalVar } from "@/globalVar";
 import { applyBorder } from "@/mixins/applyBorder";
 
 export default {
-  name: "SellerForm",
+  name: "sellerForm",
 
   data: () => ({
     serviceKo: globalVar.serviceKo,
@@ -220,7 +220,6 @@ export default {
         this.sellerForm_CategoryValue.value &&
         this.marketing.val_1
       ) {
-        this.$Progress.start();
         this.$toast("요청중입니다. 잠시만 기다려주세요!");
         const base = process.env.VUE_APP_BASE_URL;
         axios
@@ -243,7 +242,6 @@ export default {
             }
           )
           .then(() => {
-            this.$Progress.finish();
             this.SET_TOKEN_BOOL(true);
             this.$toast("입점 신청이 완료되었습니다.");
             if (this.isApp) {
@@ -253,7 +251,6 @@ export default {
             }
           })
           .catch(error => {
-            this.$Progress.fail();
             this.SET_TOKEN_BOOL(false);
             alert(`오류입니다. 다시 시도해주세요!\n${error}`);
           });

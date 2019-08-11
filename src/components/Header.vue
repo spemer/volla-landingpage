@@ -33,12 +33,9 @@ import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
 
 export default {
-  name: "header-el",
-
   data: () => ({
     href: "",
     text: "",
-    tagline: globalVar.tagline,
     serviceEn: globalVar.serviceEn
   }),
 
@@ -49,14 +46,14 @@ export default {
   watch: {
     $route() {
       return this.$route.path === "/"
-        ? ((this.href = "/seller/"), (this.text = "입점소개"))
+        ? ((this.href = "/benefits/"), (this.text = "입점소개"))
         : ((this.href = "/"), (this.text = "메인으로"));
     }
   },
 
   mounted() {
     return this.$route.path === "/"
-      ? ((this.href = "/seller/"), (this.text = "입점소개"))
+      ? ((this.href = "/benefits/"), (this.text = "입점소개"))
       : ((this.href = "/"), (this.text = "메인으로"));
   }
 };

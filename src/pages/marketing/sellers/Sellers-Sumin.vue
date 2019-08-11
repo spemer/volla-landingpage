@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#seller
+  div#sellers
 </template>
 
 <script>

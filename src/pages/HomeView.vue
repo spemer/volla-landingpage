@@ -11,7 +11,7 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "HomeView",
+  name: "homeView",
 
   metaInfo: {
     title: globalVar.serviceEn,

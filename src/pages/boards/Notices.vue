@@ -21,7 +21,7 @@ import NOTICES_ENTRIES from "@/statics/data/notices.json";
 import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
-  name: "Notices",
+  name: "notices",
 
   metaInfo: {
     title: `공지사항`,

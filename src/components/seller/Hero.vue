@@ -20,8 +20,6 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "hero",
-
   data: () => ({
     serviceEn: globalVar.serviceEn,
     backgroundImage: `url(${require("@/assets/dist/hero_2.png")})`

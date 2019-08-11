@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#benefits.benefits2
+  div#benefitsComp.benefits2
     div.container
       h1.service__title.section__title.subtitle
         | 또한 이와 더불어, 아래와 같은
@@ -20,8 +20,6 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "benefits",
-
   data: () => ({
     serviceKo: globalVar.serviceKo,
     benefitsBottom: {

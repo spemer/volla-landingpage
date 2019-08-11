@@ -1,6 +1,6 @@
 <template lang="pug">
   div#plusfriend-addfriend-button(
-    v-if="this.$route.path === '/' || this.$route.path === '/seller/' || this.$route.path === '/sellerform/'"
+    v-if="this.$route.path === '/' || this.$route.path === '/benefits/' || this.$route.path === '/sellerform/'"
   )
     img(
       v-if="onReady"
@@ -13,8 +13,6 @@
 
 <script>
 export default {
-  name: "kakao-btn",
-
   data: () => ({
     onReady: false,
     isInitialized: false

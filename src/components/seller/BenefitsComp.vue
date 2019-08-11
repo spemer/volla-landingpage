@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#benefits
+  div#benefitsComp
     div.container
       h1.service__title.section__title
         | {{ serviceKo }}를 선택해야 하는 이유는 당연합니다
@@ -27,8 +27,6 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "benefits",
-
   data: () => ({
     volla_pdf: globalVar.volla_pdf,
     serviceKo: globalVar.serviceKo,

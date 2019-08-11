@@ -32,8 +32,6 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
 library.add(faYoutube);
 
 export default {
-  name: "videoEmbed",
-
   data: () => ({
     onReady: false,
     videoChannel: "춤추는 변호사",

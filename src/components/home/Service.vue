@@ -18,8 +18,6 @@
 import { globalVar } from "@/globalVar";
 
 export default {
-  name: "service",
-
   data: () => ({
     serviceList: {
       serviceList1: {
