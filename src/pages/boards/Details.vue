@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import NOTICE_ENTRIES from "@/statics/data/notice.json";
+import NOTICES_ENTRIES from "@/statics/data/notices.json";
 import { dateFormatting } from "@/mixins/dateFormatting";
 import { applyBorder } from "@/mixins/applyBorder";
 
@@ -27,7 +27,7 @@ export default {
   mixins: [dateFormatting, applyBorder],
 
   computed: {
-    noticeEntries: () => NOTICE_ENTRIES
+    noticesEntries: () => NOTICES_ENTRIES
   },
 
   metaInfo() {
@@ -39,7 +39,7 @@ export default {
 
   mounted() {
     // append date info
-    let arr = this.noticeEntries["notice"];
+    let arr = this.noticesEntries["notices"];
 
     let idx = arr.findIndex(item => {
       return item.id === this.$route.params.id;

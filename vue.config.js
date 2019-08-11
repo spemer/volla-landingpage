@@ -21,11 +21,7 @@ module.exports = {
           "/submit/",
           "/submit-app/",
           "/notices/",
-          "/event_landing/",
-          "/tos/ceo_privacy/",
-          "/tos/ceo_service/",
-          "/tos/user_privacy/",
-          "/tos/user_service/"
+          "/event_landing/"
         ],
         renderer: new PuppeteerRenderer(),
         minify: {

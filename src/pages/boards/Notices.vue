@@ -2,22 +2,22 @@
   div#notices
     div.container
       div.notices__wrapper(
-        v-for="(section, index) in Object.keys(noticeEntries)"
+        v-for="(section, index) in Object.keys(noticesEntries)"
         :key="index"
       )
         div.notices__list(
-          v-for="entry in noticeEntries[section]"
+          v-for="entry in noticesEntries[section]"
           :key="entry.id"
         )
           div.notices__list--each
             h3.notices__list--title(
-              @click="goDetails(entry.id)"
+              @click="goDetails(entry.id, entry.ymd)"
             ) {{ entry.title }}
               span.notices__list--date {{ dateFormatting(entry.ymd) }}
 </template>
 
 <script>
-import NOTICE_ENTRIES from "@/statics/data/notice.json";
+import NOTICES_ENTRIES from "@/statics/data/notices.json";
 import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
@@ -31,14 +31,15 @@ export default {
   mixins: [dateFormatting],
 
   computed: {
-    noticeEntries: () => NOTICE_ENTRIES
+    noticesEntries: () => NOTICES_ENTRIES
   },
 
   methods: {
-    goDetails(id) {
+    goDetails(id, ymd) {
       this.$router.push({
-        name: id,
+        name: `${id}`,
         params: {
+          ymd: ymd,
           id: id
         }
       });

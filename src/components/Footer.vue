@@ -15,7 +15,7 @@
             v-for="entry in tosEntries[section]"
             :key="entry.id"
             :title="entry.title"
-            :to="{ path: `/tos/${entry.id}/`, name: entry.id, params: {id: entry.id} }"
+            :to="{ name: entry.id, params: {id: entry.id} }"
           ) {{ entry.title }}
 
         p.footer__copyright--info

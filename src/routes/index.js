@@ -8,14 +8,14 @@ Vue.use(VueMeta);
 
 const requireToken = (to, from, next) => {
   store.state.tokenState && next();
-  next("/sellerform");
+  next("/sellerform/");
 };
 
 // NoticeEntries
-import NoticeEntries from "@/statics/data/notice.json";
-const noticeRoutes = Object.keys(NoticeEntries).map(section => {
-  const children = NoticeEntries[section].map(child => ({
-    path: `${child.ymd}/:id`,
+import NoticesEntries from "@/statics/data/notices.json";
+const noticesRoutes = Object.keys(NoticesEntries).map(section => {
+  const children = NoticesEntries[section].map(child => ({
+    path: `${child.ymd}/${child.id}`,
     name: `${child.id}`,
     component: () =>
       import(
@@ -23,8 +23,8 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
       )
   }));
   return {
-    path: `/${section}/`,
-    name: `${section}`,
+    path: `${section}`,
+    name: `details`,
     component: () =>
       import(/* webpackChunkName: 'router-Details' */ "@/pages/boards/Details"),
     children
@@ -35,7 +35,7 @@ const noticeRoutes = Object.keys(NoticeEntries).map(section => {
 import TosEntries from "@/statics/data/tos.json";
 const tosRoutes = Object.keys(TosEntries).map(section => {
   const children = TosEntries[section].map(child => ({
-    path: "/tos/:id/",
+    path: "/tos/:id",
     name: child.id,
     component: () =>
       import(
@@ -43,7 +43,7 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
       )
   }));
   return {
-    path: "/tos/:id/",
+    path: "/tos/:id",
     name: section,
     component: () =>
       import(
@@ -112,7 +112,7 @@ export default new Router({
     },
 
     // mobile notice lists
-    ...noticeRoutes,
+    ...noticesRoutes,
     {
       path: "/notice",
       redirect: "/notices/"
@@ -130,19 +130,19 @@ export default new Router({
     ...tosRoutes,
     {
       path: "/tos/user/privacy",
-      redirect: "/tos/user_privacy/"
+      redirect: "/tos/user_privacy"
     },
     {
       path: "/tos/user/service",
-      redirect: "/tos/user_service/"
+      redirect: "/tos/user_service"
     },
     {
       path: "/tos/ceo/privacy",
-      redirect: "/tos/ceo_privacy/"
+      redirect: "/tos/ceo_privacy"
     },
     {
       path: "/tos/ceo/service",
-      redirect: "/tos/ceo_service/"
+      redirect: "/tos/ceo_service"
     },
 
     // appstore download link
@@ -159,7 +159,7 @@ export default new Router({
       name: "eventLanding",
       component: () =>
         import(
-          /* webpackChunkName: 'router-EventLanding' */ "@/pages/EventLanding"
+          /* webpackChunkName: 'router-EventLanding' */ "@/pages/marketing/EventLanding"
         )
     }
   ],
