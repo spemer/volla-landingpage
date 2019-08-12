@@ -250,15 +250,9 @@ export default {
           .then(() => {
             this.SET_TOKEN_BOOL(true);
             this.$toast("입점 신청이 완료되었습니다.");
-            if (
-              this.$route.path === "/sellerform-app/" ||
-              this.$route.path === "/sellerform-app"
-            ) {
+            if (this.$route.path === "/sellerform-app/") {
               return this.$router.replace("/submit-app/");
-            } else if (
-              this.$route.path === "/sellerform/" ||
-              this.$route.path === "/sellerform"
-            ) {
+            } else if (this.$route.path === "/sellerform/") {
               return this.$router.replace("/submit/");
             }
           })

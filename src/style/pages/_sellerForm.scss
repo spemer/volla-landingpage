@@ -295,7 +295,7 @@ $mobile-width: 288px;
 
   &.app {
     &:not(.submit) {
-      padding-top: 0;
+      padding-top: $grid4x;
       padding-bottom: $grid24x;
       @include user-select();
 
