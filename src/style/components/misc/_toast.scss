@@ -4,7 +4,6 @@
   left: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  max-width: 80%;
   height: $grid12x;
   padding: $grid2x $grid4x;
   transform: translateX(-50%);
@@ -13,11 +12,13 @@
   z-index: 9999;
   color: #fff;
   background: $black78;
-  animation: show-toast .25s;
   -webkit-animation: show-toast .25s;
+          animation: show-toast .25s;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: calc(100% - #{$grid8x});
+  max-width: calc(100% - #{$grid8x});
   @include font-size(12px);
   @include border-radius($grid16x !important);
   @include box-shadow($grid, $grid2x, $black16);

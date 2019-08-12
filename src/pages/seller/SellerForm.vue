@@ -108,6 +108,7 @@ export default {
   name: "sellerForm",
 
   data: () => ({
+    pageTitle: globalVar.sellerFormTitle,
     serviceKo: globalVar.serviceKo,
     sellerForm: globalVar.sellerForm,
     sellerCondition: globalVar.sellerCondition,
@@ -129,13 +130,18 @@ export default {
 
   metaInfo() {
     return {
-      title: `${globalVar.sellerFormTitle}`,
+      title: `${this.pageTitle}`,
       titleTemplate: `%s`
     };
   },
 
   mounted() {
-    if (this.$route.path === "/sellerform-app/") {
+    this.pageTitle = globalVar.sellerFormTitle;
+
+    if (
+      this.$route.path === "/sellerform-app/" ||
+      this.$route.path === "/sellerform-app"
+    ) {
       this.SET_CLASS_APP(true);
     } else {
       this.SET_CLASS_APP(false);
@@ -244,9 +250,15 @@ export default {
           .then(() => {
             this.SET_TOKEN_BOOL(true);
             this.$toast("입점 신청이 완료되었습니다.");
-            if (this.isApp) {
+            if (
+              this.$route.path === "/sellerform-app/" ||
+              this.$route.path === "/sellerform-app"
+            ) {
               return this.$router.replace("/submit-app/");
-            } else {
+            } else if (
+              this.$route.path === "/sellerform/" ||
+              this.$route.path === "/sellerform"
+            ) {
               return this.$router.replace("/submit/");
             }
           })

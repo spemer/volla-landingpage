@@ -7,6 +7,7 @@
       alt="카카오톡 문의하기"
       title="카카오톡 문의하기"
       @click="plusFriendChat"
+      rel="noopener noreferrer"
       src="@/assets/dist/kakao.svg"
     )
 </template>

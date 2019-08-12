@@ -17,7 +17,7 @@
             target="_blank"
             :title="`${videoChannel} 님 유튜브 채널 바로가기(새 창)`"
           ) &nbsp;{{ videoChannel }}&nbsp;
-            font-awesome-icon.videoEmbed__from--icon.fab.fa-youtube(
+            font-awesome-icon.videoEmbed__from--icon.fab(
               :icon="['fab', 'youtube']"
             )
 </template>
