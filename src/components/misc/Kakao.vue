@@ -31,7 +31,7 @@ export default {
   methods: {
     plusFriendChat: () => {
       window.Kakao.PlusFriend.chat({
-        plusFriendId: process.env.VUE_APP_KAKAO_URL
+        plusFriendId: "_xhYAnj"
       });
     }
   },
@@ -77,11 +77,10 @@ export default {
       cursor: pointer;
       border-radius: $grid8x;
       transition: all 0.25s ease;
-      @include box-shadow($grid3x, $grid4x, $black08);
 
       &:hover {
         @include transform(scale(1.05));
-        @include box-shadow($grid3x, $grid4x, $black16);
+        @include box-shadow($grid2x, $grid3x, $black16);
       }
     }
   }

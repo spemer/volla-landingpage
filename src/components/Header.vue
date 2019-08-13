@@ -1,6 +1,6 @@
 <template lang="pug">
   div#header(
-    v-if="!isApp"
+    v-if="!this.$store.state.isApp"
   )
     div.container
       div.header_left(
@@ -26,9 +26,7 @@
 
 <script>
 import Vue from "vue";
-import { mapState } from "vuex";
 import { globalVar } from "@/globalVar";
-import { headerText } from "@/mixins/headerText";
 
 import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
@@ -40,11 +38,19 @@ export default {
     serviceEn: globalVar.serviceEn
   }),
 
-  computed: {
-    ...mapState(["isApp"])
+  watch: {
+    $route() {
+      return this.$route.path === "/"
+        ? ((this.href = "/benefits/"), (this.text = "입점소개"))
+        : ((this.href = "/"), (this.text = "메인으로"));
+    }
   },
 
-  mixins: [headerText]
+  mounted() {
+    return this.$route.path === "/"
+      ? ((this.href = "/benefits/"), (this.text = "입점소개"))
+      : ((this.href = "/"), (this.text = "메인으로"));
+  }
 };
 </script>
 

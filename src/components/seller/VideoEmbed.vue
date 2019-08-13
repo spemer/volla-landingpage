@@ -13,29 +13,23 @@
       p.videoEmbed_from
         span.videoEmbed_from-text 영상출처:
           a.videoEmbed_from-link(
-            :href="videoLink"
             target="_blank"
+            :href="videoLink"
+            rel="noopener noreferrer"
             :title="`${videoChannel} 님 유튜브 채널 바로가기(새 창)`"
           ) &nbsp;{{ videoChannel }}&nbsp;
-            font-awesome-icon.videoEmbed_from-icon.fab(
-              :icon="['fab', 'youtube']"
-            )
 </template>
 
 <script>
 import Vue from "vue";
-import VueYoutube from "vue-youtube";
-Vue.use(VueYoutube);
-
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
-library.add(faYoutube);
+import VueYouTubeEmbed from "vue-youtube-embed";
+Vue.use(VueYouTubeEmbed);
 
 export default {
   data: () => ({
     onReady: false,
     videoChannel: "춤추는 변호사",
-    videoId: process.env.VUE_APP_YT_ID,
+    videoId: "_62t0IooHYw",
     videoLink: "https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ"
   }),
 

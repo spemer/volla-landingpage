@@ -1,6 +1,6 @@
 <template lang="pug">
   div#footer(
-    v-if="!isApp"
+    v-if="!this.$store.state.isApp"
   )
     div.container
       div.footer_copyright
@@ -46,7 +46,6 @@
 
 <script>
 import Vue from "vue";
-import { mapState } from "vuex";
 import TOS_ENTRIES from "@/statics/data/tos.json";
 import { globalVar } from "@/globalVar";
 import { copyToast } from "@/mixins/copyToast";
@@ -74,12 +73,6 @@ export default {
       대표전화: globalVar.callTo,
       주소: globalVar.companyAdr
     },
-    tosList: {
-      userPrivacyPageTitle: [globalVar.userPrivacyPageTitle, "user/privacy"],
-      userServicePageTitle: [globalVar.userServicePageTitle, "user/service"],
-      ceoPrivacyPageTitle: [globalVar.ceoPrivacyPageTitle, "ceo/privacy"],
-      ceoServicePageTitle: [globalVar.ceoServicePageTitle, "ceo/service"]
-    },
     snsList: {
       facebook: [globalVar.facebookUrl, "facebook-square", "페이스북"],
       instagram: [globalVar.instagramUrl, "instagram", "인스타그램"],
@@ -91,7 +84,6 @@ export default {
   mixins: [copyToast],
 
   computed: {
-    ...mapState(["isApp"]),
     tosEntries: () => TOS_ENTRIES
   }
 };

@@ -88,9 +88,7 @@
           )
           span.checkmark
 
-        div.sellerform_form-wrapper(
-          :class="{ 'apply_border': !isBottom && isApp }"
-        )
+        div.sellerform_form-wrapper
           div.sellerform_form-box
             button.sellerform_form-submit(
               name="sellerform_form"
@@ -102,7 +100,6 @@
 import axios from "axios";
 import { mapState, mapMutations } from "vuex";
 import { globalVar } from "@/globalVar";
-import { applyBorder } from "@/mixins/applyBorder";
 
 export default {
   name: "sellerForm",
@@ -125,8 +122,6 @@ export default {
       }
     }
   }),
-
-  mixins: [applyBorder],
 
   metaInfo() {
     return {

@@ -11,7 +11,7 @@
           v-for="(value, key, index) in statsList"
           :key="key"
         )
-          span.service_card-title {{ value.value }}{{ value.suffix }}
+          span.service_card-title {{ value.value }}
           p.service_card-text.section_subtitle {{ value.title }}
 </template>
 
@@ -23,18 +23,15 @@ export default {
     serviceKo: globalVar.serviceKo,
     statsList: {
       first: {
-        value: 66,
-        suffix: "%",
+        value: "66%",
         title: "모바일 점유율"
       },
       second: {
-        value: 5.15,
-        suffix: "배",
+        value: "5.15배",
         title: "평균 구매 전환율 (온라인 쇼핑 대비)"
       },
       third: {
-        value: 4.9,
-        suffix: "배",
+        value: "4.9배",
         title: "평균 구매량 (온라인 쇼핑 대비)"
       }
     }

@@ -4,8 +4,6 @@ const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
 
-require("es6-promise").polyfill();
-
 module.exports = {
   configureWebpack: {
     resolve: {

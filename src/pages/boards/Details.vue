@@ -1,9 +1,7 @@
 <template lang="pug">
   div#markdown
     router-view.container
-    div#closebtn(
-      :class="{ 'apply_border': !isBottom }"
-    )
+    div#closebtn
       router-link.global_cta(
         to="/notices/"
       )
@@ -15,7 +13,6 @@
 <script>
 import NOTICES_ENTRIES from "@/statics/data/notices.json";
 import { dateFormatting } from "@/mixins/dateFormatting";
-import { applyBorder } from "@/mixins/applyBorder";
 
 export default {
   name: "details",
@@ -24,7 +21,7 @@ export default {
     title: null
   }),
 
-  mixins: [dateFormatting, applyBorder],
+  mixins: [dateFormatting],
 
   computed: {
     noticesEntries: () => NOTICES_ENTRIES
@@ -100,10 +97,6 @@ export default {
     // iPhone X safearea
     @supports (padding-bottom: env(safe-area-inset-bottom)) {
       padding-bottom: calc(env(safe-area-inset-bottom)) !important;
-    }
-
-    &.apply_border {
-      border-top: 1px solid $texteee;
     }
 
     .global_cta-btn {
