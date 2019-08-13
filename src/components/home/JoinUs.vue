@@ -1,29 +1,29 @@
 <template lang="pug">
   div#joinus
     div.container
-      h1.joinus__title.section__title {{ serviceKo }}에 입점하세요
-      p.section__subtitle
+      h1.joinus_title.section_title {{ serviceKo }}에 입점하세요
+      p.section_subtitle
         | {{ stringUpper }}
         br
         | {{ stringBelow }}
         br
-        span.joinus__title--copyEmail(
+        span.joinus_title-copyEmail(
           title="이메일 주소를 복사하려면 클릭하세요"
           @click="copyToast(mailTo, '이메일 주소가 복사되었습니다')"
         ) 이메일 주소 복사하기
 
-      div.global__cta
-        a.global__cta--link(
+      div.global_cta
+        a.global_cta-link(
           :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
         )
-          button.global__cta--btn.mailto(
+          button.global_cta-btn.mailto(
             title="메일 앱 열기(새 창)"
           ) 메일로 문의하기
 
-        router-link.global__cta--link(
+        router-link.global_cta-link(
           :to="sellerformLink"
         )
-          button.global__cta--btn.form(
+          button.global_cta-btn.form(
             title="셀러입점신청"
           ) 셀러입점신청
 </template>
@@ -89,10 +89,10 @@ export default {
   }
 
   .container {
-    .section__subtitle {
+    .section_subtitle {
       margin-bottom: 0;
 
-      .joinus__title--copyEmail {
+      .joinus_title-copyEmail {
         cursor: pointer;
         font-weight: 400;
         color: $brand-pink;
@@ -109,11 +109,11 @@ export default {
       }
     }
 
-    .global__cta {
+    .global_cta {
       width: 100%;
       display: inline-block;
 
-      .global__cta--btn {
+      .global_cta-btn {
         width: $grid40x;
 
         &.form {

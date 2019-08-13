@@ -1,19 +1,19 @@
 <template lang="pug">
   div#notices
     div.container
-      div.notices__wrapper(
+      div.notices_wrapper(
         v-for="(section, index) in Object.keys(noticesEntries)"
         :key="index"
       )
-        div.notices__list(
+        div.notices_list(
           v-for="entry in noticesEntries[section]"
           :key="entry.id"
         )
-          div.notices__list--each
-            h3.notices__list--title(
+          div.notices_list-each
+            h3.notices_list-title(
               @click="goDetails(entry.id, entry.ymd)"
             ) {{ entry.title }}
-              span.notices__list--date {{ dateFormatting(entry.ymd) }}
+              span.notices_list-date {{ dateFormatting(entry.ymd) }}
 </template>
 
 <script>
@@ -54,20 +54,20 @@ export default {
   padding-top: $grid2x;
   max-width: 480px !important;
 
-  .notices__wrapper {
+  .notices_wrapper {
     max-width: 480px !important;
 
-    .notices__list {
+    .notices_list {
       cursor: pointer;
 
-      .notices__list--each {
+      .notices_list-each {
         border-bottom: 1px solid $texteee;
 
-        .notices__list--title {
+        .notices_list-title {
           @include font-size($grid4x);
         }
 
-        .notices__list--date {
+        .notices_list-date {
           color: $black54;
           font-weight: 400;
           @include font-size($grid3x);

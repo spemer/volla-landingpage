@@ -54,7 +54,7 @@ export default {
 
 <style lang="scss" scoped>
 #plusfriend-addfriend-button {
-  &:not(.contact__each) {
+  &:not(.contact_each) {
     @keyframes popup {
       from {
         opacity: 0;

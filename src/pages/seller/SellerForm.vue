@@ -3,21 +3,21 @@
     :class="{app: isApp}"
   )
     div.container
-      h1.sellerform__form--title {{ sellerForm }}
-      p.sellerform__form--subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
+      h1.sellerform_form-title {{ sellerForm }}
+      p.sellerform_form-subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
         span 는 필수 입력 항목입니다.
 
-      form.sellerform__form--form(
-        name="sellerform__form"
+      form.sellerform_form-form(
+        name="sellerform_form"
         @submit.prevent="sendPost"
       )
-        p.sellerform__form--title(
+        p.sellerform_form-title(
           v-for="list in sellerForm_List"
         ) {{ list.text }}
           span(
             :required="list.required"
           )
-          input.sellerform__form--input(
+          input.sellerform_form-input(
             :type="list.type"
             :name="list.name"
             v-model.trim="list.value"
@@ -27,16 +27,16 @@
             :maxlength="list.maxlength"
             :placeholder="list.placeholder"
           )
-          span.sellerform__form--helpText {{ list.helpText }}
+          span.sellerform_form-helpText {{ list.helpText }}
 
-        p.sellerform__form--title.host {{ sellerForm_Category[0].text }}
+        p.sellerform_form-title.host {{ sellerForm_Category[0].text }}
           span(
             :required="sellerForm_Category[0].required"
           )
-            div.sellerform__form--div(
+            div.sellerform_form-div(
               v-for="category in sellerForm_Category"
             )
-              input.sellerform__form--input(
+              input.sellerform_form-input(
                 :id="category.id"
                 :type="category.type"
                 :name="category.name"
@@ -44,7 +44,7 @@
                 :required="category.required"
                 v-model="sellerForm_CategoryValue.value"
               )
-              label.sellerform__form--label(
+              label.sellerform_form-label(
                 :for="category.id"
                 :name="category.name"
                 :class="category.class"
@@ -52,22 +52,22 @@
                 v-model="sellerForm_CategoryValue.value"
               ) {{ category.buttonText }}
 
-        p.sellerform__form--title {{ sellerForm_Details.text }}
-          textarea.sellerform__form--input.textarea(
+        p.sellerform_form-title {{ sellerForm_Details.text }}
+          textarea.sellerform_form-input.textarea(
             :type="sellerForm_Details.text"
             :name="sellerForm_Details.name"
             v-model.trim="sellerForm_Details.value"
             :placeholder="sellerForm_Details.placeholder"
           )
 
-        p.sellerform__form--condition {{ sellerCondition }}
+        p.sellerform_form-condition {{ sellerCondition }}
 
-        div.sellerform__form--terms
-          p.sellerform__form--termsDetails(
+        div.sellerform_form-terms
+          p.sellerform_form-termsDetails(
             v-for="(value, key, index) in marketingTerms"
           ) {{ value.desc }}
 
-        label.sellerform__form--checkbox(
+        label.sellerform_form-checkbox(
           for="checkbox_1"
           style="font-weight: 700"
         ) {{ marketingTerms.personal.title }}
@@ -78,7 +78,7 @@
           )
           span.checkmark
 
-        label.sellerform__form--checkbox(
+        label.sellerform_form-checkbox(
           for="checkbox_2"
         ) {{ marketingTerms.marketing.title }}
           input(
@@ -88,12 +88,12 @@
           )
           span.checkmark
 
-        div.sellerform__form--wrapper(
+        div.sellerform_form-wrapper(
           :class="{ 'apply_border': !isBottom && isApp }"
         )
-          div.sellerform__form--box
-            button.sellerform__form--submit(
-              name="sellerform__form"
+          div.sellerform_form-box
+            button.sellerform_form-submit(
+              name="sellerform_form"
               @click="checkCategoryValue"
             ) 제출하기
 </template>
@@ -227,6 +227,7 @@ export default {
         this.marketing.val_1
       ) {
         this.$toast("요청중입니다. 잠시만 기다려주세요!");
+        this.$Progress.start();
         const base = process.env.VUE_APP_BASE_URL;
         axios
           .post(
@@ -250,6 +251,7 @@ export default {
           .then(() => {
             this.SET_TOKEN_BOOL(true);
             this.$toast("입점 신청이 완료되었습니다.");
+            this.$Progress.finish();
             if (this.$route.path === "/sellerform-app/") {
               return this.$router.replace("/submit-app/");
             } else if (this.$route.path === "/sellerform/") {
@@ -269,7 +271,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sellerform__form--wrapper {
+.sellerform_form-wrapper {
   &.apply_border {
     border-top: 1px solid $texteee;
   }

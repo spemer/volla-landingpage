@@ -1,9 +1,9 @@
 <template lang="pug">
   div#closebtn
-    a.global__cta--link(
+    a.global_cta-link(
       @click="closeWindow"
     )
-      button.global__cta--btn(
+      button.global_cta-btn(
         type="button"
       ) 창 닫기
 </template>

@@ -65,7 +65,7 @@ h1 {
     @include font-size($grid7x);
   }
 
-  &.section__title {
+  &.section_title {
     font-weight: 300;
     text-align: center;
     margin-bottom: $grid8x;
@@ -91,7 +91,7 @@ span {
     font-weight: 900;
   }
 
-  &.section__subtitle {
+  &.section_subtitle {
     text-align: center;
     margin-bottom: $grid8x;
     margin-top: -#{$grid4x};
@@ -177,7 +177,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   background-color: #fff !important;
   -webkit-box-shadow: 0 0 0 $grid24x #fff inset !important;
-  box-shadow: 0 0 0 $grid24x #fff inset !important;
+          box-shadow: 0 0 0 $grid24x #fff inset !important;
 }
 
 input:-webkit-autofill {

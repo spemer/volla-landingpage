@@ -1,16 +1,16 @@
 <template lang="pug">
   div#redirect
     div.container
-      div.redirect__wrapper
-        img.redirect__wrapper--img(
+      div.redirect_wrapper
+        img.redirect_wrapper-img(
           src="@/assets/dist/launcher.svg"
         )
-        p.redirect__wrapper--text {{ serviceKo }}
+        p.redirect_wrapper-text {{ serviceKo }}
 
-        router-link.global__cta(
+        router-link.global_cta(
           :to="'/'"
         )
-          button.global__cta--btn(
+          button.global_cta-btn(
             :title="website"
           ) {{ website }}
 </template>
@@ -57,9 +57,9 @@ export default {
       ios = globalVar.iosStore,
       unknown = globalVar.websiteUrl;
 
-    if (this.userAgent == "Android") {
+    if (this.userAgent === "Android") {
       window.location.href = android;
-    } else if (this.userAgent == "iOS") {
+    } else if (this.userAgent === "iOS") {
       window.location.href = ios;
     } else {
       alert("안드로이드, iOS 등의 모바일 운영체제에서만 다운로드 가능합니다.");
@@ -73,24 +73,24 @@ export default {
 #redirect {
   text-align: center;
 
-  .redirect__wrapper {
+  .redirect_wrapper {
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     @include transform(translate(-50%, -50%));
 
-    .redirect__wrapper--img {
+    .redirect_wrapper-img {
       display: block;
       margin: 0 auto;
       width: $grid16x;
     }
 
-    .redirect__wrapper--text {
+    .redirect_wrapper-text {
       margin-top: $grid2x;
     }
 
-    .global__cta {
+    .global_cta {
       display: block;
       margin-top: $grid32x;
     }

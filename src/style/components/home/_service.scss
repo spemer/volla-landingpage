@@ -9,19 +9,19 @@
   padding-top: $grid16x;
   padding-bottom: $grid12x;
 
-  .service__title {
+  .service_title {
     margin-bottom: $grid4x;
   }
 
-  .service__card {
+  .service_card {
     @include grid-layout(3, 100px, $grid16x);
 
     @media #{$pro2} {
       @include grid-layout(1, 100px, $grid4x);
     }
 
-    .service__card--each {
-      .section__subtitle {
+    .service_card-each {
+      .section_subtitle {
         @media #{$pro2} {
           padding: 0 $grid32x;
         }
@@ -35,7 +35,7 @@
         }
       }
 
-      .service__card--img {
+      .service_card-img {
 
         &.service {
           height: 480px;
@@ -49,8 +49,8 @@
         }
       }
 
-      .service__card--title,
-      .service__card--text {
+      .service_card-title,
+      .service_card-text {
         text-align: center;
         margin-top: $grid8x;
 
@@ -59,12 +59,12 @@
         }
       }
 
-      .service__card--title {
+      .service_card-title {
         font-weight: 500;
         margin: $grid4x 0 $grid6x;
       }
 
-      .service__card--text {
+      .service_card-text {
         margin: -#{$grid4x} 0 $grid6x 0;
       }
     }

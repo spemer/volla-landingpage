@@ -1,24 +1,24 @@
 <template lang="pug">
   div#benefitsComp
     div.container
-      h1.service__title.section__title
+      h1.service_title.section_title
         | {{ serviceKo }}를 선택해야 하는 이유는 당연합니다
-      div.service__card
-        div.service__card--each(
+      div.service_card
+        div.service_card-each(
           v-for="(value, key, index) in benefitsTop"
           :key="key"
         )
-          div.service__card--img.seller.seller1(
+          div.service_card-img.seller.seller1(
             :class="'img-' + index"
           )
-          p.service__card--text.section__subtitle.withcount {{ value }}
+          p.service_card-text.section_subtitle.withcount {{ value }}
 
-      div.global__cta
-        a.global__cta--link(
+      div.global_cta
+        a.global_cta-link(
           :href="volla_pdf"
           target="_blank"
         )
-          button.global__cta--btn(
+          button.global_cta-btn(
             :title="serviceKo + ' 입점소개서 다운로드(새 창)'"
           ) 입점소개서 받기
 </template>

@@ -5,15 +5,15 @@
   padding-bottom: $grid24x;
   border-top: 1px solid $texteee;
 
-  .section__title {
+  .section_title {
     margin-bottom: $grid8x;
   }
 
-  .global__cta {
+  .global_cta {
     margin-top: -#{$grid8x};
   }
 
-  .service__card {
+  .service_card {
     padding: 0 $grid4x $grid4x;
 
     @media #{$middle} {
@@ -24,8 +24,8 @@
       padding: 0 $grid8x $grid4x;
     }
 
-    .service__card--each {
-      .service__card--img {
+    .service_card-each {
+      .service_card-img {
         &.seller {
           width: 80px;
           height: 80px;
@@ -47,8 +47,8 @@
     }
   }
 
-  .service__card {
-    .service__card--text {
+  .service_card {
+    .service_card-text {
       padding: $grid4x $grid4x;
 
       @media #{$pablet} {

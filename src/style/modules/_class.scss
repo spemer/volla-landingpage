@@ -2,16 +2,13 @@
 @mixin box-shadow ($val:$grid2x, $val2:$grid4x, $color:$black08) {
   -webkit-box-shadow: 0 $val $val2 $color;
   -ms-box-shadow: 0 $val $val2 $color;
-  -o-box-shadow: 0 $val $val2 $color;
   box-shadow: 0 $val $val2 $color;
 }
 
 // drop-shadow
 @mixin drop-shadow ($val:0, $val2:$grid2x, $val3:$grid4x, $color:$black08) {
   -webkit-filter: drop-shadow($val $val2 $val3 $color);
-  -moz-filter: drop-shadow($val $val2 $val3 $color);
   -ms-filter: drop-shadow($val $val2 $val3 $color);
-  -o-filter: drop-shadow($val $val2 $val3 $color);
   filter: drop-shadow($val $val2 $val3 $color);
 }
 
@@ -25,15 +22,13 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  -o-user-select: none;
   user-select: none;
 }
 
 // transform
 @mixin transform ($val...) {
   -webkit-transform: $val;
-  -khtml-transform: $val;
-  transform: $val;
+          transform: $val;
 }
 
 // css grid layout
@@ -71,10 +66,10 @@
 }
 
 // global btn
-.global__cta {
+.global_cta {
   text-align: center;
 
-  .global__cta--btn {
+  .global_cta-btn {
     outline: none;
     width: $grid48x;
     cursor: pointer;

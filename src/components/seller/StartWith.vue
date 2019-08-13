@@ -1,24 +1,24 @@
 <template lang="pug">
   div#startWith
     div.container
-      h1.service__title.section__title
+      h1.service_title.section_title
         | {{ serviceKo }}의 시작을 함께하실 셀러분들을 모십니다
-        div.service__card--each
-        h3.service__card--title
+        div.service_card-each
+        h3.service_card-title
           | 누구나 스마트폰으로 손쉽게
           br
           | 라이브 커머스를 시작할 수 있습니다
 
-      div.service__card
-        div.service__card--each(
+      div.service_card
+        div.service_card-each(
         v-for="(value, key, index) in startWith"
         :key="key"
         )
-          div.service__card--img.seller(
+          div.service_card-img.seller(
             :class="'img-' + index"
           )
-          p.service__card--text.section__subtitle {{ value }}
-      p.sellerform__form--condition {{ sellerCondition }}
+          p.service_card-text.section_subtitle {{ value }}
+      p.sellerform_form-condition {{ sellerCondition }}
 </template>
 
 <script>

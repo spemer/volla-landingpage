@@ -1,14 +1,14 @@
 <template lang="pug">
   div#download
     div.container
-      h1.download__title.section__title 앱으로 간편하게 즐겨보세요
-      p.section__subtitle
+      h1.download_title.section_title 앱으로 간편하게 즐겨보세요
+      p.section_subtitle
         | {{ serviceKo }} 앱은 안드로이드 구글 플레이, 아이폰 앱스토어에서 다운로드 받으실 수 있습니다.
 
       DownloadBtn
 
-      div.download__mockup
-        img.download__mockup--img(
+      div.download_mockup
+        img.download_mockup-img(
           :title="serviceEn"
           src="@/assets/dist/screen.png"
         )
@@ -35,7 +35,6 @@ export default {
 <style lang="scss" scoped>
 #download {
   $height: 664px;
-
   height: $height;
   overflow-y: hidden;
   border-top: 1px solid $texteee;
@@ -56,10 +55,10 @@ export default {
     height: calc(#{$height} - 53px);
   }
 
-  .download__mockup {
+  .download_mockup {
     text-align: center;
 
-    .download__mockup--img {
+    .download_mockup-img {
       width: 320px;
       margin: 0 auto;
 

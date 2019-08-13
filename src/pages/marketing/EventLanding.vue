@@ -1,7 +1,7 @@
 <template lang="pug">
   div#eventlanding
-    div.eventlanding__wrapper
-      img.eventlanding__img(
+    div.eventlanding_wrapper
+      img.eventlanding_img(
         src="@/markdowns/notice/image/dist/event_landing.png"
       )
       JoinUs
@@ -37,8 +37,8 @@ export default {
     border: none !important;
   }
 
-  .eventlanding__wrapper {
-    .eventlanding__img {
+  .eventlanding_wrapper {
+    .eventlanding_img {
       width: 100%;
       max-width: 560px;
     }

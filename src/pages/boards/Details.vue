@@ -4,10 +4,10 @@
     div#closebtn(
       :class="{ 'apply_border': !isBottom }"
     )
-      router-link.global__cta(
+      router-link.global_cta(
         to="/notices/"
       )
-        button.global__cta--btn(
+        button.global_cta-btn(
           type="button"
         ) 목록으로
 </template>
@@ -106,7 +106,7 @@ export default {
       border-top: 1px solid $texteee;
     }
 
-    .global__cta--btn {
+    .global_cta-btn {
       display: block;
       height: $header;
       color: $brand_pink;

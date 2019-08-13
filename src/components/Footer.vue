@@ -3,34 +3,34 @@
     v-if="!isApp"
   )
     div.container
-      div.footer__copyright
-        p.footer__copyright--text
+      div.footer_copyright
+        p.footer_copyright-text
           | ⓒ {{ new Date().getFullYear() }} {{ companyName }}., All Rights Reserved.
 
-        p.footer__terms(
+        p.footer_terms(
             v-for="(section, index) in Object.keys(tosEntries)"
             :key="index"
           )
-          router-link.footer__terms--each(
+          router-link.footer_terms-each(
             v-for="entry in tosEntries[section]"
             :key="entry.id"
             :title="entry.title"
             :to="{ name: entry.id, params: {id: entry.id} }"
           ) {{ entry.title }}
 
-        p.footer__copyright--info
-          span.footer__copyright--title(
+        p.footer_copyright-info
+          span.footer_copyright-title(
             v-for="(key, info) in infoList"
             :key="key"
           ) {{ info }}
-            span.footer__copyright--desc {{ key }}
-          span.footer__copyright--title 이메일
-            span.footer__copyright--desc.clipboard(
+            span.footer_copyright-desc {{ key }}
+          span.footer_copyright-title 이메일
+            span.footer_copyright-desc.clipboard(
             title="이메일 주소를 복사하려면 클릭하세요"
             @click="copyToast(mailTo, '이메일 주소가 복사되었습니다')"
           ) {{ mailTo }}
 
-        a.footer__sns(
+        a.footer_sns(
           v-for="(value, key) in snsList"
           :key="key"
           target="_blank"
@@ -38,7 +38,7 @@
           rel="noopener noreferrer"
           :title="serviceKo + ' ' + value[2] + '(새 창)'"
         )
-          font-awesome-icon.footer__sns--logo.fab(
+          font-awesome-icon.footer_sns-logo.fab(
             :icon="['fab', `${value[1]}`]"
             :class="`fa-${value[1]}`"
           )
@@ -111,28 +111,28 @@ export default {
     padding: $grid12x $grid4x $grid16x;
   }
 
-  .footer__copyright {
+  .footer_copyright {
     margin: 0 auto;
     color: $black24;
 
-    .footer__copyright--info,
-    .footer__terms {
+    .footer_copyright-info,
+    .footer_terms {
       margin-top: $grid5x;
     }
 
-    .footer__copyright--text {
+    .footer_copyright-text {
       color: $black38;
       font-weight: 700;
       margin-bottom: -#{$grid2x};
       @include font-size(14px);
     }
 
-    .footer__terms {
+    .footer_terms {
       font-weight: 700;
       margin-top: $grid6x;
       @include line-height($grid3x);
 
-      .footer__terms--each {
+      .footer_terms-each {
         color: $black24;
         cursor: pointer;
         @include font-size($grid3x);
@@ -152,7 +152,7 @@ export default {
       }
     }
 
-    .footer__copyright--info {
+    .footer_copyright-info {
       margin-bottom: $grid8x;
       @include font-size(10px);
 
@@ -160,13 +160,13 @@ export default {
         display: inline-block;
         @include font-size(10px);
 
-        &.footer__copyright--title {
+        &.footer_copyright-title {
           display: block;
           font-weight: 400;
           @include line-height($grid3x);
         }
 
-        &.footer__copyright--desc {
+        &.footer_copyright-desc {
           font-weight: 900;
           display: inline;
 
@@ -187,12 +187,12 @@ export default {
       }
     }
 
-    .footer__sns {
+    .footer_sns {
       color: $black24;
       font-size: $grid5x;
       display: inline-block;
 
-      .footer__sns--logo {
+      .footer_sns-logo {
         margin: $grid2x;
         padding: $grid2x;
         margin-bottom: $grid4x;

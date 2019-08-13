@@ -10,12 +10,12 @@
     max-height: calc(92vh - #{$grid16x});
   }
 
-  .hero__dim {
+  .hero_dim {
     height: 100%;
     overflow: hidden;
     background-color: $black78;
 
-    .hero__text {
+    .hero_text {
       &.center {
         top: 50%;
         left: 50%;
@@ -26,16 +26,16 @@
         @include transform(translate(-50%, -50%));
       }
 
-      .hero__title--nbsp {
+      .hero_title-nbsp {
         display: inline-block;
       }
 
       @media #{$middle} {
-        .hero__title--nbsp {
+        .hero_title-nbsp {
           display: none !important;
         }
 
-        .hero__br {
+        .hero_br {
           &::after {
             content: '\a ';
             white-space: pre;
@@ -43,7 +43,7 @@
         }
       }
 
-      .hero__text--title {
+      .hero_text-title {
         text-align: center;
 
         @media #{$mini} {
@@ -52,7 +52,7 @@
         }
       }
 
-      .hero__text--subtitle {
+      .hero_text-subtitle {
         font-weight: 300;
         margin-top: -#{$grid4x};
         @include font-size($grid5x);
@@ -66,8 +66,8 @@
         }
       }
 
-      .hero__text--spantext,
-      .hero__br {
+      .hero_text-spantext,
+      .hero_br {
         opacity: 0.8;
         font-weight: 300;
         margin-bottom: -#{$grid2x};
@@ -104,7 +104,7 @@
       text-align: center !important;
     }
 
-    .hero__text {
+    .hero_text {
       top: 50%;
       color: #fff;
       position: absolute;
@@ -123,7 +123,7 @@
         margin-top: 0;
       }
 
-      .hero__text--title {
+      .hero_text-title {
         text-align: left;
 
         @media #{$tablet} {
@@ -132,7 +132,7 @@
       }
     }
 
-    .hero__text--image {
+    .hero_text-image {
       width: 360px;
       float: right;
       display: block;

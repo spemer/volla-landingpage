@@ -19,6 +19,7 @@ dev_or_deploy() {
     printf "\n"
     read -p "${BOLD}${GREEN}Run dev server (R) / Deploy directly (D) / Lint (L)${RESET}" rdl
     case ${rdl} in
+
       [Rr]* )
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 Run dev server 🔥${RESET}"
@@ -35,7 +36,7 @@ dev_or_deploy() {
         npm run lint;
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 npm run build 🔥${RESET}"
-        npm run build;
+        npm run build:modern;
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 firebase deploy 🔥${RESET}"
         firebase deploy;
@@ -60,13 +61,16 @@ image_resizer() {
     printf "\n"
     read -p "${BOLD}${GREEN}Run gulpfile.js(image resizer)? (Y/n) ${RESET}" yn
     case ${yn} in
+
       [Yy]* )
         trap 'echo Stop gulp' SIGINT
         sudo gulp;
         trap SIGINT
         break;;
 
-      [Nn]* ) return 0;;
+      [Nn]* )
+        return 0;;
+
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
@@ -80,8 +84,14 @@ npm_run_serve() {
     printf "\n"
     read -p "${BOLD}${GREEN}npm run serve? (Y/n) ${RESET}" yn
     case ${yn} in
-      [Yy]* ) npm run serve; break;;
-      [Nn]* ) return 0;;
+
+      [Yy]* )
+        npm run serve;
+        break;;
+
+      [Nn]* )
+        return 0;;
+
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
@@ -95,8 +105,14 @@ npm_run_build() {
     printf "\n"
     read -p "${BOLD}${GREEN}npm run build? (Y/n) ${RESET}" yn
     case ${yn} in
-      [Yy]* ) npm run build; break;;
-      [Nn]* ) return 0;;
+
+      [Yy]* )
+        npm run build:modern;
+        break;;
+
+      [Nn]* )
+        return 0;;
+
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
@@ -110,8 +126,14 @@ firebase_deploy() {
     printf "\n"
     read -p "${BOLD}${GREEN}firebase deploy? (Y/n) ${RESET}" yn
     case ${yn} in
-      [Yy]* ) firebase deploy; break;;
-      [Nn]* ) return 0;;
+
+      [Yy]* )
+        firebase deploy;
+        break;;
+
+      [Nn]* )
+        return 0;;
+
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
@@ -125,6 +147,7 @@ git_commit() {
     printf "\n"
     read -p "${BOLD}${GREEN}git commit? (Y/n) ${RESET}" yn
     case ${yn} in
+
       [Yy]* )
         IFS= read -r -p "${BOLD}Enter commit message: ${RESET}" commitmsg
 
@@ -142,7 +165,9 @@ git_commit() {
         git_push
         break;;
 
-      [Nn]* ) return 0;;
+      [Nn]* )
+        return 0;;
+
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done
@@ -156,6 +181,7 @@ git_push() {
     printf "\n"
     read -p "${BOLD}${GREEN}git push? (Y/n) ${RESET}" yn
     case ${yn} in
+
       [Yy]* )
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 Push: GitLab 🔥${RESET}"
@@ -164,7 +190,10 @@ git_push() {
         echo "${BOLD}${PURPLE}🔥 Push: GitHub 🔥${RESET}"
         git push github;
         break;;
-      [Nn]* ) return 0;;
+
+      [Nn]* )
+        return 0;;
+
       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
     esac
   done

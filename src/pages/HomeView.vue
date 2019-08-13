@@ -2,9 +2,9 @@
   div#homeView
     Hero
     Service
-    EasyStart.section__each
-    Download.section__each
-    JoinUs.section__each
+    EasyStart.section_each
+    Download.section_each
+    JoinUs.section_each
 </template>
 
 <script>

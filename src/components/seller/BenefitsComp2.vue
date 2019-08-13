@@ -1,19 +1,19 @@
 <template lang="pug">
   div#benefitsComp.benefits2
     div.container
-      h1.service__title.section__title.subtitle
+      h1.service_title.section_title.subtitle
         | 또한 이와 더불어, 아래와 같은
         br
         | 초기 입점 혜택을 준비했습니다.
-      div.service__card
-        div.service__card--each(
+      div.service_card
+        div.service_card-each(
           v-for="(value, key, index) in benefitsBottom"
           :key="key"
         )
-          div.service__card--img.seller.seller2(
+          div.service_card-img.seller.seller2(
             :class="'img-' + index"
           )
-          p.service__card--text.section__subtitle {{ value }}
+          p.service_card-text.section_subtitle {{ value }}
 </template>
 
 <script>

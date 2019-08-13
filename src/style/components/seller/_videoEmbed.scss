@@ -1,7 +1,7 @@
 #videoEmbed {
   padding: $grid16x 0 $grid20x;
 
-  .easy__text--title {
+  .easy_text-title {
     padding: $grid4x 0;
     @include font-size($grid7x);
 
@@ -29,22 +29,22 @@
     height: auto !important;
   }
 
-  .videoEmbed__from {
+  .videoEmbed_from {
     text-align: center;
     margin-top: $grid2x;
 
-    .videoEmbed__from--text {
+    .videoEmbed_from-text {
       font-weight: 300;
       display: inline-block;
 
-      .videoEmbed__from--link {
+      .videoEmbed_from-link {
         cursor: pointer;
         font-weight: 700;
       }
     }
   }
 
-  .global__cta {
+  .global_cta {
     margin-bottom: $grid12x;
   }
 }

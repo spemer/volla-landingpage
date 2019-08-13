@@ -16,7 +16,7 @@
       width: calc(100% - #{$grid16x});
       padding: 0 $grid8x;
 
-      .page__wrapper {
+      .page_wrapper {
         width: 480px;
       }
     }
@@ -24,7 +24,7 @@
     @media #{$landsc} {
       padding: 0 $grid8x;
 
-      .page__wrapper {
+      .page_wrapper {
         width: 360px;
       }
     }
@@ -33,7 +33,7 @@
       width: calc(100% - #{$grid8x});
       padding: 0 $grid4x;
 
-      .page__wrapper {
+      .page_wrapper {
         width: calc(100% - #{$grid8x});
       }
     }

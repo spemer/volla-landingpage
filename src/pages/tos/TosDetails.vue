@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss">
 #tosDetails {
-  .global__cta--btn {
+  .global_cta-btn {
     display: inline-block;
     border: 2px solid transparent;
     background-color: $brand-pink-16;

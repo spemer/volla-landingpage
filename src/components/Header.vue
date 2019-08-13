@@ -3,22 +3,22 @@
     v-if="!isApp"
   )
     div.container
-      div.header__left(
+      div.header_left(
         v-scroll-to="{el: 'body', duration: 0}"
       )
-        img.header__left--img(
+        img.header_left-img(
           :alt="serviceEn"
           src="../assets/dist/launcher.svg"
         )
-        p.header__left--text {{ serviceEn }}
+        p.header_left-text {{ serviceEn }}
 
-      div.header__right(
+      div.header_right(
       )
-        p.header__right--text.dl(
+        p.header_right-text.dl(
           v-if="this.$route.path === '/'"
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"
         ) 다운로드
-        router-link.header__right--text(
+        router-link.header_right-text(
           :to="href"
           :class="(this.$route.path === '/') ? 'join' : 'home'"
         ) {{ text }}
@@ -28,6 +28,7 @@
 import Vue from "vue";
 import { mapState } from "vuex";
 import { globalVar } from "@/globalVar";
+import { headerText } from "@/mixins/headerText";
 
 import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
@@ -43,19 +44,7 @@ export default {
     ...mapState(["isApp"])
   },
 
-  watch: {
-    $route() {
-      return this.$route.path === "/"
-        ? ((this.href = "/benefits/"), (this.text = "입점소개"))
-        : ((this.href = "/"), (this.text = "메인으로"));
-    }
-  },
-
-  mounted() {
-    return this.$route.path === "/"
-      ? ((this.href = "/benefits/"), (this.text = "입점소개"))
-      : ((this.href = "/"), (this.text = "메인으로"));
-  }
+  mixins: [headerText]
 };
 </script>
 
@@ -78,20 +67,20 @@ export default {
   .container {
     height: $header;
 
-    .header__left {
+    .header_left {
       cursor: pointer;
       height: $header;
       font-weight: 400;
       display: inline-block;
 
-      .header__left--img {
+      .header_left-img {
         width: 40px;
         height: 40px;
         padding: $grid2x 0;
         margin-left: -6px;
       }
 
-      .header__left--text {
+      .header_left-text {
         font-weight: 700;
         color: $brand-pink;
         margin-left: $grid2x;
@@ -105,12 +94,12 @@ export default {
       }
     }
 
-    .header__right {
+    .header_right {
       float: right;
       height: $header;
       font-weight: 400;
 
-      .header__right--text {
+      .header_right-text {
         cursor: pointer;
         display: inline-block;
         @include font-size($grid4x);

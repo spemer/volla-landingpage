@@ -1,7 +1,7 @@
 <template lang="pug">
   div#downloadBtn
-    div.download__badge.if__mobile--false
-      a.download__badge--link(
+    div.download_badge.if_mobile-false
+      a.download_badge-link(
         v-for="(value, key) in badges"
         :key="key"
         target="_blank"
@@ -9,24 +9,24 @@
         rel="noopener noreferrer"
         :title="key + ' ' + value.title + '에서 다운받기'"
       )
-        img.download__badge--each(
+        img.download_badge-each(
           :alt="serviceEn"
           :src="value.src"
         )
-        span.download__badge--text {{ value.title }}
+        span.download_badge-text {{ value.title }}
 
-    div.download__badge.if__mobile--true
-      a.download__badge--link(
+    div.download_badge.if_mobile-true
+      a.download_badge-link(
         target="_blank"
         :href="badgesMobile.href"
         rel="noopener noreferrer"
         :title="badgesMobile.title + '에서 다운받기'"
       )
-        img.download__badge--each(
+        img.download_badge-each(
           :alt="serviceEn"
           :src="badgesMobile.src"
         )
-        span.download__badge--text {{ badgesMobile.title }}
+        span.download_badge-text {{ badgesMobile.title }}
 </template>
 
 <script>
@@ -62,25 +62,25 @@ export default {
 
 <style lang="scss" scoped>
 #downloadBtn {
-  .if__mobile--true {
+  .if_mobile-true {
     display: none !important;
   }
 
-  .if__mobile--false {
+  .if_mobile-false {
     display: block !important;
   }
 
   @media #{$pablet} {
-    .if__mobile--false {
+    .if_mobile-false {
       display: none !important;
     }
 
-    .if__mobile--true {
+    .if_mobile-true {
       display: block !important;
     }
   }
 
-  .download__badge {
+  .download_badge {
     width: 100%;
     outline: none;
     margin: 0 auto;
@@ -88,7 +88,7 @@ export default {
     margin-top: $grid4x;
     display: inline-block;
 
-    .download__badge--link {
+    .download_badge-link {
       cursor: pointer;
       height: $grid12x;
       display: inline-block;
@@ -111,14 +111,14 @@ export default {
         }
       }
 
-      .download__badge--each {
+      .download_badge-each {
         width: $grid6x;
         margin-top: $grid2x;
         margin-right: $grid2x;
         vertical-align: bottom;
       }
 
-      .download__badge--text {
+      .download_badge-text {
         color: $text777;
         font-weight: 700;
         vertical-align: bottom;

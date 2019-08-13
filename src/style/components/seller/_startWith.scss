@@ -3,12 +3,12 @@
 
   border-top: 1px solid $texteee;
 
-  .service__card--title {
+  .service_card-title {
     font-weight: 400;
     text-align: center;
   }
 
-  .service__card {
+  .service_card {
     padding: $grid4x $grid8x;
 
     @media #{$middle} {
@@ -19,8 +19,8 @@
       padding: $grid4x $grid8x;
     }
 
-    .service__card--each {
-      .service__card--img {
+    .service_card-each {
+      .service_card-img {
         &.seller {
           width: 80px;
           height: 80px;
@@ -31,7 +31,7 @@
     }
   }
 
-  .sellerform__form--condition {
+  .sellerform_form-condition {
     color: $black38;
     text-align: center;
     margin-top: $grid4x;

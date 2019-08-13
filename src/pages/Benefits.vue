@@ -1,12 +1,12 @@
 <template lang="pug">
   div#benefits
     Hero
-    VideoEmbed.section__each
-    StatsList.section__each
-    StartWith.section__each
-    Benefits.section__each
-    Benefits2.section__each
-    JoinUs.section__each
+    VideoEmbed.section_each
+    StatsList.section_each
+    StartWith.section_each
+    Benefits.section_each
+    Benefits2.section_each
+    JoinUs.section_each
 </template>
 
 <script>
