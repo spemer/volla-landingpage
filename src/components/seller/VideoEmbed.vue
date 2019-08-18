@@ -7,7 +7,6 @@
         | 영상을 통한 소통으로 구매를 합니다
 
       youtube.video_body(
-        v-if="onReady"
         :video-id="videoId"
       )
       p.videoEmbed_from
@@ -27,16 +26,9 @@ Vue.use(VueYouTubeEmbed);
 
 export default {
   data: () => ({
-    onReady: false,
     videoChannel: "춤추는 변호사",
     videoId: "_62t0IooHYw",
     videoLink: "https://www.youtube.com/channel/UCoeXIHBxfJ7ahvMV4y8a9wQ"
-  }),
-
-  mounted() {
-    this.$nextTick(() => {
-      this.onReady = true;
-    });
-  }
+  })
 };
 </script>

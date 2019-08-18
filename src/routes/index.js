@@ -23,8 +23,8 @@ const noticesRoutes = Object.keys(NoticesEntries).map(section => {
       )
   }));
   return {
-    path: `${section}`,
-    name: `details`,
+    path: `/`,
+    name: `noticeDetails`,
     component: () =>
       import(/* webpackChunkName: 'router-Details' */ "@/pages/boards/Details"),
     children

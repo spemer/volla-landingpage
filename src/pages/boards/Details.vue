@@ -1,7 +1,7 @@
 <template lang="pug">
   div#markdown
     router-view.container
-    div#closebtn
+    div#closebtn.apply_border
       router-link.global_cta(
         to="/notices/"
       )
@@ -15,7 +15,7 @@ import NOTICES_ENTRIES from "@/statics/data/notices.json";
 import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
-  name: "details",
+  name: "noticeDetails",
 
   data: () => ({
     title: null
@@ -97,6 +97,10 @@ export default {
     // iPhone X safearea
     @supports (padding-bottom: env(safe-area-inset-bottom)) {
       padding-bottom: calc(env(safe-area-inset-bottom)) !important;
+    }
+
+    &.apply_border {
+      border-top: 1px solid #eee;
     }
 
     .global_cta-btn {

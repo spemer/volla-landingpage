@@ -88,7 +88,9 @@
           )
           span.checkmark
 
-        div.sellerform_form-wrapper
+        div.sellerform_form-wrapper(
+          :class="{'apply_border': this.$store.state.isApp}"
+        )
           div.sellerform_form-box
             button.sellerform_form-submit(
               name="sellerform_form"
@@ -105,7 +107,6 @@ export default {
   name: "sellerForm",
 
   data: () => ({
-    pageTitle: globalVar.sellerFormTitle,
     serviceKo: globalVar.serviceKo,
     sellerForm: globalVar.sellerForm,
     sellerCondition: globalVar.sellerCondition,
@@ -125,14 +126,12 @@ export default {
 
   metaInfo() {
     return {
-      title: `${this.pageTitle}`,
+      title: `${globalVar.sellerFormTitle}`,
       titleTemplate: `%s`
     };
   },
 
   mounted() {
-    this.pageTitle = globalVar.sellerFormTitle;
-
     if (
       this.$route.path === "/sellerform-app/" ||
       this.$route.path === "/sellerform-app"
