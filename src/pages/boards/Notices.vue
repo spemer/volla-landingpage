@@ -13,12 +13,11 @@
             h3.notices_list-title(
               @click="goDetails(entry.id, entry.ymd)"
             ) {{ entry.title }}
-              span.notices_list-date {{ dateFormatting(entry.ymd) }}
+              span.notices_list-date 20{{ entry.ymd.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ". ") }}
 </template>
 
 <script>
 import NOTICES_ENTRIES from "@/statics/data/notices.json";
-import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
   name: "notices",
@@ -27,8 +26,6 @@ export default {
     title: `공지사항`,
     titleTemplate: `%s`
   },
-
-  mixins: [dateFormatting],
 
   computed: {
     noticesEntries: () => NOTICES_ENTRIES

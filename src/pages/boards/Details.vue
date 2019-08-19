@@ -12,7 +12,6 @@
 
 <script>
 import NOTICES_ENTRIES from "@/statics/data/notices.json";
-import { dateFormatting } from "@/mixins/dateFormatting";
 
 export default {
   name: "noticeDetails",
@@ -20,8 +19,6 @@ export default {
   data: () => ({
     title: null
   }),
-
-  mixins: [dateFormatting],
 
   computed: {
     noticesEntries: () => NOTICES_ENTRIES
@@ -45,7 +42,9 @@ export default {
     let getTitle = document.querySelectorAll("section h1")[0];
     let setDate = document.createElement("h4");
     getTitle.parentNode.insertBefore(setDate, getTitle.nextSibling);
-    setDate.innerHTML = this.dateFormatting(arr[idx].ymd);
+    setDate.innerHTML = `20${arr[idx].ymd
+      .toString()
+      .replace(/\B(?=(\d{2})+(?!\d))/g, ". ")}`;
     this.title = arr[idx].title;
 
     // set _blank every anchor tags

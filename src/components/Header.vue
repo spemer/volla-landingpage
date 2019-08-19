@@ -12,8 +12,7 @@
         )
         p.header_left-text {{ serviceEn }}
 
-      div.header_right(
-      )
+      div.header_right
         p.header_right-text.dl(
           v-if="this.$route.path === '/'"
           v-scroll-to="{el: '#download', duration: 0, offset: -54}"

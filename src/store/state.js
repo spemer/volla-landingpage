@@ -1,5 +1,4 @@
 export const state = {
-  // SellerForm.vue
   sellerForm_List: [
     {
       value: "",
