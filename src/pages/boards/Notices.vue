@@ -22,9 +22,11 @@ import NOTICES_ENTRIES from "@/statics/data/notices.json";
 export default {
   name: "notices",
 
-  metaInfo: {
-    title: `공지사항`,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: `공지사항`,
+      titleTemplate: `%s`
+    };
   },
 
   computed: {

@@ -11,9 +11,11 @@ import { globalVar } from "@/globalVar";
 export default {
   name: "app",
 
-  metaInfo: {
-    title: globalVar.serviceEn,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: globalVar.serviceEn,
+      titleTemplate: `%s`
+    };
   },
 
   created() {

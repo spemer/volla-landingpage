@@ -13,9 +13,11 @@ import { globalVar } from "@/globalVar";
 export default {
   name: "homeView",
 
-  metaInfo: {
-    title: globalVar.serviceEn,
-    titleTemplate: `%s - ${globalVar.tagline}`
+  metaInfo() {
+    return {
+      title: globalVar.serviceEn,
+      titleTemplate: `%s - ${globalVar.tagline}`
+    };
   },
 
   components: {

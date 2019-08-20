@@ -15,9 +15,11 @@ import { globalVar } from "@/globalVar";
 export default {
   name: "benefits",
 
-  metaInfo: {
-    title: `${globalVar.taglineSeller}`,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: `${globalVar.taglineSeller}`,
+      titleTemplate: `%s`
+    };
   },
 
   components: {

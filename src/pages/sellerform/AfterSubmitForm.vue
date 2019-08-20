@@ -56,9 +56,11 @@ export default {
     serviceKo: globalVar.serviceKo
   }),
 
-  metaInfo: {
-    title: `${globalVar.afterSubmitForm}`,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: `${globalVar.afterSubmitForm}`,
+      titleTemplate: `%s`
+    };
   },
 
   mounted() {
