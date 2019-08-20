@@ -95,7 +95,7 @@ export default new Router({
           name: "sellerForm",
           component: () =>
             import(
-              /* webpackChunkName: 'router-SellerForm' */ "@/pages/seller/SellerForm"
+              /* webpackChunkName: 'router-SellerForm' */ "@/pages/sellerform/SellerForm"
             )
         },
         {
@@ -104,7 +104,7 @@ export default new Router({
           name: "afterSubmitForm",
           component: () =>
             import(
-              /* webpackChunkName: 'router-AfterSubmitForm' */ "@/pages/seller/AfterSubmitForm"
+              /* webpackChunkName: 'router-AfterSubmitForm' */ "@/pages/sellerform/AfterSubmitForm"
             ),
           beforeEnter: requireToken
         }
@@ -146,19 +146,19 @@ export default new Router({
     },
 
     // seller special pages
+    // {
+    //   path: "sellers",
+    //   children: [
     {
-      path: "/sellers",
-      children: [
-        {
-          path: "/sumin/",
-          name: "sellers_sumin",
-          components: () =>
-            import(
-              /* webpackChunkName: 'router-sellers-sumin' */ "@/pages/marketing/sellers/Sellers-Sumin"
-            )
-        }
-      ]
+      path: "/sumin/",
+      name: "sellers_sumin",
+      components: () =>
+        import(
+          /* webpackChunkName: 'router-sellerPage-sumin' */ "@/pages/marketing/sellerPage/Sumin"
+        )
     },
+    //   ]
+    // },
 
     // appstore download link
     {
