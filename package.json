@@ -17,7 +17,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^3.2.0",
     "gulp": "^4.0.2",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-imagemin": "^6.1.0",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^7.0.0",
@@ -32,7 +32,7 @@
     "vue-scrollto": "^2.15.0",
     "vue-youtube-embed": "^2.2.2",
     "vue2-toast": "^2.1.0",
-    "vuex": "^3.0.1",
+    "vuex": "^3.1.1",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "file-loader": "^1.1.4",
     "node-sass": "^4.9.0",
-    "prerender-spa-plugin": "^3.0.0-beta.2",
+    "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "vue-loader": "^15.7.1",
