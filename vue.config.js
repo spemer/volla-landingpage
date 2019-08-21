@@ -1,6 +1,6 @@
-const path = require("path");
-const PrerenderSPAPlugin = require("prerender-spa-plugin");
-const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
+// const path = require("path");
+// const PrerenderSPAPlugin = require("prerender-spa-plugin");
+// const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
 
@@ -8,39 +8,39 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: require("./aliases.config").webpack
-    },
+    }
 
-    plugins: [
-      // new BundleAnalyzerPlugin(),
+    // plugins: [
+    //   // new BundleAnalyzerPlugin(),
 
-      new PrerenderSPAPlugin({
-        staticDir: path.join(__dirname, "dist"),
-        routes: [
-          "/",
-          "/benefits/",
-          "/sellerform/",
-          "/sellerform-app/",
-          "/submit/",
-          "/submit-app/",
-          "/notices/",
-          "/event_landing/"
-        ],
-        renderer: new PuppeteerRenderer(),
-        minify: {
-          caseSensitive: true,
-          collapseBooleanAttributes: true,
-          collapseWhitespace: true,
-          collapseInlineTagWhitespace: true,
-          decodeEntities: true,
-          minifyCSS: true,
-          keepClosingSlash: true,
-          sortAttributes: true,
-          removeComments: true,
-          removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true
-        }
-      })
-    ]
+    //   new PrerenderSPAPlugin({
+    //     staticDir: path.join(__dirname, "dist"),
+    //     routes: [
+    //       "/",
+    //       "/benefits/",
+    //       "/sellerform/",
+    //       "/sellerform-app/",
+    //       "/submit/",
+    //       "/submit-app/",
+    //       "/notices/",
+    //       "/event_landing/"
+    //     ],
+    //     renderer: new PuppeteerRenderer(),
+    //     minify: {
+    //       caseSensitive: true,
+    //       collapseBooleanAttributes: true,
+    //       collapseWhitespace: true,
+    //       collapseInlineTagWhitespace: true,
+    //       decodeEntities: true,
+    //       minifyCSS: true,
+    //       keepClosingSlash: true,
+    //       sortAttributes: true,
+    //       removeComments: true,
+    //       removeScriptTypeAttributes: true,
+    //       removeStyleLinkTypeAttributes: true
+    //     }
+    //   })
+    // ]
   },
 
   devServer: {

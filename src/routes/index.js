@@ -8,7 +8,7 @@ Vue.use(VueMeta);
 
 const requireToken = (to, from, next) => {
   store.state.tokenState && next();
-  next("/sellerform/");
+  next("/sellerform");
 };
 
 // NoticeEntries
@@ -64,11 +64,11 @@ export default new Router({
     },
     {
       path: "/seller-form",
-      redirect: "/sellerform/"
+      redirect: "/sellerform"
     },
     {
       path: "/seller",
-      redirect: "/benefits/"
+      redirect: "/benefits"
     },
 
     // app
@@ -84,14 +84,14 @@ export default new Router({
             import(/* webpackChunkName: 'router-HomeView' */ "@/pages/HomeView")
         },
         {
-          path: "/benefits/",
+          path: "/benefits",
           name: "benefits",
           component: () =>
             import(/* webpackChunkName: 'router-Benefits' */ "@/pages/Benefits")
         },
         {
-          path: "/sellerform/",
-          alias: "/sellerform-app/",
+          path: "/sellerform",
+          alias: "/sellerform-app",
           name: "sellerForm",
           component: () =>
             import(
@@ -99,8 +99,8 @@ export default new Router({
             )
         },
         {
-          path: "/submit/",
-          alias: "/submit-app/",
+          path: "/submit",
+          alias: "/submit-app",
           name: "afterSubmitForm",
           component: () =>
             import(
@@ -115,10 +115,10 @@ export default new Router({
     ...noticesRoutes,
     {
       path: "/notice",
-      redirect: "/notices/"
+      redirect: "/notices"
     },
     {
-      path: "/notices/",
+      path: "/notices",
       name: "notices",
       component: () =>
         import(
@@ -150,7 +150,7 @@ export default new Router({
     //   path: "sellers",
     //   children: [
     {
-      path: "/sumin/",
+      path: "/sumin",
       name: "sellers_sumin",
       components: () =>
         import(
@@ -170,7 +170,7 @@ export default new Router({
 
     // in-app landing page
     {
-      path: "/event_landing/",
+      path: "/event_landing",
       name: "eventLanding",
       component: () =>
         import(
