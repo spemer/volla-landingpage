@@ -12,9 +12,8 @@ export const globalVar = {
 
   serviceKo: "볼라",
   serviceEn: "Volla",
-  tagline: "실시간 쇼핑 스트리밍",
+  tagline: "라이브 여성 쇼핑 앱",
   taglineSeller: "셀러 입점안내",
-  taglineLong: "라이브 방송으로 만나는 오프라인 쇼핑",
   sellerForm: "셀러 입점신청서",
   sellerFormTitle: "셀러 입점신청",
   afterSubmitForm: "입점신청 완료",

@@ -17,8 +17,8 @@ export default {
 
   metaInfo() {
     return {
-      title: `${globalVar.taglineSeller}`,
-      titleTemplate: `%s`
+      title: globalVar.serviceEn,
+      titleTemplate: `%s - ${globalVar.taglineSeller}`
     };
   },
 
