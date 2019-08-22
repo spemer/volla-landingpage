@@ -1,7 +1,7 @@
 <template lang="pug">
   div#joinus
     div.container
-      h1.joinus_title.section_title {{ serviceKo }}에 입점하세요
+      h1.joinus_title.section_title {{ serviceKo }}에 데뷔하세요
       p.section_subtitle
         | {{ stringUpper }}
         br

@@ -17,8 +17,6 @@
 </template>
 
 <script>
-import { globalVar } from "@/globalVar";
-
 export default {
   data: () => ({
     benefitsBottom: {

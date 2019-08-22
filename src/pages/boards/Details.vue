@@ -24,11 +24,9 @@ export default {
     noticesEntries: () => NOTICES_ENTRIES
   },
 
-  metaInfo() {
-    return {
-      title: `공지사항`,
-      titleTemplate: `%s`
-    };
+  metaInfo: {
+    title: `공지사항`,
+    titleTemplate: `%s`
   },
 
   mounted() {
