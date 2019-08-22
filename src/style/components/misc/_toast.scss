@@ -17,8 +17,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - #{$grid8x});
-  max-width: calc(100% - #{$grid8x});
+  width: calc(100% - #{$grid16x});
+  max-width: calc(100% - #{$grid16x}) !important;
   @include font-size(12px);
   @include border-radius($grid16x !important);
   @include box-shadow($grid, $grid2x, $black16);
@@ -26,8 +26,8 @@
 
 .lx-toast.lx-word-wrap {
   width: 80%;
-  white-space: inherit;
   height: auto;
+  white-space: inherit;
 }
 
 @-webkit-keyframes show-toast {

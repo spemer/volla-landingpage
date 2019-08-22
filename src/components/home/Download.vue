@@ -9,7 +9,7 @@
 
       div.download_mockup
         img.download_mockup-img(
-          :title="serviceEn"
+          :alt="serviceEn"
           src="@/assets/dist/screen.png"
         )
 </template>

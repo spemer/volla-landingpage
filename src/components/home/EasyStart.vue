@@ -5,9 +5,9 @@
       p.section_subtitle
         | {{ serviceKo }}는 방송용 전문장비가 필요 없습니다.
         br
-        | 언제 어디서든, 스마트폰 하나만으로도
+        | 언제 어디서나, 스마트폰 하나만으로
         br
-        | 쉽고 빠르게 {{ serviceKo }}에서 방송을 시작해보세요.
+        | {{ serviceKo }}에서 쉽고 빠르게 판매를 시작해보세요!
 </template>
 
 <script>

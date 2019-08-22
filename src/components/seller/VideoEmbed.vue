@@ -2,9 +2,9 @@
   div#videoEmbed
     div.container
       h1.easy_text-title.section_title
-        | 이제 소비자는 예쁜 제품사진이 아닌
+        | 이제 소비자는 단순히 예쁜 사진이 아닌
         br
-        | 영상을 통한 소통으로 구매를 합니다
+        | 영상을 통한 더 생생한 정보를 원합니다
 
       youtube.video_body(
         :video-id="videoId"
