@@ -40,8 +40,8 @@
         &.service {
           height: 480px;
           margin: 0 auto;
-          @include drop-shadow();
           @include setGridIcons($BaseURI, $ext);
+          @include drop-shadow(0, $grid2x, $grid4x, $black16);
         }
 
         @media #{$pro2} {
