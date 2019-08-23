@@ -1,8 +1,6 @@
 // const path = require("path");
 // const PrerenderSPAPlugin = require("prerender-spa-plugin");
 // const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-//   .BundleAnalyzerPlugin;
 
 module.exports = {
   configureWebpack: {
@@ -11,8 +9,6 @@ module.exports = {
     }
 
     // plugins: [
-    //   // new BundleAnalyzerPlugin(),
-
     //   new PrerenderSPAPlugin({
     //     staticDir: path.join(__dirname, "dist"),
     //     routes: [

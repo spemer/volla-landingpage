@@ -14,7 +14,7 @@ export default {
   metaInfo() {
     return {
       title: globalVar.serviceEn,
-      titleTemplate: `%s`
+      titleTemplate: `%s - ${globalVar.tagline}`
     };
   },
 
