@@ -1,9 +1,10 @@
 <template lang="pug">
-  div#sellers
+  div#seller
+    router-view
 </template>
 
 <script>
 export default {
-  name: "sellers_sumin"
+  name: "seller"
 };
 </script>

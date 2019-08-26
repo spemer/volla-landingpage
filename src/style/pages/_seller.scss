@@ -1,0 +1,32 @@
+$width: 560px;
+
+#seller {
+  width: 100%;
+  max-width: $width;
+  margin: 0 auto;
+
+  .sellerPage {
+    width: 100%;
+    height: auto;
+
+    .sellerPage_hero {
+      .sellerPage_hero-img {
+        width: 100%;
+      }
+    }
+
+    .sellerPage_container {
+      padding: $grid8x;
+
+      @media #{$mobile} {
+        padding: $grid4x;
+      }
+
+      .sellerPage_container-text {
+        text-align: center;
+        @include line-height($grid2x);
+      }
+    }
+  }
+
+}

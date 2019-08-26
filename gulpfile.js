@@ -45,5 +45,14 @@ function imagemin_notice() {
     .pipe(dest(["./src/markdowns/notice/image/dist"]));
 }
 
+// image resize - marketing
+function imagemin_marketing() {
+  return src(["./src/assets/marketing/src/*"], {
+    since: lastRun(imagemin_marketing)
+  })
+    .pipe(imagemin([...options]))
+    .pipe(dest(["./src/assets/marketing/dist"]));
+}
+
 // exports
-exports.default = series(imagemin_asset, imagemin_notice);
+exports.default = series(imagemin_asset, imagemin_notice, imagemin_marketing);

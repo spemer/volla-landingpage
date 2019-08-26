@@ -66,10 +66,6 @@ export default new Router({
       path: "/seller-form",
       redirect: "/sellerform"
     },
-    {
-      path: "/seller",
-      redirect: "/benefits"
-    },
 
     // app
     {
@@ -146,19 +142,23 @@ export default new Router({
     },
 
     // seller special pages
-    // {
-    //   path: "sellers",
-    //   children: [
     {
-      path: "/sumin",
-      name: "sellers_sumin",
-      components: () =>
+      path: "/seller",
+      component: () =>
         import(
-          /* webpackChunkName: 'router-sellerPage-sumin' */ "@/pages/marketing/sellerPage/Sumin"
-        )
+          /* webpackChunkName: 'router-sellerPage' */ "@/pages/sellerPage/Seller"
+        ),
+      children: [
+        {
+          path: "sumin",
+          name: "seller-sumin",
+          component: () =>
+            import(
+              /* webpackChunkName: 'router-sellerPage-sumin' */ "@/pages/sellerPage/seller/Sumin"
+            )
+        }
+      ]
     },
-    //   ]
-    // },
 
     // appstore download link
     {
