@@ -64,7 +64,7 @@ export default {
   },
 
   mounted() {
-    return this.$route.path == "/submit-app"
+    return this.$route.query.from === "app"
       ? this.SET_CLASS_APP(true)
       : this.SET_CLASS_APP(false);
   },

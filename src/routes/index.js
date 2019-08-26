@@ -35,7 +35,7 @@ const noticesRoutes = Object.keys(NoticesEntries).map(section => {
 import TosEntries from "@/statics/data/tos.json";
 const tosRoutes = Object.keys(TosEntries).map(section => {
   const children = TosEntries[section].map(child => ({
-    path: "/tos/:id",
+    path: child.id,
     name: child.id,
     component: () =>
       import(
@@ -43,7 +43,7 @@ const tosRoutes = Object.keys(TosEntries).map(section => {
       )
   }));
   return {
-    path: "/tos/:id",
+    path: "/tos",
     name: section,
     component: () =>
       import(
@@ -87,7 +87,6 @@ export default new Router({
         },
         {
           path: "/sellerform",
-          alias: "/sellerform-app",
           name: "sellerForm",
           component: () =>
             import(
@@ -96,7 +95,6 @@ export default new Router({
         },
         {
           path: "/submit",
-          alias: "/submit-app",
           name: "afterSubmitForm",
           component: () =>
             import(

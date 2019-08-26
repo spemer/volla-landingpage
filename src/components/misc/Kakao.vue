@@ -1,6 +1,6 @@
 <template lang="pug">
   div#plusfriend-addfriend-button(
-    v-if="this.$route.path === '/' || this.$route.path === '/benefits' || this.$route.path === '/sellerform'"
+    v-if="render"
   )
     img(
       v-if="onReady"
@@ -15,9 +15,22 @@
 <script>
 export default {
   data: () => ({
+    render: false,
     onReady: false,
     isInitialized: false
   }),
+
+  mounted() {
+    if (
+      this.$route.path === "/" ||
+      this.$route.path === "/benefits" ||
+      this.$route.path === "/sellerform"
+    ) {
+      return this.$route.query.from === "app"
+        ? (this.render = false)
+        : (this.render = true);
+    }
+  },
 
   updated() {
     if (this.onReady && !this.isInitialized) {

@@ -14,6 +14,7 @@
           router-link.footer_terms-each(
             v-for="entry in tosEntries[section]"
             :key="entry.id"
+            target="_blank"
             :title="entry.title"
             :to="{ name: entry.id, params: {id: entry.id} }"
           ) {{ entry.title }}

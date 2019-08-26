@@ -30,7 +30,7 @@ export default {
     let arr = this.tosEntries[globalVar.tosDateNowNumber];
 
     let idx = arr.findIndex(item => {
-      return item.id === this.$route.params.id;
+      return `/tos/${item.id}` === this.$route.path;
     });
 
     this.title = arr[idx].title;

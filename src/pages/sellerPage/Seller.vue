@@ -5,6 +5,18 @@
 
 <script>
 export default {
-  name: "seller"
+  name: "seller",
+
+  created() {
+    document.addEventListener("contextmenu", event => {
+      return event.preventDefault();
+    });
+  },
+
+  destroyed() {
+    document.removeEventListener("contextmenu", event => {
+      return event.preventDefault();
+    });
+  }
 };
 </script>

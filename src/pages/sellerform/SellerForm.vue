@@ -89,7 +89,7 @@
           span.checkmark
 
         div.sellerform_form-wrapper(
-          :class="{'apply_border': this.$store.state.isApp}"
+          :class="{'apply_border': isApp}"
         )
           div.sellerform_form-box
             button.sellerform_form-submit(
@@ -132,7 +132,7 @@ export default {
   },
 
   mounted() {
-    if (this.$route.path === "/sellerform-app") {
+    if (this.$route.query.from === "app") {
       this.SET_CLASS_APP(true);
     } else {
       this.SET_CLASS_APP(false);
@@ -243,10 +243,15 @@ export default {
             this.SET_TOKEN_BOOL(true);
             this.$toast("입점 신청이 완료되었습니다.");
             this.$Progress.finish();
-            if (this.$route.path === "/sellerform-app") {
-              return this.$router.replace("/submit-app");
-            } else if (this.$route.path === "/sellerform") {
-              return this.$router.replace("/submit");
+            if (this.isApp) {
+              this.$router.replace({
+                path: "/submit",
+                query: {
+                  from: "app"
+                }
+              });
+            } else if (!this.isApp) {
+              this.$router.replace("/submit");
             }
           })
           .catch(error => {

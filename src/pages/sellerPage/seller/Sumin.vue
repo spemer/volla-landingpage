@@ -17,7 +17,7 @@
 
       br
       p.sellerPage_container-text.bold
-        | ⬇️ 수민님 제품 리스트 ⬇ ️
+        | ⬇️ 수민님 제품 리스트 ⬇️ ️
 
       div.sellerPage_items(
         v-for="(item, i) in itemList"
@@ -34,8 +34,10 @@
         )
 
       br
-      p.sellerPage_container-text.bold
-        | ⬇️ 더 많은 제품 구경하기 ⬇ ️
+      p.sellerPage_container-text.bold(
+        v-if="this.$route.query.from === 'app'"
+      )
+        | ⬇️ 더 많은 제품 구경하기 ⬇️ ️
       br
 </template>
 
