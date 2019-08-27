@@ -1,19 +1,34 @@
 {
-  "notices": [{
-    "id": "event_landing",
-    "ymd": "190730",
-    "title": "Volla 초기 입점 셀러 모집 Event!"
-  }, {
-    "id": "kiml_live",
-    "ymd": "190615",
-    "title": "시원한 여름 바캉스 쇼핑 라이브!"
-  }, {
-    "id": "join_seller",
-    "ymd": "190610",
-    "title": "볼라와 함께 성장하실 셀러분들을 모십니다."
-  }, {
-    "id": "welcome_volla",
-    "ymd": "190607",
-    "title": "볼라에 오신것을 환영합니다!"
-  }]
+  "notices": [
+    {
+      "id": "new_seller_dra",
+      "ymd": "190826",
+      "title": "[입점] Deep Red Attraction, DRA [드라]"
+    },
+    {
+      "id": "new_seller_sumin",
+      "ymd": "190822",
+      "title": "[입점] 일러스트레이터 이숨(e.sooom)"
+    },
+    {
+      "id": "event_landing",
+      "ymd": "190730",
+      "title": "[이벤트] Volla 초기 입점 셀러 모집 Event!"
+    },
+    {
+      "id": "kiml_live",
+      "ymd": "190615",
+      "title": "[라이브] 시원한 여름 바캉스 쇼핑 라이브!"
+    },
+    {
+      "id": "join_seller",
+      "ymd": "190610",
+      "title": "볼라와 함께 성장하실 셀러분들을 모십니다."
+    },
+    {
+      "id": "welcome_volla",
+      "ymd": "190607",
+      "title": "볼라에 오신것을 환영합니다!"
+    }
+  ]
 }

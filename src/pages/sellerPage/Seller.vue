@@ -23,6 +23,9 @@ export default {
 
 <style lang="scss" scoped>
 #seller {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $width_seller;
   @include user-select();
 }
 </style>

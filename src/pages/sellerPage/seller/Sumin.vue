@@ -109,71 +109,65 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#seller {
+.sellerPage {
   width: 100%;
-  max-width: $width_seller;
-  margin: 0 auto;
+  height: auto;
 
-  .sellerPage {
-    width: 100%;
-    height: auto;
+  .sellerPage_hero {
+    .sellerPage_hero-img {
+      width: 100%;
+    }
+  }
 
-    .sellerPage_hero {
-      .sellerPage_hero-img {
-        width: 100%;
+  .sellerPage_container {
+    padding: $grid4x;
+    text-align: center;
+
+    .sellerPage_container-title {
+      margin-bottom: 0;
+    }
+
+    .sellerPage_container-text {
+      margin: $grid;
+      color: $black54;
+      @include font-size(14px);
+
+      &.bold {
+        color: $black78;
+        font-weight: 700;
+        margin: $grid4x 0;
       }
     }
 
-    .sellerPage_container {
-      padding: $grid4x;
-      text-align: center;
+    .sellerPage_items {
+      padding: $grid4x 0;
 
-      .sellerPage_container-title {
+      .sellerPage_items-title {
         margin-bottom: 0;
       }
 
-      .sellerPage_container-text {
-        margin: $grid;
-        color: $black54;
+      .sellerPage_items-text {
+        margin: $grid2x;
         @include font-size(14px);
 
-        &.bold {
+        &.caption {
+          color: $black54;
+          margin-bottom: $grid4x;
+          @include font-size($grid3x);
+        }
+
+        .price {
           color: $black78;
           font-weight: 700;
-          margin: $grid4x 0;
+          margin-bottom: 0;
+          @include font-size(14px);
         }
       }
 
-      .sellerPage_items {
-        padding: $grid4x 0;
-
-        .sellerPage_items-title {
-          margin-bottom: 0;
-        }
-
-        .sellerPage_items-text {
-          margin: $grid2x;
-          @include font-size(14px);
-
-          &.caption {
-            color: $black54;
-            margin-bottom: $grid4x;
-            @include font-size($grid3x);
-          }
-
-          .price {
-            color: $black78;
-            font-weight: 700;
-            margin-bottom: 0;
-            @include font-size(14px);
-          }
-        }
-
-        .sellerPage_items-img {
-          width: 100%;
-          max-width: $width_seller;
-          @include border-radius();
-        }
+      .sellerPage_items-img {
+        width: 100%;
+        max-width: $width_seller;
+        @include border-radius();
       }
     }
   }
