@@ -64,7 +64,12 @@ export default new Router({
     },
     {
       path: "/sellerform-app",
-      redirect: "/sellerform?from=app"
+      redirect: {
+        path: "/sellerform",
+        query: {
+          from: "app"
+        }
+      }
     },
 
     // app
