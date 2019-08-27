@@ -56,7 +56,7 @@ export default {
     } else if (this.$route.path === "/event_landing") {
       this.stringUpper = "라이브 방송으로 만나는 패션 커머스,";
       this.stringBelow = `${this.serviceKo}에 지금 바로 입점하세요!`;
-      this.sellerformLink = "/sellerform-app";
+      this.sellerformLink = "/sellerform?from=app";
     }
   }
 };

@@ -20,3 +20,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+#seller {
+  @include user-select();
+}
+</style>

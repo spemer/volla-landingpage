@@ -63,8 +63,8 @@ export default new Router({
       redirect: "/"
     },
     {
-      path: "/seller-form",
-      redirect: "/sellerform"
+      path: "/sellerform-app",
+      redirect: "/sellerform?from=app"
     },
 
     // app

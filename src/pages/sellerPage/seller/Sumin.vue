@@ -36,8 +36,12 @@
       br
       p.sellerPage_container-text.bold(
         v-if="this.$route.query.from === 'app'"
+      ) ⬇️ 더 많은 제품 구경하기 ⬇️ ️
+      div(
+        v-if="this.$route.query.from !== 'app'"
       )
-        | ⬇️ 더 많은 제품 구경하기 ⬇️ ️
+        p.sellerPage_container-text.bold ⬇️ 볼라 앱 다운받기 ⬇️ ️
+        DownloadBtn
       br
 </template>
 
@@ -52,6 +56,13 @@ export default {
       title: globalVar.serviceEn,
       titleTemplate: "[입점] 이숨(e.sooom)"
     };
+  },
+
+  components: {
+    DownloadBtn: () =>
+      import(
+        /* webpackChunkName: 'components/misc/DownloadBtn' */ "@/components/misc/DownloadBtn"
+      )
   },
 
   data: () => ({
@@ -96,3 +107,75 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+#seller {
+  width: 100%;
+  max-width: $width_seller;
+  margin: 0 auto;
+
+  .sellerPage {
+    width: 100%;
+    height: auto;
+
+    .sellerPage_hero {
+      .sellerPage_hero-img {
+        width: 100%;
+      }
+    }
+
+    .sellerPage_container {
+      padding: $grid4x;
+      text-align: center;
+
+      .sellerPage_container-title {
+        margin-bottom: 0;
+      }
+
+      .sellerPage_container-text {
+        margin: $grid;
+        color: $black54;
+        @include font-size(14px);
+
+        &.bold {
+          color: $black78;
+          font-weight: 700;
+          margin: $grid4x 0;
+        }
+      }
+
+      .sellerPage_items {
+        padding: $grid4x 0;
+
+        .sellerPage_items-title {
+          margin-bottom: 0;
+        }
+
+        .sellerPage_items-text {
+          margin: $grid2x;
+          @include font-size(14px);
+
+          &.caption {
+            color: $black54;
+            margin-bottom: $grid4x;
+            @include font-size($grid3x);
+          }
+
+          .price {
+            color: $black78;
+            font-weight: 700;
+            margin-bottom: 0;
+            @include font-size(14px);
+          }
+        }
+
+        .sellerPage_items-img {
+          width: 100%;
+          max-width: $width_seller;
+          @include border-radius();
+        }
+      }
+    }
+  }
+}
+</style>
