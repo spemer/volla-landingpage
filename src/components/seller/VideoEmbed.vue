@@ -8,6 +8,8 @@
 
       youtube.video_body(
         :video-id="videoId"
+        player-width="100%"
+        player-height="480px"
       )
       p.videoEmbed_from
         span.videoEmbed_from-text 영상출처:
@@ -32,3 +34,55 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+#videoEmbed {
+  padding: $grid16x 0 $grid20x;
+
+  .easy_text-title {
+    padding: $grid4x 0;
+    @include font-size($grid7x);
+
+    @media #{$tablet} {
+      @include font-size($grid6x);
+    }
+
+    @media #{$ip6} {
+      @include font-size($grid5x);
+    }
+
+    @media #{$mini} {
+      @include font-size($grid4x);
+    }
+  }
+
+  .video_body {
+    display: block;
+
+    iframe {
+      width: 100%;
+      height: 480px;
+      margin: 0 auto;
+    }
+
+    @media #{$pablet} {
+      height: auto !important;
+    }
+  }
+
+  .videoEmbed_from {
+    text-align: center;
+    margin-top: $grid2x;
+
+    .videoEmbed_from-text {
+      font-weight: 300;
+      display: inline-block;
+
+      .videoEmbed_from-link {
+        cursor: pointer;
+        font-weight: 700;
+      }
+    }
+  }
+}
+</style>

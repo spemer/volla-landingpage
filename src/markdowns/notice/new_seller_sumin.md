@@ -1,6 +1,6 @@
 # [입점] 일러스트레이터 이숨(e.sooom)
 
-![esooom](../../../assets/marketing/dist/esooom_hero.png)
+![esooom](../../assets/marketing/dist/esooom_hero.png)
 
 일러스트레이터 이숨(e.sooom) 작가님의 (넘나 귀여운) 제품들이 입점되었어요...!
 

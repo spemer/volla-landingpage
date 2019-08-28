@@ -36,15 +36,6 @@ function imagemin_asset() {
     .pipe(dest(["./src/assets/dist"]));
 }
 
-// image resize - notice
-function imagemin_notice() {
-  return src(["./src/markdowns/notice/image/src/*"], {
-    since: lastRun(imagemin_notice)
-  })
-    .pipe(imagemin([...options]))
-    .pipe(dest(["./src/markdowns/notice/image/dist"]));
-}
-
 // image resize - marketing
 function imagemin_marketing() {
   return src(["./src/assets/marketing/src/*"], {
@@ -55,4 +46,4 @@ function imagemin_marketing() {
 }
 
 // exports
-exports.default = series(imagemin_asset, imagemin_notice, imagemin_marketing);
+exports.default = series(imagemin_asset, imagemin_marketing);

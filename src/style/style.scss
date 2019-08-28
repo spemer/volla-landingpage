@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-
 @import './normalize';
 
 // modules
@@ -13,17 +12,13 @@
 
 // pages
 @import './pages/home';
-@import './pages/sellerForm';
 
 // components/home
 @import './components/home/hero';
 @import './components/home/service';
 
 // components/seller
-@import './components/seller/videoEmbed';
-@import './components/seller/statsList';
 @import './components/seller/benefits';
-@import './components/seller/startWith';
 
 // components/misc
 @import './components/misc/toast';

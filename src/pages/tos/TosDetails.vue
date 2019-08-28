@@ -28,7 +28,6 @@ export default {
 
   mounted() {
     let arr = this.tosEntries[globalVar.tosDateNowNumber];
-
     let idx = arr.findIndex(item => {
       return `/tos/${item.id}` === this.$route.path;
     });
@@ -38,15 +37,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #tosDetails {
-  .global_cta-btn {
-    display: inline-block;
-    border: 2px solid transparent;
-    background-color: $brand-pink-16;
-    margin: -#{$grid16x} auto $grid48x !important;
-  }
-
   #terms {
     font-weight: 400;
 
@@ -55,13 +47,7 @@ export default {
       background-color: $brand-pink !important;
     }
 
-    h1 {
-      font-weight: 900;
-      text-align: center;
-      color: $black78 !important;
-    }
-
-    .terms-wrapper {
+    /deep/ .terms-wrapper {
       margin: 0 auto;
       max-width: 640px;
       color: $black78 !important;
@@ -70,6 +56,13 @@ export default {
 
       @media #{$pablet} {
         padding-bottom: $grid32x !important;
+      }
+
+      h1 {
+        text-align: center;
+        color: $black78 !important;
+        font-weight: 700 !important;
+        @include font-size($grid8x);
       }
 
       h2 {
@@ -88,11 +81,6 @@ export default {
         margin-bottom: $grid2x;
         @include font-size($grid4x);
         @include line-height(18px);
-      }
-
-      h1 {
-        color: $black78;
-        @include font-size($grid8x);
       }
 
       h3 {

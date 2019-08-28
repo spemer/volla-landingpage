@@ -8,7 +8,7 @@
 - 온라인 쇼핑몰 구축을 염두하고 있지만 어려움을 겪고 있는 분
 - 직접 소비자들과 소통하면서, 동시에 매출을 올리고 싶은 분
 
-![Volla](../image/dist/store_last.png)
+![Volla](../../assets/marketing/dist/store_last.png)
 
 라이브 방송으로 담는 오프라인 쇼핑, 볼라에 지금 바로 입점하세요!
 

@@ -267,9 +267,391 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sellerform_form-wrapper {
-  &.apply_border {
-    border-top: 1px solid $texteee;
+$width: 480px;
+$pablet-width: 320px;
+$mobile-width: 288px;
+
+#sellerForm {
+  text-align: center;
+  padding: $grid8x 0 $grid16x;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    height: 0 !important;
+    width: 0 !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+    -ms-filter: "alpha(opacity=0)" !important;
+    filter: alpha(opacity=0) !important;
+    -webkit-opacity: 0 !important;
+    -moz-opacity: 0 !important;
+    -ms-opacity: 0 !important;
+    -o-opacity: 0 !important;
+    opacity: 0 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+  }
+
+  @media #{$mobile} {
+    padding: $grid12x 0 $grid24x;
+  }
+
+  .sellerform_form-subtitle {
+    font-weight: 300;
+
+    span {
+      &::before {
+        content: "\A* ";
+        white-space: pre;
+        font-weight: 900;
+        color: $brand-pink;
+      }
+    }
+  }
+
+  .sellerform_form-form {
+    width: $width;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: $grid16x;
+
+    .sellerform_form-wrapper {
+      &.apply_border {
+        border-top: 1px solid $texteee;
+      }
+    }
+
+    label[for="checkbox_2"] {
+      margin-bottom: $grid16x;
+    }
+
+    @media #{$pablet} {
+      width: calc(100% - #{$grid8x});
+    }
+
+    @media #{$ip6} {
+      width: calc(100% - #{$grid8x});
+      margin-top: $grid16x;
+    }
+
+    .sellerform_form-title {
+      display: block;
+      text-align: left;
+      font-weight: 900;
+      margin-bottom: $grid;
+      @include font-size($grid5x);
+
+      span[required] {
+        &::before {
+          content: " *";
+          color: $brand-pink;
+          @include font-size($grid5x);
+        }
+      }
+
+      &.host {
+        margin-bottom: $grid16x;
+
+        span {
+          &::before {
+            content: " *\A";
+            white-space: pre;
+          }
+        }
+
+        .sellerform_form-div {
+          display: inline-block;
+
+          .sellerform_form-label {
+            color: $black38;
+            cursor: pointer;
+            font-weight: 700;
+            text-align: center;
+            margin-top: $grid4x;
+            display: inline-block;
+            padding: $grid3x $grid6x;
+            background-color: $black04;
+            @include font-size($grid4x);
+            @include border-radius($grid2x);
+            @include transition(all 0.1s ease);
+
+            &.first {
+              margin-right: $grid2x;
+            }
+          }
+
+          input[type="radio"]:checked + label {
+            color: #fff;
+            font-weight: 700;
+            color: $brand-pink;
+            background-color: $brand-pink-16;
+          }
+        }
+      }
+
+      .sellerform_form-input {
+        border: none;
+        width: $width;
+        outline: none;
+        display: inline-block;
+        margin-bottom: $grid12x;
+        color: $black78 !important;
+        padding: $grid4x 0 $grid2x;
+        border-bottom: 1px solid $textccc;
+        @include border-radius(0);
+        @include font-size($grid4x);
+        @include transition(border-bottom 0.25s ease);
+
+        @media #{$pablet} {
+          width: 100%;
+        }
+
+        &.textarea {
+          resize: none;
+          height: $grid32x;
+          padding-top: $grid4x;
+          @include line-height($grid4x);
+        }
+
+        &[type="radio"] {
+          margin-top: $grid8x;
+          margin-bottom: -#{$grid2x};
+        }
+
+        &:focus {
+          border-bottom: 1px solid $brand-pink;
+        }
+
+        &::selection {
+          color: #fff !important;
+          background-color: $brand-pink !important;
+        }
+      }
+
+      .sellerform_form-helpText {
+        display: block;
+        font-weight: 400;
+        color: $warning_red;
+        margin-top: -#{$grid10x};
+        margin-bottom: $grid14x;
+        @include font-size($grid3x);
+      }
+    }
+
+    .sellerform_form-submit {
+      outline: none;
+      margin: 0 auto;
+      display: block;
+      width: $grid48x;
+      cursor: pointer;
+      height: $grid14x;
+      font-weight: 900;
+      color: $brand-pink;
+      background-color: $brand-pink-16;
+      @include border-radius($grid16x);
+      @include transition(all 0.25s ease);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .sellerform_form-condition {
+      color: $black38;
+      text-align: left;
+      margin-top: -#{$grid10x};
+      @include font-size($grid3x);
+    }
+
+    .sellerform_form-terms {
+      height: $grid28x;
+      text-align: left;
+      font-weight: 300;
+      padding: 0 $grid4x;
+      overflow-y: scroll;
+      margin-top: $grid16x;
+      background-color: $black03;
+      @include border-radius($grid2x);
+
+      .sellerform_form-termsDetails {
+        @include font-size(14px);
+      }
+    }
+
+    .sellerform_form-checkbox {
+      display: block;
+      cursor: pointer;
+      text-align: left;
+      position: relative;
+      margin-top: $grid4x;
+      padding-left: $grid8x;
+      @include user-select();
+      @include font-size(14px);
+
+      .checkmark {
+        top: 2px;
+        left: 0;
+        width: $grid5x;
+        height: $grid5x;
+        position: absolute;
+        background-color: $black04;
+        @include border-radius($grid);
+        @include transition(all 0.1s ease);
+      }
+
+      &:hover input ~ .checkmark {
+        background-color: $black04;
+      }
+
+      input:checked ~ .checkmark {
+        background-color: $brand-pink-16;
+      }
+
+      .checkmark:after {
+        content: "";
+        display: none;
+        position: absolute;
+      }
+
+      input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .checkmark:after {
+        top: 3px;
+        right: 7px;
+        width: $grid;
+        height: 9px;
+        border: solid $brand-pink;
+        border-width: 0 2px 2px 0;
+        @include transform(rotate(45deg));
+      }
+    }
+  }
+
+  &.app {
+    &:not(.submit) {
+      padding-top: $grid4x;
+      padding-bottom: $grid24x;
+      @include user-select();
+
+      // iPhone X safearea
+      @supports (padding-bottom: env(safe-area-inset-bottom)) {
+        padding-bottom: calc(
+          env(safe-area-inset-bottom + #{$grid40x})
+        ) !important;
+      }
+
+      h1 {
+        &.sellerform_form-title {
+          display: none;
+        }
+      }
+
+      p {
+        &.sellerform_form-title {
+          @include font-size($grid4x);
+
+          &.host {
+            margin-bottom: $grid12x;
+          }
+
+          input {
+            margin-bottom: $grid4x;
+            @include font-size(14px);
+          }
+
+          .sellerform_form-helpText {
+            margin-bottom: $grid10x;
+            margin-top: -#{$grid2x};
+          }
+        }
+
+        &.sellerform_form-subtitle {
+          display: none;
+        }
+      }
+
+      .sellerform_form-input {
+        padding-top: $grid2x;
+
+        &.textarea {
+          height: $grid24x;
+          padding-top: $grid2x;
+          @include font-size(14px);
+        }
+      }
+
+      .sellerform_form-label {
+        margin-top: $grid2x !important;
+      }
+
+      .sellerform_form-form {
+        margin-top: $grid4x !important;
+
+        @media #{$pablet} {
+          width: calc(100% - #{$grid4x});
+        }
+
+        @media #{$ip6} {
+          width: calc(100%);
+          margin-top: $grid16x;
+        }
+      }
+
+      .sellerform_form-wrapper {
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        width: 100vw;
+        position: fixed;
+        height: $grid22x;
+        background-color: #fff;
+        @include gradient();
+
+        @media #{$tablet} {
+          width: calc(100% - #{$grid16x});
+          padding: 0 $grid8x;
+        }
+
+        @media #{$landsc} {
+          padding: 0 $grid8x;
+        }
+
+        @media #{$pablet} {
+          width: calc(100% - #{$grid8x});
+          padding: 0 $grid4x;
+        }
+
+        @media #{$mobile} {
+          padding: 0 $grid4x;
+        }
+
+        // iPhone X safearea
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+          padding-bottom: calc(env(safe-area-inset-bottom)) !important;
+        }
+
+        .sellerform_form-box {
+          .sellerform_form-submit {
+            opacity: 1;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+            margin-top: $grid4x !important;
+            background-color: $brand-pink-16;
+            @include border-radius();
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>

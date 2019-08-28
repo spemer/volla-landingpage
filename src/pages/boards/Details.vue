@@ -34,7 +34,6 @@ export default {
   mounted() {
     // append date info
     let arr = this.noticesEntries["notices"];
-
     let idx = arr.findIndex(item => {
       return item.id === this.$route.params.id;
     });

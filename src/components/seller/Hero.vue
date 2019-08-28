@@ -26,3 +26,57 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+#hero {
+  &.sellerHero {
+    margin: 0 auto;
+    height: $grid140x;
+    text-align: left !important;
+
+    @media #{$tablet} {
+      height: $grid96x;
+      text-align: center !important;
+    }
+
+    .hero_text {
+      top: 50%;
+      color: #fff;
+      position: absolute;
+      margin-right: -50%;
+      @include transform(translate(0%, -50%));
+
+      @media #{$tablet} {
+        margin-top: -#{$grid8x};
+        color: #fff;
+        position: relative;
+        margin-right: 0%;
+        @include transform(translate(0%, 100%));
+      }
+
+      @media #{$mini} {
+        margin-top: 0;
+      }
+
+      .hero_text-title {
+        text-align: left;
+
+        @media #{$tablet} {
+          text-align: center;
+        }
+      }
+    }
+
+    .hero_text-image {
+      width: 360px;
+      float: right;
+      display: block;
+      @include transform(translate(0%, 10%));
+
+      @media #{$tablet} {
+        display: none;
+      }
+    }
+  }
+}
+</style>

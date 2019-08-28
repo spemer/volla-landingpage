@@ -7,9 +7,6 @@
         div.hero_text.center
           h1.hero_text-title
             | {{ tagline }}
-            //- span.hero_title-nbsp &nbsp;&nbsp;
-            //- span.hero_br
-            //- | 패션 커머스
           p.hero_text-subtitle {{ serviceEn }}를 소개합니다
           p.hero_text-spantext
             | 라이브 방송으로 여러분의 상품을

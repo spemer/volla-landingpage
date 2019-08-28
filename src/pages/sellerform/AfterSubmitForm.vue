@@ -104,4 +104,53 @@ export default {
     padding-top: $grid8x !important;
   }
 }
+
+#sellerForm {
+  text-align: center;
+  padding: $grid8x 0 $grid16x;
+
+  .sellerform_form-subtitle {
+    font-weight: 300;
+
+    span {
+      &::before {
+        content: "\A* ";
+        white-space: pre;
+        font-weight: 900;
+        color: $brand-pink;
+      }
+    }
+  }
+
+  .sbmt {
+    width: 480px;
+    margin: 0 auto;
+
+    @media #{$pablet} {
+      width: 100%;
+    }
+
+    .sellerform_form-wrapper {
+      margin: $grid16x 0 $grid8x;
+
+      .sellerform_form-title {
+        &.text {
+          text-align: left;
+          font-weight: 900;
+          margin-bottom: $grid12x;
+          @include font-size($grid5x);
+
+          .value {
+            display: block;
+            color: $black54;
+            font-weight: 400;
+            margin-top: $grid2x;
+            word-wrap: break-word;
+            @include font-size($grid4x);
+          }
+        }
+      }
+    }
+  }
+}
 </style>

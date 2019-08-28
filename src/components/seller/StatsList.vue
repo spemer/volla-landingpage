@@ -38,3 +38,17 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+#statsList {
+  padding-bottom: $grid20x;
+  border-top: 1px solid $texteee;
+
+  .service_card-title {
+    display: block;
+    color: $brand-pink;
+    font-weight: 700 !important;
+    @include font-size($grid8x);
+  }
+}
+</style>
