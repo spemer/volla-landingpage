@@ -8,7 +8,7 @@ export const globalVar = {
   companyCEO: "이문규",
   companyID: "653-12-01150",
   companyItc: "2019-서울송파-0847",
-  companyMailTo: "riversouthfive@gmail.com",
+  companyMailTo: "support@volla.live",
 
   serviceKo: "볼라",
   serviceEn: "Volla",

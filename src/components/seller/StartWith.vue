@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 #startWith {
-  $BaseURI: "~@/assets/dist/condition_";
+  $icon: "../../assets/dist/condition_";
 
   border-top: 1px solid $texteee;
 
@@ -68,7 +68,7 @@ export default {
           width: 80px;
           height: 80px;
           margin-bottom: $grid8x !important;
-          @include setGridIcons($BaseURI);
+          @include setGridIcons($icon);
         }
       }
     }

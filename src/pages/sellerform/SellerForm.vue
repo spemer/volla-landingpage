@@ -241,7 +241,7 @@ export default {
           )
           .then(() => {
             this.SET_TOKEN_BOOL(true);
-            this.$toast("입점 신청이 완료되었습니다.");
+            this.$toast("셀러 입점신청이 완료되었습니다.");
             this.$Progress.finish();
             if (this.isApp) {
               this.$router.replace({
@@ -256,7 +256,7 @@ export default {
           })
           .catch(error => {
             this.SET_TOKEN_BOOL(false);
-            alert(`오류입니다. 다시 시도해주세요!\n${error}`);
+            alert(`네트워크 오류입니다. 다시 시도해주세요!\n${error}`);
           });
       } else {
         this.$toast("개인정보 수집 및 이용 동의 여부를 선택해주세요.");
@@ -279,18 +279,10 @@ $mobile-width: 288px;
   input[type="checkbox"] {
     height: 0 !important;
     width: 0 !important;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
-    -ms-filter: "alpha(opacity=0)" !important;
     filter: alpha(opacity=0) !important;
-    -webkit-opacity: 0 !important;
-    -moz-opacity: 0 !important;
-    -ms-opacity: 0 !important;
-    -o-opacity: 0 !important;
     opacity: 0 !important;
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
-    -ms-appearance: none !important;
-    -o-appearance: none !important;
     appearance: none !important;
   }
 

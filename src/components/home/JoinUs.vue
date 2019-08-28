@@ -8,7 +8,7 @@
         | {{ stringBelow }}
         br
         span.joinus_title-copyEmail(
-          title="이메일 주소를 복사하려면 클릭하세요"
+          title="이메일 주소를 복사하려면 클릭해주세요."
           @click="copyToast(mailTo, '이메일 주소가 복사되었습니다')"
         ) 이메일 주소 복사하기
 
@@ -17,7 +17,7 @@
           :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
         )
           button.global_cta-btn.mailto(
-            title="메일 앱 열기(새 창)"
+            title="메일 앱으로 열기(새 창)"
           ) 메일로 문의하기
 
         router-link.global_cta-link(
@@ -47,7 +47,7 @@ export default {
     if (this.$route.path === "/") {
       this.stringUpper = `${this.serviceKo}와 함께 성장하실 셀러분들을 모십니다.`;
       this.stringBelow =
-        "입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요.";
+        "입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요!";
       this.sellerformLink = "/sellerform";
     } else if (this.$route.path === "/benefits") {
       this.stringUpper = "라이브 방송으로 만나는 패션 커머스,";
@@ -66,27 +66,6 @@ export default {
 #joinus {
   padding: $grid12x 0 $grid24x;
   border-top: 1px solid $texteee;
-
-  &.aos-animate {
-    .form {
-      color: $brand-pink !important;
-      background-color: #fff !important;
-      border: 1px solid $brand-pink !important;
-      animation: btn 0.5s ease-in-out 1.5s 1 forwards;
-
-      @keyframes btn {
-        from {
-          color: $brand-pink !important;
-          background-color: #fff !important;
-        }
-
-        to {
-          color: #fff;
-          background-color: $brand-pink;
-        }
-      }
-    }
-  }
 
   .container {
     .section_subtitle {
