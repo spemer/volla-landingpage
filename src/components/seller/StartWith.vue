@@ -42,8 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 #startWith {
-  $icon: "../../assets/dist/condition_";
-
+  $icon_condition: "~@/assets/dist/condition_";
   border-top: 1px solid $texteee;
 
   .service_card-title {
@@ -68,7 +67,7 @@ export default {
           width: 80px;
           height: 80px;
           margin-bottom: $grid8x !important;
-          @include setGridIcons($icon);
+          @include setGridIcons($icon_condition);
         }
       }
     }

@@ -1,6 +1,6 @@
 #benefitsComp {
-  $icon: '~@/assets/dist/benefits_';
-  $icon_2: '~@/assets/dist/benefits2_';
+  $icon_benefits: '~@/assets/dist/benefits_';
+  $icon_benefits-2: '~@/assets/dist/benefits2_';
 
   padding-bottom: $grid24x;
   border-top: 1px solid $texteee;
@@ -32,11 +32,11 @@
           margin-bottom: $grid4x !important;
 
           &.seller1 {
-            @include setGridIcons($icon);
+            @include setGridIcons($icon_benefits);
           }
 
           &.seller2 {
-            @include setGridIcons($icon_2);
+            @include setGridIcons($icon_benefits-2);
           }
 
           @media #{$pro2} {

@@ -15,9 +15,7 @@ module.exports = {
     //       "/",
     //       "/benefits/",
     //       "/sellerform/",
-    //       "/sellerform-app/",
     //       "/submit/",
-    //       "/submit-app/",
     //       "/notices/",
     //       "/event_landing/"
     //     ],
