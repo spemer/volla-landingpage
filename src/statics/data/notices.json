@@ -1,6 +1,11 @@
 {
   "notices": [
     {
+      "id": "new_seller_jooni",
+      "ymd": "190830",
+      "title": "[입점] 쥬니 - 다프네 클로젯"
+    },
+    {
       "id": "new_seller_dra",
       "ymd": "190826",
       "title": "[입점] Deep Red Attraction, DRA [드라]"

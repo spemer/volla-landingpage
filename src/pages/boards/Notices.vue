@@ -52,6 +52,7 @@ export default {
   margin: 0 auto;
   padding-top: $grid2x;
   max-width: 480px !important;
+  @include user-select();
 
   .notices_wrapper {
     max-width: 480px !important;

@@ -19,7 +19,7 @@ const noticesRoutes = Object.keys(NoticesEntries).map(section => {
     name: `${child.id}`,
     component: () =>
       import(
-        /* webpackChunkName: 'router-Details-markdown' */ `@/markdowns/notice/${child.id}.md`
+        /* webpackChunkName: 'router-Details-markdown' */ `@/markdowns/notices/${child.id}.md`
       )
   }));
   return {
