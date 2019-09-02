@@ -216,6 +216,12 @@ export default {
             color: $instagram;
           }
         }
+
+        &.fa-twitter {
+          &:hover {
+            color: $twitter;
+          }
+        }
       }
     }
   }

@@ -2,7 +2,7 @@ import "es6-promise/auto";
 import "promise-polyfill/src/polyfill";
 
 import Vue from "vue";
-import axios from "axios";
+// import axios from "axios";
 import App from "@/App.vue";
 import store from "@/store";
 import router from "@/routes";
@@ -23,7 +23,7 @@ Vue.use(VueProgressBar, {
 
 Vue.config.productionTip = false;
 // Vue.config.performance = true;
-Vue.prototype.$http = axios;
+// Vue.prototype.$http = axios;
 
 new Vue({
   el: "#app",

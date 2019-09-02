@@ -5,7 +5,6 @@
     img(
       v-if="onReady"
       alt="카카오톡 문의하기"
-      title="카카오톡 문의하기"
       @click="plusFriendChat"
       rel="noopener noreferrer"
       src="@/assets/dist/kakao.svg"
@@ -56,6 +55,7 @@ export default {
         "src",
         "https://developers.kakao.com/sdk/js/kakao.min.js"
       );
+      injectScript.style.opacity = "0";
       injectScript.style.display = "none";
       injectScript.style.visibility = "hidden";
       document.head.appendChild(injectScript);

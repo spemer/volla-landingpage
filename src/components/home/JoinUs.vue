@@ -46,8 +46,7 @@ export default {
   mounted() {
     if (this.$route.path === "/") {
       this.stringUpper = `${this.serviceKo}와 함께 성장하실 셀러분들을 모십니다.`;
-      this.stringBelow =
-        "입점신청서를 작성하시려면, 아래의 버튼을 클릭해주세요!";
+      this.stringBelow = "입점신청서를 작성하시려면, 아래 버튼을 클릭해주세요!";
       this.sellerformLink = "/sellerform";
     } else if (this.$route.path === "/benefits") {
       this.stringUpper = "라이브 방송으로 만나는 패션 커머스,";

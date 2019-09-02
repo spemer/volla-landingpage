@@ -18,8 +18,8 @@
     div.download_badge.if_mobile-true
       a.download_badge-link(
         target="_blank"
-        :href="badgesMobile.href"
         rel="noopener noreferrer"
+        :href="badgesMobile.href"
         :title="badgesMobile.title + '에서 다운받기'"
       )
         img.download_badge-each(

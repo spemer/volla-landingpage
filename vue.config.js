@@ -11,15 +11,10 @@ module.exports = {
     // plugins: [
     //   new PrerenderSPAPlugin({
     //     staticDir: path.join(__dirname, "dist"),
-    //     routes: [
-    //       "/",
-    //       "/benefits/",
-    //       "/sellerform/",
-    //       "/submit/",
-    //       "/notices/",
-    //       "/event_landing/"
-    //     ],
-    //     renderer: new PuppeteerRenderer(),
+    //     routes: ["/", "/notices"],
+    //     renderer: new PuppeteerRenderer({
+    //       renderAfterDocumentEvent: "render-event"
+    //     }),
     //     minify: {
     //       caseSensitive: true,
     //       collapseBooleanAttributes: true,
