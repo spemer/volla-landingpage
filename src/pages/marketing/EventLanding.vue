@@ -18,9 +18,11 @@ export default {
       )
   },
 
-  metaInfo: {
-    title: `볼라 입점이벤트`,
-    titleTemplate: `%s`
+  metaInfo() {
+    return {
+      title: `볼라 입점이벤트`,
+      titleTemplate: `%s`
+    };
   }
 };
 </script>

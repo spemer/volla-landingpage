@@ -59,10 +59,6 @@ export default new Router({
   functional: true,
   routes: [
     {
-      path: "*",
-      redirect: "/"
-    },
-    {
       path: "/sellerform-app",
       redirect: {
         path: "/sellerform",
@@ -179,6 +175,12 @@ export default new Router({
         import(
           /* webpackChunkName: 'router-EventLanding' */ "@/pages/marketing/EventLanding"
         )
+    },
+
+    {
+      path: "*",
+      redirect: "/",
+      hidden: true
     }
   ],
 

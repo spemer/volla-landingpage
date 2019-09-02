@@ -22,6 +22,7 @@ Vue.use(VueProgressBar, {
 });
 
 Vue.config.productionTip = false;
+// Vue.config.performance = true;
 Vue.prototype.$http = axios;
 
 new Vue({

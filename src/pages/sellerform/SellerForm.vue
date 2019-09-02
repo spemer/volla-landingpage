@@ -2,6 +2,7 @@
   div#sellerForm(
     :class="{app: isApp}"
   )
+    vue-progress-bar
     div.container
       h1.sellerform_form-title {{ sellerForm }}
       p.sellerform_form-subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.

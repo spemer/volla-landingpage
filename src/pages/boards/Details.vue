@@ -24,13 +24,6 @@ export default {
     noticesEntries: () => NOTICES_ENTRIES
   },
 
-  metaInfo() {
-    return {
-      title: `공지사항`,
-      titleTemplate: `%s`
-    };
-  },
-
   mounted() {
     // append date info
     let arr = this.noticesEntries["notices"];

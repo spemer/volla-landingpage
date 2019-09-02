@@ -54,9 +54,16 @@ import { copyToast } from "@/mixins/copyToast";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons/faFacebookSquare";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
 import { faAppStoreIos } from "@fortawesome/free-brands-svg-icons/faAppStoreIos";
 import { faGooglePlay } from "@fortawesome/free-brands-svg-icons/faGooglePlay";
-library.add(faFacebookSquare, faInstagram, faAppStoreIos, faGooglePlay);
+library.add(
+  faFacebookSquare,
+  faInstagram,
+  faTwitter,
+  faAppStoreIos,
+  faGooglePlay
+);
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 Vue.component("font-awesome-icon", FontAwesomeIcon);
@@ -77,6 +84,7 @@ export default {
     snsList: {
       facebook: [globalVar.facebookUrl, "facebook-square", "페이스북"],
       instagram: [globalVar.instagramUrl, "instagram", "인스타그램"],
+      twitter: [globalVar.twitterUrl, "twitter", "트위터"],
       appstore: [globalVar.iosStore, "app-store-ios", "앱 스토어 다운받기"],
       android: [globalVar.androidStore, "google-play", "구글 플레이 다운받기"]
     }
