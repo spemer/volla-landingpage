@@ -23,14 +23,14 @@ export const globalVar = {
   callTo: "02-401-2155",
   mailTo: "ceo@volla.live",
 
-  websiteUrl: "https://volla.live",
-  iosStore: "https://itunes.apple.com/kr/app/id1454785070?mt=8",
-  androidStore:
+  WEB_URL: "https://volla.live",
+  IOS_URL: "https://itunes.apple.com/kr/app/id1454785070?mt=8",
+  AND_URL:
     "https://play.google.com/store/apps/details?id=com.riversouthfive.volla",
 
-  facebookUrl: "https://facebook.com/vollaofficial",
-  instagramUrl: "https://www.instagram.com/volla_official",
-  twitterUrl: "https://twitter.com/volla_official",
+  FB_URL: "https://facebook.com/vollaofficial",
+  INSTA_URL: "https://www.instagram.com/volla_official",
+  TWT_URL: "https://twitter.com/volla_official",
 
   tosDateNow: "2019년 3월 26일",
   tosDateNowNumber: "190326"

@@ -44,3 +44,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.section_each {
+  padding: $grid12x 0 $grid20x;
+}
+</style>

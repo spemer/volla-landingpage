@@ -57,7 +57,7 @@ export default {
   mounted() {
     let android = globalVar.androidStore,
       ios = globalVar.iosStore,
-      unknown = globalVar.websiteUrl;
+      unknown = globalVar.WEB_URL;
 
     if (this.userAgent === "Android") {
       window.location.href = android;

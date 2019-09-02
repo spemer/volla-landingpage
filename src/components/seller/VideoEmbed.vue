@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#videoEmbed
+  div#yt
     div.container
       h1.easy_text-title.section_title
         | 이제 소비자는 단순히 예쁜 사진이 아닌
@@ -11,9 +11,9 @@
         player-width="100%"
         player-height="480px"
       )
-      p.videoEmbed_from
-        span.videoEmbed_from-text 영상출처:
-          a.videoEmbed_from-link(
+      p.yt_from
+        span.yt_from-text 영상출처:
+          a.yt_from-link(
             target="_blank"
             :href="videoLink"
             rel="noopener noreferrer"
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#videoEmbed {
+#yt {
   padding: $grid16x 0 $grid20x;
 
   .easy_text-title {
@@ -70,15 +70,15 @@ export default {
     }
   }
 
-  .videoEmbed_from {
+  .yt_from {
     text-align: center;
     margin-top: $grid2x;
 
-    .videoEmbed_from-text {
+    .yt_from-text {
       font-weight: 300;
       display: inline-block;
 
-      .videoEmbed_from-link {
+      .yt_from-link {
         cursor: pointer;
         font-weight: 700;
       }

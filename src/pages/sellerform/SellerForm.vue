@@ -1,24 +1,24 @@
 <template lang="pug">
-  div#sellerForm(
+  div#sellerform(
     :class="{app: isApp}"
   )
     vue-progress-bar
     div.container
-      h1.sellerform_form-title {{ sellerForm }}
-      p.sellerform_form-subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
+      h1.sellerform-title {{ sellerForm }}
+      p.sellerform-subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
         span 는 필수 입력 항목입니다.
 
-      form.sellerform_form-form(
+      form.sellerform-form(
         name="sellerform_form"
         @submit.prevent="sendPost"
       )
-        p.sellerform_form-title(
+        p.sellerform-title(
           v-for="list in sellerForm_List"
         ) {{ list.text }}
           span(
             :required="list.required"
           )
-          input.sellerform_form-input(
+          input.sellerform-input(
             :type="list.type"
             :name="list.name"
             v-model.trim="list.value"
@@ -28,16 +28,16 @@
             :maxlength="list.maxlength"
             :placeholder="list.placeholder"
           )
-          span.sellerform_form-helpText {{ list.helpText }}
+          span.sellerform-helpText {{ list.helpText }}
 
-        p.sellerform_form-title.host {{ sellerForm_Category[0].text }}
+        p.sellerform-title.host {{ sellerForm_Category[0].text }}
           span(
             :required="sellerForm_Category[0].required"
           )
-            div.sellerform_form-div(
+            div.sellerform-div(
               v-for="category in sellerForm_Category"
             )
-              input.sellerform_form-input(
+              input.sellerform-input(
                 :id="category.id"
                 :type="category.type"
                 :name="category.name"
@@ -45,7 +45,7 @@
                 :required="category.required"
                 v-model="sellerForm_CategoryValue.value"
               )
-              label.sellerform_form-label(
+              label.sellerform-label(
                 :for="category.id"
                 :name="category.name"
                 :class="category.class"
@@ -53,22 +53,22 @@
                 v-model="sellerForm_CategoryValue.value"
               ) {{ category.buttonText }}
 
-        p.sellerform_form-title {{ sellerForm_Details.text }}
-          textarea.sellerform_form-input.textarea(
+        p.sellerform-title {{ sellerForm_Details.text }}
+          textarea.sellerform-input.textarea(
             :type="sellerForm_Details.text"
             :name="sellerForm_Details.name"
             v-model.trim="sellerForm_Details.value"
             :placeholder="sellerForm_Details.placeholder"
           )
 
-        p.sellerform_form-condition {{ sellerCondition }}
+        p.sellerform-condition {{ sellerCondition }}
 
-        div.sellerform_form-terms
-          p.sellerform_form-termsDetails(
+        div.sellerform-terms
+          p.sellerform-termsDetails(
             v-for="(value, key, index) in marketingTerms"
           ) {{ value.desc }}
 
-        label.sellerform_form-checkbox(
+        label.sellerform-checkbox(
           for="checkbox_1"
           style="font-weight: 700"
         ) {{ marketingTerms.personal.title }}
@@ -79,7 +79,7 @@
           )
           span.checkmark
 
-        label.sellerform_form-checkbox(
+        label.sellerform-checkbox(
           for="checkbox_2"
         ) {{ marketingTerms.marketing.title }}
           input(
@@ -89,20 +89,28 @@
           )
           span.checkmark
 
-        div.sellerform_form-wrapper(
+        div.sellerform-wrapper(
           :class="{'apply_border': isApp}"
         )
-          div.sellerform_form-box
-            button.sellerform_form-submit(
+          div.sellerform-box
+            button.sellerform-submit(
               name="sellerform_form"
               @click="checkCategoryValue"
             ) 제출하기
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
 import { mapState, mapMutations } from "vuex";
 import { globalVar } from "@/globalVar";
+
+import VueProgressBar from "vue-progressbar";
+Vue.use(VueProgressBar, {
+  color: "#ff82ab",
+  failedColor: "#ff82ab",
+  height: "4px"
+});
 
 export default {
   name: "sellerForm",
@@ -244,15 +252,15 @@ export default {
             this.SET_TOKEN_BOOL(true);
             this.$toast("셀러 입점신청이 완료되었습니다.");
             this.$Progress.finish();
-            if (this.isApp) {
+            if (!this.isApp) {
+              this.$router.replace("/submit");
+            } else {
               this.$router.replace({
                 path: "/submit",
                 query: {
                   from: "app"
                 }
               });
-            } else if (!this.isApp) {
-              this.$router.replace("/submit");
             }
           })
           .catch(error => {
@@ -272,7 +280,7 @@ $width: 480px;
 $pablet-width: 320px;
 $mobile-width: 288px;
 
-#sellerForm {
+#sellerform {
   text-align: center;
   padding: $grid8x 0 $grid16x;
 
@@ -291,7 +299,7 @@ $mobile-width: 288px;
     padding: $grid12x 0 $grid24x;
   }
 
-  .sellerform_form-subtitle {
+  .sellerform-subtitle {
     font-weight: 300;
 
     span {
@@ -304,14 +312,14 @@ $mobile-width: 288px;
     }
   }
 
-  .sellerform_form-form {
+  .sellerform-form {
     width: $width;
     display: block;
     margin: 0 auto;
     text-align: center;
     margin-top: $grid16x;
 
-    .sellerform_form-wrapper {
+    .sellerform-wrapper {
       &.apply_border {
         border-top: 1px solid $texteee;
       }
@@ -330,7 +338,7 @@ $mobile-width: 288px;
       margin-top: $grid16x;
     }
 
-    .sellerform_form-title {
+    .sellerform-title {
       display: block;
       text-align: left;
       font-weight: 900;
@@ -355,10 +363,10 @@ $mobile-width: 288px;
           }
         }
 
-        .sellerform_form-div {
+        .sellerform-div {
           display: inline-block;
 
-          .sellerform_form-label {
+          .sellerform-label {
             color: $black38;
             cursor: pointer;
             font-weight: 700;
@@ -385,7 +393,7 @@ $mobile-width: 288px;
         }
       }
 
-      .sellerform_form-input {
+      .sellerform-input {
         border: none;
         width: $width;
         outline: none;
@@ -424,7 +432,7 @@ $mobile-width: 288px;
         }
       }
 
-      .sellerform_form-helpText {
+      .sellerform-helpText {
         display: block;
         font-weight: 400;
         color: $warning_red;
@@ -434,7 +442,7 @@ $mobile-width: 288px;
       }
     }
 
-    .sellerform_form-submit {
+    .sellerform-submit {
       outline: none;
       margin: 0 auto;
       display: block;
@@ -452,14 +460,14 @@ $mobile-width: 288px;
       }
     }
 
-    .sellerform_form-condition {
+    .sellerform-condition {
       color: $black38;
       text-align: left;
       margin-top: -#{$grid10x};
       @include font-size($grid3x);
     }
 
-    .sellerform_form-terms {
+    .sellerform-terms {
       height: $grid28x;
       text-align: left;
       font-weight: 300;
@@ -469,12 +477,12 @@ $mobile-width: 288px;
       background-color: $black03;
       @include border-radius($grid2x);
 
-      .sellerform_form-termsDetails {
+      .sellerform-termsDetails {
         @include font-size(14px);
       }
     }
 
-    .sellerform_form-checkbox {
+    .sellerform-checkbox {
       display: block;
       cursor: pointer;
       text-align: left;
@@ -539,13 +547,13 @@ $mobile-width: 288px;
       }
 
       h1 {
-        &.sellerform_form-title {
+        &.sellerform-title {
           display: none;
         }
       }
 
       p {
-        &.sellerform_form-title {
+        &.sellerform-title {
           @include font-size($grid4x);
 
           &.host {
@@ -557,18 +565,18 @@ $mobile-width: 288px;
             @include font-size(14px);
           }
 
-          .sellerform_form-helpText {
+          .sellerform-helpText {
             margin-bottom: $grid10x;
             margin-top: -#{$grid2x};
           }
         }
 
-        &.sellerform_form-subtitle {
+        &.sellerform-subtitle {
           display: none;
         }
       }
 
-      .sellerform_form-input {
+      .sellerform-input {
         padding-top: $grid2x;
 
         &.textarea {
@@ -578,11 +586,11 @@ $mobile-width: 288px;
         }
       }
 
-      .sellerform_form-label {
+      .sellerform-label {
         margin-top: $grid2x !important;
       }
 
-      .sellerform_form-form {
+      .sellerform-form {
         margin-top: $grid4x !important;
 
         @media #{$pablet} {
@@ -595,7 +603,7 @@ $mobile-width: 288px;
         }
       }
 
-      .sellerform_form-wrapper {
+      .sellerform-wrapper {
         left: 0;
         bottom: 0;
         padding: 0;
@@ -605,7 +613,7 @@ $mobile-width: 288px;
         background-color: #fff;
         @include gradient();
 
-        @media #{$tablet} {
+        @media #{$default} {
           width: calc(100% - #{$grid16x});
           padding: 0 $grid8x;
         }
@@ -628,8 +636,8 @@ $mobile-width: 288px;
           padding-bottom: calc(env(safe-area-inset-bottom)) !important;
         }
 
-        .sellerform_form-box {
-          .sellerform_form-submit {
+        .sellerform-box {
+          .sellerform-submit {
             opacity: 1;
             width: 100%;
             margin: 0 auto;

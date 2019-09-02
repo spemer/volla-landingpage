@@ -82,11 +82,11 @@ export default {
       주소: globalVar.companyAdr
     },
     snsList: {
-      facebook: [globalVar.facebookUrl, "facebook-square", "페이스북"],
-      instagram: [globalVar.instagramUrl, "instagram", "인스타그램"],
-      twitter: [globalVar.twitterUrl, "twitter", "트위터"],
-      appstore: [globalVar.iosStore, "app-store-ios", "앱 스토어 다운받기"],
-      android: [globalVar.androidStore, "google-play", "구글 플레이 다운받기"]
+      facebook: [globalVar.FB_URL, "facebook-square", "페이스북"],
+      instagram: [globalVar.INSTA_URL, "instagram", "인스타그램"],
+      twitter: [globalVar.TWT_URL, "twitter", "트위터"],
+      appstore: [globalVar.IOS_URL, "app-store-ios", "앱 스토어 다운받기"],
+      android: [globalVar.AND_URL, "google-play", "구글 플레이 다운받기"]
     }
   }),
 

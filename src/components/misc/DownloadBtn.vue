@@ -40,12 +40,12 @@ export default {
       Android: {
         src: require("@/assets/dist/playstore.png"),
         title: "Google Play",
-        href: globalVar.androidStore
+        href: globalVar.AND_URL
       },
       iOS: {
         src: require("@/assets/dist/appstore.png"),
         title: "App Store",
-        href: globalVar.iosStore
+        href: globalVar.IOS_URL
       }
     }
   }),

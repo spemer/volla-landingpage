@@ -4,36 +4,36 @@
   )
     div.container
       div.sbmt
-        h1.sellerform_form-title 감사합니다
-        p.sellerform_form-subtitle
+        h1.sellerform-title 감사합니다
+        p.sellerform-subtitle
           | {{ serviceKo }} 셀러 입점신청이 완료되었습니다.
           br
           | 빠른 시일 내에 안내메일을 발송해드리겠습니다.
 
-        div.sellerform_form-wrapper
-          div.sellerform_form-value(
+        div.sellerform-wrapper
+          div.sellerform-value(
             v-for="list in sellerForm_List"
           )
-            p.sellerform_form-title.text(
+            p.sellerform-title.text(
               v-if="list.value"
             ) {{ list.text }}
               span.value {{ list.value }}
 
-          p.sellerform_form-title.text(
+          p.sellerform-title.text(
             v-if="sellerForm_CategoryValue.value"
           ) {{ sellerForm_Category[0].text }}
             span.value {{ sellerForm_CategoryValue.value }}
 
-          p.sellerform_form-title.text(
+          p.sellerform-title.text(
             v-if="sellerForm_Details.value"
           ) {{ sellerForm_Details.text }}
             span.value {{ sellerForm_Details.value }}
 
-          p.sellerform_form-title.text 개인정보 수집 및 이용
+          p.sellerform-title.text 개인정보 수집 및 이용
             span.value( v-if="marketing.val_1" ) 동의
             span.value( v-else ) 미동의
 
-          p.sellerform_form-title.text 마케팅 정보 수신
+          p.sellerform-title.text 마케팅 정보 수신
             span.value( v-if="marketing.val_2" ) 동의
             span.value( v-else ) 미동의
 
@@ -109,7 +109,7 @@ export default {
   text-align: center;
   padding: $grid8x 0 $grid16x;
 
-  .sellerform_form-subtitle {
+  .sellerform-subtitle {
     font-weight: 300;
 
     span {
@@ -130,10 +130,10 @@ export default {
       width: 100%;
     }
 
-    .sellerform_form-wrapper {
+    .sellerform-wrapper {
       margin: $grid16x 0 $grid8x;
 
-      .sellerform_form-title {
+      .sellerform-title {
         &.text {
           text-align: left;
           font-weight: 900;
