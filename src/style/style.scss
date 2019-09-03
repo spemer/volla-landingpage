@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-@import './normalize';
 
 // modules
 @import './modules/grid';
@@ -11,12 +10,10 @@
 @import './modules/class';
 
 // components/home
-@import './components/home/hero';
 @import './components/home/service';
 
 // components/benefits
 @import './components/benefits/benefits';
-@import './components/benefits/startWith';
 
 // components/misc
 @import './components/misc/toast';

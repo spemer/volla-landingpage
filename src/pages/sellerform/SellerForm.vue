@@ -203,11 +203,11 @@ export default {
     },
 
     created() {
-      return this.$route.query.from === "app" && this.$Progress.start();
+      this.$Progress.start();
     },
 
     mounted() {
-      return this.$route.query.from === "app" && this.$Progress.finish();
+      this.$Progress.finish();
     },
 
     sendPost() {

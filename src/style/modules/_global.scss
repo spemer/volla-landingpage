@@ -1,10 +1,8 @@
-// mixin default font
 @mixin font-stack-html() {
   font-family: 'Spoqa Han Sans', Sans-serif;
   font-display: swap;
 }
 
-// text rendering
 @mixin font-settings() {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
@@ -15,7 +13,6 @@
   -webkit-text-decoration-skip: ink;
 }
 
-// default font-size, line-height
 @function calculateRem($size) {
   $remSize: $size / $grid4x;
   @return $remSize * 1rem;
@@ -32,7 +29,6 @@
   @include line-height($size);
 }
 
-// normalize css
 body {
   outline: none;
   color: $black78;
@@ -42,16 +38,13 @@ body {
   @include font-size($grid4x);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
-// fonts
 a {
   color: $brand-pink;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
 h1 {
@@ -105,18 +98,6 @@ span {
   color: $black38;
 }
 
-::-moz-placeholder {
-  color: $black38;
-}
-
-::-ms-placeholder {
-  color: $black38;
-}
-
-::-webkit-input-placeholder {
-  color: $black38;
-}
-
 :-ms-input-placeholder {
   color: $black38;
 }
@@ -136,7 +117,6 @@ button {
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  tap-highlight-color: rgba(0, 0, 0, 0) !important;
 
   &:focus,
   &:active {
@@ -144,7 +124,6 @@ button {
     outline: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
     -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-    tap-highlight-color: rgba(0, 0, 0, 0) !important;
   }
 }
 

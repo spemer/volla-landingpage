@@ -25,27 +25,27 @@ export default {
   components: {
     Hero: () =>
       import(
-        /* webpackChunkName: 'components/seller/Hero' */ "@/components/seller/Hero"
+        /* webpackChunkName: 'components/benefits/Hero' */ "@/components/benefits/Hero"
       ),
     VideoEmbed: () =>
       import(
-        /* webpackChunkName: 'components/seller/VideoEmbed' */ "@/components/seller/VideoEmbed"
+        /* webpackChunkName: 'components/benefits/VideoEmbed' */ "@/components/benefits/VideoEmbed"
       ),
     StatsList: () =>
       import(
-        /* webpackChunkName: 'components/seller/StatsList' */ "@/components/seller/StatsList"
+        /* webpackChunkName: 'components/benefits/StatsList' */ "@/components/benefits/StatsList"
       ),
     StartWith: () =>
       import(
-        /* webpackChunkName: 'components/seller/StartWith' */ "@/components/seller/StartWith"
+        /* webpackChunkName: 'components/benefits/StartWith' */ "@/components/benefits/StartWith"
       ),
     Benefits: () =>
       import(
-        /* webpackChunkName: 'components/seller/BenefitsComp' */ "@/components/seller/BenefitsComp"
+        /* webpackChunkName: 'components/benefits/BenefitsComp' */ "@/components/benefits/BenefitsComp"
       ),
     Benefits2: () =>
       import(
-        /* webpackChunkName: 'components/seller/BenefitsComp2' */ "@/components/seller/BenefitsComp2"
+        /* webpackChunkName: 'components/benefits/BenefitsComp2' */ "@/components/benefits/BenefitsComp2"
       ),
     JoinUs: () =>
       import(

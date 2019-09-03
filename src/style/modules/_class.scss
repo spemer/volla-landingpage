@@ -1,23 +1,19 @@
-// box-shadow
 @mixin box-shadow ($val:$grid2x, $val2:$grid4x, $color:$black08) {
   -webkit-box-shadow: 0 $val $val2 $color;
   -ms-box-shadow: 0 $val $val2 $color;
   box-shadow: 0 $val $val2 $color;
 }
 
-// drop-shadow
 @mixin drop-shadow ($val:0, $val2:$grid2x, $val3:$grid4x, $color:$black08) {
   -webkit-filter: drop-shadow($val $val2 $val3 $color);
   -ms-filter: drop-shadow($val $val2 $val3 $color);
   filter: drop-shadow($val $val2 $val3 $color);
 }
 
-// border-radius
 @mixin border-radius ($val:$grid4x) {
   border-radius: $val;
 }
 
-// user-select
 @mixin user-select () {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -25,13 +21,11 @@
   user-select: none;
 }
 
-// transform
 @mixin transform ($val...) {
   -webkit-transform: $val;
           transform: $val;
 }
 
-// css grid layout
 @mixin grid-layout($col:3, $row:$grid12x, $gap:$grid24x) {
   display: grid;
   grid-template-columns: repeat($col, 1fr);
@@ -39,18 +33,15 @@
   grid-gap: $gap;
 }
 
-// transition
 @mixin transition ($transition...) {
   -webkit-transition: $transition;
   transition: $transition;
 }
 
-// bottom btn gradient
 @mixin gradient() {
   background-color: #fff;
 }
 
-// setGridIcons - 3
 @mixin setGridIcons($base, $ext:'svg') {
   margin: 0 auto;
   background-size: cover;
@@ -65,7 +56,6 @@
   }
 }
 
-// global btn
 .global_cta {
   text-align: center;
 

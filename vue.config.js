@@ -1,35 +1,14 @@
-// const path = require("path");
-// const PrerenderSPAPlugin = require("prerender-spa-plugin");
-// const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
-
 module.exports = {
   configureWebpack: {
     resolve: {
       alias: require("./aliases.config").webpack
-    }
+    },
 
-    // plugins: [
-    //   new PrerenderSPAPlugin({
-    //     staticDir: path.join(__dirname, "dist"),
-    //     routes: ["/", "/notices"],
-    //     renderer: new PuppeteerRenderer({
-    //       renderAfterDocumentEvent: "render-event"
-    //     }),
-    //     minify: {
-    //       caseSensitive: true,
-    //       collapseBooleanAttributes: true,
-    //       collapseWhitespace: true,
-    //       collapseInlineTagWhitespace: true,
-    //       decodeEntities: true,
-    //       minifyCSS: true,
-    //       keepClosingSlash: true,
-    //       sortAttributes: true,
-    //       removeComments: true,
-    //       removeScriptTypeAttributes: true,
-    //       removeStyleLinkTypeAttributes: true
-    //     }
-    //   })
-    // ]
+    optimization: {
+      splitChunks: {
+        chunks: "all"
+      }
+    }
   },
 
   devServer: {
