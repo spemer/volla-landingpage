@@ -75,6 +75,5 @@ export const state = {
     val_2: false
   },
 
-  tokenState: false,
-  isApp: false
+  tokenState: false
 };

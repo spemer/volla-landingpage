@@ -67,6 +67,15 @@ export default new Router({
         }
       }
     },
+    {
+      path: "/submit-app",
+      redirect: {
+        path: "/submit",
+        query: {
+          from: "app"
+        }
+      }
+    },
 
     // app
     {

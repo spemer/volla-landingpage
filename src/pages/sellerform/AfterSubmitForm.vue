@@ -1,6 +1,6 @@
 <template lang="pug">
   div#sellerForm.submit(
-    :class="{app: isApp}"
+    :class="{app: this.$route.query.from === 'app'}"
   )
     div.container
       div.sbmt
@@ -63,12 +63,6 @@ export default {
     };
   },
 
-  mounted() {
-    return this.$route.query.from === "app"
-      ? this.SET_CLASS_APP(true)
-      : this.SET_CLASS_APP(false);
-  },
-
   computed: {
     ...mapState([
       "sellerForm_List",
@@ -76,18 +70,12 @@ export default {
       "sellerForm_Details",
       "sellerForm_Category",
       "marketing",
-      "tokenState",
-      "isApp"
+      "tokenState"
     ])
   },
 
   methods: {
-    ...mapMutations([
-      "REMOVE_FORM_VAL",
-      "SET_MARKETING_BOOL",
-      "SET_TOKEN_BOOL",
-      "SET_CLASS_APP"
-    ])
+    ...mapMutations(["REMOVE_FORM_VAL", "SET_MARKETING_BOOL", "SET_TOKEN_BOOL"])
   },
 
   destroyed() {

@@ -18,6 +18,14 @@ export default {
       )
   },
 
+  created() {
+    this.$Progress.start();
+  },
+
+  mounted() {
+    this.$Progress.finish();
+  },
+
   metaInfo() {
     return {
       title: `볼라 입점이벤트`,

@@ -24,10 +24,6 @@ export const mutations = {
     state.marketing.val_2 = bool;
   },
 
-  SET_CLASS_APP: (state, bool) => {
-    state.isApp = bool;
-  },
-
   REMOVE_FORM_VAL: state => {
     [...state.sellerForm_List].forEach(list => {
       list.value = null;

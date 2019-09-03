@@ -1,8 +1,7 @@
 <template lang="pug">
   div#sellerform(
-    :class="{app: isApp}"
+    :class="{app: this.$route.query.from === 'app'}"
   )
-    vue-progress-bar
     div.container
       h1.sellerform-title {{ sellerForm }}
       p.sellerform-subtitle {{ serviceKo }} 셀러(판매자)용 입점 신청서입니다.
@@ -90,7 +89,7 @@
           span.checkmark
 
         div.sellerform-wrapper(
-          :class="{'apply_border': isApp}"
+          :class="{'apply_border': this.$route.query.from === 'app'}"
         )
           div.sellerform-box
             button.sellerform-submit(
@@ -100,17 +99,9 @@
 </template>
 
 <script>
-import Vue from "vue";
 import axios from "axios";
 import { mapState, mapMutations } from "vuex";
 import { globalVar } from "@/globalVar";
-
-import VueProgressBar from "vue-progressbar";
-Vue.use(VueProgressBar, {
-  color: "#ff82ab",
-  failedColor: "#ff82ab",
-  height: "4px"
-});
 
 export default {
   name: "sellerForm",
@@ -140,16 +131,8 @@ export default {
     };
   },
 
-  mounted() {
-    if (this.$route.query.from === "app") {
-      this.SET_CLASS_APP(true);
-    } else {
-      this.SET_CLASS_APP(false);
-    }
-  },
-
   computed: {
-    ...mapState(["sellerForm_Category", "tokenState", "isApp"]),
+    ...mapState(["sellerForm_Category", "tokenState"]),
 
     sellerForm_List: {
       get() {
@@ -189,7 +172,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["SET_TOKEN_BOOL", "SET_CLASS_APP", "ADD_FORM_HELPTEXT"]),
+    ...mapMutations(["SET_TOKEN_BOOL", "ADD_FORM_HELPTEXT"]),
 
     checkCategoryValue() {
       if (!this.sellerForm_List[0].value) {
@@ -217,6 +200,14 @@ export default {
           }
         }
       }
+    },
+
+    created() {
+      return this.$route.query.from === "app" && this.$Progress.start();
+    },
+
+    mounted() {
+      return this.$route.query.from === "app" && this.$Progress.finish();
     },
 
     sendPost() {
@@ -252,7 +243,7 @@ export default {
             this.SET_TOKEN_BOOL(true);
             this.$toast("셀러 입점신청이 완료되었습니다.");
             this.$Progress.finish();
-            if (!this.isApp) {
+            if (this.$route.query.from !== "app") {
               this.$router.replace("/submit");
             } else {
               this.$router.replace({

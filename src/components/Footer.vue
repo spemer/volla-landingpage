@@ -1,6 +1,6 @@
 <template lang="pug">
   div#footer(
-    v-if="!this.$store.state.isApp"
+    v-if="this.$route.query.from !== 'app'"
   )
     div.container
       div.footer_copyright
