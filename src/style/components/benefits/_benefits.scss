@@ -1,7 +1,4 @@
 #benefitsComp {
-  $icon_benefits: '~@/assets/dist/benefits_';
-  $icon_benefits-2: '~@/assets/dist/benefits2_';
-
   padding-bottom: $grid24x;
   border-top: 1px solid $texteee;
 
@@ -31,14 +28,6 @@
           height: 80px;
           margin-bottom: $grid4x !important;
 
-          &.seller1 {
-            @include setGridIcons($icon_benefits);
-          }
-
-          &.seller2 {
-            @include setGridIcons($icon_benefits-2);
-          }
-
           @media #{$pro2} {
             margin-bottom: $grid8x !important;
           }
@@ -53,22 +42,6 @@
 
       @media #{$pablet} {
         padding: 0 $grid8x;
-      }
-    }
-  }
-
-  &.benefits2 {
-    padding-bottom: $grid8x;
-
-    .subtitle {
-      @include font-size($grid8x);
-
-      @media #{$pablet} {
-        @include font-size($grid7x);
-      }
-
-      @media #{$ip6} {
-        @include font-size($grid5x);
       }
     }
   }

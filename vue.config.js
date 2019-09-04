@@ -25,13 +25,11 @@ module.exports = {
   },
 
   css: {
-    sourceMap: true,
     loaderOptions: {
       sass: {
-        data: `
-                @import '@/style/style.scss';
-              `
+        data: '\n                @import "@/style/style.scss";\n              '
       }
-    }
+    },
+    extract: false
   }
 };

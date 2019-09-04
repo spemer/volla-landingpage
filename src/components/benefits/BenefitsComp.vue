@@ -9,7 +9,7 @@
           :key="key"
         )
           div.service_card-img.seller.seller1(
-            :class="'img-' + index"
+            :class="'img-' + (index + 1)"
           )
           p.service_card-text.section_subtitle.withcount {{ value }}
 
@@ -38,3 +38,21 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+#benefitsComp {
+  $icon_benefits: "~@/assets/dist/benefits_";
+
+  .service_card {
+    .service_card-each {
+      .service_card-img {
+        &.seller {
+          &.seller1 {
+            @include setGridIcons($icon_benefits);
+          }
+        }
+      }
+    }
+  }
+}
+</style>

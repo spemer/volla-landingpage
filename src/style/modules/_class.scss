@@ -48,10 +48,10 @@
   background-repeat: no-repeat;
   background-position: center center;
 
-  @for $i from 0 through 2 {
+  @for $i from 1 through 3 {
 
     &.img-#{$i} {
-      background-image: url('#{$base + ($i + 1)}'+ '.'+ '#{$ext}');
+      background-image: url('#{$base + ($i)}'+ '.'+ '#{$ext}');
     }
   }
 }

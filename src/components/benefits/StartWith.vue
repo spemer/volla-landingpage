@@ -15,7 +15,7 @@
         :key="key"
         )
           div.service_card-img.seller(
-            :class="'img-' + index"
+            :class="'img-' + (index + 1)"
           )
           p.service_card-text.section_subtitle {{ value }}
       p.sellerform_form-condition {{ sellerCondition }}

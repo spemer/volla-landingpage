@@ -11,7 +11,7 @@
           :key="key"
         )
           div.service_card-img.seller.seller2(
-            :class="'img-' + index"
+            :class="'img-' + (index + 1)"
           )
           p.service_card-text.section_subtitle {{ value }}
 </template>
@@ -27,3 +27,35 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+.benefits2 {
+  $icon_benefits-2: "~@/assets/dist/benefits2_";
+
+  padding-bottom: $grid8x !important;
+
+  .service_card {
+    .service_card-each {
+      .service_card-img {
+        &.seller {
+          &.seller2 {
+            @include setGridIcons($icon_benefits-2);
+          }
+        }
+      }
+    }
+  }
+
+  .subtitle {
+    @include font-size($grid8x);
+
+    @media #{$pablet} {
+      @include font-size($grid7x);
+    }
+
+    @media #{$ip6} {
+      @include font-size($grid5x);
+    }
+  }
+}
+</style>

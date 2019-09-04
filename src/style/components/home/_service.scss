@@ -2,9 +2,6 @@
 #benefitsComp,
 #startWith,
 #statsList {
-  $BaseURI: '~@/assets/dist/serviceImage_';
-  $ext: 'png';
-
   overflow-y: hidden;
   padding-top: $grid16x;
   padding-bottom: $grid12x;
@@ -40,7 +37,6 @@
         &.service {
           height: 480px;
           margin: 0 auto;
-          @include setGridIcons($BaseURI, $ext);
           @include drop-shadow(0, $grid2x, $grid4x, $black16);
         }
 

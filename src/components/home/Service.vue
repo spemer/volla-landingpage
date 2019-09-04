@@ -10,7 +10,7 @@
           h3.service_card-title {{ value.title }}
           p.service_card-text.section_subtitle {{ value.desc }}
           div.service_card-img.service(
-            :class="'img-' + index"
+            :class="'img-' + (index + 1)"
           )
 </template>
 
@@ -36,3 +36,20 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+#service {
+  $BaseURI: "~@/assets/dist/serviceImage_";
+  $ext: "png";
+
+  .service_card {
+    .service_card-each {
+      .service_card-img {
+        &.service {
+          @include setGridIcons($BaseURI, $ext);
+        }
+      }
+    }
+  }
+}
+</style>
