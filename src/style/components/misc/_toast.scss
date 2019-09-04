@@ -17,8 +17,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100% !important;
-  max-width: calc(100% - #{$grid32x}) !important;
   @include font-size($grid3x);
   @include border-radius($grid16x !important);
   @include box-shadow($grid, $grid2x, $black16);
@@ -27,8 +25,23 @@
 .lx-toast.lx-word-wrap {
   height: auto;
   white-space: inherit;
-  width: 100% !important;
-  max-width: calc(100% - #{$grid32x}) !important;
+  width: calc(100% - #{$grid128x}) !important;
+  max-width: calc(100% - #{$grid128x}) !important;
+
+  @media #{$tablet} {
+    width: calc(100% - #{$grid64x}) !important;
+    max-width: calc(100% - #{$grid64x}) !important;
+  }
+
+  @media #{$pablet2} {
+    width: calc(100% - #{$grid32x}) !important;
+    max-width: calc(100% - #{$grid32x}) !important;
+  }
+
+  @media #{$ip6} {
+    width: calc(100% - #{$grid16x}) !important;
+    max-width: calc(100% - #{$grid16x}) !important;
+  }
 }
 
 @-webkit-keyframes show-toast {
