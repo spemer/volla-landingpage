@@ -26,11 +26,11 @@
   height: auto;
   white-space: inherit;
   width: calc(100% - #{$grid128x}) !important;
-  max-width: calc(100% - #{$grid128x}) !important;
+  max-width: 480px !important;
 
   @media #{$tablet} {
     width: calc(100% - #{$grid64x}) !important;
-    max-width: calc(100% - #{$grid64x}) !important;
+    max-width: 480px !important;
   }
 
   @media #{$pablet2} {

@@ -29,28 +29,28 @@
           )
           span.sellerform-helpText {{ list.helpText }}
 
-        //- p.sellerform-title.host {{ sellerForm_Category[0].text }}
-        //-   span(
-        //-     :required="sellerForm_Category[0].required"
-        //-   )
-        //-     div.sellerform-div(
-        //-       v-for="category in sellerForm_Category"
-        //-     )
-        //-       input.sellerform-input(
-        //-         :id="category.id"
-        //-         :type="category.type"
-        //-         :name="category.name"
-        //-         :value="category.buttonText"
-        //-         :required="category.required"
-        //-         v-model="sellerForm_CategoryValue.value"
-        //-       )
-        //-       label.sellerform-label(
-        //-         :for="category.id"
-        //-         :name="category.name"
-        //-         :class="category.class"
-        //-         :title="category.buttonText"
-        //-         v-model="sellerForm_CategoryValue.value"
-        //-       ) {{ category.buttonText }}
+        p.sellerform-title.host {{ sellerForm_Category[0].text }}
+          span(
+            :required="sellerForm_Category[0].required"
+          )
+            div.sellerform-div(
+              v-for="category in sellerForm_Category"
+            )
+              input.sellerform-input(
+                :id="category.id"
+                :type="category.type"
+                :name="category.name"
+                :value="category.buttonText"
+                :required="category.required"
+                v-model="sellerForm_CategoryValue.value"
+              )
+              label.sellerform-label(
+                :for="category.id"
+                :name="category.name"
+                :class="category.class"
+                :title="category.buttonText"
+                v-model="sellerForm_CategoryValue.value"
+              ) {{ category.buttonText }}
 
         p.sellerform-title {{ sellerForm_Details.text }}
           textarea.sellerform-input.textarea(
@@ -132,10 +132,7 @@ export default {
   },
 
   computed: {
-    ...mapState([
-      // "sellerForm_Category",
-      "tokenState"
-    ]),
+    ...mapState(["sellerForm_Category", "tokenState"]),
 
     sellerForm_List: {
       get() {
@@ -198,9 +195,9 @@ export default {
               : this.ADD_FORM_HELPTEXT([2, ""]);
           }
 
-          // if (!this.sellerForm_CategoryValue.value) {
-          //   alert("호스트 지원 희망여부를 선택해주세요.");
-          // }
+          if (!this.sellerForm_CategoryValue.value) {
+            alert("호스트 지원 희망여부를 선택해주세요.");
+          }
         }
       }
     },
@@ -217,7 +214,7 @@ export default {
       if (
         this.sellerForm_List[0].value &&
         this.sellerForm_List[1].value &&
-        // this.sellerForm_CategoryValue.value &&
+        this.sellerForm_CategoryValue.value &&
         this.marketing.val_1
       ) {
         this.$toast("요청중입니다. 잠시만 기다려주세요!");
@@ -230,7 +227,7 @@ export default {
               email: this.sellerForm_List[0].value,
               name: this.sellerForm_List[1].value,
               site: this.sellerForm_List[2].value,
-              // apply_categories: this.sellerForm_CategoryValue.value,
+              apply_categories: this.sellerForm_CategoryValue.value,
               details: this.sellerForm_Details.value,
               agree_personal_info: this.marketing.val_1,
               agree_marketing_info: this.marketing.val_2
@@ -246,15 +243,15 @@ export default {
             this.SET_TOKEN_BOOL(true);
             this.$toast("셀러 입점신청이 완료되었습니다.");
             this.$Progress.finish();
-            if (this.$route.query.from !== "app") {
-              this.$router.replace("/submit");
-            } else {
+            if (this.$route.query.from === "app") {
               this.$router.replace({
                 path: "/submit",
                 query: {
                   from: "app"
                 }
               });
+            } else {
+              this.$router.replace("/submit");
             }
           })
           .catch(error => {

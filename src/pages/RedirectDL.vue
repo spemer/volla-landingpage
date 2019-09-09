@@ -55,8 +55,8 @@ export default {
   },
 
   mounted() {
-    let android = globalVar.androidStore,
-      ios = globalVar.iosStore,
+    let android = globalVar.AND_URL,
+      ios = globalVar.IOS_URL,
       unknown = globalVar.WEB_URL;
 
     if (this.userAgent === "Android") {

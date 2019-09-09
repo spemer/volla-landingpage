@@ -40,19 +40,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/style/components/home/_service.scss";
+@import "~@/style/components/benefits/_benefits.scss";
+
 #benefitsComp {
   $icon_benefits: "~@/assets/dist/benefits_";
 
-  .service_card {
-    .service_card-each {
-      .service_card-img {
-        &.seller {
-          &.seller1 {
-            @include setGridIcons($icon_benefits);
-          }
-        }
-      }
-    }
+  .seller1 {
+    @include setGridIcons($icon_benefits);
   }
 }
 </style>

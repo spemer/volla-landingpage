@@ -14,29 +14,7 @@ export default {
   metaInfo() {
     return {
       title: globalVar.serviceEn,
-      titleTemplate: `%s - ${globalVar.tagline}`,
-      meta: [
-        {
-          name: "og:image",
-          content: require("@/assets/dist/gpstore_feature_graphic.png")
-        },
-        {
-          itemprop: "image",
-          content: require("@/assets/dist/gpstore_feature_graphic.png")
-        },
-        {
-          property: "og:image",
-          content: require("@/assets/dist/gpstore_feature_graphic.png")
-        },
-        {
-          name: "twitter:image",
-          content: require("@/assets/dist/gpstore_feature_graphic.png")
-        },
-        {
-          name: "twitter:image:src",
-          content: require("@/assets/dist/gpstore_feature_graphic.png")
-        }
-      ]
+      titleTemplate: `%s - ${globalVar.tagline}`
     };
   },
 

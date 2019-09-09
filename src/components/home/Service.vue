@@ -38,17 +38,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/style/components/home/_service.scss";
+
 #service {
   $BaseURI: "~@/assets/dist/serviceImage_";
   $ext: "png";
 
-  .service_card {
-    .service_card-each {
-      .service_card-img {
-        &.service {
-          @include setGridIcons($BaseURI, $ext);
-        }
-      }
+  .service_card-img {
+    &.service {
+      @include setGridIcons($BaseURI, $ext);
     }
   }
 }

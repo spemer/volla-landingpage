@@ -40,6 +40,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/style/components/home/_service.scss";
+
 #statsList {
   padding-bottom: $grid20x;
   border-top: 1px solid $texteee;

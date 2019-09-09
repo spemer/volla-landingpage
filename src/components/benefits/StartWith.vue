@@ -41,6 +41,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/style/components/home/_service.scss";
+
 #startWith {
   $icon_condition: "~@/assets/dist/condition_";
   border-top: 1px solid $texteee;

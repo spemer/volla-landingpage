@@ -29,21 +29,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/style/components/home/_service.scss";
+@import "~@/style/components/benefits/_benefits.scss";
+
 .benefits2 {
   $icon_benefits-2: "~@/assets/dist/benefits2_";
 
   padding-bottom: $grid8x !important;
 
-  .service_card {
-    .service_card-each {
-      .service_card-img {
-        &.seller {
-          &.seller2 {
-            @include setGridIcons($icon_benefits-2);
-          }
-        }
-      }
-    }
+  .seller2 {
+    @include setGridIcons($icon_benefits-2);
   }
 
   .subtitle {
