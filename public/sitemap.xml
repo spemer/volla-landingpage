@@ -16,13 +16,13 @@
     <loc>https://volla.live/sellerform</loc>
   </url>
   <url>
-    <loc>https://volla.live/sellerform-app</loc>
+    <loc>https://volla.live/sellerform?from=app</loc>
   </url>
   <url>
     <loc>https://volla.live/submit</loc>
   </url>
   <url>
-    <loc>https://volla.live/submit-app</loc>
+    <loc>https://volla.live/submit?from=app</loc>
   </url>
   <url>
     <loc>https://volla.live/notices</loc>

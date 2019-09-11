@@ -14,13 +14,6 @@ Vue.use(Toast, {
   wordWrap: true
 });
 
-import VueProgressBar from "vue-progressbar";
-Vue.use(VueProgressBar, {
-  color: "#ff82ab",
-  failedColor: "#ff82ab",
-  height: "4px"
-});
-
 Vue.config.productionTip = false;
 // Vue.config.performance = true;
 // Vue.prototype.$http = axios;

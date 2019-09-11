@@ -99,9 +99,17 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
 import { mapState, mapMutations } from "vuex";
 import { globalVar } from "@/globalVar";
+
+import VueProgressBar from "vue-progressbar";
+Vue.use(VueProgressBar, {
+  color: "#ff82ab",
+  failedColor: "#ff82ab",
+  height: "4px"
+});
 
 export default {
   name: "sellerForm",
@@ -202,14 +210,6 @@ export default {
       }
     },
 
-    created() {
-      this.$Progress.start();
-    },
-
-    mounted() {
-      this.$Progress.finish();
-    },
-
     sendPost() {
       if (
         this.sellerForm_List[0].value &&
@@ -244,14 +244,14 @@ export default {
             this.$toast("셀러 입점신청이 완료되었습니다.");
             this.$Progress.finish();
             if (this.$route.query.from === "app") {
-              this.$router.replace({
+              this.$router.push({
                 path: "/submit",
                 query: {
                   from: "app"
                 }
               });
             } else {
-              this.$router.replace("/submit");
+              this.$router.push("/submit");
             }
           })
           .catch(error => {

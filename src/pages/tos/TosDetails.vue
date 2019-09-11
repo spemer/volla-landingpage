@@ -26,13 +26,7 @@ export default {
     };
   },
 
-  created() {
-    this.$Progress.start();
-  },
-
   mounted() {
-    this.$Progress.finish();
-
     let arr = this.tosEntries[globalVar.tosDateNowNumber];
     let idx = arr.findIndex(item => {
       return `/tos/${item.id}` === this.$route.path;
