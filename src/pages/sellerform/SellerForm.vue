@@ -193,14 +193,14 @@ export default {
         } else if (this.sellerForm_List[1].value) {
           this.ADD_FORM_HELPTEXT([1, ""]);
 
-          if (this.sellerForm_List[2].value) {
-            return this.sellerForm_List[2].value.indexOf("http") === -1 ||
-              this.sellerForm_List[2].value.indexOf("://") === -1
+          if (this.sellerForm_List[3].value) {
+            return this.sellerForm_List[3].value.indexOf("http") === -1 ||
+              this.sellerForm_List[3].value.indexOf("://") === -1
               ? this.ADD_FORM_HELPTEXT([
-                  2,
+                  3,
                   `URL은 'http://' 혹은 'https://'로 시작해야 합니다.`
                 ])
-              : this.ADD_FORM_HELPTEXT([2, ""]);
+              : this.ADD_FORM_HELPTEXT([3, ""]);
           }
 
           if (!this.sellerForm_CategoryValue.value) {
@@ -226,7 +226,8 @@ export default {
             {
               email: this.sellerForm_List[0].value,
               name: this.sellerForm_List[1].value,
-              site: this.sellerForm_List[2].value,
+              contact: this.sellerForm_List[2].value,
+              site: this.sellerForm_List[3].value,
               apply_categories: this.sellerForm_CategoryValue.value,
               details: this.sellerForm_Details.value,
               agree_personal_info: this.marketing.val_1,
@@ -530,7 +531,6 @@ $mobile-width: 288px;
       padding-bottom: $grid24x;
       @include user-select();
 
-      // iPhone X safearea
       @supports (padding-bottom: env(safe-area-inset-bottom)) {
         padding-bottom: calc(
           env(safe-area-inset-bottom + #{$grid40x})
@@ -622,7 +622,6 @@ $mobile-width: 288px;
           padding: 0 $grid4x;
         }
 
-        // iPhone X safearea
         @supports (padding-bottom: env(safe-area-inset-bottom)) {
           padding-bottom: calc(env(safe-area-inset-bottom)) !important;
         }

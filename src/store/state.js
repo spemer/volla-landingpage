@@ -18,16 +18,15 @@ export const state = {
       placeholder: "담당자 이름을 입력해주세요.",
       required: true
     },
-    // {
-    //   value: '',
-    //   text: '전화번호',
-    //   type: 'tel',
-    //   name: 'contact',
-    //   minlength: '8',
-    //   maxlength: '12',
-    //   placeholder: '숫자만 입력해주세요.',
-    //   required: true,
-    // },
+    {
+      value: "",
+      text: "전화번호",
+      type: "tel",
+      name: "contact",
+      minlength: "8",
+      maxlength: "12",
+      placeholder: "숫자만 입력해주세요."
+    },
     {
       value: "",
       text: "웹사이트 주소",
