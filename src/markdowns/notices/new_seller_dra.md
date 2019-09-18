@@ -1,6 +1,6 @@
 # [입점] Deep Red Attraction, DRA [드라]
 
-![DRA](../../assets/marketing/dist/dra_hero.png)
+![DRA](../../assets/marketing/dist/seller-dra.png)
 
 Deep Red Attraction, 깊은 빨강의 매력
 

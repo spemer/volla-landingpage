@@ -1,6 +1,6 @@
 # [입점] 린프린세스_LinPrincess
 
-![esooom](../../assets/marketing/dist/linprincess_hero.png)
+![esooom](../../assets/marketing/dist/seller-linprincess.png)
 
 순수 써지컬스틸 초커와 목걸이 악세서리를 핸드메이드로 작업하시는 린프린세스님이 볼라에 입점하셨어요.
 

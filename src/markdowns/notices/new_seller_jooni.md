@@ -1,6 +1,6 @@
 # [입점] 쥬니 - 다프네 클로젯
 
-![쥬니](../../assets/marketing/dist/jooni_hero.png)
+![쥬니](../../assets/marketing/dist/seller-jooni.png)
 
 쥬니 - 다프네 클로젯
 

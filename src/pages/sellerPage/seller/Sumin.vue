@@ -66,7 +66,7 @@ export default {
   },
 
   data: () => ({
-    backgroundImage: require("@/assets/marketing/dist/esooom_hero.png"),
+    backgroundImage: require("@/assets/marketing/dist/seller-esooom.png"),
     itemList: [
       {
         index: "01",
