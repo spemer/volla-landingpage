@@ -19,8 +19,8 @@
           target="_blank"
         )
           button.global_cta-btn(
-            :title="serviceKo + ' 입점소개서 다운로드(새 창)'"
-          ) 입점소개서 받기
+            :title="serviceKo + ' 입점 제안서 다운로드(새 창)'"
+          ) 입점 제안서 받기
 </template>
 
 <script>

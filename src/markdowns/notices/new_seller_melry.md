@@ -1,6 +1,6 @@
 # [입점] 멜리(MELRY)
 
-![DRA](../../assets/marketing/dist/seller-melry.png)
+![멜리](../../assets/marketing/dist/seller-melry.png)
 
 Simple x Trendy jewelry
 
@@ -8,7 +8,7 @@ Simple x Trendy jewelry
 
 심플함과 트렌디함을 동시에 갖춘 멜리님의 제품을 볼라에서 만나보세요.
 
-- [DRA님 셀러 페이지 바로가기](volla://deeplink/seller/10)
+- [멜리님 셀러 페이지 바로가기](volla://deeplink/seller/10)
 
 <br>
 
