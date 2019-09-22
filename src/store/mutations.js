@@ -3,9 +3,9 @@ export const mutations = {
     state.sellerForm_List.value = value;
   },
 
-  UPDATE_FORM_CATEGORY: (state, value) => {
-    state.sellerForm_CategoryValue.value = value;
-  },
+  // UPDATE_FORM_CATEGORY: (state, value) => {
+  //   state.sellerForm_CategoryValue.value = value;
+  // },
 
   UPDATE_FORM_DETAILS: (state, value) => {
     state.sellerForm_Details.value = value;
@@ -28,7 +28,7 @@ export const mutations = {
     [...state.sellerForm_List].forEach(list => {
       list.value = null;
     });
-    state.sellerForm_CategoryValue.value = null;
+    // state.sellerForm_CategoryValue.value = null;
     state.sellerForm_Details.value = null;
   }
 };

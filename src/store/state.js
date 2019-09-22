@@ -38,28 +38,28 @@ export const state = {
     }
   ],
 
-  sellerForm_Category: [
-    {
-      text: "호스트 지원 희망여부",
-      buttonText: "직접 방송",
-      id: "hostTrue",
-      type: "radio",
-      name: "apply_category",
-      required: true,
-      class: "first"
-    },
-    {
-      buttonText: "호스트 지원 필요",
-      id: "hostFalse",
-      type: "radio",
-      name: "apply_category",
-      required: true
-    }
-  ],
+  // sellerForm_Category: [
+  //   {
+  //     text: "호스트 지원 희망여부",
+  //     buttonText: "직접 방송",
+  //     id: "hostTrue",
+  //     type: "radio",
+  //     name: "apply_category",
+  //     required: true,
+  //     class: "first"
+  //   },
+  //   {
+  //     buttonText: "호스트 지원 필요",
+  //     id: "hostFalse",
+  //     type: "radio",
+  //     name: "apply_category",
+  //     required: true
+  //   }
+  // ],
 
-  sellerForm_CategoryValue: {
-    value: ""
-  },
+  // sellerForm_CategoryValue: {
+  //   value: ""
+  // },
 
   sellerForm_Details: {
     value: "",

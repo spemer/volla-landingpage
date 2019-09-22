@@ -19,10 +19,10 @@
             ) {{ list.text }}
               span.value {{ list.value }}
 
-          p.sellerform-title.text(
-            v-if="sellerForm_CategoryValue.value"
-          ) {{ sellerForm_Category[0].text }}
-            span.value {{ sellerForm_CategoryValue.value }}
+          //- p.sellerform-title.text(
+          //-   v-if="sellerForm_CategoryValue.value"
+          //- ) {{ sellerForm_Category[0].text }}
+          //-   span.value {{ sellerForm_CategoryValue.value }}
 
           p.sellerform-title.text(
             v-if="sellerForm_Details.value"
@@ -66,9 +66,9 @@ export default {
   computed: {
     ...mapState([
       "sellerForm_List",
-      "sellerForm_CategoryValue",
+      // "sellerForm_CategoryValue",
       "sellerForm_Details",
-      "sellerForm_Category",
+      // "sellerForm_Category",
       "marketing",
       "tokenState"
     ])
