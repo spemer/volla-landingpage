@@ -19,8 +19,8 @@
           target="_blank"
         )
           button.global_cta-btn(
-            :title="serviceKo + ' 입점 제안서 다운로드(새 창)'"
-          ) 입점 제안서 받기
+            :title="serviceKo + ' 입점 제안서 보기(새 창)'"
+          ) 입점 제안서 보기
 </template>
 
 <script>
@@ -28,7 +28,7 @@ import { globalVar } from "@/globalVar";
 
 export default {
   data: () => ({
-    volla_pdf: `https://firebasestorage.googleapis.com/v0/b/volla-landingpage.appspot.com/o/%E1%84%87%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1_%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9%E1%84%8F%E1%85%A5%E1%84%86%E1%85%A5%E1%84%89%E1%85%B3_%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5.pdf?alt=media&token=d55ea123-e275-4858-864b-cecafbb756fb`,
+    volla_pdf: `https://docs.google.com/presentation/d/1QeCdTK742vROdp5TbUM0ZK8VWLR-zzfX85OFmTF3SFY/edit?usp=sharing`,
     serviceKo: globalVar.serviceKo,
     benefitsTop: {
       benefits_1: `입점비용이 없습니다. 상품만 있다면 누구나 셀러가 될 수 있습니다.`,
