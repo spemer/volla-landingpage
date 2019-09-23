@@ -1,6 +1,11 @@
 {
   "notices": [
     {
+      "id": "new_seller_epilime",
+      "ymd": "190922",
+      "title": "[입점] 에피라임"
+    },
+    {
       "id": "new_seller_melry",
       "ymd": "190918",
       "title": "[입점] 멜리(MELRY)"
