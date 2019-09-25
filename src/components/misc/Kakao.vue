@@ -3,7 +3,6 @@
     v-if="render"
   )
     img(
-      v-if="onReady"
       alt="카카오톡 문의하기"
       @click="plusFriendChat"
       rel="noopener noreferrer"
@@ -14,9 +13,7 @@
 <script>
 export default {
   data: () => ({
-    render: false,
-    onReady: false,
-    isInitialized: false
+    render: false
   }),
 
   mounted() {
@@ -31,36 +28,12 @@ export default {
     }
   },
 
-  updated() {
-    if (this.onReady && !this.isInitialized) {
-      setTimeout(() => {
-        window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
-        this.isInitialized = true;
-      }, 1500);
-    }
-  },
-
   methods: {
     plusFriendChat: () => {
       window.Kakao.PlusFriend.chat({
         plusFriendId: "_xhYAnj"
       });
     }
-  },
-
-  created() {
-    setTimeout(() => {
-      let injectScript = document.createElement("script");
-      injectScript.setAttribute(
-        "src",
-        "https://developers.kakao.com/sdk/js/kakao.min.js"
-      );
-      injectScript.style.opacity = "0";
-      injectScript.style.display = "none";
-      injectScript.style.visibility = "hidden";
-      document.head.appendChild(injectScript);
-      this.onReady = true;
-    }, 1500);
   }
 };
 </script>
