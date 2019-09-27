@@ -23,7 +23,7 @@ export default {
       this.$route.path === "/benefits" ||
       this.$route.path === "/sellerform"
     ) {
-      this.render = true
+      this.render = true;
     }
   },
 

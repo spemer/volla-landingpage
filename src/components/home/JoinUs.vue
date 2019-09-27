@@ -14,11 +14,11 @@
 
       div.global_cta
         a.global_cta-link(
-          :href="`mailto:${mailTo}?subject=볼라 셀러(판매자) 입점신청`"
+          @click="plusFriendChat"
         )
           button.global_cta-btn.mailto(
-            title="메일 앱으로 열기(새 창)"
-          ) 메일로 문의하기
+            title="카카오톡 문의하기"
+          ) 카카오톡 문의하기
 
         router-link.global_cta-link(
           :to="sellerformLink"
@@ -42,6 +42,14 @@ export default {
   }),
 
   mixins: [copyToast],
+
+  methods: {
+    plusFriendChat: () => {
+      window.Kakao.PlusFriend.chat({
+        plusFriendId: "_xhYAnj"
+      });
+    }
+  },
 
   mounted() {
     if (this.$route.path === "/") {

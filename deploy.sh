@@ -151,6 +151,10 @@ git_commit() {
       [Yy]* )
         IFS= read -r -p "${BOLD}Enter commit message: ${RESET}" commitmsg
 
+        printf "\n"
+        echo "${BOLD}${PURPLE}🔥 lint 🔥${RESET}"
+        npm run lint;
+
         # if commitmsg empty
         if [ -z "$commitmsg" ]
         then
@@ -159,10 +163,10 @@ git_commit() {
         fi
 
         printf "\n"
-        git add .
-        git commit -m "$commitmsg"
+        git add .;
+        git commit -m "$commitmsg";
 
-        git_push
+        git_push;
         break;;
 
       [Nn]* )
