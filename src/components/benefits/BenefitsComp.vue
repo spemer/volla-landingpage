@@ -28,7 +28,7 @@ import { globalVar } from "@/globalVar";
 
 export default {
   data: () => ({
-    volla_pdf: `https://docs.google.com/presentation/d/1QeCdTK742vROdp5TbUM0ZK8VWLR-zzfX85OFmTF3SFY/edit?usp=sharing`,
+    volla_pdf: globalVar.entryProposal,
     serviceKo: globalVar.serviceKo,
     benefitsTop: {
       benefits_1: `입점비용이 없습니다. 상품만 있다면 누구나 셀러가 될 수 있습니다.`,

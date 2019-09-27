@@ -33,5 +33,7 @@ export const globalVar = {
   TWT_URL: "https://twitter.com/volla_official",
 
   tosDateNow: "2019년 3월 26일",
-  tosDateNowNumber: "190326"
+  tosDateNowNumber: "190326",
+  entryProposal:
+    "https://docs.google.com/presentation/d/1QeCdTK742vROdp5TbUM0ZK8VWLR-zzfX85OFmTF3SFY"
 };

@@ -1,6 +1,7 @@
 <template lang="pug">
   div#plusfriend-addfriend-button(
     v-if="render"
+    :class="{app: this.$route.query.from === 'app'}"
   )
     img(
       alt="카카오톡 문의하기"
@@ -22,9 +23,7 @@ export default {
       this.$route.path === "/benefits" ||
       this.$route.path === "/sellerform"
     ) {
-      return this.$route.query.from === "app"
-        ? (this.render = false)
-        : (this.render = true);
+      this.render = true
     }
   },
 
@@ -40,6 +39,10 @@ export default {
 
 <style lang="scss" scoped>
 #plusfriend-addfriend-button {
+  &.app {
+    margin-bottom: $grid18x;
+  }
+
   &:not(.contact_each) {
     @keyframes popup {
       from {
