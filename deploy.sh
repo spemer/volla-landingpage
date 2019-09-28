@@ -32,19 +32,19 @@ dev_or_deploy() {
 
       [Dd]* )
         printf "\n"
-        echo "${BOLD}${PURPLE}🔥 lint 🔥${RESET}"
+        echo "${BOLD}${PURPLE}🔥 Lint 🔥${RESET}"
         npm run lint;
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 npm run build 🔥${RESET}"
         npm run build:modern;
         printf "\n"
-        echo "${BOLD}${PURPLE}🔥 firebase deploy 🔥${RESET}"
+        echo "${BOLD}${PURPLE}🔥 Firebase deploy 🔥${RESET}"
         firebase deploy;
         break;;
 
       [Ll]* )
         printf "\n"
-        echo "${BOLD}${PURPLE}🔥 lint 🔥${RESET}"
+        echo "${BOLD}${PURPLE}🔥 Lint 🔥${RESET}"
         npm run lint;
         break;;
 
@@ -124,7 +124,7 @@ npm_run_build() {
 firebase_deploy() {
   while true; do
     printf "\n"
-    read -p "${BOLD}${GREEN}firebase deploy? (Y/n) ${RESET}" yn
+    read -p "${BOLD}${GREEN}Firebase deploy? (Y/n) ${RESET}" yn
     case ${yn} in
 
       [Yy]* )
@@ -152,7 +152,7 @@ git_commit() {
         IFS= read -r -p "${BOLD}Enter commit message: ${RESET}" commitmsg
 
         printf "\n"
-        echo "${BOLD}${PURPLE}🔥 lint 🔥${RESET}"
+        echo "${BOLD}${PURPLE}🔥 Lint 🔥${RESET}"
         npm run lint;
 
         # if commitmsg empty
@@ -163,6 +163,7 @@ git_commit() {
         fi
 
         printf "\n"
+        echo "${BOLD}${PURPLE}🔥 Commit 🔥${RESET}"
         git add .;
         git commit -m "$commitmsg";
 
