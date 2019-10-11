@@ -4,7 +4,7 @@ export const globalVar = {
   // companyNameFull: '(주)알에스파이브',
   companyNameFullKo: "알에스파이브",
   // companyNameFullKo: '주식회사 알에스파이브',
-  companyAdr: "서울특별시 송파구 송파대로 345, 209동 904호(가락동, 헬리오시티)",
+  companyAdr: "서울특별시 강남구 테헤란로 201, 아주빌딩 2층 206호",
   companyCEO: "이문규",
   companyID: "653-12-01150",
   companyItc: "2019-서울송파-0847",

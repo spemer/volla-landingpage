@@ -16,7 +16,7 @@ Vue.use(Toast, {
 
 Vue.config.productionTip = false;
 window.Kakao.init(process.env.VUE_APP_KAKAO_KEY);
-// Vue.config.performance = true;
+Vue.config.performance = true;
 // Vue.prototype.$http = axios;
 
 new Vue({
