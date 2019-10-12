@@ -1,9 +1,7 @@
 export const globalVar = {
   companyName: "알에스파이브",
   companyNameFull: "알에스파이브",
-  // companyNameFull: '(주)알에스파이브',
   companyNameFullKo: "알에스파이브",
-  // companyNameFullKo: '주식회사 알에스파이브',
   companyAdr: "서울특별시 강남구 테헤란로 201, 아주빌딩 2층 206호",
   companyCEO: "이문규",
   companyID: "653-12-01150",
