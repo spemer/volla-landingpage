@@ -99,17 +99,9 @@
 </template>
 
 <script>
-import Vue from "vue";
 import axios from "axios";
 import { mapState, mapMutations } from "vuex";
 import { globalVar } from "@/globalVar";
-
-import VueProgressBar from "vue-progressbar";
-Vue.use(VueProgressBar, {
-  color: "#ff82ab",
-  failedColor: "#ff82ab",
-  height: "4px"
-});
 
 export default {
   name: "sellerForm",
