@@ -1,6 +1,26 @@
 {
   "notices": [
     {
+      "id": "new_seller_trueromance",
+      "ymd": "191014",
+      "title": "[입점] 트루로맨스"
+    },
+    {
+      "id": "new_seller_eldin",
+      "ymd": "191008",
+      "title": "[입점] ELDIN"
+    },
+    {
+      "id": "new_seller_realhee",
+      "ymd": "191004",
+      "title": "[입점] 리얼히"
+    },
+    {
+      "id": "new_seller_lavenro",
+      "ymd": "191002",
+      "title": "[입점] 벤쥬얼리"
+    },
+    {
       "id": "new_seller_modeinandco",
       "ymd": "190924",
       "title": "[입점] 모드인앤코"
