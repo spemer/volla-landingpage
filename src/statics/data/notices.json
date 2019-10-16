@@ -1,6 +1,11 @@
 {
   "notices": [
     {
+      "id": "new_seller_pickles",
+      "ymd": "191016",
+      "title": "[입점] 피클즈"
+    },
+    {
       "id": "new_seller_may14",
       "ymd": "191015",
       "title": "[입점] 메이포틴"
