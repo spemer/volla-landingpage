@@ -1,8 +1,18 @@
 {
   "notices": [
     {
-      "id": "new_seller_trueromance",
+      "id": "new_seller_may14",
+      "ymd": "191015",
+      "title": "[입점] 메이포틴"
+    },
+    {
+      "id": "new_seller_dallae",
       "ymd": "191014",
+      "title": "[입점] 달래마켓"
+    },
+    {
+      "id": "new_seller_trueromance",
+      "ymd": "191013",
       "title": "[입점] 트루로맨스"
     },
     {

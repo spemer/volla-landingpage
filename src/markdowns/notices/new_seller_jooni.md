@@ -8,7 +8,7 @@
 
 美를 담은 쥬니님만의 컬렉션을 볼라에서 확인해보세요!
 
-- [쥬니님 셀러 페이지 바로가기](volla://deeplink/seller/7)
+- [쥬니 님 셀러 페이지 바로가기](volla://deeplink/seller/7)
 
 <br>
 

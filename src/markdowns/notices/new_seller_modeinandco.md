@@ -6,7 +6,7 @@
 
 모드인앤코 님의 빛나는 Silver 92.5 실버제품들을 볼라에서 만나보세요.
 
-- [모드인앤코님 셀러 페이지 바로가기](volla://deeplink/seller/12)
+- [모드인앤코 님 셀러 페이지 바로가기](volla://deeplink/seller/12)
 
 <br>
 

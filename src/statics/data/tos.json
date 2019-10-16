@@ -14,6 +14,14 @@
     {
       "id": "ceo_service",
       "title": "서비스이용약관(쇼핑몰사업자용)"
+    },
+    {
+      "id": "nicepay_call",
+      "title": "결제창인증사 바로호출옵션약관"
+    },
+    {
+      "id": "nicepay_transaction",
+      "title": "전자금융거래 이용약관"
     }
   ]
 }

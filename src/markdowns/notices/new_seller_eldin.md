@@ -8,7 +8,7 @@
 
 볼라에 새로 입점한 #ELDIN #엘딘 님의 다양한 가죽자켓과 아우터들을 볼라 앱에서 확인해보세요!
 
-- [ELDIN님 셀러 페이지 바로가기](volla://deeplink/seller/16)
+- [ELDIN 님 셀러 페이지 바로가기](volla://deeplink/seller/16)
 
 <br>
 
