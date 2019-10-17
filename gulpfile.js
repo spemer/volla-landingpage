@@ -45,5 +45,14 @@ function imagemin_marketing() {
     .pipe(dest(["./src/assets/marketing/dist"]));
 }
 
+// image resize - SL Guide
+function imagemin_guide() {
+  return src(["./src/assets/guide/src/*"], {
+    since: lastRun(imagemin_guide)
+  })
+    .pipe(imagemin([...options]))
+    .pipe(dest(["./src/assets/guide/dist"]));
+}
+
 // exports
-exports.default = series(imagemin_asset, imagemin_marketing);
+exports.default = series(imagemin_asset, imagemin_marketing, imagemin_guide);

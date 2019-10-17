@@ -130,6 +130,32 @@ export default new Router({
         )
     },
 
+    // guide
+    {
+      path: "/guide",
+      name: "guide",
+      component: () =>
+        import(/* webpackChunkName: 'router-Guide' */ "@/pages/guide/Guide"),
+      children: [
+        {
+          path: "live",
+          name: "guide-live",
+          component: () =>
+            import(
+              /* webpackChunkName: 'router-Guide-Live' */ "@/pages/guide/Guide-Live"
+            )
+        },
+        {
+          path: "prism",
+          name: "guide-prism",
+          component: () =>
+            import(
+              /* webpackChunkName: 'router-Guide-Prism' */ "@/pages/guide/Guide-Prism"
+            )
+        }
+      ]
+    },
+
     // tos
     ...tosRoutes,
     {
