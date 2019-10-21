@@ -1,6 +1,11 @@
 {
   "notices": [
     {
+      "id": "new_seller_mera",
+      "ymd": "191021",
+      "title": "[입점] 메라"
+    },
+    {
       "id": "new_seller_aubeyoon",
       "ymd": "191020",
       "title": "[입점] 오브윤"
