@@ -1,6 +1,26 @@
 {
   "notices": [
     {
+      "id": "new_seller_aubeyoon",
+      "ymd": "191020",
+      "title": "[입점] 오브윤"
+    },
+    {
+      "id": "new_seller_glowing",
+      "ymd": "191019",
+      "title": "[입점] 글로윙"
+    },
+    {
+      "id": "new_seller_peachpop",
+      "ymd": "191018",
+      "title": "[입점] 피치팝"
+    },
+    {
+      "id": "new_seller_rookie",
+      "ymd": "191017",
+      "title": "[입점] 루키"
+    },
+    {
       "id": "new_seller_pickles",
       "ymd": "191016",
       "title": "[입점] PiCKLES® 피클즈"

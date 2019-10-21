@@ -2,7 +2,7 @@
   div#guide-live
     div.guide-live_title 라이브 방송하기
     div.guide-live_imgbox(
-      v-for="n in 6"
+      v-for="n in 7"
     )
       img.guide-live_img(
         :src="require(`@/assets/guide/dist/live-${n}.png`)"
