@@ -88,6 +88,12 @@
           )
           span.checkmark
 
+
+        p.sellerform-guideline
+          span 볼라는 10~30대 초반 여성을 대상으로한 여성 쇼핑몰로,
+          br
+          span 해당 기준에서 벗어난다고 판단될 경우 입점이 제한될 수 있습니다.
+
         div.sellerform-wrapper(
           :class="{'apply_border': this.$route.query.from === 'app'}"
         )
@@ -296,6 +302,18 @@ $mobile-width: 288px;
         font-weight: 900;
         color: $brand-pink;
       }
+    }
+  }
+
+  .sellerform-guideline {
+    color: $black38;
+    display: inline-block;
+    margin-top: -#{$grid4x};
+    margin-bottom: $grid16x;
+    line-height: $grid4x;
+
+    span {
+      @include font-size($grid3x);
     }
   }
 
