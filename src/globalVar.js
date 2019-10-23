@@ -19,7 +19,7 @@ export const globalVar = {
     "* 입점 시 판매를 위한 사업자등록, 통신판매업 신고 등이 필요할 수 있습니다.",
 
   callTo: "02-401-2155",
-  mailTo: "ceo@volla.live",
+  mailTo: "support@volla.live",
 
   WEB_URL: "https://volla.live",
   IOS_URL: "https://itunes.apple.com/kr/app/id1454785070?mt=8",
