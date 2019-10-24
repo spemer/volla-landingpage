@@ -89,9 +89,11 @@
           span.checkmark
 
         p.sellerform-guideline
-          span 볼라는 10~30대 초반 여성을 대상으로한 여성 쇼핑몰로,
+          span * 볼라는 10~30대 초반 여성을 대상으로한 쇼핑몰로,
           br
-          span 해당 기준에서 벗어난다고 판단되거나 거래처 사진을 사용하는 샵의 경우 입점이 제한될 수 있습니다.
+          span 해당 기준에서 벗어난다고 판단되거나 가품 판매 및 거래처
+          br
+          span 사진을 사용하는 샵의 경우 입점이 제한될 수 있습니다.
 
         div.sellerform-wrapper(
           :class="{'apply_border': this.$route.query.from === 'app'}"
@@ -308,7 +310,7 @@ $mobile-width: 288px;
     color: $black38;
     display: inline-block;
     margin-top: -#{$grid4x};
-    margin-bottom: $grid16x;
+    margin-bottom: $grid20x;
     line-height: $grid4x;
 
     span {
