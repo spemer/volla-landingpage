@@ -3,9 +3,7 @@
     Header
     router-view
     Footer
-    Kakao(
-      v-if="!this.$store.state.isApp"
-    )
+    Kakao
 </template>
 
 <script>

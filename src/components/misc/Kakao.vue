@@ -21,7 +21,9 @@ export default {
     if (
       this.$route.path === "/" ||
       this.$route.path === "/benefits" ||
-      this.$route.path === "/sellerform"
+      this.$route.path === "/sellerform" ||
+      this.$route.path === "/guide/live" ||
+      this.$route.path === "/guide/prism"
     ) {
       this.render = true;
     }
@@ -39,6 +41,8 @@ export default {
 
 <style lang="scss" scoped>
 #plusfriend-addfriend-button {
+  z-index: 99999 !important;
+
   &.app {
     margin-bottom: $grid18x;
   }
