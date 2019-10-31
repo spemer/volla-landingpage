@@ -94,14 +94,14 @@ export default {
 
   .swiper-container {
     .swiper-pagination {
-      position: fixed;
       bottom: 0;
+      position: fixed;
       margin-bottom: $grid32x;
+      z-index: 99998 !important;
 
       .swiper-pagination-bullet {
         opacity: 1;
         background: $black16;
-        z-index: 99998 !important;
 
         &.swiper-pagination-bullet-active {
           background: $brand-pink;
