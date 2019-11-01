@@ -97,7 +97,7 @@ export default {
       bottom: 0;
       position: fixed;
       margin-bottom: $grid32x;
-      z-index: 99998 !important;
+      z-index: 99999 !important;
 
       .swiper-pagination-bullet {
         opacity: 1;

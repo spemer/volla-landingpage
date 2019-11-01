@@ -1,6 +1,16 @@
 {
   "notices": [
     {
+      "id": "new_seller_secondmoa",
+      "ymd": "191026",
+      "title": "[입점] 세컨드모아"
+    },
+    {
+      "id": "new_seller_naintoyou",
+      "ymd": "191025",
+      "title": "[입점] 나인투유"
+    },
+    {
       "id": "new_seller_yvev",
       "ymd": "191024",
       "title": "[입점] 이베브"
@@ -81,16 +91,6 @@
       "title": "[입점] 에피라임"
     },
     {
-      "id": "new_seller_linprincess",
-      "ymd": "190916",
-      "title": "[입점] 린프린세스_LinPrincess"
-    },
-    {
-      "id": "new_seller_jooni",
-      "ymd": "190830",
-      "title": "[입점] 쥬니 - 다프네 클로젯"
-    },
-    {
       "id": "new_seller_dra",
       "ymd": "190826",
       "title": "[입점] Deep Red Attraction, DRA [드라]"
@@ -104,11 +104,6 @@
       "id": "event_landing",
       "ymd": "190730",
       "title": "[이벤트] Volla 초기 입점 셀러 모집 Event!"
-    },
-    {
-      "id": "kiml_live",
-      "ymd": "190615",
-      "title": "[라이브] 시원한 여름 바캉스 쇼핑 라이브!"
     },
     {
       "id": "join_seller",

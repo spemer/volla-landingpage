@@ -54,6 +54,11 @@ export default {
   max-width: 480px !important;
   @include user-select();
 
+  // iPhone X safearea
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    padding-bottom: calc(env(safe-area-inset-bottom)) !important;
+  }
+
   .notices_wrapper {
     max-width: 480px !important;
 

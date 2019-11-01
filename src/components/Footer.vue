@@ -46,7 +46,6 @@
 </template>
 
 <script>
-import Vue from "vue";
 import TOS_ENTRIES from "@/statics/data/tos.json";
 import { globalVar } from "@/globalVar";
 import { copyToast } from "@/mixins/copyToast";
@@ -66,7 +65,6 @@ library.add(
 );
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 export default {
   data: () => ({
@@ -94,6 +92,10 @@ export default {
 
   computed: {
     tosEntries: () => TOS_ENTRIES
+  },
+
+  components: {
+    "font-awesome-icon": FontAwesomeIcon
   }
 };
 </script>
