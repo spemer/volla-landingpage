@@ -22,8 +22,7 @@ export default {
       this.$route.path === "/" ||
       this.$route.path === "/benefits" ||
       this.$route.path === "/sellerform" ||
-      this.$route.path === "/guide/live" ||
-      this.$route.path === "/guide/prism"
+      this.$route.path === "/guide"
     ) {
       this.render = true;
     }

@@ -1,9 +1,9 @@
 <template lang="pug">
   div#guide
-    router-view
+    Details
     div#closebtn.apply_border
-      router-link.global_cta(
-        :to="btn_link"
+      div.global_cta(
+        @click="pushQuery"
       )
         button.global_cta-btn(
           type="button"
@@ -17,28 +17,47 @@ export default {
 
   data: () => ({
     btn_text: "",
-    btn_link: ""
+    btn_query: ""
   }),
+
+  methods: {
+    pushQuery() {
+      this.$router.push({
+        path: "/guide",
+        query: {
+          type: this.btn_query
+        }
+      });
+    }
+  },
 
   watch: {
     $route() {
-      return this.$route.path === "/guide/live"
-        ? ((this.btn_text = "프리즘 송출 가이드 보러가기"),
-          (this.btn_link = "/guide/prism"))
-        : ((this.btn_text = "라이브 신청 가이드 보러가기"),
-          (this.btn_link = "/guide/live"));
+      if (this.$route.query.type === "live") {
+        (this.btn_text = "프리즘 송출 가이드 보러가기"),
+          (this.btn_query = "prism");
+      } else if (this.$route.query.type === "prism") {
+        (this.btn_text = "라이브 신청 가이드 보러가기"),
+          (this.btn_query = "live");
+      }
     }
   },
 
   mounted() {
-    return this.$route.path === "/guide/live"
-      ? ((this.btn_text = "프리즘 송출 가이드 보러가기"),
-        (this.btn_link = "/guide/prism"))
-      : ((this.btn_text = "라이브 신청 가이드 보러가기"),
-        (this.btn_link = "/guide/live"));
+    if (this.$route.query.type === "live") {
+      (this.btn_text = "프리즘 송출 가이드 보러가기"),
+        (this.btn_query = "prism");
+    } else if (this.$route.query.type === "prism") {
+      (this.btn_text = "라이브 신청 가이드 보러가기"),
+        (this.btn_query = "live");
+    }
   },
 
   components: {
+    Details: () =>
+      import(
+        /* webpackChunkName: 'pages/guide/Guide-Details' */ "@/pages/guide/Guide-Details"
+      ),
     Kakao: () =>
       import(
         /* webpackChunkName: 'components/misc/kakao' */ "@/components/misc/Kakao"

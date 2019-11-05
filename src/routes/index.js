@@ -132,28 +132,32 @@ export default new Router({
 
     // guide
     {
+      path: "/guide/live",
+      redirect: {
+        path: "/guide",
+        query: {
+          type: "live"
+        }
+      }
+    },
+    {
+      path: "/guide/prism",
+      redirect: {
+        path: "/guide",
+        query: {
+          type: "prism"
+        }
+      }
+    },
+
+    {
       path: "/guide",
       name: "guide",
+      query: {
+        type: "live"
+      },
       component: () =>
-        import(/* webpackChunkName: 'router-Guide' */ "@/pages/guide/Guide"),
-      children: [
-        {
-          path: "live",
-          name: "guide-live",
-          component: () =>
-            import(
-              /* webpackChunkName: 'router-Guide-Live' */ "@/pages/guide/Guide-Live"
-            )
-        },
-        {
-          path: "prism",
-          name: "guide-prism",
-          component: () =>
-            import(
-              /* webpackChunkName: 'router-Guide-Prism' */ "@/pages/guide/Guide-Prism"
-            )
-        }
-      ]
+        import(/* webpackChunkName: 'router-Guide' */ "@/pages/guide/Guide")
     },
 
     // tos
