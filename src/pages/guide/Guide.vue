@@ -44,12 +44,22 @@ export default {
   },
 
   mounted() {
-    if (this.$route.query.type === "live") {
-      (this.btn_text = "프리즘 송출 가이드 보러가기"),
-        (this.btn_query = "prism");
-    } else if (this.$route.query.type === "prism") {
-      (this.btn_text = "라이브 신청 가이드 보러가기"),
-        (this.btn_query = "live");
+    if (this.$route.query.type) {
+      if (this.$route.query.type === "live") {
+        this.btn_text = "프리즘 송출 가이드 보러가기";
+        this.btn_query = "prism";
+      } else if (this.$route.query.type === "prism") {
+        (this.btn_text = "라이브 신청 가이드 보러가기"),
+          (this.btn_query = "live");
+      }
+    } else {
+      this.$router.replace({
+        path: "/guide",
+        name: "guide",
+        query: {
+          type: "live"
+        }
+      });
     }
   },
 

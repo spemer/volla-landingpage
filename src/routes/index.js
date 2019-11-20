@@ -153,9 +153,6 @@ export default new Router({
     {
       path: "/guide",
       name: "guide",
-      query: {
-        type: "live"
-      },
       component: () =>
         import(/* webpackChunkName: 'router-Guide' */ "@/pages/guide/Guide")
     },
