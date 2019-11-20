@@ -1,6 +1,31 @@
 {
   "notices": [
     {
+      "id": "new_seller_linchpin",
+      "ymd": "191118",
+      "title": "[입점] 린치핀"
+    },
+    {
+      "id": "new_seller_jjuvelym",
+      "ymd": "191108",
+      "title": "[입점] 쮸블림"
+    },
+    {
+      "id": "new_seller_eclat",
+      "ymd": "191108",
+      "title": "[입점] 에끌라 스튜디오"
+    },
+    {
+      "id": "new_seller_klyseoul",
+      "ymd": "191105",
+      "title": "[입점] 크리서울"
+    },
+    {
+      "id": "new_seller_kokomini",
+      "ymd": "191104",
+      "title": "[입점] 코코미니"
+    },
+    {
       "id": "new_seller_secondmoa",
       "ymd": "191026",
       "title": "[입점] 세컨드모아"
