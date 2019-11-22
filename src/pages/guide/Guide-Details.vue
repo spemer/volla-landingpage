@@ -1,8 +1,8 @@
 <template lang="pug">
-  div#guide
-    div.guide_title {{ title }}
-    div.guide_subtitle
-      a.guide_subtitle-link(
+  div#guide-details
+    div.guide-details_title {{ title }}
+    div.guide-details_subtitle
+      a.guide-details_subtitle-link(
         :href="subtitle_link"
         target="_blank"
       ) {{ subtitle }}
@@ -10,11 +10,11 @@
       :options="swiperOption"
       ref="mySwiper"
     )
-      swiper-slide.guide_imgbox(
+      swiper-slide.guide-details_imgbox(
         v-for="imgQue in imgQty"
         :key="imgQue"
       )
-        img.guide_img(
+        img.guide-details_img(
           :src="require(`@/assets/guide/dist/${imgSrc}-${imgQue}.png`)"
         )
       div.swiper-pagination(
@@ -27,7 +27,7 @@ import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 export default {
-  name: "guide",
+  name: "guide-details",
 
   data: () => ({
     title: "",
@@ -91,22 +91,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#guide {
+#guide-details {
   text-align: center;
-  padding: 32px 0 48px;
+  padding: $grid8x 0 $grid12x;
 
-  .guide_title {
+  .guide-details_title {
     font-weight: 700;
     @include font-size($grid5x);
   }
 
-  .guide_subtitle {
+  .guide-details_subtitle {
     font-weight: 400;
     @include font-size($grid4x);
   }
 
   img {
-    margin: 16px auto 32px;
+    margin: $grid2x auto $grid8x;
     display: inline-block;
     width: 100% !important;
     max-width: 560px !important;

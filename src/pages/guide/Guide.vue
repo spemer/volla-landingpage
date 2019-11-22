@@ -78,6 +78,8 @@ export default {
 
 <style lang="scss">
 #guide {
+  padding-bottom: 96px;
+
   #plusfriend-addfriend-button {
     margin-bottom: $grid18x;
   }
@@ -123,14 +125,13 @@ export default {
 
   .swiper-container {
     .swiper-pagination {
-      bottom: 0;
-      position: fixed;
-      margin-bottom: $grid32x;
-      z-index: 99999 !important;
+      position: relative;
+      z-index: 99998 !important;
 
       .swiper-pagination-bullet {
         opacity: 1;
         background: $black16;
+        z-index: 99999 !important;
 
         &.swiper-pagination-bullet-active {
           background: $brand-pink;
