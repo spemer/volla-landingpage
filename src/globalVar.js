@@ -10,7 +10,7 @@ export const globalVar = {
 
   serviceKo: "볼라",
   serviceEn: "Volla",
-  tagline: "라이브 여성 쇼핑 앱",
+  tagline: "여성 라이브 마켓 모음 앱",
   taglineSeller: "셀러 입점안내",
   sellerForm: "셀러 입점신청서",
   sellerFormTitle: "셀러 입점신청",
