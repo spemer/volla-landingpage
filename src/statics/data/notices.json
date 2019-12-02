@@ -1,6 +1,21 @@
 {
   "notices": [
     {
+      "id": "new_seller_seolsera",
+      "ymd": "191202",
+      "title": "[입점] 설세라"
+    },
+    {
+      "id": "new_seller_daylotus",
+      "ymd": "191128",
+      "title": "[입점] 데이로터스"
+    },
+    {
+      "id": "new_seller_fromheena",
+      "ymd": "191122",
+      "title": "[입점] 프롬희나"
+    },
+    {
       "id": "new_seller_linchpin",
       "ymd": "191118",
       "title": "[입점] 린치핀"
