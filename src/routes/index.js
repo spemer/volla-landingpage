@@ -3,6 +3,9 @@ import Router from "vue-router";
 import VueMeta from "vue-meta";
 import store from "@/store/index";
 
+import tosRoutes from "@/routes/modules/tosRoutes";
+import noticesRoutes from "@/routes/modules/noticesRoutes";
+
 Vue.use(Router);
 Vue.use(VueMeta);
 
@@ -10,48 +13,6 @@ const requireToken = (to, from, next) => {
   store.state.tokenState && next();
   next("/sellerform");
 };
-
-// NoticeEntries
-import NoticesEntries from "@/statics/data/notices.json";
-const noticesRoutes = Object.keys(NoticesEntries).map(section => {
-  const children = NoticesEntries[section].map(child => ({
-    path: `${child.ymd}/${child.id}`,
-    name: `${child.id}`,
-    component: () =>
-      import(
-        /* webpackChunkName: 'router-Details-markdown' */ `@/markdowns/notices/${child.id}.md`
-      )
-  }));
-  return {
-    path: `/`,
-    name: `noticeDetails`,
-    component: () =>
-      import(/* webpackChunkName: 'router-Details' */ "@/pages/boards/Details"),
-    children
-  };
-});
-
-// TosEntries
-import TosEntries from "@/statics/data/tos.json";
-const tosRoutes = Object.keys(TosEntries).map(section => {
-  const children = TosEntries[section].map(child => ({
-    path: child.id,
-    name: child.id,
-    component: () =>
-      import(
-        /* webpackChunkName: 'router-TosDetails-markdown' */ `@/markdowns/tos/${section}/${child.id}.md`
-      )
-  }));
-  return {
-    path: "/tos",
-    name: section,
-    component: () =>
-      import(
-        /* webpackChunkName: 'router-TosDetails' */ "@/pages/tos/TosDetails"
-      ),
-    children
-  };
-});
 
 // Router
 export default new Router({
@@ -174,6 +135,23 @@ export default new Router({
     {
       path: "/tos/ceo/service",
       redirect: "/tos/ceo_service"
+    },
+
+    // event
+    {
+      path: "/event",
+      component: () =>
+        import(/* webpackChunkName: 'router-Event' */ "@/pages/event/Event"),
+      children: [
+        {
+          path: "airpods",
+          name: "airpods",
+          component: () =>
+            import(
+              /* webpackChunkName: 'router-Event-Airpods' */ "@/pages/event/details/Airpods"
+            )
+        }
+      ]
     },
 
     // seller special pages

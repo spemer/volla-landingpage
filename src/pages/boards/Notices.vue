@@ -34,13 +34,9 @@ export default {
   },
 
   methods: {
-    goDetails(id, ymd) {
+    goDetails(id) {
       this.$router.push({
-        name: `${id}`,
-        params: {
-          ymd: ymd,
-          id: id
-        }
+        name: `${id}`
       });
     }
   }

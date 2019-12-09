@@ -7,7 +7,7 @@
       )
         button.global_cta-btn(
           type="button"
-        ) 목록으로
+        ) 공지사항 목록으로
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
     // append date info
     let arr = this.noticesEntries["notices"];
     let idx = arr.findIndex(item => {
-      return item.id === this.$route.params.id;
+      return item.id === this.$route.name;
     });
 
     let getTitle = document.querySelectorAll("section h1")[0];
@@ -131,6 +131,14 @@ export default {
     @include font-size($grid4x);
   }
 
+  h3 {
+    margin-top: $grid12x;
+    margin-bottom: 0;
+    text-align: left;
+    font-weight: 700;
+    @include font-size($grid4x);
+  }
+
   h4 {
     color: $black54;
     font-weight: 400;
@@ -146,6 +154,11 @@ export default {
 
     li {
       color: $black78;
+      margin-top: $grid;
+
+      img {
+        @include border-radius(0);
+      }
     }
   }
 
