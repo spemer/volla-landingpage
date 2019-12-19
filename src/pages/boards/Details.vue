@@ -3,7 +3,7 @@
     router-view.container
     div#closebtn.apply_border
       router-link.global_cta(
-        to="/notices/"
+        to="/notices"
       )
         button.global_cta-btn(
           type="button"

@@ -1,6 +1,16 @@
 {
   "notices": [
     {
+      "id": "new_seller_wouldyou",
+      "ymd": "191218",
+      "title": "[입점] 우아한쥬얼리"
+    },
+    {
+      "id": "new_seller_bbiang",
+      "ymd": "191216",
+      "title": "[입점] 삐앙벨르"
+    },
+    {
       "id": "event_airpods",
       "ymd": "191209",
       "title": "[EVENT] ‘볼라’가 크리스마스 선물로 에어팟을 드립니다!"
