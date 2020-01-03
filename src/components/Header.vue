@@ -15,7 +15,7 @@
       div.header_right
         p.header_right-text.dl(
           v-if="this.$route.path === '/'"
-          v-scroll-to="{el: '#download', duration: 0, offset: -54}"
+          v-scroll-to="{el: '#dl', duration: 0, offset: -54}"
         ) 다운로드
         router-link.header_right-text(
           :to="href"
@@ -36,14 +36,6 @@ export default {
     text: "",
     serviceEn: globalVar.serviceEn
   }),
-
-  watch: {
-    $route() {
-      return this.$route.path === "/"
-        ? ((this.href = "/benefits"), (this.text = "입점소개"))
-        : ((this.href = "/"), (this.text = "메인으로"));
-    }
-  },
 
   mounted() {
     return this.$route.path === "/"

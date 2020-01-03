@@ -1,8 +1,11 @@
 <template lang="pug">
   div#guide
-    Details
+    Details(
+      :key="$route.fullPath"
+    )
     div#closebtn.apply_border
       div.global_cta(
+        :key="$route.fullPath"
         @click="pushQuery"
       )
         button.global_cta-btn(
@@ -31,19 +34,7 @@ export default {
     }
   },
 
-  watch: {
-    $route() {
-      if (this.$route.query.type === "live") {
-        (this.btn_text = "프리즘 송출 가이드 보러가기"),
-          (this.btn_query = "prism");
-      } else if (this.$route.query.type === "prism") {
-        (this.btn_text = "라이브 신청 가이드 보러가기"),
-          (this.btn_query = "live");
-      }
-    }
-  },
-
-  mounted() {
+  updated() {
     if (this.$route.query.type) {
       if (this.$route.query.type === "live") {
         this.btn_text = "프리즘 송출 가이드 보러가기";

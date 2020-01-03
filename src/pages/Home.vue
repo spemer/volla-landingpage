@@ -1,6 +1,8 @@
 <template lang="pug">
   div#home
-    Header
+    Header(
+      :key="$route.fullPath"
+    )
     router-view
     Footer
     Kakao
