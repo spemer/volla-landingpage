@@ -12,7 +12,7 @@
           p.hero_text-subtitle {{ serviceEn }}를 소개합니다
         img.hero_text-image(
           :alt="serviceEn"
-          src="@/assets/dist/white.png"
+          src="https://prod-image.volla.live/webpage/intro/white.png"
         )
 </template>
 
