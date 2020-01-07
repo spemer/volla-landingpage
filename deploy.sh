@@ -26,7 +26,7 @@ dev_or_deploy() {
         image_resizer
         npm_run_serve
         npm_run_build
-        firebase_deploy
+        # firebase_deploy
         git_commit
         break;;
 
@@ -37,9 +37,9 @@ dev_or_deploy() {
         printf "\n"
         echo "${BOLD}${PURPLE}🔥 npm run build 🔥${RESET}"
         npm run build:modern;
-        printf "\n"
-        echo "${BOLD}${PURPLE}🔥 Firebase deploy 🔥${RESET}"
-        firebase deploy;
+        # printf "\n"
+        # echo "${BOLD}${PURPLE}🔥 Firebase deploy 🔥${RESET}"
+        # firebase deploy;
         break;;
 
       [Ll]* )
@@ -121,23 +121,23 @@ npm_run_build() {
 #============================================================
 # deploy with firebase cli
 #============================================================
-firebase_deploy() {
-  while true; do
-    printf "\n"
-    read -p "${BOLD}${GREEN}Firebase deploy? (Y/n) ${RESET}" yn
-    case ${yn} in
+# firebase_deploy() {
+#   while true; do
+#     printf "\n"
+#     read -p "${BOLD}${GREEN}Firebase deploy? (Y/n) ${RESET}" yn
+#     case ${yn} in
 
-      [Yy]* )
-        firebase deploy;
-        break;;
+#       [Yy]* )
+#         firebase deploy;
+#         break;;
 
-      [Nn]* )
-        return 0;;
+#       [Nn]* )
+#         return 0;;
 
-      * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
-    esac
-  done
-}
+#       * ) echo "${YELLOW}Please answer yes or no.${RESET}";;
+#     esac
+#   done
+# }
 
 #============================================================
 # git commit
