@@ -10,7 +10,7 @@
       div.dl_mockup
         img.dl_mockup-img(
           :alt="serviceEn"
-          src="https://prod-image.volla.live/webpage/intro/screen.png"
+          src="@/assets/dist/screen.png"
         )
 </template>
 

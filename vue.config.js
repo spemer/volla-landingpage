@@ -9,8 +9,6 @@ module.exports = {
     port: 5814
   },
 
-  publicPath: "/dist",
-
   chainWebpack: config => {
     config.module.rules.delete("eslint");
     config.module
