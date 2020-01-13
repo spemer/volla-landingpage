@@ -10,7 +10,7 @@
   filter: drop-shadow($val $val2 $val3 $color);
 }
 
-@mixin border-radius ($val:$grid4x) {
+@mixin border-radius ($val:$grid2x) {
   border-radius: $val;
 }
 

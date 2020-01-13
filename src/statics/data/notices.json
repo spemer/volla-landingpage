@@ -1,6 +1,21 @@
 {
   "notices": [
     {
+      "id": "follow_coupon",
+      "ymd": "200117",
+      "title": "[EVENT] 셀러 팔로우하고, 3천원 쿠폰받자 💖"
+    },
+    {
+      "id": "new_seller_withsj",
+      "ymd": "200110",
+      "title": "[입점] 위드에스제이"
+    },
+    {
+      "id": "new_seller_nieve",
+      "ymd": "200106",
+      "title": "[입점] 니에베"
+    },
+    {
       "id": "event_airpods_winner",
       "ymd": "191224",
       "title": "[EVENT] 볼라 크리스마스 이벤트 당첨자 발표"
