@@ -12,4 +12,4 @@ Simple x Trendy jewelry
 
 <br>
 
-라이브 방송으로 만나는 오프라인 쇼핑, Volla
+라이브 마켓 모음 앱, **Volla**

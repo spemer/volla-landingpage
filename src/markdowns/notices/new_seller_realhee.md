@@ -10,4 +10,4 @@ Simple, Lovely in realhee💕#리얼히 님이 볼라에 입점하셨어요.
 
 <br>
 
-라이브 방송으로 만나는 오프라인 쇼핑, Volla
+라이브 마켓 모음 앱, **Volla**
