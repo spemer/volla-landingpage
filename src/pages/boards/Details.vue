@@ -191,7 +191,10 @@ export default {
   }
 
   hr {
-    margin: $grid16x 0;
+    height: 1px;
+    background-color: #eee;
+    border: none;
+    margin: $grid8x 0;
   }
 
   p,
